@@ -1,10 +1,10 @@
 # Quality gate report
 
-- Input rows from aggregators: **3838**
+- Input rows from aggregators: **3827**
 - Rejected as noise / resale duplicates: **2518**
-- Merged duplicates collapsed to one page: **237**
+- Merged duplicates collapsed to one page: **235**
 - Routed to human review queue: **85**
-- Published with data-derived pages: **672**
+- Published with data-derived pages: **666**
 
 ## Rejection reasons
 - provider resale duplicate or SDK harness entry: 1976

@@ -1,10 +1,10 @@
 # Daily review digest - 2026-10-09
 
-Automation refreshed the pricing dataset. **672 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **666 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-0 price changes in the last 30 days, 672 new models, 0 delisted.
+0 price changes in the last 30 days, 666 new models, 0 delisted.
 
 Nothing has moved since the last snapshot. History is now being recorded daily.
 
