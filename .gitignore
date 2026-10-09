@@ -16,3 +16,6 @@ automation/mvp/site/
 # models cost on each date. Never add them to .gitignore and never delete them
 # to "clean up" - a day not recorded is permanently lost, and no competitor can
 # be caught up to on it either.
+
+# Python cache in automation dirs
+__pycache__/
