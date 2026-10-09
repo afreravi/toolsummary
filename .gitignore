@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+
+# Raw API payloads (regenerated every run)
+automation/mvp/*_raw.json
+
+# Generated site output
+automation/mvp/site/
+
+# Runtime-written SFTP private key (Phase 3). Never commit a credential.
+.sftp_key
+**/.sftp_key
+
+# NOTE: data/price_history.jsonl and data/price_changes.jsonl are the one thing
+# in this repo that cannot be regenerated. They are append-only records of what
+# models cost on each date. Never add them to .gitignore and never delete them
+# to "clean up" - a day not recorded is permanently lost, and no competitor can
+# be caught up to on it either.

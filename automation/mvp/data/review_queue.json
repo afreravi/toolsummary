@@ -1,0 +1,767 @@
+[
+  {
+    "candidate": "poolside/laguna-xs-2.1:free",
+    "candidate_name": "Laguna Xs 2.1",
+    "input_per_1m_usd": 0.0,
+    "possible_duplicate_of": "poolside/laguna-s-2.1:free",
+    "possible_duplicate_name": "Laguna S2.1",
+    "confidence": 0.96,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "nscale/Qwen/Qwen2.5-Coder-3B-Instruct",
+    "candidate_name": "Qwen 2.5 Coder 3 B Instruct",
+    "input_per_1m_usd": 0.01,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "nscale/Qwen/Qwen2.5-Coder-7B-Instruct",
+    "candidate_name": "Qwen 2.5 Coder 7 B Instruct",
+    "input_per_1m_usd": 0.01,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+    "candidate_name": "DeepSeek R1 Distill Llama 8 B",
+    "input_per_1m_usd": 0.025,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "nscale/Qwen/Qwen2.5-Coder-32B-Instruct",
+    "candidate_name": "Qwen 2.5 Coder 32 B Instruct",
+    "input_per_1m_usd": 0.06,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "candidate_name": "DeepSeek R1 Distill Qwen 14 B",
+    "input_per_1m_usd": 0.07,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "candidate_name": "DeepSeek R1 Distill Qwen 1.5 B",
+    "input_per_1m_usd": 0.09,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "meta/muse-spark-1.2-contributor",
+    "candidate_name": "Muse Spark 1.2 Contributor",
+    "input_per_1m_usd": 0.1,
+    "possible_duplicate_of": "meta/muse-spark-1.3-contributor",
+    "possible_duplicate_name": "Muse Spark 1.3 Contributor",
+    "confidence": 0.962,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "fireworks-ai-up-to-4b",
+    "candidate_name": "Fireworks AI Up To 4 B",
+    "input_per_1m_usd": 0.1,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "mistral/ministral-3-3b-2512",
+    "candidate_name": "Ministral 3.3 B2512",
+    "input_per_1m_usd": 0.1,
+    "possible_duplicate_of": "mistralai/ministral-3b-2512",
+    "possible_duplicate_name": "Ministral 3 B2512",
+    "confidence": 0.944,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "together-ai-up-to-4b",
+    "candidate_name": "Together AI Up To 4 B",
+    "input_per_1m_usd": 0.1,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "lambda_ai/llama3.3-70b-instruct-fp8",
+    "candidate_name": "Llama 3.3 70 B Instruct Fp 8",
+    "input_per_1m_usd": 0.12,
+    "possible_duplicate_of": "lambda_ai/llama3.1-70b-instruct-fp8",
+    "possible_duplicate_name": "Llama 3.1 70 B Instruct Fp 8",
+    "confidence": 0.96,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "perceptron/perceptron-mk1",
+    "candidate_name": "Perceptron Mk 1",
+    "input_per_1m_usd": 0.15,
+    "possible_duplicate_of": "perceptron/perceptron-mk1.5",
+    "possible_duplicate_name": "Perceptron Mk 1.5",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "candidate_name": "DeepSeek R1 Distill Qwen 32 B",
+    "input_per_1m_usd": 0.15,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "fireworks-ai-4.1b-to-16b",
+    "candidate_name": "Fireworks AI 4.1 B To 16 B",
+    "input_per_1m_usd": 0.2,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "mistral/ministral-3-14b-2512",
+    "candidate_name": "Ministral 3 14 B2512",
+    "input_per_1m_usd": 0.2,
+    "possible_duplicate_of": "mistralai/ministral-14b-2512",
+    "possible_duplicate_name": "Ministral 14 B2512",
+    "confidence": 0.947,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "candidate_name": "DeepSeek R1 Distill Qwen 7 B",
+    "input_per_1m_usd": 0.2,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "together-ai-4.1b-8b",
+    "candidate_name": "Together AI 4.1 B8 B",
+    "input_per_1m_usd": 0.2,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "baseten/nvidia/Nemotron-120B-A12B",
+    "candidate_name": "Nemotron 120 B A12 B",
+    "input_per_1m_usd": 0.3,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "gmi/Qwen/Qwen3-VL-235B-A22B-Instruct-FP8",
+    "candidate_name": "Qwen 3 VL 235 B A22 B Instruct Fp 8",
+    "input_per_1m_usd": 0.3,
+    "possible_duplicate_of": "qwen/qwen3-vl-235b-a22b-instruct",
+    "possible_duplicate_name": "Qwen 3 VL 235 B A22 B Instruct",
+    "confidence": 0.931,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "minimax/MiniMax-M2.5-lightning",
+    "candidate_name": "Minimax M2.5 Lightning",
+    "input_per_1m_usd": 0.3,
+    "possible_duplicate_of": "minimax/MiniMax-M2.1-lightning",
+    "possible_duplicate_name": "Minimax M2.1 Lightning",
+    "confidence": 0.955,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "together-ai-8.1b-21b",
+    "candidate_name": "Together AI 8.1 B21 B",
+    "input_per_1m_usd": 0.3,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "google/gemini-3.7-flash:batch",
+    "candidate_name": "Gemini 3.7 Flash",
+    "input_per_1m_usd": 0.375,
+    "possible_duplicate_of": "google/gemini-3.8-flash:batch",
+    "possible_duplicate_name": "Gemini 3.8 Flash",
+    "confidence": 0.938,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "google/gemini-3.6-flash:batch",
+    "candidate_name": "Gemini 3.6 Flash",
+    "input_per_1m_usd": 0.375,
+    "possible_duplicate_of": "google/gemini-3.8-flash:batch",
+    "possible_duplicate_name": "Gemini 3.8 Flash",
+    "confidence": 0.938,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "fal_ai/fal-ai/moondream3-preview/query",
+    "candidate_name": "Query",
+    "input_per_1m_usd": 0.4,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "fireworks-ai-moe-up-to-56b",
+    "candidate_name": "Fireworks AI MoE Up To 56 B",
+    "input_per_1m_usd": 0.5,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "baseten/deepseek-ai/DeepSeek-V3.1",
+    "candidate_name": "DeepSeek V3.1",
+    "input_per_1m_usd": 0.5,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "cognition/swe-1.6",
+    "candidate_name": "Swe 1.6",
+    "input_per_1m_usd": 0.5,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "cognition/swe-1.7",
+    "candidate_name": "Swe 1.7",
+    "input_per_1m_usd": 0.5,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "baseten/moonshotai/Kimi-K2-Instruct-0905",
+    "candidate_name": "Kimi K2 Instruct 0905",
+    "input_per_1m_usd": 0.6,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "gpt-4o-mini-tts",
+    "candidate_name": "GPT-4 O Mini Tts",
+    "input_per_1m_usd": 0.6,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "nscale/mistralai/mixtral-8x22b-instruct-v0.1",
+    "candidate_name": "Mixtral 8 X22 B Instruct V0.1",
+    "input_per_1m_usd": 0.6,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "nebius/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1",
+    "candidate_name": "Llama 3.1 Nemotron Ultra 253 B",
+    "input_per_1m_usd": 0.6,
+    "possible_duplicate_of": "nebius/nvidia/Llama-3.1-Nemotron-Ultra-253B-v1",
+    "possible_duplicate_name": "Llama 3.1 Nemotron Ultra 253 B",
+    "confidence": 0.966,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "ovhcloud/Meta-Llama-3_3-70B-Instruct",
+    "candidate_name": "Meta Llama 3.3 70 B Instruct",
+    "input_per_1m_usd": 0.67,
+    "possible_duplicate_of": "ovhcloud/Meta-Llama-3_1-70B-Instruct",
+    "possible_duplicate_name": "Meta Llama 3.1 70 B Instruct",
+    "confidence": 0.963,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "mistral/mistral-large-4",
+    "candidate_name": "Mistral Large 4",
+    "input_per_1m_usd": 0.68,
+    "possible_duplicate_of": "mistralai/mistral-large-4-0",
+    "possible_duplicate_name": "Mistral Large 4.0",
+    "confidence": 0.938,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "vercel_ai_gateway/meta/llama-3.1-70b",
+    "candidate_name": "Llama 3.1 70 B",
+    "input_per_1m_usd": 0.72,
+    "possible_duplicate_of": "snowflake/llama3.1-70b",
+    "possible_duplicate_name": "Llama 3.1 70 B",
+    "confidence": 0.96,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "vercel_ai_gateway/meta/llama-3.3-70b",
+    "candidate_name": "Llama 3.3 70 B",
+    "input_per_1m_usd": 0.72,
+    "possible_duplicate_of": "snowflake/llama3.3-70b",
+    "possible_duplicate_name": "Llama 3.3 70 B",
+    "confidence": 0.96,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "together-ai-21.1b-41b",
+    "candidate_name": "Together AI 21.1 B41 B",
+    "input_per_1m_usd": 0.8,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "together_ai/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+    "candidate_name": "Meta Llama 3.1 70 B Instruct Turbo",
+    "input_per_1m_usd": 0.88,
+    "possible_duplicate_of": "together_ai/meta-llama/Meta-Llama-3-70B-Instruct-Turbo",
+    "possible_duplicate_name": "Meta Llama 3 70 B Instruct Turbo",
+    "confidence": 0.969,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "fireworks-ai-above-16b",
+    "candidate_name": "Fireworks AI Above 16 B",
+    "input_per_1m_usd": 0.9,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "together-ai-41.1b-80b",
+    "candidate_name": "Together AI 41.1 B80 B",
+    "input_per_1m_usd": 0.9,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "anthropic/claude-sonnet-5:batch",
+    "candidate_name": "Claude Sonnet 5",
+    "input_per_1m_usd": 1.0,
+    "possible_duplicate_of": "anthropic/claude-sonnet-5.5:batch",
+    "possible_duplicate_name": "Claude Sonnet 5.5",
+    "confidence": 0.938,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "together_ai/moonshotai/Kimi-K2-Instruct",
+    "candidate_name": "Kimi K2 Instruct",
+    "input_per_1m_usd": 1.0,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "xai/grok-code-fast-1",
+    "candidate_name": "Grok Code Fast 1",
+    "input_per_1m_usd": 1.0,
+    "possible_duplicate_of": "xai/grok-code-fast",
+    "possible_duplicate_name": "Grok Code Fast",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "z-ai/glm-5-turbo",
+    "candidate_name": "GLM 5 Turbo",
+    "input_per_1m_usd": 1.2,
+    "possible_duplicate_of": "z-ai/glm-5v-turbo",
+    "possible_duplicate_name": "GLM 5 V Turbo",
+    "confidence": 0.957,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "fireworks-ai-56b-to-176b",
+    "candidate_name": "Fireworks AI 56 B To 176 B",
+    "input_per_1m_usd": 1.2,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "xai/grok-4.20-beta-0309-non-reasoning",
+    "candidate_name": "Grok 4.20 Beta 0309 Non Reasoning",
+    "input_per_1m_usd": 1.25,
+    "possible_duplicate_of": "xai/grok-4.20-beta-0309-reasoning",
+    "possible_duplicate_name": "Grok 4.20 Beta 0309 Reasoning",
+    "confidence": 0.935,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "xai/grok-4.20-beta-latest-reasoning",
+    "candidate_name": "Grok 4.20 Beta Latest Reasoning",
+    "input_per_1m_usd": 1.25,
+    "possible_duplicate_of": "xai/grok-4.20-beta-latest-non-reasoning",
+    "possible_duplicate_name": "Grok 4.20 Beta Latest Non Reasoning",
+    "confidence": 0.939,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "xai/grok-4.20-experimental-beta-0304-reasoning",
+    "candidate_name": "Grok 4.20 Experimental Beta 0304 Reasoning",
+    "input_per_1m_usd": 1.25,
+    "possible_duplicate_of": "xai/grok-4.20-experimental-beta-0304-non-reasoning",
+    "possible_duplicate_name": "Grok 4.20 Experimental Beta 0304 Non Reasoning",
+    "confidence": 0.955,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "xai/grok-4.20-experimental-beta-non-reasoning-latest",
+    "candidate_name": "Grok 4.20 Experimental Beta Non Reasoning Latest",
+    "input_per_1m_usd": 1.25,
+    "possible_duplicate_of": "xai/grok-4.20-experimental-beta-0304-non-reasoning",
+    "possible_duplicate_name": "Grok 4.20 Experimental Beta 0304 Non Reasoning",
+    "confidence": 0.943,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "xai/grok-4.20-multi-agent-experimental-beta-latest",
+    "candidate_name": "Grok 4.20 Multi Agent Experimental Beta Latest",
+    "input_per_1m_usd": 1.25,
+    "possible_duplicate_of": "xai/grok-4.20-multi-agent-experimental-beta-0304",
+    "possible_duplicate_name": "Grok 4.20 Multi Agent Experimental Beta 0304",
+    "confidence": 0.94,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "xai/grok-4.20-non-reasoning-gv2",
+    "candidate_name": "Grok 4.20 Non Reasoning G",
+    "input_per_1m_usd": 1.25,
+    "possible_duplicate_of": "xai/grok-4.20-non-reasoning",
+    "possible_duplicate_name": "Grok 4.20 Non Reasoning",
+    "confidence": 0.958,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "xai/grok-4.20-reasoning-gv2",
+    "candidate_name": "Grok 4.20 Reasoning G",
+    "input_per_1m_usd": 1.25,
+    "possible_duplicate_of": "xai/grok-4.20-reasoning",
+    "possible_duplicate_name": "Grok 4.20 Reasoning",
+    "confidence": 0.95,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "anthropic/claude-sonnet-4.5:batch",
+    "candidate_name": "Claude Sonnet 4.5",
+    "input_per_1m_usd": 1.5,
+    "possible_duplicate_of": "anthropic/claude-sonnet-4.6:batch",
+    "possible_duplicate_name": "Claude Sonnet 4.6",
+    "confidence": 0.941,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "mistral/mistral-medium",
+    "candidate_name": "Mistral Medium",
+    "input_per_1m_usd": 1.5,
+    "possible_duplicate_of": "mistral/magistral-medium-latest",
+    "possible_duplicate_name": "Magistral Medium Latest",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "together-ai-81.1b-110b",
+    "candidate_name": "Together AI 81.1 B110 B",
+    "input_per_1m_usd": 1.8,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "cloudflare/@cf/meta/llama-2-7b-chat-fp16",
+    "candidate_name": "Llama 2.7 B Chat Fp 16",
+    "input_per_1m_usd": 1.923,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "cloudflare/@cf/meta/llama-2-7b-chat-int8",
+    "candidate_name": "Llama 2.7 B Chat Int 8",
+    "input_per_1m_usd": 1.923,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "jamba-large-1.7",
+    "candidate_name": "Jamba Large 1.7",
+    "input_per_1m_usd": 2.0,
+    "possible_duplicate_of": "jamba-large-1.6",
+    "possible_duplicate_name": "Jamba Large 1.6",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "snowflake/mistral-large2",
+    "candidate_name": "Mistral Large 2",
+    "input_per_1m_usd": 2.0,
+    "possible_duplicate_of": "mistralai/mistral-large",
+    "possible_duplicate_name": "Mistral Large",
+    "confidence": 0.963,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "au.anthropic.claude-sonnet-5-5",
+    "candidate_name": "Au Anthropic Claude Sonnet 5.5",
+    "input_per_1m_usd": 2.2,
+    "possible_duplicate_of": "au.anthropic.claude-sonnet-5",
+    "possible_duplicate_name": "Au Anthropic Claude Sonnet 5",
+    "confidence": 0.966,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "us-gov.anthropic.claude-sonnet-5-5",
+    "candidate_name": "Us Gov Anthropic Claude Sonnet 5.5",
+    "input_per_1m_usd": 2.4,
+    "possible_duplicate_of": "us-gov.anthropic.claude-sonnet-5",
+    "possible_duplicate_name": "Us Gov Anthropic Claude Sonnet 5",
+    "confidence": 0.97,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "anthropic/claude-opus-4.7:batch",
+    "candidate_name": "Claude Opus 4.7",
+    "input_per_1m_usd": 2.5,
+    "possible_duplicate_of": "anthropic/claude-opus-4.8:batch",
+    "possible_duplicate_name": "Claude Opus 4.8",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "anthropic/claude-opus-4.6:batch",
+    "candidate_name": "Claude Opus 4.6",
+    "input_per_1m_usd": 2.5,
+    "possible_duplicate_of": "anthropic/claude-opus-4.8:batch",
+    "possible_duplicate_name": "Claude Opus 4.8",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "anthropic/claude-opus-4.5:batch",
+    "candidate_name": "Claude Opus 4.5",
+    "input_per_1m_usd": 2.5,
+    "possible_duplicate_of": "anthropic/claude-opus-4.8:batch",
+    "possible_duplicate_name": "Claude Opus 4.8",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "cognition/swe-1.7-lightning",
+    "candidate_name": "Swe 1.7 Lightning",
+    "input_per_1m_usd": 2.5,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "claude-sonnet-4-5",
+    "candidate_name": "Claude Sonnet 4.5",
+    "input_per_1m_usd": 3.0,
+    "possible_duplicate_of": "anthropic/claude-sonnet-4",
+    "possible_duplicate_name": "Claude Sonnet 4",
+    "confidence": 0.938,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "claude-sonnet-4-6",
+    "candidate_name": "Claude Sonnet 4.6",
+    "input_per_1m_usd": 3.0,
+    "possible_duplicate_of": "anthropic/claude-sonnet-4",
+    "possible_duplicate_name": "Claude Sonnet 4",
+    "confidence": 0.938,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "gradient_ai/anthropic-claude-3.7-sonnet",
+    "candidate_name": "Anthropic Claude 3.7 Sonnet",
+    "input_per_1m_usd": 3.0,
+    "possible_duplicate_of": "gradient_ai/anthropic-claude-3.5-sonnet",
+    "possible_duplicate_name": "Anthropic Claude 3.5 Sonnet",
+    "confidence": 0.963,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "vercel_ai_gateway/anthropic/claude-3.5-sonnet",
+    "candidate_name": "Claude 3.5 Sonnet",
+    "input_per_1m_usd": 3.0,
+    "possible_duplicate_of": "snowflake/claude-3-5-sonnet",
+    "possible_duplicate_name": "Claude 3.5 Sonnet",
+    "confidence": 0.941,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "vercel_ai_gateway/anthropic/claude-3-7-sonnet",
+    "candidate_name": "Claude 3.7 Sonnet",
+    "input_per_1m_usd": 3.0,
+    "possible_duplicate_of": "snowflake/claude-3-5-sonnet",
+    "possible_duplicate_name": "Claude 3.5 Sonnet",
+    "confidence": 0.941,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "au.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "candidate_name": "Au Anthropic Claude Sonnet 4.5",
+    "input_per_1m_usd": 3.3,
+    "possible_duplicate_of": "au.anthropic.claude-sonnet-4-6",
+    "possible_duplicate_name": "Au Anthropic Claude Sonnet 4.6",
+    "confidence": 0.967,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "gpt-realtime-2.1",
+    "candidate_name": "GPT Realtime 2.1",
+    "input_per_1m_usd": 4.0,
+    "possible_duplicate_of": "gpt-realtime-2",
+    "possible_duplicate_name": "GPT Realtime 2",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "anthropic/claude-fable-5:batch",
+    "candidate_name": "Claude Fable 5",
+    "input_per_1m_usd": 5.0,
+    "possible_duplicate_of": "anthropic/claude-fable-5.1:batch",
+    "possible_duplicate_name": "Claude Fable 5.1",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "claude-opus-4-6",
+    "candidate_name": "Claude Opus 4.6",
+    "input_per_1m_usd": 5.0,
+    "possible_duplicate_of": "claude-opus-4-5-20251101",
+    "possible_duplicate_name": "Claude Opus 4.5",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "claude-opus-4-7",
+    "candidate_name": "Claude Opus 4.7",
+    "input_per_1m_usd": 5.0,
+    "possible_duplicate_of": "claude-opus-4-5-20251101",
+    "possible_duplicate_name": "Claude Opus 4.5",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "claude-opus-4-8",
+    "candidate_name": "Claude Opus 4.8",
+    "input_per_1m_usd": 5.0,
+    "possible_duplicate_of": "claude-opus-4-5-20251101",
+    "possible_duplicate_name": "Claude Opus 4.5",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "gpt-image-1.5",
+    "candidate_name": "GPT Image 1.5",
+    "input_per_1m_usd": 5.0,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "chatgpt-image-latest",
+    "candidate_name": "Chatgpt Image Latest",
+    "input_per_1m_usd": 5.0,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "gpt-rosalind-research",
+    "candidate_name": "GPT Rosalind Research",
+    "input_per_1m_usd": 5.0,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  },
+  {
+    "candidate": "au.anthropic.claude-opus-4-7",
+    "candidate_name": "Au Anthropic Claude Opus 4.7",
+    "input_per_1m_usd": 5.5,
+    "possible_duplicate_of": "au.anthropic.claude-opus-4-6-v1",
+    "possible_duplicate_name": "Au Anthropic Claude Opus 4.6",
+    "confidence": 0.964,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "au.anthropic.claude-opus-4-8",
+    "candidate_name": "Au Anthropic Claude Opus 4.8",
+    "input_per_1m_usd": 5.5,
+    "possible_duplicate_of": "au.anthropic.claude-opus-4-6-v1",
+    "possible_duplicate_name": "Au Anthropic Claude Opus 4.6",
+    "confidence": 0.964,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "us-gov.anthropic.claude-opus-5",
+    "candidate_name": "Us Gov Anthropic Claude Opus 5",
+    "input_per_1m_usd": 6.0,
+    "possible_duplicate_of": "us-gov.anthropic.claude-opus-4-8",
+    "possible_duplicate_name": "Us Gov Anthropic Claude Opus 4.8",
+    "confidence": 0.935,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "claude-mythos-5-1",
+    "candidate_name": "Claude Mythos 5.1",
+    "input_per_1m_usd": 10.0,
+    "possible_duplicate_of": "claude-mythos-5",
+    "possible_duplicate_name": "Claude Mythos 5",
+    "confidence": 0.938,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "gpt-5.5-cyber",
+    "candidate_name": "GPT-5.5 Cyber",
+    "input_per_1m_usd": 12.5,
+    "possible_duplicate_of": null,
+    "possible_duplicate_name": null,
+    "confidence": null,
+    "reason": "missing or too-small context window"
+  }
+]
