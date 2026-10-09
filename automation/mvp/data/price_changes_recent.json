@@ -1,0 +1,6734 @@
+{
+  "generated_at": "2026-10-09T15:52:19+00:00",
+  "as_of": "2026-10-09",
+  "window_days": 30,
+  "counts": {
+    "price": 0,
+    "new": 672,
+    "delisted": 0,
+    "context": 0,
+    "significant": 0
+  },
+  "events": [
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "aion-2.0",
+      "display_name": "Aion 2.0",
+      "vendor": "aion-labs",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 1.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "aion-3.0",
+      "display_name": "Aion 3.0",
+      "vendor": "aion-labs",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "aion-3.0-mini",
+      "display_name": "Aion 3.0 Mini",
+      "vendor": "aion-labs",
+      "input_per_1m_usd": 0.7,
+      "output_per_1m_usd": 1.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "aion-3.5",
+      "display_name": "Aion 3.5",
+      "vendor": "aion-labs",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "aion-3.5-mini",
+      "display_name": "Aion 3.5 Mini",
+      "vendor": "aion-labs",
+      "input_per_1m_usd": 0.7,
+      "output_per_1m_usd": 1.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "aion-rp-llama-3.1-8b",
+      "display_name": "Aion Rp Llama 3.1.8 B",
+      "vendor": "aion-labs",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 1.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "anthropic-claude-3-opus",
+      "display_name": "Anthropic Claude 3 Opus",
+      "vendor": "gradient_ai",
+      "input_per_1m_usd": 15.0,
+      "output_per_1m_usd": 75.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "anthropic-claude-3.5-haiku",
+      "display_name": "Anthropic Claude 3.5 Haiku",
+      "vendor": "gradient_ai",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 4.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "anthropic-claude-3.5-sonnet",
+      "display_name": "Anthropic Claude 3.5 Sonnet",
+      "vendor": "gradient_ai",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "apodex-1.1-mini",
+      "display_name": "Apodex 1.1 Mini",
+      "vendor": "apodex",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-fable-5",
+      "display_name": "Au Anthropic Claude Fable 5",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 11.0,
+      "output_per_1m_usd": 55.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-haiku-4-5",
+      "display_name": "Au Anthropic Claude Haiku 4.5",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 1.1,
+      "output_per_1m_usd": 5.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-haiku-5-5",
+      "display_name": "Au Anthropic Claude Haiku 5.5",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 0.11,
+      "output_per_1m_usd": 0.55,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-mythos",
+      "display_name": "Au Anthropic Claude Mythos Preview",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 27.5,
+      "output_per_1m_usd": 137.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-opus-4-6",
+      "display_name": "Au Anthropic Claude Opus 4.6",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 5.5,
+      "output_per_1m_usd": 27.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-opus-5",
+      "display_name": "Au Anthropic Claude Opus 5",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 5.5,
+      "output_per_1m_usd": 27.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-opus-5-5",
+      "display_name": "Au Anthropic Claude Opus 5.5",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 4.4,
+      "output_per_1m_usd": 22.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-sonnet-4-6",
+      "display_name": "Au Anthropic Claude Sonnet 4.6",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 3.3,
+      "output_per_1m_usd": 16.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "au.anthropic.claude-sonnet-5",
+      "display_name": "Au Anthropic Claude Sonnet 5",
+      "vendor": "au.anthropic.claude",
+      "input_per_1m_usd": 2.2,
+      "output_per_1m_usd": 11.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "c4ai-aya-expanse-32b",
+      "display_name": "C4 AI Aya Expanse 32 B",
+      "vendor": "c4ai",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "chat",
+      "display_name": "Chat Latest",
+      "vendor": "chat",
+      "input_per_1m_usd": 5.0,
+      "output_per_1m_usd": 30.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "chatdolphin",
+      "display_name": "Chatdolphin",
+      "vendor": "chatdolphin",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-3-5-sonnet",
+      "display_name": "Claude 3.5 Sonnet",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-3-haiku",
+      "display_name": "Claude 3 Haiku",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 1.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-3-opus",
+      "display_name": "Claude 3 Opus",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 15.0,
+      "output_per_1m_usd": 75.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-3.5-haiku",
+      "display_name": "Claude 3.5 Haiku",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 4.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-3.7-sonnet",
+      "display_name": "Claude 3.7 Sonnet",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-4-opus",
+      "display_name": "Claude 4 Opus",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 5.0,
+      "output_per_1m_usd": 25.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-4-sonnet",
+      "display_name": "Claude 4 Sonnet",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-fable",
+      "display_name": "Claude Fable Latest",
+      "vendor": "~anthropic",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 50.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-fable-5-1",
+      "display_name": "Claude Fable 5.1",
+      "vendor": "claude",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 50.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-fable-5.1",
+      "display_name": "Claude Fable 5.1",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 5.0,
+      "output_per_1m_usd": 25.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-haiku",
+      "display_name": "Claude Haiku Latest",
+      "vendor": "~anthropic",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-haiku-4-5",
+      "display_name": "Claude Haiku 4.5",
+      "vendor": "claude",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-haiku-4.5",
+      "display_name": "Claude Haiku 4.5",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-haiku-5-5",
+      "display_name": "Claude Haiku 5.5",
+      "vendor": "claude",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-haiku-5.5",
+      "display_name": "Claude Haiku 5.5",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-mythos",
+      "display_name": "Claude Mythos Preview",
+      "vendor": "claude",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 50.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-mythos-5",
+      "display_name": "Claude Mythos 5",
+      "vendor": "claude",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 50.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-opus",
+      "display_name": "Claude Opus Latest",
+      "vendor": "~anthropic",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 20.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-opus-4",
+      "display_name": "Claude Opus 4",
+      "vendor": "gmi",
+      "input_per_1m_usd": 15.0,
+      "output_per_1m_usd": 75.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-opus-4-5",
+      "display_name": "Claude Opus 4.5",
+      "vendor": "claude",
+      "input_per_1m_usd": 5.0,
+      "output_per_1m_usd": 25.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-opus-4.1",
+      "display_name": "Claude Opus 4.1",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 7.5,
+      "output_per_1m_usd": 37.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-opus-4.8",
+      "display_name": "Claude Opus 4.8",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 12.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-opus-5",
+      "display_name": "Claude Opus 5",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 12.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-opus-5-5",
+      "display_name": "Claude Opus 5.5",
+      "vendor": "claude",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 20.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-opus-5.5",
+      "display_name": "Claude Opus 5.5",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-sonnet",
+      "display_name": "Claude Sonnet Latest",
+      "vendor": "~anthropic",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-sonnet-4",
+      "display_name": "Claude Sonnet 4",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-sonnet-4.6",
+      "display_name": "Claude Sonnet 4.6",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-sonnet-5-5",
+      "display_name": "Claude Sonnet 5.5",
+      "vendor": "claude",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "claude-sonnet-5.5",
+      "display_name": "Claude Sonnet 5.5",
+      "vendor": "anthropic",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "codellama-7b",
+      "display_name": "Codellama 7 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.12,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "codellama-7b-instruct-awq",
+      "display_name": "Codellama 7 B Instruct Awq",
+      "vendor": "cloudflare",
+      "input_per_1m_usd": 1.923,
+      "output_per_1m_usd": 1.923,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "codestral",
+      "display_name": "Codestral Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "codestral-2508",
+      "display_name": "Codestral 2508",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.45,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "codestral-mamba",
+      "display_name": "Codestral Mamba Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "command-a",
+      "display_name": "Command A",
+      "vendor": "cohere",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "command-a-plus",
+      "display_name": "Command A Plus",
+      "vendor": "cohere",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "command-nightly",
+      "display_name": "Command Nightly",
+      "vendor": "command",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "command-r",
+      "display_name": "Command R",
+      "vendor": "cohere",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "command-r-plus",
+      "display_name": "Command R Plus",
+      "vendor": "cohere",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "command-r7b",
+      "display_name": "Command R7 B",
+      "vendor": "cohere",
+      "input_per_1m_usd": 0.0375,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "cosmos3-super-reasoner",
+      "display_name": "Cosmos 3 Super Reasoner",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "cydonia-24b-v4.1",
+      "display_name": "Cydonia 24 B V4.1",
+      "vendor": "thedrummer",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "daybreak-blue",
+      "display_name": "Daybreak Blue Latest",
+      "vendor": "daybreak",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 20.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "daybreak-red",
+      "display_name": "Daybreak Red Latest",
+      "vendor": "daybreak",
+      "input_per_1m_usd": 12.5,
+      "output_per_1m_usd": 75.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deep-research-max-preview",
+      "display_name": "Deep Research Max Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deep-research-preview",
+      "display_name": "Deep Research Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deep-research-pro-preview",
+      "display_name": "Deep Research Pro Preview",
+      "vendor": "deep",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek",
+      "display_name": "DeepSeek",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.27,
+      "output_per_1m_usd": 1.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-chat",
+      "display_name": "DeepSeek Chat",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.32,
+      "output_per_1m_usd": 0.89,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-chat-v3-0324",
+      "display_name": "DeepSeek Chat V3 0324",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.29,
+      "output_per_1m_usd": 1.14,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-chat-v3.1",
+      "display_name": "DeepSeek Chat V3.1",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.95,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-coder",
+      "display_name": "DeepSeek Coder",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.14,
+      "output_per_1m_usd": 0.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-coder-33b-instruct",
+      "display_name": "DeepSeek Coder 33 B Instruct",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 0.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-coder-6.7b",
+      "display_name": "DeepSeek Coder 6.7 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.12,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-flash",
+      "display_name": "DeepSeek Flash Latest",
+      "vendor": "~deepseek",
+      "input_per_1m_usd": 0.016,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-llama3.3-70b",
+      "display_name": "DeepSeek Llama 3.3 70 B",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-pro",
+      "display_name": "DeepSeek Pro Latest",
+      "vendor": "~deepseek",
+      "input_per_1m_usd": 0.1282,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-r1",
+      "display_name": "DeepSeek R1",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.7,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-r1-0528",
+      "display_name": "DeepSeek R1 0528",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 2.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-r1-671b",
+      "display_name": "DeepSeek R1 671 B",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 0.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-r1-7b-qwen",
+      "display_name": "DeepSeek R1.7 B Qwen",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-r1-8b",
+      "display_name": "DeepSeek R1.8 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-r1-distill-llama-70b",
+      "display_name": "DeepSeek R1 Distill Llama 70 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-reasoner",
+      "display_name": "DeepSeek Reasoner",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.28,
+      "output_per_1m_usd": 0.42,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v3-0324",
+      "display_name": "DeepSeek V3 0324",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v3.1-terminus",
+      "display_name": "DeepSeek V3.1 Terminus",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.27,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v3.2",
+      "display_name": "DeepSeek V3.2",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.259,
+      "output_per_1m_usd": 0.42,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v3.2-exp",
+      "display_name": "DeepSeek V3.2 Exp",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.27,
+      "output_per_1m_usd": 0.41,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v4-flash",
+      "display_name": "DeepSeek V4 Flash Latest",
+      "vendor": "~deepseek",
+      "input_per_1m_usd": 0.0048,
+      "output_per_1m_usd": 0.0248,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v4-flash-0731",
+      "display_name": "DeepSeek V4 Flash 0731",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.006,
+      "output_per_1m_usd": 1.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v4-flash-thinking",
+      "display_name": "DeepSeek V4 Flash Thinking",
+      "vendor": "libertai",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 1.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v4-flash-vision-exp",
+      "display_name": "DeepSeek V4 Flash Vision Exp",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.2156,
+      "output_per_1m_usd": 0.6468,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v4-pro",
+      "display_name": "DeepSeek V4 Pro",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.2753,
+      "output_per_1m_usd": 0.5505,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v4-pro-0813",
+      "display_name": "DeepSeek V4 Pro 0813",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.66,
+      "output_per_1m_usd": 1.98,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v4.1-flash",
+      "display_name": "DeepSeek V4.1 Flash",
+      "vendor": "deepseek",
+      "input_per_1m_usd": 0.112,
+      "output_per_1m_usd": 0.336,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "deepseek-v4.1-flash-fast",
+      "display_name": "DeepSeek V4.1 Flash Fast",
+      "vendor": "baseten",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "devstral",
+      "display_name": "Devstral Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "devstral-2512",
+      "display_name": "Devstral 2512",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "devstral-medium",
+      "display_name": "Devstral Medium Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "devstral-small",
+      "display_name": "Devstral Small",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.07,
+      "output_per_1m_usd": 0.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "dolphin",
+      "display_name": "Dolphin",
+      "vendor": "dolphin",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "dolphin-mistral-24b-venice-edition",
+      "display_name": "Dolphin Mistral 24 B Venice Edition",
+      "vendor": "cognitivecomputations",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "dolphin3-8b",
+      "display_name": "Dolphin 3.8 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "dots-3-note",
+      "display_name": "Dots 3 Note Preview",
+      "vendor": "dots-studio",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "doubao-seed-2-1-pro-260628",
+      "display_name": "Doubao Seed 2.1 Pro 260628",
+      "vendor": "volcengine",
+      "input_per_1m_usd": 0.8625,
+      "output_per_1m_usd": 4.3125,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "doubao-seed-2-1-turbo-260628",
+      "display_name": "Doubao Seed 2.1 Turbo 260628",
+      "vendor": "volcengine",
+      "input_per_1m_usd": 0.4313,
+      "output_per_1m_usd": 2.1562,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ember-1",
+      "display_name": "Ember 1",
+      "vendor": "fireworks",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "fugu-max",
+      "display_name": "Fugu Max",
+      "vendor": "sakana",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "fugu-ultra",
+      "display_name": "Fugu Ultra",
+      "vendor": "sakana",
+      "input_per_1m_usd": 5.0,
+      "output_per_1m_usd": 30.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-computer-use-preview",
+      "display_name": "Gemini 2.5 Computer Use Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-flash",
+      "display_name": "Gemini 2.5 Flash",
+      "vendor": "google",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 1.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-flash-image",
+      "display_name": "Gemini 2.5 Flash Image",
+      "vendor": "google",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-flash-lite",
+      "display_name": "Gemini 2.5 Flash Lite",
+      "vendor": "google",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-flash-lite-preview",
+      "display_name": "Gemini 2.5 Flash Lite Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-flash-native-audio",
+      "display_name": "Gemini 2.5 Flash Native Audio Latest",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-flash-native-audio-preview",
+      "display_name": "Gemini 2.5 Flash Native Audio Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-flash-preview",
+      "display_name": "Gemini 2.5 Flash Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-flash-preview-tts",
+      "display_name": "Gemini 2.5 Flash Preview Tts",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-pro",
+      "display_name": "Gemini 2.5 Pro",
+      "vendor": "google",
+      "input_per_1m_usd": 0.625,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-2.5-pro-preview-tts",
+      "display_name": "Gemini 2.5 Pro Preview Tts",
+      "vendor": "gemini",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 20.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3-flash",
+      "display_name": "Gemini 3 Flash Preview",
+      "vendor": "google",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3-pro-image",
+      "display_name": "Gemini 3 Pro Image",
+      "vendor": "google",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.1-flash-image",
+      "display_name": "Gemini 3.1 Flash Image",
+      "vendor": "google",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 3.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.1-flash-lite",
+      "display_name": "Gemini 3.1 Flash Lite",
+      "vendor": "google",
+      "input_per_1m_usd": 0.125,
+      "output_per_1m_usd": 0.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.1-flash-lite-image",
+      "display_name": "Gemini 3.1 Flash Lite Image",
+      "vendor": "google",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.1-flash-live",
+      "display_name": "Gemini 3.1 Flash Live Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.1-flash-tts",
+      "display_name": "Gemini 3.1 Flash Tts Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 20.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.1-pro",
+      "display_name": "Gemini 3.1 Pro Preview",
+      "vendor": "google",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.1-pro-preview-customtools",
+      "display_name": "Gemini 3.1 Pro Preview Customtools",
+      "vendor": "google",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.5-flash",
+      "display_name": "Gemini 3.5 Flash",
+      "vendor": "google",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.5-flash-lite",
+      "display_name": "Gemini 3.5 Flash Lite",
+      "vendor": "google",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 1.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.5-live-translate",
+      "display_name": "Gemini 3.5 Live Translate Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 3.5,
+      "output_per_1m_usd": 21.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.5-transcribe",
+      "display_name": "Gemini 3.5 Transcribe",
+      "vendor": "gemini",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.5-transcribe-live",
+      "display_name": "Gemini 3.5 Transcribe Live",
+      "vendor": "gemini",
+      "input_per_1m_usd": 3.5,
+      "output_per_1m_usd": 21.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.8-flash",
+      "display_name": "Gemini 3.8 Flash",
+      "vendor": "google",
+      "input_per_1m_usd": 0.375,
+      "output_per_1m_usd": 1.875,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.8-flash-cyber",
+      "display_name": "Gemini 3.8 Flash Cyber",
+      "vendor": "gemini",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.8-flash-lite-tts",
+      "display_name": "Gemini 3.8 Flash Lite Tts",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.8-flash-tts",
+      "display_name": "Gemini 3.8 Flash Tts",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 9.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.8-live",
+      "display_name": "Gemini 3.8 Live",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-3.8-live-extended-thinking",
+      "display_name": "Gemini 3.8 Live Extended Thinking",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-exp-1206",
+      "display_name": "Gemini Exp 1206",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-flash",
+      "display_name": "Gemini Flash Latest",
+      "vendor": "~google",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 3.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-flash-lite",
+      "display_name": "Gemini Flash Lite Latest",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-gemma-2-27b-it",
+      "display_name": "Gemini Gemma 2 27 B It",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.35,
+      "output_per_1m_usd": 1.05,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-gemma-2-9b-it",
+      "display_name": "Gemini Gemma 2.9 B It",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.35,
+      "output_per_1m_usd": 1.05,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-live-2.5-flash-native-audio",
+      "display_name": "Gemini Live 2.5 Flash Native Audio",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-live-2.5-flash-preview-native-audio",
+      "display_name": "Gemini Live 2.5 Flash Preview Native Audio",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-nano-banana-2.1",
+      "display_name": "Gemini Nano Banana 2.1",
+      "vendor": "google",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-omni-1.1-flash",
+      "display_name": "Gemini Omni 1.1 Flash",
+      "vendor": "gemini",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 9.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-omni-flash",
+      "display_name": "Gemini Omni Flash Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 9.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-pro",
+      "display_name": "Gemini Pro Latest",
+      "vendor": "~google",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-robotics-er-1.5",
+      "display_name": "Gemini Robotics Er 1.5 Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-robotics-er-2",
+      "display_name": "Gemini Robotics Er 2 Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemini-robotics-er-2-streaming",
+      "display_name": "Gemini Robotics Er 2 Streaming Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-2-27b-it",
+      "display_name": "Gemma 2 27 B It",
+      "vendor": "google",
+      "input_per_1m_usd": 0.65,
+      "output_per_1m_usd": 0.65,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-2-9b",
+      "display_name": "Gemma 2.9 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-3-12b-it",
+      "display_name": "Gemma 3 12 B It",
+      "vendor": "google",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-3-27b-it",
+      "display_name": "Gemma 3 27 B It",
+      "vendor": "google",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.45,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-3-4b-it",
+      "display_name": "Gemma 3.4 B It",
+      "vendor": "google",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-4-12b-it",
+      "display_name": "Gemma 4 12 B It",
+      "vendor": "sail",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-4-26b",
+      "display_name": "Gemma 4 26 B",
+      "vendor": "darkbloom",
+      "input_per_1m_usd": 0.03,
+      "output_per_1m_usd": 0.165,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-4-26b-a4b-it",
+      "display_name": "Gemma 4 26 B A4 B It",
+      "vendor": "google",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-4-31b-it",
+      "display_name": "Gemma 4 31 B It",
+      "vendor": "google",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-4-31b-it-nvfp4",
+      "display_name": "Gemma 4 31 B It Nvfp 4",
+      "vendor": "sail",
+      "input_per_1m_usd": 0.14,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-4-31b-it-thinking",
+      "display_name": "Gemma 4 31 B It Thinking",
+      "vendor": "libertai",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma-sea-lion-v4-27b-it",
+      "display_name": "Gemma Sea Lion V4 27 B It",
+      "vendor": "cloudflare",
+      "input_per_1m_usd": 0.351,
+      "output_per_1m_usd": 0.555,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gemma3-4b",
+      "display_name": "Gemma 3.4 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.03,
+      "output_per_1m_usd": 0.08,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm",
+      "display_name": "GLM Latest",
+      "vendor": "~z-ai",
+      "input_per_1m_usd": 0.0312,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4-32b-0414-128k",
+      "display_name": "GLM 4 32 B0414 128 K",
+      "vendor": "zai",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.5",
+      "display_name": "GLM 4.5",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.5-air",
+      "display_name": "GLM 4.5 Air",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.13,
+      "output_per_1m_usd": 0.85,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.5-air-fp8",
+      "display_name": "GLM 4.5 Air Fp 8",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 1.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.5-airx",
+      "display_name": "GLM 4.5 Airx",
+      "vendor": "zai",
+      "input_per_1m_usd": 1.1,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.5-x",
+      "display_name": "GLM 4.5 X",
+      "vendor": "zai",
+      "input_per_1m_usd": 2.2,
+      "output_per_1m_usd": 8.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.5v",
+      "display_name": "GLM 4.5 V",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 1.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.6",
+      "display_name": "GLM 4.6",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.43,
+      "output_per_1m_usd": 1.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.6v",
+      "display_name": "GLM 4.6 V",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.7",
+      "display_name": "GLM 4.7",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.7-flash",
+      "display_name": "GLM 4.7 Flash",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.0605,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-4.7-fp8",
+      "display_name": "GLM 4.7 Fp 8",
+      "vendor": "gmi",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5",
+      "display_name": "GLM 5",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 1.92,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5-2",
+      "display_name": "GLM 5.2",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.4,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5-code",
+      "display_name": "GLM 5 Code",
+      "vendor": "zai",
+      "input_per_1m_usd": 1.2,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.1",
+      "display_name": "GLM 5.1",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.966,
+      "output_per_1m_usd": 3.036,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.1-nvfp4-mtp",
+      "display_name": "GLM 5.1 Nvfp 4 Mtp",
+      "vendor": "tensormesh",
+      "input_per_1m_usd": 1.4,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.2",
+      "display_name": "GLM 5.2",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 4.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.2-fast",
+      "display_name": "GLM 5.2 Fast",
+      "vendor": "baseten",
+      "input_per_1m_usd": 2.1,
+      "output_per_1m_usd": 6.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.3",
+      "display_name": "GLM 5.3",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.04,
+      "output_per_1m_usd": 7.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.3-fast",
+      "display_name": "GLM 5.3 Fast",
+      "vendor": "baseten",
+      "input_per_1m_usd": 2.1,
+      "output_per_1m_usd": 6.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.3-flash",
+      "display_name": "GLM 5.3 Flash",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.3-flashx",
+      "display_name": "GLM 5.3 Flashx",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 0.37,
+      "output_per_1m_usd": 1.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5.3-prime",
+      "display_name": "GLM 5.3 Prime",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 2.8,
+      "output_per_1m_usd": 8.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-5v-turbo",
+      "display_name": "GLM 5 V Turbo",
+      "vendor": "z-ai",
+      "input_per_1m_usd": 1.2,
+      "output_per_1m_usd": 4.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "glm-flash",
+      "display_name": "GLM Flash Latest",
+      "vendor": "~z-ai",
+      "input_per_1m_usd": 0.032,
+      "output_per_1m_usd": 0.2647,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-3.5-turbo",
+      "display_name": "GPT-3.5 Turbo",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-3.5-turbo-instruct",
+      "display_name": "GPT-3.5 Turbo Instruct",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4",
+      "display_name": "GPT-4",
+      "vendor": "gpt",
+      "input_per_1m_usd": 30.0,
+      "output_per_1m_usd": 60.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4-1106",
+      "display_name": "GPT-4 1106 Preview",
+      "vendor": "gpt",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 30.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4-turbo",
+      "display_name": "GPT-4 Turbo",
+      "vendor": "gpt",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 30.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4.1",
+      "display_name": "GPT-4.1",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4.1-mini",
+      "display_name": "GPT-4.1 Mini",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 1.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4.1-nano",
+      "display_name": "GPT-4.1 Nano",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o",
+      "display_name": "GPT-4 O",
+      "vendor": "gmi",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-audio-preview",
+      "display_name": "GPT-4 O Audio Preview",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-mini",
+      "display_name": "GPT-4 O Mini",
+      "vendor": "gmi",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-mini-audio-preview",
+      "display_name": "GPT-4 O Mini Audio Preview",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-mini-realtime-preview",
+      "display_name": "GPT-4 O Mini Realtime Preview",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-mini-search",
+      "display_name": "GPT-4 O Mini Search Preview",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-mini-transcribe",
+      "display_name": "GPT-4 O Mini Transcribe",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-search",
+      "display_name": "GPT-4 O Search Preview",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-transcribe",
+      "display_name": "GPT-4 O Transcribe",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-4o-transcribe-diarize",
+      "display_name": "GPT-4 O Transcribe Diarize",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5",
+      "display_name": "GPT-5",
+      "vendor": "gmi",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5-chat",
+      "display_name": "GPT-5 Chat",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5-codex",
+      "display_name": "GPT-5 Codex",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5-mini",
+      "display_name": "GPT-5 Mini",
+      "vendor": "github_copilot",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5-nano",
+      "display_name": "GPT-5 Nano",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5-pro",
+      "display_name": "GPT-5 Pro",
+      "vendor": "gpt",
+      "input_per_1m_usd": 15.0,
+      "output_per_1m_usd": 120.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5-search-api",
+      "display_name": "GPT-5 Search API",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.1",
+      "display_name": "GPT-5.1",
+      "vendor": "gmi",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.1-chat",
+      "display_name": "GPT-5.1 Chat Latest",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.1-codex",
+      "display_name": "GPT-5.1 Codex",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.1-codex-max",
+      "display_name": "GPT-5.1 Codex Max",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.1-codex-mini",
+      "display_name": "GPT-5.1 Codex Mini",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.2",
+      "display_name": "GPT-5.2",
+      "vendor": "gmi",
+      "input_per_1m_usd": 1.75,
+      "output_per_1m_usd": 14.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.2-chat",
+      "display_name": "GPT-5.2 Chat Latest",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.75,
+      "output_per_1m_usd": 14.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.2-codex",
+      "display_name": "GPT-5.2 Codex",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.75,
+      "output_per_1m_usd": 14.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.2-pro",
+      "display_name": "GPT-5.2 Pro",
+      "vendor": "gpt",
+      "input_per_1m_usd": 21.0,
+      "output_per_1m_usd": 168.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.3-chat",
+      "display_name": "GPT-5.3 Chat Latest",
+      "vendor": "gpt",
+      "input_per_1m_usd": 1.75,
+      "output_per_1m_usd": 14.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.3-codex",
+      "display_name": "GPT-5.3 Codex",
+      "vendor": "github_copilot",
+      "input_per_1m_usd": 1.75,
+      "output_per_1m_usd": 14.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.4",
+      "display_name": "GPT-5.4",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.4-mini",
+      "display_name": "GPT-5.4 Mini",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.4-nano",
+      "display_name": "GPT-5.4 Nano",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 1.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.4-pro",
+      "display_name": "GPT-5.4 Pro",
+      "vendor": "gpt",
+      "input_per_1m_usd": 30.0,
+      "output_per_1m_usd": 180.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.5",
+      "display_name": "GPT-5.5",
+      "vendor": "gpt",
+      "input_per_1m_usd": 5.0,
+      "output_per_1m_usd": 30.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.5-pro",
+      "display_name": "GPT-5.5 Pro",
+      "vendor": "gpt",
+      "input_per_1m_usd": 30.0,
+      "output_per_1m_usd": 180.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.6",
+      "display_name": "GPT-5.6",
+      "vendor": "gpt",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 20.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.6-cyber",
+      "display_name": "GPT-5.6 Cyber",
+      "vendor": "gpt",
+      "input_per_1m_usd": 12.5,
+      "output_per_1m_usd": 75.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.6-luna",
+      "display_name": "GPT-5.6 Luna",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.6-sol",
+      "display_name": "GPT-5.6 Sol",
+      "vendor": "gpt",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 20.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-5.6-terra",
+      "display_name": "GPT-5.6 Terra",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-6-astra",
+      "display_name": "GPT-6 Astra",
+      "vendor": "gpt",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 50.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-6-luna",
+      "display_name": "GPT-6 Luna",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-6-sol",
+      "display_name": "GPT-6 Sol",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-6.1-sol",
+      "display_name": "GPT-6.1 Sol",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-astra",
+      "display_name": "GPT Astra Latest",
+      "vendor": "~openai",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 50.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-audio",
+      "display_name": "GPT Audio",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-audio-1.5",
+      "display_name": "GPT Audio 1.5",
+      "vendor": "gpt",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-audio-mini",
+      "display_name": "GPT Audio Mini",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-daybreak-blue",
+      "display_name": "GPT Daybreak Blue Latest",
+      "vendor": "gpt",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 20.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-daybreak-red",
+      "display_name": "GPT Daybreak Red Latest",
+      "vendor": "gpt",
+      "input_per_1m_usd": 12.5,
+      "output_per_1m_usd": 75.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-luna",
+      "display_name": "GPT Luna Latest",
+      "vendor": "~openai",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-mini",
+      "display_name": "GPT Mini Latest",
+      "vendor": "~openai",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-oss-120b",
+      "display_name": "GPT OSS 120 B",
+      "vendor": "sail",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-oss-20b",
+      "display_name": "GPT OSS 20 B",
+      "vendor": "darkbloom",
+      "input_per_1m_usd": 0.0145,
+      "output_per_1m_usd": 0.07,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-realtime",
+      "display_name": "GPT Realtime",
+      "vendor": "gpt",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 16.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-realtime-1.5",
+      "display_name": "GPT Realtime 1.5",
+      "vendor": "gpt",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 16.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-realtime-2",
+      "display_name": "GPT Realtime 2",
+      "vendor": "gpt",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 24.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-realtime-2.1-mini",
+      "display_name": "GPT Realtime 2.1 Mini",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-realtime-mini",
+      "display_name": "GPT Realtime Mini",
+      "vendor": "gpt",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-sol",
+      "display_name": "GPT Sol Latest",
+      "vendor": "~openai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "gpt-terra",
+      "display_name": "GPT Terra Latest",
+      "vendor": "~openai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "granite-4.0-h-micro",
+      "display_name": "Granite 4.0 H Micro",
+      "vendor": "ibm-granite",
+      "input_per_1m_usd": 0.017,
+      "output_per_1m_usd": 0.112,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "granite-4.2-8b",
+      "display_name": "Granite 4.2.8 B",
+      "vendor": "ibm-granite",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok",
+      "display_name": "Grok Latest",
+      "vendor": "~x-ai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-2",
+      "display_name": "Grok 2",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-2-vision",
+      "display_name": "Grok 2 Vision",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-3",
+      "display_name": "Grok 3",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-3-fast",
+      "display_name": "Grok 3 Fast",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 5.0,
+      "output_per_1m_usd": 25.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-3-mini",
+      "display_name": "Grok 3 Mini",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-3-mini-fast",
+      "display_name": "Grok 3 Mini Fast",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 4.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4",
+      "display_name": "Grok 4",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20",
+      "display_name": "Grok 4.20",
+      "vendor": "x-ai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-0309",
+      "display_name": "Grok 4.20 0309",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-0309-non-reasoning",
+      "display_name": "Grok 4.20 0309 Non Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-0309-reasoning",
+      "display_name": "Grok 4.20 0309 Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-beta",
+      "display_name": "Grok 4.20 Beta",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-beta-0309",
+      "display_name": "Grok 4.20 Beta 0309",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-beta-0309-reasoning",
+      "display_name": "Grok 4.20 Beta 0309 Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-beta-latest-non-reasoning",
+      "display_name": "Grok 4.20 Beta Latest Non Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-beta-non-reasoning",
+      "display_name": "Grok 4.20 Beta Non Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-beta-reasoning",
+      "display_name": "Grok 4.20 Beta Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-experimental-beta",
+      "display_name": "Grok 4.20 Experimental Beta Latest",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-experimental-beta-0304",
+      "display_name": "Grok 4.20 Experimental Beta 0304",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-experimental-beta-0304-non-reasoning",
+      "display_name": "Grok 4.20 Experimental Beta 0304 Non Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-experimental-beta-reasoning",
+      "display_name": "Grok 4.20 Experimental Beta Reasoning Latest",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-multi-agent",
+      "display_name": "Grok 4.20 Multi Agent",
+      "vendor": "x-ai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-multi-agent-0309",
+      "display_name": "Grok 4.20 Multi Agent 0309",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-multi-agent-beta",
+      "display_name": "Grok 4.20 Multi Agent Beta Latest",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-multi-agent-beta-0309",
+      "display_name": "Grok 4.20 Multi Agent Beta 0309",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-multi-agent-experimental-beta-0304",
+      "display_name": "Grok 4.20 Multi Agent Experimental Beta 0304",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-non-reasoning",
+      "display_name": "Grok 4.20 Non Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.20-reasoning",
+      "display_name": "Grok 4.20 Reasoning",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.3",
+      "display_name": "Grok 4.3",
+      "vendor": "x-ai",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.5",
+      "display_name": "Grok 4.5",
+      "vendor": "x-ai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.6",
+      "display_name": "Grok 4.6",
+      "vendor": "x-ai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-4.7",
+      "display_name": "Grok 4.7",
+      "vendor": "x-ai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-build",
+      "display_name": "Grok Build Latest",
+      "vendor": "xai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-build-0.1",
+      "display_name": "Grok Build 0.1",
+      "vendor": "x-ai",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-code-fast",
+      "display_name": "Grok Code Fast",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "grok-code-fast-1-0825",
+      "display_name": "Grok Code Fast 1 0825",
+      "vendor": "xai",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hermes-3-8b-tee",
+      "display_name": "Hermes 3.8 B Tee",
+      "vendor": "libertai",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hermes-3-llama-3.1-405b",
+      "display_name": "Hermes 3 Llama 3.1 405 B",
+      "vendor": "nousresearch",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hermes-3-llama-3.1-70b",
+      "display_name": "Hermes 3 Llama 3.1 70 B",
+      "vendor": "nousresearch",
+      "input_per_1m_usd": 0.7,
+      "output_per_1m_usd": 0.7,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hermes-4-405b",
+      "display_name": "Hermes 4 405 B",
+      "vendor": "nousresearch",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 3.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hermes-4-70b",
+      "display_name": "Hermes 4 70 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.13,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hermes3-405b",
+      "display_name": "Hermes 3 405 B",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 0.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hermes3-70b",
+      "display_name": "Hermes 3 70 B",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.12,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hermes3-8b",
+      "display_name": "Hermes 3.8 B",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.025,
+      "output_per_1m_usd": 0.04,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hunyuan-a13b-instruct",
+      "display_name": "Hunyuan A13 B Instruct",
+      "vendor": "tencent",
+      "input_per_1m_usd": 0.14,
+      "output_per_1m_usd": 0.57,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hy-mt2-1.8b",
+      "display_name": "Hy Mt 2 1.8 B",
+      "vendor": "tencent",
+      "input_per_1m_usd": 0.044,
+      "output_per_1m_usd": 0.177,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hy-mt2-30b-a3b",
+      "display_name": "Hy Mt 2 30 B A3 B",
+      "vendor": "tencent",
+      "input_per_1m_usd": 0.074,
+      "output_per_1m_usd": 0.295,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hy-mt2-7b",
+      "display_name": "Hy Mt 2.7 B",
+      "vendor": "tencent",
+      "input_per_1m_usd": 0.074,
+      "output_per_1m_usd": 0.295,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hy3",
+      "display_name": "Hy 3",
+      "vendor": "tencent",
+      "input_per_1m_usd": 0.132,
+      "output_per_1m_usd": 0.528,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "hy4",
+      "display_name": "Hy 4 Preview",
+      "vendor": "tencent",
+      "input_per_1m_usd": 0.834,
+      "output_per_1m_usd": 2.501,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "in.moonshotai.kimi-k3",
+      "display_name": "In Moonshotai Kimi K3",
+      "vendor": "in.moonshotai.kimi",
+      "input_per_1m_usd": 3.3,
+      "output_per_1m_usd": 16.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "inkling",
+      "display_name": "Inkling",
+      "vendor": "thinkingmachines",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "inkling-small",
+      "display_name": "Inkling Small",
+      "vendor": "thinkingmachines",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "j2-light",
+      "display_name": "J2 Light",
+      "vendor": "j2",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 3.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "j2-mid",
+      "display_name": "J2 Mid",
+      "vendor": "j2",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "j2-ultra",
+      "display_name": "J2 Ultra",
+      "vendor": "j2",
+      "input_per_1m_usd": 15.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "jamba-1.5",
+      "display_name": "Jamba 1.5",
+      "vendor": "jamba",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "jamba-1.5-large",
+      "display_name": "Jamba 1.5 Large",
+      "vendor": "jamba",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "jamba-1.5-large@001",
+      "display_name": "Jamba 1.5 Large 001",
+      "vendor": "jamba",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "jamba-1.5-mini",
+      "display_name": "Jamba 1.5 Mini",
+      "vendor": "jamba",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "jamba-1.5-mini@001",
+      "display_name": "Jamba 1.5 Mini 001",
+      "vendor": "jamba",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "jamba-large-1.6",
+      "display_name": "Jamba Large 1.6",
+      "vendor": "jamba",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "jamba-mini-1.6",
+      "display_name": "Jamba Mini 1.6",
+      "vendor": "jamba",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "jamba-mini-1.7",
+      "display_name": "Jamba Mini 1.7",
+      "vendor": "jamba",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi",
+      "display_name": "Kimi Latest",
+      "vendor": "~moonshotai",
+      "input_per_1m_usd": 0.49,
+      "output_per_1m_usd": 13.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi-k2",
+      "display_name": "Kimi K2",
+      "vendor": "moonshotai",
+      "input_per_1m_usd": 0.57,
+      "output_per_1m_usd": 2.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi-k2-0905",
+      "display_name": "Kimi K2 0905",
+      "vendor": "moonshotai",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi-k2-thinking",
+      "display_name": "Kimi K2 Thinking",
+      "vendor": "moonshotai",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi-k2.5",
+      "display_name": "Kimi K2.5",
+      "vendor": "moonshotai",
+      "input_per_1m_usd": 0.45,
+      "output_per_1m_usd": 2.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi-k2.5-fp4",
+      "display_name": "Kimi K2.5 Fp 4",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 2.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi-k2.6",
+      "display_name": "Kimi K2.6",
+      "vendor": "moonshotai",
+      "input_per_1m_usd": 0.4344,
+      "output_per_1m_usd": 2.45,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi-k2.7-code",
+      "display_name": "Kimi K2.7 Code",
+      "vendor": "moonshotai",
+      "input_per_1m_usd": 0.6712,
+      "output_per_1m_usd": 3.35,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "kimi-k3",
+      "display_name": "Kimi K3",
+      "vendor": "moonshotai",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "l3-lunaris-8b",
+      "display_name": "L3 Lunaris 8 B",
+      "vendor": "sao10k",
+      "input_per_1m_usd": 0.04,
+      "output_per_1m_usd": 0.05,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "l3.1-euryale-70b",
+      "display_name": "L3.1 Euryale 70 B",
+      "vendor": "sao10k",
+      "input_per_1m_usd": 0.85,
+      "output_per_1m_usd": 0.85,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "l3.3-euryale-70b",
+      "display_name": "L3.3 Euryale 70 B",
+      "vendor": "sao10k",
+      "input_per_1m_usd": 0.65,
+      "output_per_1m_usd": 0.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "laguna-s-2.1",
+      "display_name": "Laguna S2.1",
+      "vendor": "poolside",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "lfm-2.5-2.6b",
+      "display_name": "Lfm 2.5 2.6 B",
+      "vendor": "liquid",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "lfm-40b",
+      "display_name": "Lfm 40 B",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "lfm-7b",
+      "display_name": "Lfm 7 B",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.025,
+      "output_per_1m_usd": 0.04,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ling-3.0-flash",
+      "display_name": "Ling 3.0 Flash",
+      "vendor": "inclusionai",
+      "input_per_1m_usd": 0.021,
+      "output_per_1m_usd": 0.063,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ling-3.0-flash-fin",
+      "display_name": "Ling 3.0 Flash Fin",
+      "vendor": "inclusionai",
+      "input_per_1m_usd": 0.042,
+      "output_per_1m_usd": 0.1232,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ling-3.0-flash-sante",
+      "display_name": "Ling 3.0 Flash Sante",
+      "vendor": "inclusionai",
+      "input_per_1m_usd": 0.042,
+      "output_per_1m_usd": 0.1232,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ling-3.0-flash-vl",
+      "display_name": "Ling 3.0 Flash VL",
+      "vendor": "inclusionai",
+      "input_per_1m_usd": 0.021,
+      "output_per_1m_usd": 0.0616,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ling-3.1-flash",
+      "display_name": "Ling 3.1 Flash",
+      "vendor": "inclusionai",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3-70b",
+      "display_name": "Llama 3 70 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.59,
+      "output_per_1m_usd": 0.79,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3-8b",
+      "display_name": "Llama 3.8 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.08,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3-8b-chat-hf",
+      "display_name": "Llama 3.8 B Chat Hf",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.1-405b-instruct",
+      "display_name": "Llama 3.1 405 B Instruct",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 3.5,
+      "output_per_1m_usd": 3.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.1-70b-instruct",
+      "display_name": "Llama 3.1 70 B Instruct",
+      "vendor": "meta-llama",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.1-8b",
+      "display_name": "Llama 3.1.8 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.03,
+      "output_per_1m_usd": 0.05,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.1-8b-instruct",
+      "display_name": "Llama 3.1.8 B Instruct",
+      "vendor": "meta-llama",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.08,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.1-8b-instruct-fp8",
+      "display_name": "Llama 3.1.8 B Instruct Fp 8",
+      "vendor": "cloudflare",
+      "input_per_1m_usd": 0.152,
+      "output_per_1m_usd": 0.287,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.1-nemotron-70b-instruct-hf",
+      "display_name": "Llama 3.1 Nemotron 70 B Instruct Hf",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.88,
+      "output_per_1m_usd": 0.88,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.1-nemotron-ultra-253b",
+      "display_name": "Llama 3.1 Nemotron Ultra 253 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 1.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.2-11b",
+      "display_name": "Llama 3.2 11 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.16,
+      "output_per_1m_usd": 0.16,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.2-11b-vision-instruct",
+      "display_name": "Llama 3.2 11 B Vision Instruct",
+      "vendor": "cloudflare",
+      "input_per_1m_usd": 0.0485,
+      "output_per_1m_usd": 0.676,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.2-1b",
+      "display_name": "Llama 3.2.1 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.2-1b-instruct",
+      "display_name": "Llama 3.2.1 B Instruct",
+      "vendor": "meta-llama",
+      "input_per_1m_usd": 0.027,
+      "output_per_1m_usd": 0.201,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.2-3b",
+      "display_name": "Llama 3.2.3 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.04,
+      "output_per_1m_usd": 0.08,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.2-3b-instruct",
+      "display_name": "Llama 3.2.3 B Instruct",
+      "vendor": "meta-llama",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.33,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.2-90b",
+      "display_name": "Llama 3.2 90 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.72,
+      "output_per_1m_usd": 0.72,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.3-70b-instruct",
+      "display_name": "Llama 3.3 70 B Instruct",
+      "vendor": "meta-llama",
+      "input_per_1m_usd": 0.22,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.3-70b-instruct-fp8-fast",
+      "display_name": "Llama 3.3 70 B Instruct Fp 8 Fast",
+      "vendor": "cloudflare",
+      "input_per_1m_usd": 0.293,
+      "output_per_1m_usd": 2.253,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.3-70b-instruct-turbo",
+      "display_name": "Llama 3.3 70 B Instruct Turbo",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 1.04,
+      "output_per_1m_usd": 1.04,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-3.3-nemotron-super-49b",
+      "display_name": "Llama 3.3 Nemotron Super 49 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-4-maverick",
+      "display_name": "Llama 4 Maverick",
+      "vendor": "meta-llama",
+      "input_per_1m_usd": 0.1875,
+      "output_per_1m_usd": 0.6525,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-4-maverick-17b-128e-instruct-fp8",
+      "display_name": "Llama 4 Maverick 17 B128 E Instruct Fp 8",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-4-scout",
+      "display_name": "Llama 4 Scout",
+      "vendor": "meta-llama",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-4-scout-17b-16e-instruct",
+      "display_name": "Llama 4 Scout 17 B16 E Instruct",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-guard-3-8b",
+      "display_name": "Llama Guard 3.8 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.02,
+      "output_per_1m_usd": 0.06,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama-guard-4-12b",
+      "display_name": "Llama Guard 4 12 B",
+      "vendor": "meta-llama",
+      "input_per_1m_usd": 0.18,
+      "output_per_1m_usd": 0.18,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3-8b-instruct",
+      "display_name": "Llama 3.8 B Instruct",
+      "vendor": "gradient_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.1-405b",
+      "display_name": "Llama 3.1 405 B",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 1.2,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.1-405b-instruct-fp8",
+      "display_name": "Llama 3.1 405 B Instruct Fp 8",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 0.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.1-70b",
+      "display_name": "Llama 3.1 70 B",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 0.72,
+      "output_per_1m_usd": 0.72,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.1-70b-instruct-fp8",
+      "display_name": "Llama 3.1 70 B Instruct Fp 8",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.12,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.1-8b",
+      "display_name": "Llama 3.1.8 B",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 0.24,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.1-8b-instruct",
+      "display_name": "Llama 3.1.8 B Instruct",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.025,
+      "output_per_1m_usd": 0.04,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.1-nemotron-70b-instruct-fp8",
+      "display_name": "Llama 3.1 Nemotron 70 B Instruct Fp 8",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.12,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.2-11b-vision-instruct",
+      "display_name": "Llama 3.2 11 B Vision Instruct",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.015,
+      "output_per_1m_usd": 0.025,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.2-3b-instruct",
+      "display_name": "Llama 3.2.3 B Instruct",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.015,
+      "output_per_1m_usd": 0.025,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.3-70b",
+      "display_name": "Llama 3.3 70 B",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 0.72,
+      "output_per_1m_usd": 0.72,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama3.3-70b-instruct",
+      "display_name": "Llama 3.3 70 B Instruct",
+      "vendor": "gradient_ai",
+      "input_per_1m_usd": 0.65,
+      "output_per_1m_usd": 0.65,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llama4-maverick",
+      "display_name": "Llama 4 Maverick",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 0.24,
+      "output_per_1m_usd": 0.97,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llava-7b",
+      "display_name": "Llava 7 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "llava-v1.6-mistral-7b-hf",
+      "display_name": "Llava V1.6 Mistral 7 B Hf",
+      "vendor": "ovhcloud",
+      "input_per_1m_usd": 0.29,
+      "output_per_1m_usd": 0.29,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "longcat-2.0",
+      "display_name": "Longcat 2.0",
+      "vendor": "meituan",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "lyria-3-clip",
+      "display_name": "Lyria 3 Clip Preview",
+      "vendor": "google",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "lyria-3-pro",
+      "display_name": "Lyria 3 Pro Preview",
+      "vendor": "google",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "magistral-medium",
+      "display_name": "Magistral Medium Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "magistral-small",
+      "display_name": "Magistral Small Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "magnum-v4-72b",
+      "display_name": "Magnum V4 72 B",
+      "vendor": "anthracite-org",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mai-code-1-flash",
+      "display_name": "Mai Code 1 Flash",
+      "vendor": "github_copilot",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mai-code-1-flash-internal",
+      "display_name": "Mai Code 1 Flash Internal",
+      "vendor": "github_copilot",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 4.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mamba-codestral-7b-v0.1",
+      "display_name": "Mamba Codestral 7 B V0.1",
+      "vendor": "ovhcloud",
+      "input_per_1m_usd": 0.19,
+      "output_per_1m_usd": 0.19,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mercury-2",
+      "display_name": "Mercury 2",
+      "vendor": "inception",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mercury-2.5",
+      "display_name": "Mercury 2.5",
+      "vendor": "inception",
+      "input_per_1m_usd": 0.04,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mercury-coder-small",
+      "display_name": "Mercury Coder Small",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mercury-edit-2",
+      "display_name": "Mercury Edit 2",
+      "vendor": "text-completion-inception",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "meta-llama-3-70b-instruct-turbo",
+      "display_name": "Meta Llama 3 70 B Instruct Turbo",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.88,
+      "output_per_1m_usd": 0.88,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "meta-llama-3-8b-instruct",
+      "display_name": "Meta Llama 3.8 B Instruct",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "meta-llama-3.1-405b-instruct",
+      "display_name": "Meta Llama 3.1 405 B Instruct",
+      "vendor": "nebius",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 3.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "meta-llama-3.1-70b-instruct",
+      "display_name": "Meta Llama 3.1 70 B Instruct",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.13,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "meta-llama-3.1-8b",
+      "display_name": "Meta Llama 3.1.8 B",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "meta-llama-3.1-8b-instruct",
+      "display_name": "Meta Llama 3.1.8 B Instruct",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.02,
+      "output_per_1m_usd": 0.06,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "meta-llama-3.1-8b-instruct-turbo",
+      "display_name": "Meta Llama 3.1.8 B Instruct Turbo",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.18,
+      "output_per_1m_usd": 0.18,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "meta-llama-3_1-70b-instruct",
+      "display_name": "Meta Llama 3.1 70 B Instruct",
+      "vendor": "ovhcloud",
+      "input_per_1m_usd": 0.67,
+      "output_per_1m_usd": 0.67,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mimo-v2.5",
+      "display_name": "Mimo V2.5",
+      "vendor": "xiaomi",
+      "input_per_1m_usd": 0.14,
+      "output_per_1m_usd": 0.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mimo-v2.5-pro",
+      "display_name": "Mimo V2.5 Pro",
+      "vendor": "xiaomi",
+      "input_per_1m_usd": 0.435,
+      "output_per_1m_usd": 0.87,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mimo-v2.6-flash",
+      "display_name": "Mimo V2.6 Flash",
+      "vendor": "xiaomi",
+      "input_per_1m_usd": 0.14,
+      "output_per_1m_usd": 0.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mimo-v2.6-pro",
+      "display_name": "Mimo V2.6 Pro",
+      "vendor": "xiaomi",
+      "input_per_1m_usd": 0.435,
+      "output_per_1m_usd": 0.87,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mimo-v2.6-pro-ultraspeed",
+      "display_name": "Mimo V2.6 Pro Ultraspeed",
+      "vendor": "xiaomi",
+      "input_per_1m_usd": 4.35,
+      "output_per_1m_usd": 8.7,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minicpm-v-4_5",
+      "display_name": "Minicpm V4.5",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.658,
+      "output_per_1m_usd": 1.11,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-01",
+      "display_name": "Minimax 01",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 1.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-m1",
+      "display_name": "Minimax M1",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.55,
+      "output_per_1m_usd": 2.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-m2",
+      "display_name": "Minimax M2",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-m2-her",
+      "display_name": "Minimax M2 Her",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-m2.1",
+      "display_name": "Minimax M2.1",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-m2.1-lightning",
+      "display_name": "Minimax M2.1 Lightning",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-m2.5",
+      "display_name": "Minimax M2.5",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.27,
+      "output_per_1m_usd": 1.08,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-m2.7",
+      "display_name": "Minimax M2.7",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.21,
+      "output_per_1m_usd": 0.84,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "minimax-m3",
+      "display_name": "Minimax M3",
+      "vendor": "minimax",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ministral-14b",
+      "display_name": "Ministral 14 B Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ministral-14b-2512",
+      "display_name": "Ministral 14 B2512",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ministral-3-14b-instruct-2512",
+      "display_name": "Ministral 3 14 B Instruct 2512",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ministral-3-8b-2512",
+      "display_name": "Ministral 3.8 B2512",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ministral-3b",
+      "display_name": "Ministral 3 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.04,
+      "output_per_1m_usd": 0.04,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ministral-3b-2512",
+      "display_name": "Ministral 3 B2512",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ministral-8b",
+      "display_name": "Ministral 8 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ministral-8b-2512",
+      "display_name": "Ministral 8 B2512",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.075,
+      "output_per_1m_usd": 0.075,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-7b-instruct-v0.1",
+      "display_name": "Mistral 7 B Instruct V0.1",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-7b-instruct-v0.3",
+      "display_name": "Mistral 7 B Instruct V0.3",
+      "vendor": "ovhcloud",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-7b-v0.3",
+      "display_name": "Mistral 7 B V0.3",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-code",
+      "display_name": "Mistral Code Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-code-agent",
+      "display_name": "Mistral Code Agent Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-code-fim",
+      "display_name": "Mistral Code Fim Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-large",
+      "display_name": "Mistral Large",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-large-2407",
+      "display_name": "Mistral Large 2407",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-large-2512",
+      "display_name": "Mistral Large 2512",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-large-3",
+      "display_name": "Mistral Large 3",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-large-4-0",
+      "display_name": "Mistral Large 4.0",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.68,
+      "output_per_1m_usd": 2.09,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-medium-2604",
+      "display_name": "Mistral Medium 2604",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-medium-3",
+      "display_name": "Mistral Medium 3",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-medium-3-5",
+      "display_name": "Mistral Medium 3.5",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.75,
+      "output_per_1m_usd": 3.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-medium-3.1",
+      "display_name": "Mistral Medium 3.1",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-medium-3.5",
+      "display_name": "Mistral Medium 3.5",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-medium-3.5-128b",
+      "display_name": "Mistral Medium 3.5 128 B",
+      "vendor": "scaleway",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-nemo",
+      "display_name": "Mistral Nemo",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.029,
+      "output_per_1m_usd": 0.03,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-nemo-instruct-2407",
+      "display_name": "Mistral Nemo Instruct 2407",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.04,
+      "output_per_1m_usd": 0.12,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-saba",
+      "display_name": "Mistral Saba",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-saba-24b",
+      "display_name": "Mistral Saba 24 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.79,
+      "output_per_1m_usd": 0.79,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-small",
+      "display_name": "Mistral Small",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-small-24b-instruct-2501",
+      "display_name": "Mistral Small 24 B Instruct 2501",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.08,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-small-2603",
+      "display_name": "Mistral Small 2603",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.075,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-small-3.1-24b-instruct",
+      "display_name": "Mistral Small 3.1 24 B Instruct",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.351,
+      "output_per_1m_usd": 0.555,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-small-3.2-24b-instruct",
+      "display_name": "Mistral Small 3.2 24 B Instruct",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.0938,
+      "output_per_1m_usd": 0.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-small-3.2-24b-instruct-2506",
+      "display_name": "Mistral Small 3.2 24 B Instruct 2506",
+      "vendor": "ovhcloud",
+      "input_per_1m_usd": 0.09,
+      "output_per_1m_usd": 0.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-tiny",
+      "display_name": "Mistral Tiny",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-vibe-cli",
+      "display_name": "Mistral Vibe Cli Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-vibe-cli-fast",
+      "display_name": "Mistral Vibe Cli Fast",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mistral-vibe-cli-with-tools",
+      "display_name": "Mistral Vibe Cli With Tools",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mixtral-8x22b-instruct",
+      "display_name": "Mixtral 8 X22 B Instruct",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mixtral-8x7b-instruct-v0.1",
+      "display_name": "Mixtral 8 X7 B Instruct V0.1",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "morph-v3-fast",
+      "display_name": "Morph V3 Fast",
+      "vendor": "morph",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "morph-v3-large",
+      "display_name": "Morph V3 Large",
+      "vendor": "morph",
+      "input_per_1m_usd": 0.9,
+      "output_per_1m_usd": 1.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "muse-glimmer-30b",
+      "display_name": "Muse Glimmer 30 B",
+      "vendor": "meta",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "muse-spark-1.1",
+      "display_name": "Muse Spark 1.1",
+      "vendor": "meta",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 4.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "muse-spark-1.2",
+      "display_name": "Muse Spark 1.2",
+      "vendor": "meta",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 4.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "muse-spark-1.3",
+      "display_name": "Muse Spark 1.3",
+      "vendor": "meta",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 4.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "muse-spark-1.3-contributor",
+      "display_name": "Muse Spark 1.3 Contributor",
+      "vendor": "meta",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "mythomax-l2-13b",
+      "display_name": "Mythomax L2 13 B",
+      "vendor": "gryphe",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.11,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nano-banana-pro",
+      "display_name": "Nano Banana Pro Preview",
+      "vendor": "gemini",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3-120b-a12b",
+      "display_name": "Nemotron 3 120 B A12 B",
+      "vendor": "cloudflare",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3-nano-30b-a3b",
+      "display_name": "Nemotron 3 Nano 30 B A3 B",
+      "vendor": "nvidia",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3-nano-omni",
+      "display_name": "Nemotron 3 Nano Omni",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3-nano-omni-30b-a3b-reasoning",
+      "display_name": "Nemotron 3 Nano Omni 30 B A3 B Reasoning",
+      "vendor": "nvidia",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3-super-120b-a12b",
+      "display_name": "Nemotron 3 Super 120 B A12 B",
+      "vendor": "nvidia",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3-ultra-550b-a55b",
+      "display_name": "Nemotron 3 Ultra 550 B A55 B",
+      "vendor": "nvidia",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3.5-content-safety",
+      "display_name": "Nemotron 3.5 Content Safety",
+      "vendor": "nvidia",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3.5-lightning",
+      "display_name": "Nemotron 3.5 Lightning",
+      "vendor": "nvidia",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nemotron-3_5-lightning",
+      "display_name": "Nemotron 3.5 Lightning",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nex-n2.5-mini",
+      "display_name": "Nex N2.5 Mini",
+      "vendor": "nex-agi",
+      "input_per_1m_usd": 0.025,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nex-n2.5-pro",
+      "display_name": "Nex N2.5 Pro",
+      "vendor": "nex-agi",
+      "input_per_1m_usd": 0.075,
+      "output_per_1m_usd": 0.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "north-mini-code",
+      "display_name": "North Mini Code",
+      "vendor": "cohere",
+      "input_per_1m_usd": 0.0,
+      "output_per_1m_usd": 0.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nous-hermes-2-mixtral-8x7b-dpo",
+      "display_name": "Nous Hermes 2 Mixtral 8 X7 B Dpo",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nova-2-lite",
+      "display_name": "Nova 2 Lite",
+      "vendor": "amazon",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nova-lite",
+      "display_name": "Nova Lite",
+      "vendor": "amazon",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nova-micro",
+      "display_name": "Nova Micro",
+      "vendor": "amazon",
+      "input_per_1m_usd": 0.035,
+      "output_per_1m_usd": 0.14,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nova-premier",
+      "display_name": "Nova Premier",
+      "vendor": "amazon",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 12.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nova-pro",
+      "display_name": "Nova Pro",
+      "vendor": "amazon",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 3.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nvidia-nemotron-3-nano-30b-a3b",
+      "display_name": "Nvidia Nemotron 3 Nano 30 B A3 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nvidia-nemotron-3-ultra-550b-a55b",
+      "display_name": "Nvidia Nemotron 3 Ultra 550 B A55 B",
+      "vendor": "baseten",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "nvidia-nemotron-nano-9b",
+      "display_name": "Nvidia Nemotron Nano 9 B",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "o1",
+      "display_name": "O1",
+      "vendor": "o1",
+      "input_per_1m_usd": 15.0,
+      "output_per_1m_usd": 60.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "o1-pro",
+      "display_name": "O1 Pro",
+      "vendor": "o1",
+      "input_per_1m_usd": 150.0,
+      "output_per_1m_usd": 600.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "o3",
+      "display_name": "O3",
+      "vendor": "o3",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "o3-deep-research",
+      "display_name": "O3 Deep Research",
+      "vendor": "o3",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 40.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "o3-mini",
+      "display_name": "O3 Mini",
+      "vendor": "o3",
+      "input_per_1m_usd": 1.1,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "o3-pro",
+      "display_name": "O3 Pro",
+      "vendor": "o3",
+      "input_per_1m_usd": 20.0,
+      "output_per_1m_usd": 80.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "o4-mini",
+      "display_name": "O4 Mini",
+      "vendor": "o4",
+      "input_per_1m_usd": 1.1,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "o4-mini-deep-research",
+      "display_name": "O4 Mini Deep Research",
+      "vendor": "o4",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "open-mistral-nemo",
+      "display_name": "Open Mistral Nemo",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "openai-gpt-4.1",
+      "display_name": "Openai GPT-4.1",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "openai-gpt-5",
+      "display_name": "Openai GPT-5",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 10.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "openai-gpt-5-mini",
+      "display_name": "Openai GPT-5 Mini",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "openai-gpt-5-nano",
+      "display_name": "Openai GPT-5 Nano",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "openai-o3",
+      "display_name": "Openai O3",
+      "vendor": "gradient_ai",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "openai-o3-mini",
+      "display_name": "Openai O3 Mini",
+      "vendor": "gradient_ai",
+      "input_per_1m_usd": 1.1,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "openthinker-7b",
+      "display_name": "Openthinker 7 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "palmyra-x5",
+      "display_name": "Palmyra X5",
+      "vendor": "writer",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "pareto",
+      "display_name": "Pareto",
+      "vendor": "unbiased",
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 7.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "pareto-26.10",
+      "display_name": "Pareto 26.10 Preview",
+      "vendor": "unbiased",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 3.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "perceptron-mk1.5",
+      "display_name": "Perceptron Mk 1.5",
+      "vendor": "perceptron",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "phi-4",
+      "display_name": "Phi 4",
+      "vendor": "microsoft",
+      "input_per_1m_usd": 0.07,
+      "output_per_1m_usd": 0.14,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "pixtral-12b",
+      "display_name": "Pixtral 12 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "pixtral-12b-2409",
+      "display_name": "Pixtral 12 B2409",
+      "vendor": "scaleway",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "pixtral-large",
+      "display_name": "Pixtral Large Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-2-1.5b-instruct",
+      "display_name": "Qwen 2 1.5 B Instruct",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-2.5-72b-instruct",
+      "display_name": "Qwen 2.5 72 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.36,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-2.5-7b-instruct",
+      "display_name": "Qwen 2.5.7 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-2.5-coder-32b-instruct",
+      "display_name": "Qwen 2.5 Coder 32 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.66,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-3-14b",
+      "display_name": "Qwen 3 14 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-3-235b",
+      "display_name": "Qwen 3 235 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-3-30b",
+      "display_name": "Qwen 3 30 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-3-32b",
+      "display_name": "Qwen 3 32 B",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-coder",
+      "display_name": "Qwen Coder",
+      "vendor": "dashscope",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-max",
+      "display_name": "Qwen Max",
+      "vendor": "dashscope",
+      "input_per_1m_usd": 1.6,
+      "output_per_1m_usd": 6.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-plus",
+      "display_name": "Qwen Plus",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.26,
+      "output_per_1m_usd": 0.78,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen-turbo",
+      "display_name": "Qwen Turbo",
+      "vendor": "dashscope",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2-1.5b-instruct",
+      "display_name": "Qwen 2 1.5 B Instruct",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.02,
+      "output_per_1m_usd": 0.02,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2-72b-instruct",
+      "display_name": "Qwen 2 72 B Instruct",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.9,
+      "output_per_1m_usd": 0.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2-vl-72b-instruct",
+      "display_name": "Qwen 2 VL 72 B Instruct",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.13,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2-vl-7b-instruct",
+      "display_name": "Qwen 2 VL 7 B Instruct",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.02,
+      "output_per_1m_usd": 0.06,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2.5-14b-instruct",
+      "display_name": "Qwen 2.5 14 B Instruct",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 0.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2.5-32b-instruct",
+      "display_name": "Qwen 2.5 32 B Instruct",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2.5-72b-instruct",
+      "display_name": "Qwen 2.5 72 B Instruct",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.13,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2.5-72b-instruct-turbo",
+      "display_name": "Qwen 2.5 72 B Instruct Turbo",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 1.2,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2.5-7b-instruct-turbo",
+      "display_name": "Qwen 2.5.7 B Instruct Turbo",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2.5-coder-7b",
+      "display_name": "Qwen 2.5 Coder 7 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.01,
+      "output_per_1m_usd": 0.03,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen2.5-vl-72b-instruct",
+      "display_name": "Qwen 2.5 VL 72 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen25-coder-32b-instruct",
+      "display_name": "Qwen 25 Coder 32 B Instruct",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-14b",
+      "display_name": "Qwen 3 14 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.12,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-235b-a22b",
+      "display_name": "Qwen 3 235 B A22 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.455,
+      "output_per_1m_usd": 1.82,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-235b-a22b-2507",
+      "display_name": "Qwen 3 235 B A22 B2507",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.09,
+      "output_per_1m_usd": 0.55,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-235b-a22b-instruct-2507",
+      "display_name": "Qwen 3 235 B A22 B Instruct 2507",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-235b-a22b-thinking-2507",
+      "display_name": "Qwen 3 235 B A22 B Thinking 2507",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.23,
+      "output_per_1m_usd": 2.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-30b-a3b",
+      "display_name": "Qwen 3 30 B A3 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.12,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-30b-a3b-fp8",
+      "display_name": "Qwen 3 30 B A3 B Fp 8",
+      "vendor": "cloudflare",
+      "input_per_1m_usd": 0.0509,
+      "output_per_1m_usd": 0.335,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-30b-a3b-instruct-2507",
+      "display_name": "Qwen 3 30 B A3 B Instruct 2507",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-30b-a3b-thinking-2507",
+      "display_name": "Qwen 3 30 B A3 B Thinking 2507",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-32b",
+      "display_name": "Qwen 3 32 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-32b-fp8",
+      "display_name": "Qwen 3 32 B Fp 8",
+      "vendor": "lambda_ai",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-4b",
+      "display_name": "Qwen 3.4 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.24,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-8b",
+      "display_name": "Qwen 3.8 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.117,
+      "output_per_1m_usd": 0.455,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-coder",
+      "display_name": "Qwen 3 Coder",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-coder-30b-a3b",
+      "display_name": "Qwen 3 Coder 30 B A3 B",
+      "vendor": "pinstripes",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-coder-30b-a3b-instruct",
+      "display_name": "Qwen 3 Coder 30 B A3 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.07,
+      "output_per_1m_usd": 0.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-coder-480b-a35b-instruct-fp8",
+      "display_name": "Qwen 3 Coder 480 B A35 B Instruct Fp 8",
+      "vendor": "tensormesh",
+      "input_per_1m_usd": 0.45,
+      "output_per_1m_usd": 1.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-coder-flash",
+      "display_name": "Qwen 3 Coder Flash",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.195,
+      "output_per_1m_usd": 0.975,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-coder-next",
+      "display_name": "Qwen 3 Coder Next",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.12,
+      "output_per_1m_usd": 0.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-coder-next-fp8",
+      "display_name": "Qwen 3 Coder Next Fp 8",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-coder-plus",
+      "display_name": "Qwen 3 Coder Plus",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.65,
+      "output_per_1m_usd": 3.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-max",
+      "display_name": "Qwen 3 Max",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.78,
+      "output_per_1m_usd": 3.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-max-thinking",
+      "display_name": "Qwen 3 Max Thinking",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.78,
+      "output_per_1m_usd": 3.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-next-80b-a3b-instruct",
+      "display_name": "Qwen 3 Next 80 B A3 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 1.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-next-80b-a3b-thinking",
+      "display_name": "Qwen 3 Next 80 B A3 B Thinking",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 1.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-235b-a22b-instruct",
+      "display_name": "Qwen 3 VL 235 B A22 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.21,
+      "output_per_1m_usd": 1.9,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-235b-a22b-thinking",
+      "display_name": "Qwen 3 VL 235 B A22 B Thinking",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 4.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-30b-a3b-instruct",
+      "display_name": "Qwen 3 VL 30 B A3 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-30b-a3b-thinking",
+      "display_name": "Qwen 3 VL 30 B A3 B Thinking",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-32b-instruct",
+      "display_name": "Qwen 3 VL 32 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.104,
+      "output_per_1m_usd": 0.416,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-32b-thinking",
+      "display_name": "Qwen 3 VL 32 B Thinking",
+      "vendor": "dashscope",
+      "input_per_1m_usd": 0.16,
+      "output_per_1m_usd": 2.87,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-8b",
+      "display_name": "Qwen 3 VL 8 B",
+      "vendor": "llamagate",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.55,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-8b-instruct",
+      "display_name": "Qwen 3 VL 8 B Instruct",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.117,
+      "output_per_1m_usd": 0.455,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3-vl-8b-thinking",
+      "display_name": "Qwen 3 VL 8 B Thinking",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.18,
+      "output_per_1m_usd": 2.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-122b-a10b",
+      "display_name": "Qwen 3.5 122 B A10 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.26,
+      "output_per_1m_usd": 2.08,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-122b-a10b-thinking",
+      "display_name": "Qwen 3.5 122 B A10 B Thinking",
+      "vendor": "libertai",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 1.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-27b",
+      "display_name": "Qwen 3.5 27 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.26,
+      "output_per_1m_usd": 2.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-35b-a3b",
+      "display_name": "Qwen 3.5 35 B A3 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.08,
+      "output_per_1m_usd": 0.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-397b-a17b",
+      "display_name": "Qwen 3.5 397 B A17 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.55,
+      "output_per_1m_usd": 3.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-397b-a17b-fp8",
+      "display_name": "Qwen 3.5 397 B A17 B Fp 8",
+      "vendor": "tensormesh",
+      "input_per_1m_usd": 0.6,
+      "output_per_1m_usd": 3.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-9b",
+      "display_name": "Qwen 3.5.9 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-flash-02-23",
+      "display_name": "Qwen 3.5 Flash 02 23",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.065,
+      "output_per_1m_usd": 0.26,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-plus",
+      "display_name": "Qwen 3.5 Plus",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.5-plus-02-15",
+      "display_name": "Qwen 3.5 Plus 02 15",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.26,
+      "output_per_1m_usd": 1.56,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.6-27b",
+      "display_name": "Qwen 3.6 27 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.32,
+      "output_per_1m_usd": 3.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.6-27b-fp8",
+      "display_name": "Qwen 3.6 27 B Fp 8",
+      "vendor": "tensormesh",
+      "input_per_1m_usd": 0.32,
+      "output_per_1m_usd": 3.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.6-27b-thinking",
+      "display_name": "Qwen 3.6 27 B Thinking",
+      "vendor": "libertai",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.6-35b-a3b",
+      "display_name": "Qwen 3.6 35 B A3 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.6-35b-a3b-thinking",
+      "display_name": "Qwen 3.6 35 B A3 B Thinking",
+      "vendor": "libertai",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.6-flash",
+      "display_name": "Qwen 3.6 Flash",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.1875,
+      "output_per_1m_usd": 1.125,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.6-max",
+      "display_name": "Qwen 3.6 Max Preview",
+      "vendor": "qwen",
+      "input_per_1m_usd": 1.027,
+      "output_per_1m_usd": 6.162,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.6-plus",
+      "display_name": "Qwen 3.6 Plus",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.325,
+      "output_per_1m_usd": 1.95,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.7-flash",
+      "display_name": "Qwen 3.7 Flash",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.03,
+      "output_per_1m_usd": 0.13,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.7-max",
+      "display_name": "Qwen 3.7 Max",
+      "vendor": "qwen",
+      "input_per_1m_usd": 1.475,
+      "output_per_1m_usd": 4.425,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.7-plus",
+      "display_name": "Qwen 3.7 Plus",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.32,
+      "output_per_1m_usd": 1.28,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.8-2.4t-a95b",
+      "display_name": "Qwen 3.8 2.4 T A95 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.8-27b",
+      "display_name": "Qwen 3.8 27 B",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.425,
+      "output_per_1m_usd": 2.55,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.8-flash",
+      "display_name": "Qwen 3.8 Flash",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.47,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.8-max",
+      "display_name": "Qwen 3.8 Max",
+      "vendor": "scx-ai",
+      "input_per_1m_usd": 1.65,
+      "output_per_1m_usd": 4.99,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.8-max-0902",
+      "display_name": "Qwen 3.8 Max 0902",
+      "vendor": "qwen",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 6.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.8-max-prime",
+      "display_name": "Qwen 3.8 Max Prime",
+      "vendor": "qwen",
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwen3.8-omni-flash",
+      "display_name": "Qwen 3.8 Omni Flash",
+      "vendor": "qwen",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.47,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwq-32b",
+      "display_name": "Qwq 32 B",
+      "vendor": "nebius",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.45,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "qwq-plus",
+      "display_name": "Qwq Plus",
+      "vendor": "dashscope",
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 2.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "reka-edge",
+      "display_name": "Reka Edge",
+      "vendor": "rekaai",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.1,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "reka-flash-3",
+      "display_name": "Reka Flash 3",
+      "vendor": "rekaai",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "relace-apply-3",
+      "display_name": "Relace Apply 3",
+      "vendor": "relace",
+      "input_per_1m_usd": 0.85,
+      "output_per_1m_usd": 1.25,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "relace-search",
+      "display_name": "Relace Search",
+      "vendor": "relace",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 3.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "remm-slerp-l2-13b",
+      "display_name": "Remm Slerp L2 13 B",
+      "vendor": "undi95",
+      "input_per_1m_usd": 0.35,
+      "output_per_1m_usd": 0.65,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "sakana-namazu",
+      "display_name": "Sakana Namazu",
+      "vendor": "sakana",
+      "input_per_1m_usd": 0.95,
+      "output_per_1m_usd": 4.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "schematron-v2-small",
+      "display_name": "Schematron V2 Small",
+      "vendor": "inference-net",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.23,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "schematron-v2-turbo",
+      "display_name": "Schematron V2 Turbo",
+      "vendor": "inference-net",
+      "input_per_1m_usd": 0.03,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "seed-1.6",
+      "display_name": "Seed 1.6",
+      "vendor": "bytedance-seed",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "seed-1.6-flash",
+      "display_name": "Seed 1.6 Flash",
+      "vendor": "bytedance-seed",
+      "input_per_1m_usd": 0.075,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "seed-2-1-turbo",
+      "display_name": "Seed 2.1 Turbo",
+      "vendor": "bytedance-seed",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 2.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "seed-2.0-code",
+      "display_name": "Seed 2.0 Code",
+      "vendor": "bytedance-seed",
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 3.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "seed-2.0-lite",
+      "display_name": "Seed 2.0 Lite",
+      "vendor": "bytedance-seed",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 2.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "seed-2.0-mini",
+      "display_name": "Seed 2.0 Mini",
+      "vendor": "bytedance-seed",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "skyfall-36b",
+      "display_name": "Skyfall 36 B",
+      "vendor": "thedrummer",
+      "input_per_1m_usd": 0.55,
+      "output_per_1m_usd": 0.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "snowflake-llama-3.3-70b",
+      "display_name": "Snowflake Llama 3.3 70 B",
+      "vendor": "snowflake",
+      "input_per_1m_usd": 0.72,
+      "output_per_1m_usd": 0.72,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "solar-mini4",
+      "display_name": "Solar Mini 4",
+      "vendor": "upstage",
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "solar-pro-3",
+      "display_name": "Solar Pro 3",
+      "vendor": "upstage",
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "solar-pro4",
+      "display_name": "Solar Pro 4",
+      "vendor": "upstage",
+      "input_per_1m_usd": 0.09,
+      "output_per_1m_usd": 0.36,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "sonar",
+      "display_name": "Sonar",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 1.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "sonar-pro",
+      "display_name": "Sonar Pro",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "sonar-reasoning",
+      "display_name": "Sonar Reasoning",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 5.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "sonar-reasoning-pro",
+      "display_name": "Sonar Reasoning Pro",
+      "vendor": "vercel_ai_gateway",
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 8.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "step-3.5-flash",
+      "display_name": "Step 3.5 Flash",
+      "vendor": "stepfun",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "step-3.7-flash",
+      "display_name": "Step 3.7 Flash",
+      "vendor": "stepfun",
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 1.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "step-5",
+      "display_name": "Step 5 Preview",
+      "vendor": "stepfun",
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 2.7,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ternary-bonsai-2-27b",
+      "display_name": "Ternary Bonsai 2 27 B",
+      "vendor": "prism-ml",
+      "input_per_1m_usd": 0.075,
+      "output_per_1m_usd": 0.5,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "text-unicorn",
+      "display_name": "Text Unicorn",
+      "vendor": "text",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 28.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "text-unicorn@001",
+      "display_name": "Text Unicorn 001",
+      "vendor": "text",
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 28.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "trinity-large-thinking",
+      "display_name": "Trinity Large Thinking",
+      "vendor": "arcee-ai",
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.8,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "trinity-mini",
+      "display_name": "Trinity Mini",
+      "vendor": "together_ai",
+      "input_per_1m_usd": 0.045,
+      "output_per_1m_usd": 0.15,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "ui-tars-1.5-7b",
+      "display_name": "Ui Tars 1.5.7 B",
+      "vendor": "bytedance",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.2,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "unslopnemo-12b",
+      "display_name": "Unslopnemo 12 B",
+      "vendor": "thedrummer",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.anthropic.claude-fable-5-1",
+      "display_name": "Us Gov Anthropic Claude Fable 5.1",
+      "vendor": "us",
+      "input_per_1m_usd": 12.0,
+      "output_per_1m_usd": 60.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.anthropic.claude-haiku-5-5",
+      "display_name": "Us Gov Anthropic Claude Haiku 5.5",
+      "vendor": "us",
+      "input_per_1m_usd": 0.12,
+      "output_per_1m_usd": 0.6,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.anthropic.claude-opus-4-8",
+      "display_name": "Us Gov Anthropic Claude Opus 4.8",
+      "vendor": "us",
+      "input_per_1m_usd": 6.0,
+      "output_per_1m_usd": 30.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.anthropic.claude-opus-5-5",
+      "display_name": "Us Gov Anthropic Claude Opus 5.5",
+      "vendor": "us",
+      "input_per_1m_usd": 4.8,
+      "output_per_1m_usd": 24.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.anthropic.claude-sonnet-4-5",
+      "display_name": "Us Gov Anthropic Claude Sonnet 4.5",
+      "vendor": "us",
+      "input_per_1m_usd": 3.6,
+      "output_per_1m_usd": 18.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.anthropic.claude-sonnet-5",
+      "display_name": "Us Gov Anthropic Claude Sonnet 5",
+      "vendor": "us",
+      "input_per_1m_usd": 2.4,
+      "output_per_1m_usd": 12.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.nvidia.nemotron-nano-12b",
+      "display_name": "Us Gov Nvidia Nemotron Nano 12 B",
+      "vendor": "us",
+      "input_per_1m_usd": 0.24,
+      "output_per_1m_usd": 0.72,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.nvidia.nemotron-nano-3-30b",
+      "display_name": "Us Gov Nvidia Nemotron Nano 3 30 B",
+      "vendor": "us",
+      "input_per_1m_usd": 0.072,
+      "output_per_1m_usd": 0.288,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.nvidia.nemotron-nano-9b",
+      "display_name": "Us Gov Nvidia Nemotron Nano 9 B",
+      "vendor": "us",
+      "input_per_1m_usd": 0.072,
+      "output_per_1m_usd": 0.276,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.nvidia.nemotron-super-3-120b",
+      "display_name": "Us Gov Nvidia Nemotron Super 3 120 B",
+      "vendor": "us",
+      "input_per_1m_usd": 0.18,
+      "output_per_1m_usd": 0.78,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.openai.gpt-oss-120b-1:0",
+      "display_name": "Us Gov Openai GPT OSS 120 B1.0",
+      "vendor": "us",
+      "input_per_1m_usd": 0.18,
+      "output_per_1m_usd": 0.72,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.openai.gpt-oss-20b-1:0",
+      "display_name": "Us Gov Openai GPT OSS 20 B1.0",
+      "vendor": "us",
+      "input_per_1m_usd": 0.084,
+      "output_per_1m_usd": 0.36,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "us-gov.xai.grok-4.6",
+      "display_name": "Us Gov Xai Grok 4.6",
+      "vendor": "us",
+      "input_per_1m_usd": 2.64,
+      "output_per_1m_usd": 7.92,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "v0-1.0-md",
+      "display_name": "V0 1.0 Md",
+      "vendor": "v0",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "v0-1.5-lg",
+      "display_name": "V0 1.5 Lg",
+      "vendor": "v0",
+      "input_per_1m_usd": 15.0,
+      "output_per_1m_usd": 75.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "v0-1.5-md",
+      "display_name": "V0 1.5 Md",
+      "vendor": "v0",
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "voxtral-small",
+      "display_name": "Voxtral Small Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "voxtral-small-24b-2507",
+      "display_name": "Voxtral Small 24 B2507",
+      "vendor": "mistralai",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "voxtral-small-2507",
+      "display_name": "Voxtral Small 2507",
+      "vendor": "mistral",
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "weaver",
+      "display_name": "Weaver",
+      "vendor": "mancer",
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 0.75,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "wizardlm-2-8x22b",
+      "display_name": "Wizardlm 2.8 X22 B",
+      "vendor": "microsoft",
+      "input_per_1m_usd": 0.62,
+      "output_per_1m_usd": 0.62,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "zai-glm",
+      "display_name": "Zai GLM Latest",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.4,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "zai-glm-5",
+      "display_name": "Zai GLM 5",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.4,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "zai-glm-5-2",
+      "display_name": "Zai GLM 5.2",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.4,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    },
+    {
+      "date": "2026-10-09",
+      "kind": "new",
+      "canonical_key": "zai-glm-5-3",
+      "display_name": "Zai GLM 5.3",
+      "vendor": "mistral",
+      "input_per_1m_usd": 1.4,
+      "output_per_1m_usd": 4.4,
+      "significant": false
+    }
+  ]
+}
