@@ -1,0 +1,9 @@
+# One tool idea per line. The first line NOT starting with [done] will be built next.
+# Optional per-tool note after a pipe:  Tool Name | any note/design hints for the builder.
+# After a tool is built, the line is rewritten to: [done] Tool Name
+#
+# Add your tool ideas below — one per line, WITHOUT a leading # so they are active.
+[done] ToolSummary | bootstrap landing page with a working extractive summarizer, keyword chart, article, FAQ and disclaimer
+Tool Description Generator | generate a short tool description from a name + keywords
+Reading Time Estimator | words-per-minute reading time with a pace selector
+Word Frequency Counter | top words with a bar chart, stop-word toggle
