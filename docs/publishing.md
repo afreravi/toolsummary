@@ -1,7 +1,52 @@
 # Publishing runbook (SFTP)
 
-Phase 3 of the roadmap publishes the generated site over SFTP. It is currently
-**not enabled**, and there is a blocker that must be fixed before it can be.
+## Validation status (checked 2026-10-09, inside the automation sandbox)
+
+The three secrets are now configured and were tested with a real login attempt.
+
+| Check | Result |
+|---|---|
+| `TOOLSUMMARY_SFTP_HOST` | present, 19 chars |
+| `TOOLSUMMARY_SFTP_USER` | present, 26 chars |
+| `TOOLSUMMARY_SFTP_KEY` | present, 98 chars, single line, not a PEM private key |
+| `TOOLSUMMARY_SFTP_PORT` / `_PATH` | not set (code defaults to `22` / `/public_html`) |
+| Protocol | FTPS on **port 21** — reachable |
+| Ports 21 (plain FTP) / 22 | accepted / timed out |
+| Login | **rejected: `530 Login incorrect`** |
+
+**Verdict: not working yet.** Three separate issues, in priority order.
+
+### 1. The host value is a URL, not a hostname
+
+The stored host contains a scheme and other URL parts. Passed straight to a
+socket or to `rsync`, it cannot resolve — `socket.gethostbyname()` returns
+`gaierror` (`EAI_NONAME`) while ordinary names such as `github.com` resolve
+fine, so the sandbox's DNS is working and the value is the problem.
+
+Fix: store the bare hostname only. Strip the `ftp://` / `sftp://` prefix and any
+trailing path. The code should also normalise defensively so a URL-shaped value
+does not silently break the run again.
+
+### 2. The password is rejected
+
+Tested with certificate verification disabled, so this is not a TLS problem:
+
+```
+LOGIN_RELAXED = REJECTED 530 Login incorrect.
+```
+
+The server answered on port 21 and refused the credentials. Either the password
+is wrong, or the username is not the FTP account's username (some hosts expect
+`account@domain`, others a bare generated name). Reset the FTP password in the
+host panel and re-add the secret — a 98-character single-line value is more
+consistent with a password than with a key.
+
+### 3. The certificate does not verify
+
+`SSLCertVerificationError` on the TLS handshake. Common on shared hosting with
+a self-signed or name-mismatched certificate. This is the least urgent problem:
+fix the credentials first, then decide whether to pin the certificate rather
+than disabling verification globally.
 
 ## Blocker: the sandbox has no rsync, ssh, or scp
 
@@ -24,25 +69,26 @@ then, a run reports `publish: skipped (no SFTP host secret configured)` and the
 site stays in the workspace.
 
 Recommended: rewrite `publish()` to upload over `ftplib.FTP_TLS` (stdlib, no
-dependency, works with SFTP-over-FTP hosting like Hostinger's). Keep the
-"delete stale files first" behaviour so the live sitemap cannot list orphans.
+dependency). The host turned out to be FTPS on port 21, not SFTP on 22, so this
+is the right route anyway. Keep the "delete stale files first" behaviour so the
+live sitemap cannot list orphans.
 
 ## The secrets to create
 
-Six names are read by the code. Only the first three are required.
-
 | Secret | Required | Value |
 |---|---|---|
-| `TOOLSUMMARY_SFTP_HOST` | yes | the server hostname, e.g. `sftp.toolsummary.com` |
-| `TOOLSUMMARY_SFTP_USER` | yes | the FTP/SFTP username from the host |
-| `TOOLSUMMARY_SFTP_KEY` | yes | the private key or password |
-| `TOOLSUMMARY_SFTP_PORT` | no | defaults to `22` |
+| `TOOLSUMMARY_SFTP_HOST` | yes | bare hostname only, no `ftp://` prefix, no path |
+| `TOOLSUMMARY_SFTP_USER` | yes | FTP username from the host panel |
+| `TOOLSUMMARY_SFTP_KEY` | yes | currently holds a password; a PEM key would need `paramiko` |
+| `TOOLSUMMARY_SFTP_PORT` | no | not set; code defaults to `22`, but this host needs **21** |
 | `TOOLSUMMARY_SFTP_PATH` | no | defaults to `/public_html` |
 | `TOOLSUMMARY_GITHUB_TOKEN` | no | only if you want a dedicated push token |
 
-Note on naming: the code reads `TOOLSUMMARY_SFTP_KEY` and writes it to
-`.sftp_key` with mode `600`, then deletes it. That file is gitignored. Never
-commit a key; never paste one into a conversation or an issue.
+Once the host is FTPS on port 21, set `TOOLSUMMARY_SFTP_PORT=21` explicitly.
+
+Note on naming: the code writes `TOOLSUMMARY_SFTP_KEY` to `.sftp_key` with mode
+`600`, then deletes it. That file is gitignored. Never commit a credential;
+never paste one into a conversation or an issue.
 
 ## Where they come from
 
