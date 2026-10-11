@@ -54,24 +54,6 @@
     "reason": "missing or too-small context window"
   },
   {
-    "candidate": "nebius/Qwen/Qwen3-4B",
-    "candidate_name": "Qwen 3.4 B",
-    "input_per_1m_usd": 0.08,
-    "possible_duplicate_of": "qwen/qwen3-14b",
-    "possible_duplicate_name": "Qwen 3 14 B",
-    "confidence": 0.941,
-    "reason": "possible duplicate"
-  },
-  {
-    "candidate": "vercel_ai_gateway/alibaba/qwen-3-14b",
-    "candidate_name": "Qwen 3 14 B",
-    "input_per_1m_usd": 0.08,
-    "possible_duplicate_of": "qwen/qwen3-14b",
-    "possible_duplicate_name": "Qwen 3 14 B",
-    "confidence": 0.947,
-    "reason": "possible duplicate"
-  },
-  {
     "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
     "candidate_name": "DeepSeek R1 Distill Qwen 1.5 B",
     "input_per_1m_usd": 0.09,
