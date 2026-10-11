@@ -7,8 +7,9 @@ automation/mvp/*_raw.json
 # Generated site output
 automation/mvp/site/
 
-# Deployment artifacts (rebuilt by automation/deploy/package_site.py)
-deploy/
+# Deployment artifacts (rebuilt by automation/deploy/package_site.py).
+# Anchored: an unanchored "deploy/" would also ignore automation/deploy/.
+/deploy/
 
 # Runtime-written SFTP private key (Phase 3). Never commit a credential.
 .sftp_key
