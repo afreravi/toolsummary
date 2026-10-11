@@ -444,6 +444,36 @@ def build_sitemap(urls: list[str]) -> None:
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{items}</urlset>')
 
 
+def build_robots_txt() -> None:
+    """Advertise the sitemap and let AI crawlers in.
+
+    llms.txt only helps crawlers that already look for it, so the major
+    AI user agents are allowed explicitly rather than left to a default.
+    Nothing here is private; the acquisition model depends on being read
+    and cited.
+    """
+    write("robots.txt", "\n".join([
+        "User-agent: *",
+        "Allow: /",
+        "",
+        "# AI crawlers are welcome; the free pages are the acquisition surface.",
+        "User-agent: GPTBot",
+        "Allow: /",
+        "",
+        "User-agent: ClaudeBot",
+        "Allow: /",
+        "",
+        "User-agent: PerplexityBot",
+        "Allow: /",
+        "",
+        "User-agent: Google-Extended",
+        "Allow: /",
+        "",
+        f"Sitemap: {BASE}/sitemap.xml",
+        "",
+    ]))
+
+
 def build_llms_txt(models: list[dict], stamp: str) -> None:
     lines = [
         "# Toolsummary - LLM API pricing",
@@ -509,6 +539,7 @@ def main() -> int:
     c_urls = build_compare_pages(models, stamp)
     build_hub(models, stamp)
     build_sitemap(["/"] + m_urls + c_urls)
+    build_robots_txt()
     build_llms_txt(models, stamp)
     print(f"[build] {len(m_urls)} model pages, {len(c_urls)} comparison pages -> site/")
     return 0

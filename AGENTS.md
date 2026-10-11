@@ -11,8 +11,15 @@ are the acquisition surface; the paid product is the API/MCP price-history feed.
   append-only price log.
 - `automation/cron/main.py` — the scheduled entrypoint. Clones the repo, runs
   the pipeline, commits the regenerated data to `main`, pushes.
+- `automation/deploy/package_site.py` — packages the generated site into
+  `deploy/toolsummary-site.tar.gz` plus a manifest. The host is not reachable
+  over SFTP from the sandbox, so a human downloads the artifact and uploads it.
+  See `docs/deploy.md`.
+- `.github/workflows/build-site.yml` — builds and packages the site at 06:00
+  UTC (after the 04:30 pricing refresh) and uploads it as a downloadable
+  artifact. It does not push to `main` or deploy.
 - `automation/automation_main.py` — legacy entrypoint that also publishes over
-  SFTP. Unused until the SFTP secrets exist.
+  SFTP. Unused; SFTP auth is rejected by the host (see `docs/publishing.md`).
 
 ## Irreplaceable data
 
