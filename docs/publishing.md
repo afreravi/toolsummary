@@ -1,52 +1,71 @@
 # Publishing runbook (SFTP)
 
-## Validation status (checked 2026-10-09, inside the automation sandbox)
+## Validation status (re-checked 2026-10-11, inside the automation sandbox)
 
-The three secrets are now configured and were tested with a real login attempt.
+All five secrets are now configured and were tested with real connections.
 
 | Check | Result |
 |---|---|
-| `TOOLSUMMARY_SFTP_HOST` | present, 19 chars |
-| `TOOLSUMMARY_SFTP_USER` | present, 26 chars |
-| `TOOLSUMMARY_SFTP_KEY` | present, 98 chars, single line, not a PEM private key |
-| `TOOLSUMMARY_SFTP_PORT` / `_PATH` | not set (code defaults to `22` / `/public_html`) |
-| Protocol | FTPS on **port 21** — reachable |
-| Ports 21 (plain FTP) / 22 | accepted / timed out |
-| Login | **rejected: `530 Login incorrect`** |
+| `TOOLSUMMARY_SFTP_HOST` | present, 13 chars, **bare hostname** (no scheme, no path, no port) |
+| `TOOLSUMMARY_SFTP_USER` | present, 34 chars, no `@` |
+| `TOOLSUMMARY_SFTP_KEY` | present, 10 chars — a **password**, not a key |
+| `TOOLSUMMARY_SFTP_PORT` | present, `65002` |
+| `Remote_Path` | present, 52 chars, leading `/`, contains `public_html` |
 
-**Verdict: not working yet.** Three separate issues, in priority order.
+**Verdict: the host, port, and protocol are correct; the login is rejected.**
 
-### 1. The host value is a URL, not a hostname
-
-The stored host contains a scheme and other URL parts. Passed straight to a
-socket or to `rsync`, it cannot resolve — `socket.gethostbyname()` returns
-`gaierror` (`EAI_NONAME`) while ordinary names such as `github.com` resolve
-fine, so the sandbox's DNS is working and the value is the problem.
-
-Fix: store the bare hostname only. Strip the `ftp://` / `sftp://` prefix and any
-trailing path. The code should also normalise defensively so a URL-shaped value
-does not silently break the run again.
-
-### 2. The password is rejected
-
-Tested with certificate verification disabled, so this is not a TLS problem:
+The earlier reading of this host was wrong. It is not FTPS on port 21. Reading
+the banner settles it:
 
 ```
-LOGIN_RELAXED = REJECTED 530 Login incorrect.
+SSH-2.0-OpenSSH_8.0        <- port 65002 is an SSH server
+IS_SSH_SERVER = True
 ```
 
-The server answered on port 21 and refused the credentials. Either the password
-is wrong, or the username is not the FTP account's username (some hosts expect
-`account@domain`, others a bare generated name). Reset the FTP password in the
-host panel and re-add the secret — a 98-character single-line value is more
-consistent with a password than with a key.
+This is the standard shared-host shape: SSH/SFTP on a high port, with the
+web root reachable through the SFTP session.
 
-### 3. The certificate does not verify
+### 1. Resolved: the host is now a bare hostname
 
-`SSLCertVerificationError` on the TLS handshake. Common on shared hosting with
-a self-signed or name-mismatched certificate. This is the least urgent problem:
-fix the credentials first, then decide whether to pin the certificate rather
-than disabling verification globally.
+The previous value was a URL (`scheme://host:port/path`), which failed to
+resolve with `gaierror EAI_NONAME`. The current value is a clean hostname and
+resolves fine. Keep it that way; `publish()` should still normalise defensively
+so a URL-shaped value cannot silently break a run again.
+
+### 2. Resolved: the port points at SSH, not FTP
+
+`TOOLSUMMARY_SFTP_PORT=65002` is correct for this host. Connecting to it with
+FTP times out because it is not an FTP port; an SSH handshake succeeds
+immediately.
+
+### 3. Open: the credentials are rejected
+
+Using a real SSH client (`paramiko`) against port 65002:
+
+```
+bare      = AUTH_FAIL
+user@host = AUTH_FAIL
+user@domain = AUTH_FAIL
+```
+
+Every realistic username form fails, and no FTP path on 21 accepts either. So
+the password in `TOOLSUMMARY_SFTP_KEY` is wrong, or the username is not an
+account that may log in over SSH. On cPanel-style hosts SSH access must usually
+be enabled per account in the panel before the same password will work.
+
+Fix, in order:
+
+1. In the host panel, confirm SSH access is enabled for this account.
+2. Reset the account password there.
+3. Re-add `TOOLSUMMARY_SFTP_KEY` with the new password.
+
+Then re-run the verification below. Nothing else is blocking.
+
+### 4. Note: `TOOLSUMMARY_SFTP_KEY` is not a key
+
+A length of 10 with no `-----BEGIN` marker means it holds a password. That is
+fine for this host — it just means the name is misleading, and that a PEM key
+will not be needed unless SSH key auth is set up instead.
 
 ## Blocker: the sandbox has no rsync, ssh, or scp
 
@@ -61,30 +80,42 @@ sftp  = MISSING
 scp   = MISSING
 git   = /usr/bin/git
 python 3.13.15, ftplib available, paramiko/requests MISSING
+apt-get = present but not root (dpkg lock denied); pip install works
 ```
 
 Adding secrets will not fix this. The publish path has to be rewritten to use
-Python's stdlib `ftplib`, or `paramiko` has to be added to the tarball. Until
-then, a run reports `publish: skipped (no SFTP host secret configured)` and the
-site stays in the workspace.
+`paramiko` over SFTP, or stdlib `ftplib` if a plain FTPS endpoint is ever used.
+`pip install paramiko` succeeds inside a run, so the SFTP route is viable:
 
-Recommended: rewrite `publish()` to upload over `ftplib.FTP_TLS` (stdlib, no
-dependency). The host turned out to be FTPS on port 21, not SFTP on 22, so this
-is the right route anyway. Keep the "delete stale files first" behaviour so the
-live sitemap cannot list orphans.
+```
+PIP_RC    = 0
+IMPORT_RC = 0
+IMPORT_VER = 5.0.0
+```
+
+Important: install `paramiko` in a subprocess and import it in a **separate**
+process. A module installed during a run is not importable by the process that
+installed it, which makes a single-process script report a false "unavailable".
+
+Recommended: rewrite `publish()` to open an SFTP session on
+`TOOLSUMMARY_SFTP_PORT` and write into `Remote_Path`. Keep the "delete stale
+files first" behaviour so the live sitemap cannot list orphans.
 
 ## The secrets to create
 
 | Secret | Required | Value |
 |---|---|---|
 | `TOOLSUMMARY_SFTP_HOST` | yes | bare hostname only, no `ftp://` prefix, no path |
-| `TOOLSUMMARY_SFTP_USER` | yes | FTP username from the host panel |
-| `TOOLSUMMARY_SFTP_KEY` | yes | currently holds a password; a PEM key would need `paramiko` |
-| `TOOLSUMMARY_SFTP_PORT` | no | not set; code defaults to `22`, but this host needs **21** |
-| `TOOLSUMMARY_SFTP_PATH` | no | defaults to `/public_html` |
+| `TOOLSUMMARY_SFTP_USER` | yes | SSH account name from the host panel |
+| `TOOLSUMMARY_SFTP_KEY` | yes | password for that account (not a key, despite the name) |
+| `TOOLSUMMARY_SFTP_PORT` | yes | `65002` for this host — SSH lives on a high port |
+| `Remote_Path` | yes | remote web root, e.g. `.../domains/<domain>/public_html` |
 | `TOOLSUMMARY_GITHUB_TOKEN` | no | only if you want a dedicated push token |
 
-Once the host is FTPS on port 21, set `TOOLSUMMARY_SFTP_PORT=21` explicitly.
+Naming note: the code reads `TOOLSUMMARY_SFTP_PATH`, but the secret added is
+named `Remote_Path`. Either rename the secret or update the code — as written,
+the run silently falls back to `/public_html`.
+
 
 Note on naming: the code writes `TOOLSUMMARY_SFTP_KEY` to `.sftp_key` with mode
 `600`, then deletes it. That file is gitignored. Never commit a credential;
@@ -92,15 +123,22 @@ never paste one into a conversation or an issue.
 
 ## Where they come from
 
-The host is whichever provider serves toolsummary.com. If it is Hostinger:
+The host panel (cPanel-style) shows the SSH account name, the SSH port, and the
+password. SSH access must be enabled for the account before the password will be
+accepted — a common reason for `AUTH_FAIL` even when the password is correct.
 
-1. Log in to hPanel → **Files → FTP Accounts** (or **Advanced → SSH Access**).
-2. The host and username are shown on that page. The password is what you set
+The remote path is the account's web root, typically
+`domains/<domain>/public_html`. That goes in `Remote_Path`.
+
+The host is whichever provider serves toolsummary.com. On a cPanel-style panel:
+
+1. Log in to the panel → **Files → FTP Accounts**, or **Advanced → SSH Access**.
+2. The host and SSH account name are shown there. The password is what you set
    when creating the account; it is not shown again, so if it is lost, reset it.
-3. If SSH/SFTP keys are available, generate a key pair and upload the public
-   key. Keep the private key for the secret below.
+3. Enable SSH access for the account. Until this is on, the same password fails
+   over port `65002`.
 4. Confirm the web root — usually `public_html`, sometimes
-   `domains/toolsummary.com/public_html`. That goes in `TOOLSUMMARY_SFTP_PATH`.
+   `domains/toolsummary.com/public_html`. That goes in `Remote_Path`.
 
 ## How to add them to OpenHands
 
@@ -112,7 +150,8 @@ make the automation see them.
    "Toolsummary pricing refresh").
 2. Go to **Settings → Secrets** (agent-server settings).
 3. Add each secret by exact name. Names are case-sensitive:
-   `TOOLSUMMARY_SFTP_HOST`, `TOOLSUMMARY_SFTP_USER`, `TOOLSUMMARY_SFTP_KEY`.
+   `TOOLSUMMARY_SFTP_HOST`, `TOOLSUMMARY_SFTP_USER`, `TOOLSUMMARY_SFTP_KEY`,
+   `TOOLSUMMARY_SFTP_PORT`, `Remote_Path`.
 4. Do not paste a secret into a chat message, an issue, or a commit.
 
 Verify from inside a run rather than from your shell — the run is what matters:
@@ -130,14 +169,14 @@ print([s["name"] for s in json.loads(urllib.request.urlopen(req).read())["secret
 
 Staging needs two things before a date can be committed to:
 
-1. `publish()` rewritten to stdlib `ftplib` (the blocker above). ~1 hour.
-2. Secrets created and verified from inside a run. ~15 minutes once you have the
-   host credentials.
+1. `publish()` rewritten to SFTP via `paramiko` (the blocker above). ~1 hour.
+2. SSH access enabled and the account password corrected in the host panel, then
+   verified from inside a run. ~15 minutes once the panel is open.
 
 Once those exist, the sequence is: dispatch a manual run with the real
 entrypoint, confirm the file count at the destination, check one model page and
 one comparison page in a browser, then let the daily schedule take over.
 
-Suggested target: **the first business day after the secrets are in place**,
-with a manual dispatch that day rather than waiting for the cron. The blockers
-are the two items above, not calendar time.
+Suggested target: **the first business day after the login succeeds**, with a
+manual dispatch that day rather than waiting for the cron. The blockers are the
+two items above, not calendar time.
