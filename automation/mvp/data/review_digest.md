@@ -1,28 +1,28 @@
-# Daily review digest - 2026-10-11
+# Daily review digest - 2026-10-12
 
 Automation refreshed the pricing dataset. **664 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-49 price changes in the last 30 days, 668 new models, 4 delisted.
+65 price changes in the last 30 days, 668 new models, 4 delisted.
 
-### 27 changes over 20% - check these before trusting the page
+### 37 changes over 20% - check these before trusting the page
 
+- **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
+- **DeepSeek Pro Latest** output: $0.6574 -> $5.0 (660.57%)
+- **DeepSeek V4 Pro** input: $0.2088 -> $0.9553 (357.52%)
+- **DeepSeek V4 Pro** output: $0.4176 -> $1.9105 (357.5%)
 - **DeepSeek V4 Pro** input: $0.2088 -> $0.9483 (354.17%)
 - **DeepSeek V4 Pro** output: $0.4176 -> $1.8966 (354.17%)
 - **GLM Flash Latest** output: $0.1563 -> $0.5 (219.9%)
 - **DeepSeek V4 Flash Latest** input: $0.0047 -> $0.0137 (191.49%)
 - **DeepSeek V4 Flash 0731** input: $0.0047 -> $0.0137 (191.49%)
+- **GLM Flash Latest** output: $0.5 -> $1.2 (140.0%)
 - **DeepSeek Pro Latest** input: $0.1282 -> $0.3 (134.01%)
 - **DeepSeek Flash Latest** input: $0.0101 -> $0.0001 (-99.01%)
+- **DeepSeek Flash Latest** output: $0.6 -> $1.188 (98.0%)
 - **Qwen 3.8 27 B** input: $0.425 -> $0.04 (-90.59%)
-- **DeepSeek V3.2** output: $0.42 -> $0.8 (90.48%)
-- **DeepSeek Pro Latest** output: $5.0 -> $0.6574 (-86.85%)
-- **DeepSeek V4 Pro** input: $0.9483 -> $0.2088 (-77.98%)
-- **DeepSeek V4 Pro** output: $1.8966 -> $0.4176 (-77.98%)
-- **Hy 3** input: $0.0825 -> $0.132 (60.0%)
-- **Hy 3** output: $0.33 -> $0.528 (60.0%)
 
 ## Needs a human decision
 
