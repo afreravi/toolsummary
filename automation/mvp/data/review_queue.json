@@ -27,6 +27,15 @@
     "reason": "missing or too-small context window"
   },
   {
+    "candidate": "~deepseek/deepseek-v4-flash-latest",
+    "candidate_name": "DeepSeek V4 Flash Latest",
+    "input_per_1m_usd": 0.0144,
+    "possible_duplicate_of": "deepseek/deepseek-v4.1-flash:batch",
+    "possible_duplicate_name": "DeepSeek V4.1 Flash",
+    "confidence": 0.944,
+    "reason": "possible duplicate"
+  },
+  {
     "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
     "candidate_name": "DeepSeek R1 Distill Llama 8 B",
     "input_per_1m_usd": 0.025,
@@ -294,6 +303,15 @@
     "possible_duplicate_of": "nebius/nvidia/Llama-3.1-Nemotron-Ultra-253B-v1",
     "possible_duplicate_name": "Llama 3.1 Nemotron Ultra 253 B",
     "confidence": 0.966,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "gradient_ai/llama3.3-70b-instruct",
+    "candidate_name": "Llama 3.3 70 B Instruct",
+    "input_per_1m_usd": 0.65,
+    "possible_duplicate_of": "meta-llama/llama-3.3-70b-instruct",
+    "possible_duplicate_name": "Llama 3.3 70 B Instruct",
+    "confidence": 0.977,
     "reason": "possible duplicate"
   },
   {

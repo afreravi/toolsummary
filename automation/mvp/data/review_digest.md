@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-12
+# Daily review digest - 2026-10-13
 
-Automation refreshed the pricing dataset. **664 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **668 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-65 price changes in the last 30 days, 668 new models, 4 delisted.
+88 price changes in the last 30 days, 674 new models, 6 delisted.
 
-### 37 changes over 20% - check these before trusting the page
+### 55 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
@@ -15,21 +15,22 @@ Automation refreshed the pricing dataset. **664 model pages** and 400 comparison
 - **DeepSeek V4 Pro** output: $0.4176 -> $1.9105 (357.5%)
 - **DeepSeek V4 Pro** input: $0.2088 -> $0.9483 (354.17%)
 - **DeepSeek V4 Pro** output: $0.4176 -> $1.8966 (354.17%)
+- **GLM 5.3 Flash** output: $0.2 -> $0.9 (350.0%)
 - **GLM Flash Latest** output: $0.1563 -> $0.5 (219.9%)
 - **DeepSeek V4 Flash Latest** input: $0.0047 -> $0.0137 (191.49%)
 - **DeepSeek V4 Flash 0731** input: $0.0047 -> $0.0137 (191.49%)
+- **Llama 3.3 70 B Instruct** input: $0.22 -> $0.59 (168.18%)
 - **GLM Flash Latest** output: $0.5 -> $1.2 (140.0%)
 - **DeepSeek Pro Latest** input: $0.1282 -> $0.3 (134.01%)
 - **DeepSeek Flash Latest** input: $0.0101 -> $0.0001 (-99.01%)
-- **DeepSeek Flash Latest** output: $0.6 -> $1.188 (98.0%)
-- **Qwen 3.8 27 B** input: $0.425 -> $0.04 (-90.59%)
 
 ## Needs a human decision
 
-### 50 possible duplicates
+### 52 possible duplicates
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
+- `~deepseek/deepseek-v4-flash-latest` looks like `deepseek/deepseek-v4.1-flash:batch` (similarity 0.944)
 - `meta/muse-spark-1.2-contributor` looks like `meta/muse-spark-1.3-contributor` (similarity 0.962)
 - `mistral/ministral-3-3b-2512` looks like `mistralai/ministral-3b-2512` (similarity 0.944)
 - `lambda_ai/llama3.3-70b-instruct-fp8` looks like `lambda_ai/llama3.1-70b-instruct-fp8` (similarity 0.96)
@@ -40,10 +41,9 @@ Two model IDs look like the same product. Confirm and either merge or ignore.
 - `google/gemini-3.7-flash:batch` looks like `google/gemini-3.8-flash:batch` (similarity 0.938)
 - `google/gemini-3.6-flash:batch` looks like `google/gemini-3.8-flash:batch` (similarity 0.938)
 - `nebius/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1` looks like `nebius/nvidia/Llama-3.1-Nemotron-Ultra-253B-v1` (similarity 0.966)
+- `gradient_ai/llama3.3-70b-instruct` looks like `meta-llama/llama-3.3-70b-instruct` (similarity 0.977)
 - `ovhcloud/Meta-Llama-3_3-70B-Instruct` looks like `ovhcloud/Meta-Llama-3_1-70B-Instruct` (similarity 0.963)
 - `mistral/mistral-large-4` looks like `mistralai/mistral-large-4-0` (similarity 0.938)
-- `vercel_ai_gateway/meta/llama-3.1-70b` looks like `snowflake/llama3.1-70b` (similarity 0.96)
-- `vercel_ai_gateway/meta/llama-3.3-70b` looks like `snowflake/llama3.3-70b` (similarity 0.96)
 
 ### 36 rows missing a usable context window
 
