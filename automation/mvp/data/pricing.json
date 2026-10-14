@@ -1,32 +1,8 @@
 {
-  "generated_at": "2026-10-13T04:34:55+00:00",
-  "model_count": 668,
+  "generated_at": "2026-10-14T04:30:34+00:00",
+  "model_count": 672,
   "failed_sources": [],
   "models": [
-    {
-      "id": "inclusionai/ling-3.1-flash",
-      "name": "inclusionAI: Ling 3.1 Flash",
-      "vendor": "inclusionai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.0,
-      "output_per_1m_usd": 0.0,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Ling 3.1 Flash",
-      "canonical_key": "ling-3.1-flash"
-    },
-    {
-      "id": "apodex/apodex-1.1-mini:free",
-      "name": "Apodex: Apodex 1.1 Mini (free)",
-      "vendor": "apodex",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.0,
-      "output_per_1m_usd": 0.0,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Apodex 1.1 Mini",
-      "canonical_key": "apodex-1.1-mini"
-    },
     {
       "id": "dots-studio/dots-3-note-preview:free",
       "name": "Dots Studio: Dots3-Note Preview (free)",
@@ -248,6 +224,44 @@
       ]
     },
     {
+      "id": "~deepseek/deepseek-flash-latest",
+      "name": "DeepSeek: DeepSeek Flash Latest",
+      "vendor": "~deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.0093,
+      "output_per_1m_usd": 0.6,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek Flash Latest",
+      "canonical_key": "deepseek-flash",
+      "merged_from": [
+        "deepseek-flash",
+        "deepseek/deepseek-flash"
+      ]
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "name": "DeepSeek: DeepSeek V4.1 Flash",
+      "vendor": "deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.0093,
+      "output_per_1m_usd": 0.6,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek V4.1 Flash",
+      "canonical_key": "deepseek-v4.1-flash",
+      "merged_from": [
+        "baseten/deepseek-ai/DeepSeek-V4.1-Flash",
+        "coralbricks/deepseek-v4.1-flash",
+        "deepseek/deepseek-v4.1-flash:batch",
+        "nebius/deepseek-ai/DeepSeek-V4.1-Flash",
+        "prism/deepseek-v4.1-flash",
+        "sail/deepseek-ai/DeepSeek-V4.1-Flash",
+        "tencent/deepseek-v4.1-flash",
+        "together_ai/deepseek-ai/DeepSeek-V4.1-Flash"
+      ]
+    },
+    {
       "id": "coralbricks/deepseek-v4.1-flash-fast",
       "name": "coralbricks/deepseek-v4.1-flash-fast",
       "vendor": "coralbricks",
@@ -420,18 +434,6 @@
       "canonical_key": "qwen2-1.5b-instruct"
     },
     {
-      "id": "inclusionai/ling-3.0-flash-vl",
-      "name": "inclusionAI: Ling 3.0 Flash VL",
-      "vendor": "inclusionai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.021,
-      "output_per_1m_usd": 0.0616,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Ling 3.0 Flash VL",
-      "canonical_key": "ling-3.0-flash-vl"
-    },
-    {
       "id": "inclusionai/ling-3.0-flash",
       "name": "inclusionAI: Ling 3.0 Flash",
       "vendor": "inclusionai",
@@ -490,39 +492,6 @@
       "source": "litellm",
       "display_name": "Llama 3.1.8 B Instruct",
       "canonical_key": "llama3.1-8b-instruct"
-    },
-    {
-      "id": "~z-ai/glm-flash-latest",
-      "name": "Z.ai: GLM Flash Latest",
-      "vendor": "~z-ai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.0261,
-      "output_per_1m_usd": 0.9,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "GLM Flash Latest",
-      "canonical_key": "glm-flash"
-    },
-    {
-      "id": "z-ai/glm-5.3-flash",
-      "name": "Z.ai: GLM 5.3 Flash",
-      "vendor": "z-ai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.0261,
-      "output_per_1m_usd": 0.9,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "GLM 5.3 Flash",
-      "canonical_key": "glm-5.3-flash",
-      "merged_from": [
-        "baseten/zai-org/GLM-5.3-Flash",
-        "friendliai/zai-org/GLM-5.3-Flash",
-        "nebius/zai-org/GLM-5.3-Flash",
-        "sail/zai-org/GLM-5.3-Flash",
-        "together_ai/zai-org/GLM-5.3-Flash",
-        "z-ai/glm-5.3-flash:batch",
-        "zai/glm-5.3-flash"
-      ]
     },
     {
       "id": "meta-llama/llama-3.2-1b-instruct",
@@ -632,6 +601,18 @@
       ]
     },
     {
+      "id": "~z-ai/glm-flash-latest",
+      "name": "Z.ai: GLM Flash Latest",
+      "vendor": "~z-ai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.036,
+      "output_per_1m_usd": 0.9,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "GLM Flash Latest",
+      "canonical_key": "glm-flash"
+    },
+    {
       "id": "cohere/command-r7b-12-2024",
       "name": "Cohere: Command R7B (12-2024)",
       "vendor": "cohere",
@@ -645,6 +626,30 @@
       "merged_from": [
         "command-r7b-12-2024"
       ]
+    },
+    {
+      "id": "scaledown/summarize",
+      "name": "ScaleDown: Summarize",
+      "vendor": "scaledown",
+      "context_length": 1000000,
+      "input_per_1m_usd": 0.04,
+      "output_per_1m_usd": 0.0,
+      "modality": "text+image+file->text",
+      "source": "openrouter",
+      "display_name": "Summarize",
+      "canonical_key": "summarize"
+    },
+    {
+      "id": "scaledown/extract",
+      "name": "ScaleDown: Extract",
+      "vendor": "scaledown",
+      "context_length": 1000000,
+      "input_per_1m_usd": 0.04,
+      "output_per_1m_usd": 0.0,
+      "modality": "text+image+file->text",
+      "source": "openrouter",
+      "display_name": "Extract",
+      "canonical_key": "extract"
     },
     {
       "id": "inception/mercury-2.5",
@@ -744,30 +749,6 @@
       "canonical_key": "qwen3-8b"
     },
     {
-      "id": "inclusionai/ling-3.0-flash-sante",
-      "name": "inclusionAI: Ling 3.0 Flash Sante",
-      "vendor": "inclusionai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.042,
-      "output_per_1m_usd": 0.1232,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Ling 3.0 Flash Sante",
-      "canonical_key": "ling-3.0-flash-sante"
-    },
-    {
-      "id": "inclusionai/ling-3.0-flash-fin",
-      "name": "inclusionAI: Ling 3.0 Flash Fin",
-      "vendor": "inclusionai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.042,
-      "output_per_1m_usd": 0.1232,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Ling 3.0 Flash Fin",
-      "canonical_key": "ling-3.0-flash-fin"
-    },
-    {
       "id": "tencent/hy-mt2-1.8b",
       "name": "Tencent: Hy-MT2-1.8B",
       "vendor": "tencent",
@@ -778,22 +759,6 @@
       "source": "openrouter",
       "display_name": "Hy Mt 2 1.8 B",
       "canonical_key": "hy-mt2-1.8b"
-    },
-    {
-      "id": "~deepseek/deepseek-flash-latest",
-      "name": "DeepSeek: DeepSeek Flash Latest",
-      "vendor": "~deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.045,
-      "output_per_1m_usd": 0.891,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek Flash Latest",
-      "canonical_key": "deepseek-flash",
-      "merged_from": [
-        "deepseek-flash",
-        "deepseek/deepseek-flash"
-      ]
     },
     {
       "id": "together_ai/arcee-ai/trinity-mini",
@@ -836,6 +801,18 @@
       ]
     },
     {
+      "id": "liquid/lfm-2.5-24b-a2b",
+      "name": "LiquidAI: LFM2.5-24B-A2B",
+      "vendor": "liquid",
+      "context_length": 128000,
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.7,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "Lfm 2.5 24 B A2 B",
+      "canonical_key": "lfm-2.5-24b-a2b"
+    },
+    {
       "id": "anthropic/claude-haiku-5.5:batch",
       "name": "Anthropic: Claude Haiku 5.5 (batch)",
       "vendor": "anthropic",
@@ -874,6 +851,32 @@
       "source": "openrouter",
       "display_name": "Schematron V2 Small",
       "canonical_key": "schematron-v2-small"
+    },
+    {
+      "id": "z-ai/glm-5.2",
+      "name": "Z.ai: GLM 5.2",
+      "vendor": "z-ai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 7.0,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "GLM 5.2",
+      "canonical_key": "glm-5.2",
+      "merged_from": [
+        "baseten/zai-org/GLM-5.2",
+        "cloudflare/@cf/zai-org/glm-5.2",
+        "dashscope/glm-5.2",
+        "friendliai/zai-org/GLM-5.2",
+        "nebius/zai-org/GLM-5.2",
+        "qwen_ai_platform/glm-5.2",
+        "qwencloud/glm-5.2",
+        "scaleway/glm-5.2",
+        "scx-ai/GLM-5.2",
+        "tencent/glm-5.2",
+        "together_ai/zai-org/GLM-5.2",
+        "zai/glm-5.2"
+      ]
     },
     {
       "id": "google/gemini-2.5-flash-lite:batch",
@@ -1068,16 +1071,16 @@
       "canonical_key": "qwen3-30b-a3b-fp8"
     },
     {
-      "id": "~z-ai/glm-latest",
-      "name": "Z.ai: GLM Latest",
-      "vendor": "~z-ai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.055,
-      "output_per_1m_usd": 5.0,
-      "modality": "text->text",
+      "id": "inclusionai/ling-3.0-flash-vl",
+      "name": "inclusionAI: Ling 3.0 Flash VL",
+      "vendor": "inclusionai",
+      "context_length": 131072,
+      "input_per_1m_usd": 0.06,
+      "output_per_1m_usd": 0.18,
+      "modality": "text+image+video->text",
       "source": "openrouter",
-      "display_name": "GLM Latest",
-      "canonical_key": "glm"
+      "display_name": "Ling 3.0 Flash VL",
+      "canonical_key": "ling-3.0-flash-vl"
     },
     {
       "id": "ibm-granite/granite-4.2-8b",
@@ -1092,28 +1095,25 @@
       "canonical_key": "granite-4.2-8b"
     },
     {
-      "id": "z-ai/glm-5.2",
-      "name": "Z.ai: GLM 5.2",
+      "id": "z-ai/glm-5.3-flash:batch",
+      "name": "Z.ai: GLM 5.3 Flash (batch)",
       "vendor": "z-ai",
       "context_length": 1048576,
       "input_per_1m_usd": 0.06,
-      "output_per_1m_usd": 7.0,
-      "modality": "text->text",
+      "output_per_1m_usd": 0.2,
+      "modality": "text+image+video->text",
       "source": "openrouter",
-      "display_name": "GLM 5.2",
-      "canonical_key": "glm-5.2",
+      "display_name": "GLM 5.3 Flash",
+      "canonical_key": "glm-5.3-flash",
       "merged_from": [
-        "baseten/zai-org/GLM-5.2",
-        "cloudflare/@cf/zai-org/glm-5.2",
-        "dashscope/glm-5.2",
-        "friendliai/zai-org/GLM-5.2",
-        "nebius/zai-org/GLM-5.2",
-        "qwen_ai_platform/glm-5.2",
-        "qwencloud/glm-5.2",
-        "scaleway/glm-5.2",
-        "scx-ai/GLM-5.2",
-        "together_ai/zai-org/GLM-5.2",
-        "zai/glm-5.2"
+        "baseten/zai-org/GLM-5.3-Flash",
+        "friendliai/zai-org/GLM-5.3-Flash",
+        "nebius/zai-org/GLM-5.3-Flash",
+        "sail/zai-org/GLM-5.3-Flash",
+        "tencent/glm-5.3-flash",
+        "together_ai/zai-org/GLM-5.3-Flash",
+        "z-ai/glm-5.3-flash",
+        "zai/glm-5.3-flash"
       ]
     },
     {
@@ -1266,6 +1266,18 @@
       ]
     },
     {
+      "id": "~z-ai/glm-latest",
+      "name": "Z.ai: GLM Latest",
+      "vendor": "~z-ai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.063,
+      "output_per_1m_usd": 4.4,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "GLM Latest",
+      "canonical_key": "glm"
+    },
+    {
       "id": "qwen/qwen3.5-flash-02-23",
       "name": "Qwen: Qwen3.5-Flash",
       "vendor": "qwen",
@@ -1368,6 +1380,18 @@
       "canonical_key": "hy-mt2-7b"
     },
     {
+      "id": "inclusionai/ling-3.1-flash",
+      "name": "inclusionAI: Ling 3.1 Flash",
+      "vendor": "inclusionai",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.075,
+      "output_per_1m_usd": 0.225,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "Ling 3.1 Flash",
+      "canonical_key": "ling-3.1-flash"
+    },
+    {
       "id": "prism-ml/ternary-bonsai-2-27b",
       "name": "PrismML: Ternary Bonsai 2 27B",
       "vendor": "prism-ml",
@@ -1452,22 +1476,11 @@
         "friendliai/zai-org/GLM-5.3",
         "nebius/zai-org/GLM-5.3",
         "sail/zai-org/GLM-5.3",
+        "tencent/glm-5.3",
         "together_ai/zai-org/GLM-5.3",
         "z-ai/glm-5.3:batch",
         "zai/glm-5.3"
       ]
-    },
-    {
-      "id": "qwen/qwen3.5-35b-a3b",
-      "name": "Qwen: Qwen3.5-35B-A3B",
-      "vendor": "qwen",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.08,
-      "output_per_1m_usd": 0.75,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Qwen 3.5 35 B A3 B",
-      "canonical_key": "qwen3.5-35b-a3b"
     },
     {
       "id": "qwen/qwen3-32b",
@@ -2103,27 +2116,6 @@
       "canonical_key": "au.anthropic.claude-haiku-5-5"
     },
     {
-      "id": "deepseek/deepseek-v4.1-flash:batch",
-      "name": "DeepSeek: DeepSeek V4.1 Flash (batch)",
-      "vendor": "deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.112,
-      "output_per_1m_usd": 0.336,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4.1 Flash",
-      "canonical_key": "deepseek-v4.1-flash",
-      "merged_from": [
-        "baseten/deepseek-ai/DeepSeek-V4.1-Flash",
-        "coralbricks/deepseek-v4.1-flash",
-        "deepseek/deepseek-v4.1-flash",
-        "nebius/deepseek-ai/DeepSeek-V4.1-Flash",
-        "prism/deepseek-v4.1-flash",
-        "sail/deepseek-ai/DeepSeek-V4.1-Flash",
-        "together_ai/deepseek-ai/DeepSeek-V4.1-Flash"
-      ]
-    },
-    {
       "id": "qwen/qwen3-14b",
       "name": "Qwen: Qwen3 14B",
       "vendor": "qwen",
@@ -2444,6 +2436,18 @@
         "gemini/gemini-3.5-flash-lite",
         "google/gemini-3.5-flash-lite"
       ]
+    },
+    {
+      "id": "qwen/qwen3.5-35b-a3b",
+      "name": "Qwen: Qwen3.5-35B-A3B",
+      "vendor": "qwen",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 1.0,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Qwen 3.5 35 B A3 B",
+      "canonical_key": "qwen3.5-35b-a3b"
     },
     {
       "id": "upstage/solar-pro-3",
@@ -2802,6 +2806,18 @@
       "merged_from": [
         "vercel_ai_gateway/meta/llama-4-scout"
       ]
+    },
+    {
+      "id": "~deepseek/deepseek-pro-latest",
+      "name": "DeepSeek: DeepSeek Pro Latest",
+      "vendor": "~deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.18,
+      "output_per_1m_usd": 8.0,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek Pro Latest",
+      "canonical_key": "deepseek-pro"
     },
     {
       "id": "meta-llama/llama-guard-4-12b",
@@ -3585,6 +3601,21 @@
       "canonical_key": "deepseek-v4-flash-thinking"
     },
     {
+      "id": "minimax/minimax-m2",
+      "name": "MiniMax: MiniMax M2",
+      "vendor": "minimax",
+      "context_length": 204800,
+      "input_per_1m_usd": 0.255,
+      "output_per_1m_usd": 1.02,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "Minimax M2",
+      "canonical_key": "minimax-m2",
+      "merged_from": [
+        "minimax/MiniMax-M2"
+      ]
+    },
+    {
       "id": "deepseek/deepseek-v3.2",
       "name": "DeepSeek: DeepSeek V3.2",
       "vendor": "deepseek",
@@ -3817,18 +3848,6 @@
       "canonical_key": "command-a-plus"
     },
     {
-      "id": "~deepseek/deepseek-pro-latest",
-      "name": "DeepSeek: DeepSeek Pro Latest",
-      "vendor": "~deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.3,
-      "output_per_1m_usd": 5.0,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek Pro Latest",
-      "canonical_key": "deepseek-pro"
-    },
-    {
       "id": "meta/muse-glimmer-30b",
       "name": "Meta: Muse Glimmer 30B",
       "vendor": "meta",
@@ -3936,21 +3955,6 @@
       "source": "openrouter",
       "display_name": "Nova 2 Lite",
       "canonical_key": "nova-2-lite"
-    },
-    {
-      "id": "minimax/minimax-m2",
-      "name": "MiniMax: MiniMax M2",
-      "vendor": "minimax",
-      "context_length": 204800,
-      "input_per_1m_usd": 0.3,
-      "output_per_1m_usd": 1.2,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Minimax M2",
-      "canonical_key": "minimax-m2",
-      "merged_from": [
-        "minimax/MiniMax-M2"
-      ]
     },
     {
       "id": "google/gemini-2.5-flash-image",
@@ -4342,7 +4346,10 @@
       "modality": "text+image+video->text",
       "source": "openrouter",
       "display_name": "GLM 5.3 Flashx",
-      "canonical_key": "glm-5.3-flashx"
+      "canonical_key": "glm-5.3-flashx",
+      "merged_from": [
+        "tencent/glm-5.3-flashx"
+      ]
     },
     {
       "id": "google/gemini-3.8-flash:batch",
@@ -4650,6 +4657,23 @@
       ]
     },
     {
+      "id": "qwen/qwen3.5-397b-a17b",
+      "name": "Qwen: Qwen3.5 397B A17B",
+      "vendor": "qwen",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 3.6,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Qwen 3.5 397 B A17 B",
+      "canonical_key": "qwen3.5-397b-a17b",
+      "merged_from": [
+        "nebius/Qwen/Qwen3.5-397B-A17B",
+        "scaleway/qwen/qwen3.5-397b-a17b",
+        "together_ai/Qwen/Qwen3.5-397B-A17B"
+      ]
+    },
+    {
       "id": "moonshotai/kimi-k2.5",
       "name": "MoonshotAI: Kimi K2.5",
       "vendor": "moonshotai",
@@ -4874,23 +4898,6 @@
       "source": "litellm",
       "display_name": "Qwen 3 Coder Next Fp 8",
       "canonical_key": "qwen3-coder-next-fp8"
-    },
-    {
-      "id": "qwen/qwen3.5-397b-a17b",
-      "name": "Qwen: Qwen3.5 397B A17B",
-      "vendor": "qwen",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.55,
-      "output_per_1m_usd": 3.5,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Qwen 3.5 397 B A17 B",
-      "canonical_key": "qwen3.5-397b-a17b",
-      "merged_from": [
-        "nebius/Qwen/Qwen3.5-397B-A17B",
-        "scaleway/qwen/qwen3.5-397b-a17b",
-        "together_ai/Qwen/Qwen3.5-397B-A17B"
-      ]
     },
     {
       "id": "minimax/minimax-m1",
@@ -5302,6 +5309,7 @@
         "baseten/deepseek-ai/DeepSeek-V4-Pro-0813",
         "nebius/deepseek-ai/DeepSeek-V4-Pro-0813",
         "sail/deepseek-ai/DeepSeek-V4-Pro-0813",
+        "tencent/deepseek-v4-pro-0813",
         "together_ai/deepseek-ai/DeepSeek-V4-Pro-0813"
       ]
     },
@@ -5347,6 +5355,7 @@
         "nebius/moonshotai/Kimi-K2.7-Code",
         "qwen_ai_platform/kimi-k2.7-code",
         "qwencloud/kimi-k2.7-code",
+        "tencent/kimi-k2.7-code",
         "together_ai/moonshotai/Kimi-K2.7-Code"
       ]
     },
@@ -5395,6 +5404,26 @@
       "canonical_key": "aion-3.5-mini"
     },
     {
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "vendor": "moonshotai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.7,
+      "output_per_1m_usd": 15.0,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Kimi K3",
+      "canonical_key": "kimi-k3",
+      "merged_from": [
+        "baseten/moonshotai/Kimi-K3",
+        "moonshotai/kimi-k3:batch",
+        "nebius/moonshotai/Kimi-K3",
+        "sail/moonshotai/Kimi-K3",
+        "tencent/kimi-k3",
+        "together_ai/moonshotai/Kimi-K3"
+      ]
+    },
+    {
       "id": "aion-labs/aion-3.0-mini",
       "name": "AionLabs: Aion-3.0-Mini",
       "vendor": "aion-labs",
@@ -5405,6 +5434,18 @@
       "source": "openrouter",
       "display_name": "Aion 3.0 Mini",
       "canonical_key": "aion-3.0-mini"
+    },
+    {
+      "id": "~moonshotai/kimi-latest",
+      "name": "MoonshotAI: Kimi Latest",
+      "vendor": "~moonshotai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.7,
+      "output_per_1m_usd": 15.0,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Kimi Latest",
+      "canonical_key": "kimi"
     },
     {
       "id": "nousresearch/hermes-3-llama-3.1-70b",
@@ -5465,37 +5506,6 @@
       "source": "litellm",
       "display_name": "Llama 3.2 90 B",
       "canonical_key": "llama-3.2-90b"
-    },
-    {
-      "id": "moonshotai/kimi-k3",
-      "name": "MoonshotAI: Kimi K3",
-      "vendor": "moonshotai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.73,
-      "output_per_1m_usd": 13.5,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Kimi K3",
-      "canonical_key": "kimi-k3",
-      "merged_from": [
-        "baseten/moonshotai/Kimi-K3",
-        "moonshotai/kimi-k3:batch",
-        "nebius/moonshotai/Kimi-K3",
-        "sail/moonshotai/Kimi-K3",
-        "together_ai/moonshotai/Kimi-K3"
-      ]
-    },
-    {
-      "id": "~moonshotai/kimi-latest",
-      "name": "MoonshotAI: Kimi Latest",
-      "vendor": "~moonshotai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.73,
-      "output_per_1m_usd": 13.5,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Kimi Latest",
-      "canonical_key": "kimi"
     },
     {
       "id": "google/gemini-3.5-flash:batch",
@@ -5947,24 +5957,20 @@
       ]
     },
     {
-      "id": "z-ai/glm-5.1",
-      "name": "Z.ai: GLM 5.1",
-      "vendor": "z-ai",
-      "context_length": 204800,
-      "input_per_1m_usd": 0.966,
-      "output_per_1m_usd": 3.036,
-      "modality": "text->text",
+      "id": "google/gemini-4-argon:batch",
+      "name": "Google: Gemini 4 Argon (batch)",
+      "vendor": "google",
+      "context_length": 1048576,
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 5.0,
+      "modality": "text+image+file+audio+video->text",
       "source": "openrouter",
-      "display_name": "GLM 5.1",
-      "canonical_key": "glm-5.1",
+      "display_name": "Gemini 4 Argon",
+      "canonical_key": "gemini-4-argon",
       "merged_from": [
-        "dashscope/glm-5.1",
-        "friendliai/zai-org/GLM-5.1",
-        "nebius/zai-org/GLM-5.1",
-        "qwen_ai_platform/glm-5.1",
-        "qwencloud/glm-5.1",
-        "together_ai/zai-org/GLM-5.1",
-        "zai/glm-5.1"
+        "gemini/gemini-4-argon",
+        "github_copilot/gemini-4-argon",
+        "google/gemini-4-argon"
       ]
     },
     {
@@ -6190,6 +6196,18 @@
       "source": "litellm",
       "display_name": "Gemini 3.1 Flash Tts Preview",
       "canonical_key": "gemini-3.1-flash-tts"
+    },
+    {
+      "id": "tencent/kimi-k2.8-preview",
+      "name": "tencent/kimi-k2.8-preview",
+      "vendor": "tencent",
+      "context_length": 1000000,
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 4.0,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "Kimi K2.8 Preview",
+      "canonical_key": "kimi-k2.8"
     },
     {
       "id": "gemini/gemini-robotics-er-2-streaming-preview",
@@ -6840,6 +6858,27 @@
       "canonical_key": "grok-4.20-multi-agent-experimental-beta-0304"
     },
     {
+      "id": "z-ai/glm-5.1",
+      "name": "Z.ai: GLM 5.1",
+      "vendor": "z-ai",
+      "context_length": 204800,
+      "input_per_1m_usd": 1.33,
+      "output_per_1m_usd": 4.18,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "GLM 5.1",
+      "canonical_key": "glm-5.1",
+      "merged_from": [
+        "dashscope/glm-5.1",
+        "friendliai/zai-org/GLM-5.1",
+        "nebius/zai-org/GLM-5.1",
+        "qwen_ai_platform/glm-5.1",
+        "qwencloud/glm-5.1",
+        "together_ai/zai-org/GLM-5.1",
+        "zai/glm-5.1"
+      ]
+    },
+    {
       "id": "mistral/zai-glm-5-2",
       "name": "mistral/zai-glm-5-2",
       "vendor": "mistral",
@@ -7185,6 +7224,18 @@
       "source": "litellm",
       "display_name": "GPT-5.3 Chat Latest",
       "canonical_key": "gpt-5.3-chat"
+    },
+    {
+      "id": "tencent/kimi-k2.7-code-highspeed",
+      "name": "tencent/kimi-k2.7-code-highspeed",
+      "vendor": "tencent",
+      "context_length": 256000,
+      "input_per_1m_usd": 1.9,
+      "output_per_1m_usd": 8.0,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "Kimi K2.7 Code Highspeed",
+      "canonical_key": "kimi-k2.7-code-highspeed"
     },
     {
       "id": "cloudflare/@hf/thebloke/codellama-7b-instruct-awq",
@@ -7770,16 +7821,28 @@
       "canonical_key": "us-gov.anthropic.claude-sonnet-5"
     },
     {
-      "id": "unbiased/pareto",
-      "name": "Pareto",
+      "id": "~unbiased/pareto-latest",
+      "name": "Pareto Latest",
+      "vendor": "~unbiased",
+      "context_length": 262144,
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 7.5,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "Pareto Latest",
+      "canonical_key": "pareto"
+    },
+    {
+      "id": "unbiased/pareto-26.9",
+      "name": "Pareto 26.9",
       "vendor": "unbiased",
       "context_length": 262144,
       "input_per_1m_usd": 2.5,
       "output_per_1m_usd": 7.5,
       "modality": "text+image->text",
       "source": "openrouter",
-      "display_name": "Pareto",
-      "canonical_key": "pareto"
+      "display_name": "Pareto 26.9",
+      "canonical_key": "pareto-26.9"
     },
     {
       "id": "anthropic/claude-opus-5:batch",
@@ -9016,10 +9079,10 @@
     }
   ],
   "quality": {
-    "input_rows": 3385,
-    "rejected": 2063,
-    "merged": 239,
+    "input_rows": 3403,
+    "rejected": 2066,
+    "merged": 241,
     "queued_for_review": 88,
-    "published": 668
+    "published": 672
   }
 }

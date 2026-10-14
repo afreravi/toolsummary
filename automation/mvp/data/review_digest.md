@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-13
+# Daily review digest - 2026-10-14
 
-Automation refreshed the pricing dataset. **668 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **672 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-88 price changes in the last 30 days, 674 new models, 6 delisted.
+116 price changes in the last 30 days, 681 new models, 9 delisted.
 
-### 55 changes over 20% - check these before trusting the page
+### 72 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
@@ -17,12 +17,12 @@ Automation refreshed the pricing dataset. **668 model pages** and 400 comparison
 - **DeepSeek V4 Pro** output: $0.4176 -> $1.8966 (354.17%)
 - **GLM 5.3 Flash** output: $0.2 -> $0.9 (350.0%)
 - **GLM Flash Latest** output: $0.1563 -> $0.5 (219.9%)
+- **Ling 3.0 Flash VL** output: $0.0616 -> $0.18 (192.21%)
 - **DeepSeek V4 Flash Latest** input: $0.0047 -> $0.0137 (191.49%)
 - **DeepSeek V4 Flash 0731** input: $0.0047 -> $0.0137 (191.49%)
+- **Ling 3.0 Flash VL** input: $0.021 -> $0.06 (185.71%)
 - **Llama 3.3 70 B Instruct** input: $0.22 -> $0.59 (168.18%)
 - **GLM Flash Latest** output: $0.5 -> $1.2 (140.0%)
-- **DeepSeek Pro Latest** input: $0.1282 -> $0.3 (134.01%)
-- **DeepSeek Flash Latest** input: $0.0101 -> $0.0001 (-99.01%)
 
 ## Needs a human decision
 
@@ -30,7 +30,7 @@ Automation refreshed the pricing dataset. **668 model pages** and 400 comparison
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
-- `~deepseek/deepseek-v4-flash-latest` looks like `deepseek/deepseek-v4.1-flash:batch` (similarity 0.944)
+- `~deepseek/deepseek-v4-flash-latest` looks like `deepseek/deepseek-v4.1-flash` (similarity 0.944)
 - `meta/muse-spark-1.2-contributor` looks like `meta/muse-spark-1.3-contributor` (similarity 0.962)
 - `mistral/ministral-3-3b-2512` looks like `mistralai/ministral-3b-2512` (similarity 0.944)
 - `lambda_ai/llama3.3-70b-instruct-fp8` looks like `lambda_ai/llama3.1-70b-instruct-fp8` (similarity 0.96)
