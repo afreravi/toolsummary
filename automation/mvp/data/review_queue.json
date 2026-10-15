@@ -27,15 +27,6 @@
     "reason": "missing or too-small context window"
   },
   {
-    "candidate": "~deepseek/deepseek-v4-flash-latest",
-    "candidate_name": "DeepSeek V4 Flash Latest",
-    "input_per_1m_usd": 0.0144,
-    "possible_duplicate_of": "deepseek/deepseek-v4.1-flash",
-    "possible_duplicate_name": "DeepSeek V4.1 Flash",
-    "confidence": 0.944,
-    "reason": "possible duplicate"
-  },
-  {
     "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
     "candidate_name": "DeepSeek R1 Distill Llama 8 B",
     "input_per_1m_usd": 0.025,
@@ -122,6 +113,15 @@
     "input_per_1m_usd": 0.15,
     "possible_duplicate_of": "perceptron/perceptron-mk1.5",
     "possible_duplicate_name": "Perceptron Mk 1.5",
+    "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "qwen/qwen3.5-35b-a3b",
+    "candidate_name": "Qwen 3.5 35 B A3 B",
+    "input_per_1m_usd": 0.15,
+    "possible_duplicate_of": "qwen/qwen3.6-35b-a3b",
+    "possible_duplicate_name": "Qwen 3.6 35 B A3 B",
     "confidence": 0.933,
     "reason": "possible duplicate"
   },
