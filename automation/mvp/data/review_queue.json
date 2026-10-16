@@ -342,15 +342,6 @@
     "reason": "possible duplicate"
   },
   {
-    "candidate": "vercel_ai_gateway/meta/llama-3.3-70b",
-    "candidate_name": "Llama 3.3 70 B",
-    "input_per_1m_usd": 0.72,
-    "possible_duplicate_of": "snowflake/llama3.3-70b",
-    "possible_duplicate_name": "Llama 3.3 70 B",
-    "confidence": 0.96,
-    "reason": "possible duplicate"
-  },
-  {
     "candidate": "together-ai-21.1b-41b",
     "candidate_name": "Together AI 21.1 B41 B",
     "input_per_1m_usd": 0.8,
@@ -612,20 +603,20 @@
     "reason": "missing or too-small context window"
   },
   {
-    "candidate": "claude-sonnet-4-5",
-    "candidate_name": "Claude Sonnet 4.5",
-    "input_per_1m_usd": 3.0,
-    "possible_duplicate_of": "anthropic/claude-sonnet-4",
-    "possible_duplicate_name": "Claude Sonnet 4",
-    "confidence": 0.938,
-    "reason": "possible duplicate"
-  },
-  {
     "candidate": "claude-sonnet-4-6",
     "candidate_name": "Claude Sonnet 4.6",
     "input_per_1m_usd": 3.0,
-    "possible_duplicate_of": "anthropic/claude-sonnet-4",
-    "possible_duplicate_name": "Claude Sonnet 4",
+    "possible_duplicate_of": "claude-sonnet-4-5",
+    "possible_duplicate_name": "Claude Sonnet 4.5",
+    "confidence": 0.941,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "gmi/anthropic/claude-sonnet-4",
+    "candidate_name": "Claude Sonnet 4",
+    "input_per_1m_usd": 3.0,
+    "possible_duplicate_of": "claude-sonnet-4-5",
+    "possible_duplicate_name": "Claude Sonnet 4.5",
     "confidence": 0.938,
     "reason": "possible duplicate"
   },

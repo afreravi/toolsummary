@@ -1,15 +1,16 @@
-# Daily review digest - 2026-10-15
+# Daily review digest - 2026-10-16
 
-Automation refreshed the pricing dataset. **672 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **683 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-142 price changes in the last 30 days, 682 new models, 10 delisted.
+176 price changes in the last 30 days, 695 new models, 12 delisted.
 
-### 89 changes over 20% - check these before trusting the page
+### 114 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
+- **GLM 5.2** input: $0.037 -> $0.62 (1575.68%)
 - **DeepSeek Pro Latest** output: $0.6574 -> $5.0 (660.57%)
 - **Qwen 3.8 27 B** input: $0.04 -> $0.24 (500.0%)
 - **DeepSeek V4 Pro** input: $0.2088 -> $0.9553 (357.52%)
@@ -22,11 +23,10 @@ Automation refreshed the pricing dataset. **672 model pages** and 400 comparison
 - **Ling 3.0 Flash VL** output: $0.0616 -> $0.18 (192.21%)
 - **DeepSeek V4 Flash Latest** input: $0.0047 -> $0.0137 (191.49%)
 - **DeepSeek V4 Flash 0731** input: $0.0047 -> $0.0137 (191.49%)
-- **Ling 3.0 Flash VL** input: $0.021 -> $0.06 (185.71%)
 
 ## Needs a human decision
 
-### 52 possible duplicates
+### 51 possible duplicates
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
