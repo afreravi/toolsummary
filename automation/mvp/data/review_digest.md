@@ -1,17 +1,18 @@
-# Daily review digest - 2026-10-16
+# Daily review digest - 2026-10-17
 
-Automation refreshed the pricing dataset. **683 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **689 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-176 price changes in the last 30 days, 695 new models, 12 delisted.
+207 price changes in the last 30 days, 701 new models, 12 delisted.
 
-### 114 changes over 20% - check these before trusting the page
+### 135 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
 - **GLM 5.2** input: $0.037 -> $0.62 (1575.68%)
 - **DeepSeek Pro Latest** output: $0.6574 -> $5.0 (660.57%)
+- **DeepSeek V4 Flash 0731** input: $0.0094 -> $0.07 (644.68%)
 - **Qwen 3.8 27 B** input: $0.04 -> $0.24 (500.0%)
 - **DeepSeek V4 Pro** input: $0.2088 -> $0.9553 (357.52%)
 - **DeepSeek V4 Pro** output: $0.4176 -> $1.9105 (357.5%)
@@ -19,14 +20,13 @@ Automation refreshed the pricing dataset. **683 model pages** and 400 comparison
 - **DeepSeek V4 Pro** output: $0.4176 -> $1.8966 (354.17%)
 - **GLM 5.3 Flash** output: $0.2 -> $0.9 (350.0%)
 - **GLM 5.3 Flash** output: $0.2 -> $0.9 (350.0%)
+- **GLM Flash Latest** input: $0.0158 -> $0.055 (248.1%)
 - **GLM Flash Latest** output: $0.1563 -> $0.5 (219.9%)
-- **Ling 3.0 Flash VL** output: $0.0616 -> $0.18 (192.21%)
-- **DeepSeek V4 Flash Latest** input: $0.0047 -> $0.0137 (191.49%)
-- **DeepSeek V4 Flash 0731** input: $0.0047 -> $0.0137 (191.49%)
+- **GLM 5.3 Flash** input: $0.0158 -> $0.05 (216.46%)
 
 ## Needs a human decision
 
-### 51 possible duplicates
+### 50 possible duplicates
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
@@ -41,9 +41,9 @@ Two model IDs look like the same product. Confirm and either merge or ignore.
 - `google/gemini-3.7-flash:batch` looks like `google/gemini-3.8-flash:batch` (similarity 0.938)
 - `google/gemini-3.6-flash:batch` looks like `google/gemini-3.8-flash:batch` (similarity 0.938)
 - `nebius/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1` looks like `nebius/nvidia/Llama-3.1-Nemotron-Ultra-253B-v1` (similarity 0.966)
-- `gradient_ai/llama3.3-70b-instruct` looks like `meta-llama/llama-3.3-70b-instruct` (similarity 0.977)
 - `ovhcloud/Meta-Llama-3_3-70B-Instruct` looks like `ovhcloud/Meta-Llama-3_1-70B-Instruct` (similarity 0.963)
 - `mistral/mistral-large-4` looks like `mistralai/mistral-large-4-0` (similarity 0.938)
+- `vercel_ai_gateway/meta/llama-3.1-70b` looks like `snowflake/llama3.1-70b` (similarity 0.96)
 
 ### 36 rows missing a usable context window
 
