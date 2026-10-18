@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17T04:30:38+00:00",
-  "model_count": 689,
+  "generated_at": "2026-10-18T04:30:20+00:00",
+  "model_count": 692,
   "failed_sources": [],
   "models": [
     {
@@ -337,6 +337,33 @@
       "canonical_key": "llama3.2-3b-instruct"
     },
     {
+      "id": "~deepseek/deepseek-v4-flash-latest",
+      "name": "DeepSeek: DeepSeek V4 Flash Latest",
+      "vendor": "~deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.0159,
+      "output_per_1m_usd": 0.1436,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek V4 Flash Latest",
+      "canonical_key": "deepseek-v4-flash",
+      "merged_from": [
+        "dashscope/deepseek-v4-flash",
+        "deepseek-v4-flash",
+        "deepseek/deepseek-v4-flash",
+        "inferenceapis/deepseek-ai/DeepSeek-V4-Flash",
+        "inferenceapis/deepseek-v4-flash",
+        "libertai/deepseek-v4-flash",
+        "nebius/deepseek-ai/DeepSeek-V4-Flash",
+        "pinstripes/ps/deepseek-v4-flash",
+        "prism/deepseek-v4-flash",
+        "qwen_ai_platform/deepseek-v4-flash",
+        "qwencloud/deepseek-v4-flash",
+        "tencent/deepseek-v4-flash",
+        "tensormesh/deepseek-ai/DeepSeek-V4-Flash"
+      ]
+    },
+    {
       "id": "ibm-granite/granite-4.0-h-micro",
       "name": "IBM: Granite 4.0 Micro",
       "vendor": "ibm-granite",
@@ -401,33 +428,6 @@
       "source": "litellm",
       "display_name": "Qwen 2 1.5 B Instruct",
       "canonical_key": "qwen2-1.5b-instruct"
-    },
-    {
-      "id": "~deepseek/deepseek-v4-flash-latest",
-      "name": "DeepSeek: DeepSeek V4 Flash Latest",
-      "vendor": "~deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.021,
-      "output_per_1m_usd": 0.528,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4 Flash Latest",
-      "canonical_key": "deepseek-v4-flash",
-      "merged_from": [
-        "dashscope/deepseek-v4-flash",
-        "deepseek-v4-flash",
-        "deepseek/deepseek-v4-flash",
-        "inferenceapis/deepseek-ai/DeepSeek-V4-Flash",
-        "inferenceapis/deepseek-v4-flash",
-        "libertai/deepseek-v4-flash",
-        "nebius/deepseek-ai/DeepSeek-V4-Flash",
-        "pinstripes/ps/deepseek-v4-flash",
-        "prism/deepseek-v4-flash",
-        "qwen_ai_platform/deepseek-v4-flash",
-        "qwencloud/deepseek-v4-flash",
-        "tencent/deepseek-v4-flash",
-        "tensormesh/deepseek-ai/DeepSeek-V4-Flash"
-      ]
     },
     {
       "id": "inclusionai/ling-3.0-flash",
@@ -612,31 +612,6 @@
       ]
     },
     {
-      "id": "deepseek/deepseek-v4.1-flash",
-      "name": "DeepSeek: DeepSeek V4.1 Flash",
-      "vendor": "deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.04,
-      "output_per_1m_usd": 0.7,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4.1 Flash",
-      "canonical_key": "deepseek-v4.1-flash",
-      "merged_from": [
-        "baseten/deepseek-ai/DeepSeek-V4.1-Flash",
-        "coralbricks/deepseek-v4.1-flash",
-        "deepseek/deepseek-v4.1-flash:batch",
-        "inferenceapis/deepseek-ai/DeepSeek-V4.1-Flash",
-        "inferenceapis/deepseek-v4.1-flash",
-        "nebius/deepseek-ai/DeepSeek-V4.1-Flash",
-        "prism/deepseek-v4.1-flash",
-        "sail/deepseek-ai/DeepSeek-V4.1-Flash",
-        "scx-ai/DeepSeek-V4.1-flash",
-        "tencent/deepseek-v4.1-flash",
-        "together_ai/deepseek-ai/DeepSeek-V4.1-Flash"
-      ]
-    },
-    {
       "id": "scaledown/summarize",
       "name": "ScaleDown: Summarize",
       "vendor": "scaledown",
@@ -659,23 +634,6 @@
       "source": "openrouter",
       "display_name": "Extract",
       "canonical_key": "extract"
-    },
-    {
-      "id": "~deepseek/deepseek-flash-latest",
-      "name": "DeepSeek: DeepSeek Flash Latest",
-      "vendor": "~deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.04,
-      "output_per_1m_usd": 0.7,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek Flash Latest",
-      "canonical_key": "deepseek-flash",
-      "merged_from": [
-        "deepseek-flash",
-        "deepseek/deepseek-flash",
-        "inferenceapis/deepseek-flash"
-      ]
     },
     {
       "id": "inception/mercury-2.5",
@@ -784,6 +742,43 @@
       "canonical_key": "trinity-mini"
     },
     {
+      "id": "~z-ai/glm-flash-latest",
+      "name": "Z.ai: GLM Flash Latest",
+      "vendor": "~z-ai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.048,
+      "output_per_1m_usd": 0.2,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "GLM Flash Latest",
+      "canonical_key": "glm-flash"
+    },
+    {
+      "id": "z-ai/glm-5.3-flash",
+      "name": "Z.ai: GLM 5.3 Flash",
+      "vendor": "z-ai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.048,
+      "output_per_1m_usd": 0.2,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "GLM 5.3 Flash",
+      "canonical_key": "glm-5.3-flash",
+      "merged_from": [
+        "baseten/zai-org/GLM-5.3-Flash",
+        "friendliai/zai-org/GLM-5.3-Flash",
+        "inferenceapis/glm-5.3-flash",
+        "inferenceapis/zai-org/GLM-5.3-Flash",
+        "nebius/zai-org/GLM-5.3-Flash",
+        "openinfer/@oi/GLM-5.3-Flash",
+        "sail/zai-org/GLM-5.3-Flash",
+        "tencent/glm-5.3-flash",
+        "together_ai/zai-org/GLM-5.3-Flash",
+        "z-ai/glm-5.3-flash:batch",
+        "zai/glm-5.3-flash"
+      ]
+    },
+    {
       "id": "cloudflare/@cf/meta/llama-3.2-11b-vision-instruct",
       "name": "cloudflare/@cf/meta/llama-3.2-11b-vision-instruct",
       "vendor": "cloudflare",
@@ -794,6 +789,31 @@
       "source": "litellm",
       "display_name": "Llama 3.2 11 B Vision Instruct",
       "canonical_key": "llama-3.2-11b-vision-instruct"
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash:batch",
+      "name": "DeepSeek: DeepSeek V4.1 Flash (batch)",
+      "vendor": "deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.15,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek V4.1 Flash",
+      "canonical_key": "deepseek-v4.1-flash",
+      "merged_from": [
+        "baseten/deepseek-ai/DeepSeek-V4.1-Flash",
+        "coralbricks/deepseek-v4.1-flash",
+        "deepseek/deepseek-v4.1-flash",
+        "inferenceapis/deepseek-ai/DeepSeek-V4.1-Flash",
+        "inferenceapis/deepseek-v4.1-flash",
+        "nebius/deepseek-ai/DeepSeek-V4.1-Flash",
+        "prism/deepseek-v4.1-flash",
+        "sail/deepseek-ai/DeepSeek-V4.1-Flash",
+        "scx-ai/DeepSeek-V4.1-flash",
+        "tencent/deepseek-v4.1-flash",
+        "together_ai/deepseek-ai/DeepSeek-V4.1-Flash"
+      ]
     },
     {
       "id": "meta-llama/llama-3.1-8b-instruct",
@@ -852,6 +872,23 @@
       "canonical_key": "solar-mini4"
     },
     {
+      "id": "~deepseek/deepseek-flash-latest",
+      "name": "DeepSeek: DeepSeek Flash Latest",
+      "vendor": "~deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.6,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek Flash Latest",
+      "canonical_key": "deepseek-flash",
+      "merged_from": [
+        "deepseek-flash",
+        "deepseek/deepseek-flash",
+        "inferenceapis/deepseek-flash"
+      ]
+    },
+    {
       "id": "inference-net/schematron-v2-small",
       "name": "Inference.net: Schematron V2 Small",
       "vendor": "inference-net",
@@ -862,30 +899,6 @@
       "source": "openrouter",
       "display_name": "Schematron V2 Small",
       "canonical_key": "schematron-v2-small"
-    },
-    {
-      "id": "z-ai/glm-5.3-flash:batch",
-      "name": "Z.ai: GLM 5.3 Flash (batch)",
-      "vendor": "z-ai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.05,
-      "output_per_1m_usd": 0.18,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "GLM 5.3 Flash",
-      "canonical_key": "glm-5.3-flash",
-      "merged_from": [
-        "baseten/zai-org/GLM-5.3-Flash",
-        "friendliai/zai-org/GLM-5.3-Flash",
-        "inferenceapis/glm-5.3-flash",
-        "inferenceapis/zai-org/GLM-5.3-Flash",
-        "nebius/zai-org/GLM-5.3-Flash",
-        "sail/zai-org/GLM-5.3-Flash",
-        "tencent/glm-5.3-flash",
-        "together_ai/zai-org/GLM-5.3-Flash",
-        "z-ai/glm-5.3-flash",
-        "zai/glm-5.3-flash"
-      ]
     },
     {
       "id": "google/gemini-2.5-flash-lite:batch",
@@ -1080,18 +1093,6 @@
       "canonical_key": "qwen3-30b-a3b-fp8"
     },
     {
-      "id": "~z-ai/glm-flash-latest",
-      "name": "Z.ai: GLM Flash Latest",
-      "vendor": "~z-ai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.055,
-      "output_per_1m_usd": 0.65,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "GLM Flash Latest",
-      "canonical_key": "glm-flash"
-    },
-    {
       "id": "inclusionai/ling-3.0-flash-vl",
       "name": "inclusionAI: Ling 3.0 Flash VL",
       "vendor": "inclusionai",
@@ -1267,6 +1268,18 @@
       ]
     },
     {
+      "id": "~z-ai/glm-latest",
+      "name": "Z.ai: GLM Latest",
+      "vendor": "~z-ai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.0632,
+      "output_per_1m_usd": 4.4,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "GLM Latest",
+      "canonical_key": "glm"
+    },
+    {
       "id": "qwen/qwen3.5-flash-02-23",
       "name": "Qwen: Qwen3.5-Flash",
       "vendor": "qwen",
@@ -1277,29 +1290,6 @@
       "source": "openrouter",
       "display_name": "Qwen 3.5 Flash 02 23",
       "canonical_key": "qwen3.5-flash-02-23"
-    },
-    {
-      "id": "deepseek/deepseek-v4-flash-0731",
-      "name": "DeepSeek: DeepSeek V4 Flash 0731",
-      "vendor": "deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.07,
-      "output_per_1m_usd": 0.14,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4 Flash 0731",
-      "canonical_key": "deepseek-v4-flash-0731",
-      "merged_from": [
-        "baseten/deepseek-ai/DeepSeek-V4-Flash-0731",
-        "dashscope/deepseek-v4-flash-0731",
-        "inferenceapis/deepseek-ai/DeepSeek-V4-Flash-0731",
-        "nebius/deepseek-ai/DeepSeek-V4-Flash-0731",
-        "qwen_ai_platform/deepseek-v4-flash-0731",
-        "qwencloud/deepseek-v4-flash-0731",
-        "sail/deepseek-ai/DeepSeek-V4-Flash-0731",
-        "scaleway/deepseek-v4-flash-0731",
-        "together_ai/deepseek-ai/DeepSeek-V4-Flash-0731"
-      ]
     },
     {
       "id": "qwen/qwen3-coder-30b-a3b-instruct",
@@ -1472,18 +1462,6 @@
       ]
     },
     {
-      "id": "~z-ai/glm-latest",
-      "name": "Z.ai: GLM Latest",
-      "vendor": "~z-ai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.079,
-      "output_per_1m_usd": 4.8,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "GLM Latest",
-      "canonical_key": "glm"
-    },
-    {
       "id": "z-ai/glm-5.3",
       "name": "Z.ai: GLM 5.3",
       "vendor": "z-ai",
@@ -1531,7 +1509,7 @@
       "vendor": "google",
       "context_length": 131072,
       "input_per_1m_usd": 0.08,
-      "output_per_1m_usd": 0.45,
+      "output_per_1m_usd": 0.35,
       "modality": "text+image->text",
       "source": "openrouter",
       "display_name": "Gemma 3 27 B It",
@@ -1655,6 +1633,21 @@
       ]
     },
     {
+      "id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "name": "Qwen: Qwen3 30B A3B Instruct 2507",
+      "vendor": "qwen",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.09,
+      "output_per_1m_usd": 0.3,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "Qwen 3 30 B A3 B Instruct 2507",
+      "canonical_key": "qwen3-30b-a3b-instruct-2507",
+      "merged_from": [
+        "nebius/Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ]
+    },
+    {
       "id": "qwen/qwen3-235b-a22b-2507",
       "name": "Qwen: Qwen3 235B A22B Instruct 2507",
       "vendor": "qwen",
@@ -1692,6 +1685,29 @@
       "source": "openrouter",
       "display_name": "Mistral Small 3.2 24 B Instruct",
       "canonical_key": "mistral-small-3.2-24b-instruct"
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "name": "DeepSeek: DeepSeek V4 Flash 0731",
+      "vendor": "deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek V4 Flash 0731",
+      "canonical_key": "deepseek-v4-flash-0731",
+      "merged_from": [
+        "baseten/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "dashscope/deepseek-v4-flash-0731",
+        "inferenceapis/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "nebius/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "qwen_ai_platform/deepseek-v4-flash-0731",
+        "qwencloud/deepseek-v4-flash-0731",
+        "sail/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "scaleway/deepseek-v4-flash-0731",
+        "together_ai/deepseek-ai/DeepSeek-V4-Flash-0731"
+      ]
     },
     {
       "id": "~openai/gpt-luna-latest",
@@ -1753,6 +1769,7 @@
       "display_name": "Qwen 3.5.9 B",
       "canonical_key": "qwen3.5-9b",
       "merged_from": [
+        "openinfer/@oi/Qwen3.5-9B",
         "together_ai/Qwen/Qwen3.5-9B"
       ]
     },
@@ -1806,21 +1823,6 @@
       "source": "openrouter",
       "display_name": "Voxtral Small 24 B2507",
       "canonical_key": "voxtral-small-24b-2507"
-    },
-    {
-      "id": "qwen/qwen3-30b-a3b-instruct-2507",
-      "name": "Qwen: Qwen3 30B A3B Instruct 2507",
-      "vendor": "qwen",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.1,
-      "output_per_1m_usd": 0.3,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Qwen 3 30 B A3 B Instruct 2507",
-      "canonical_key": "qwen3-30b-a3b-instruct-2507",
-      "merged_from": [
-        "nebius/Qwen/Qwen3-30B-A3B-Instruct-2507"
-      ]
     },
     {
       "id": "bytedance/ui-tars-1.5-7b",
@@ -1906,6 +1908,21 @@
       "canonical_key": "gemini-2.5-flash-lite-preview"
     },
     {
+      "id": "github_copilot/gpt-6-luna",
+      "name": "github_copilot/gpt-6-luna",
+      "vendor": "github_copilot",
+      "context_length": 272000,
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.5,
+      "modality": "responses",
+      "source": "litellm",
+      "display_name": "GPT-6 Luna",
+      "canonical_key": "gpt-6-luna",
+      "merged_from": [
+        "gpt-6-luna"
+      ]
+    },
+    {
       "id": "gpt-4.1-nano",
       "name": "gpt-4.1-nano",
       "vendor": "gpt",
@@ -1920,18 +1937,6 @@
         "gpt-4.1-nano-2025-04-14",
         "vercel_ai_gateway/openai/gpt-4.1-nano"
       ]
-    },
-    {
-      "id": "gpt-6-luna",
-      "name": "gpt-6-luna",
-      "vendor": "gpt",
-      "context_length": 922000,
-      "input_per_1m_usd": 0.1,
-      "output_per_1m_usd": 0.5,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "GPT-6 Luna",
-      "canonical_key": "gpt-6-luna"
     },
     {
       "id": "lambda_ai/lfm-40b",
@@ -2191,6 +2196,18 @@
       ]
     },
     {
+      "id": "~deepseek/deepseek-pro-latest",
+      "name": "DeepSeek: DeepSeek Pro Latest",
+      "vendor": "~deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.12,
+      "output_per_1m_usd": 8.0,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek Pro Latest",
+      "canonical_key": "deepseek-pro"
+    },
+    {
       "id": "qwen/qwen3-coder-next",
       "name": "Qwen: Qwen3 Coder Next",
       "vendor": "qwen",
@@ -2436,6 +2453,18 @@
         "sail/Qwen/Qwen3.6-35B-A3B",
         "scaleway/qwen/qwen3.6-35b-a3b"
       ]
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash-1017",
+      "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+      "vendor": "deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek V4.1 Flash 1017",
+      "canonical_key": "deepseek-v4.1-flash-1017"
     },
     {
       "id": "perceptron/perceptron-mk1.5",
@@ -3069,16 +3098,31 @@
       "canonical_key": "minimax-01"
     },
     {
-      "id": "gpt-5.6-luna",
-      "name": "gpt-5.6-luna",
-      "vendor": "gpt",
-      "context_length": 922000,
+      "id": "github_copilot/gpt-5.6-luna",
+      "name": "github_copilot/gpt-5.6-luna",
+      "vendor": "github_copilot",
+      "context_length": 200000,
       "input_per_1m_usd": 0.2,
       "output_per_1m_usd": 1.2,
-      "modality": "chat",
+      "modality": "responses",
       "source": "litellm",
       "display_name": "GPT-5.6 Luna",
-      "canonical_key": "gpt-5.6-luna"
+      "canonical_key": "gpt-5.6-luna",
+      "merged_from": [
+        "gpt-5.6-luna"
+      ]
+    },
+    {
+      "id": "github_copilot/mai-code-1.1-flash",
+      "name": "github_copilot/mai-code-1.1-flash",
+      "vendor": "github_copilot",
+      "context_length": 128000,
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 1.2,
+      "modality": "responses",
+      "source": "litellm",
+      "display_name": "Mai Code 1.1 Flash",
+      "canonical_key": "mai-code-1.1-flash"
     },
     {
       "id": "gpt-5.4-nano",
@@ -3538,18 +3582,6 @@
       "canonical_key": "llama4-maverick"
     },
     {
-      "id": "~deepseek/deepseek-pro-latest",
-      "name": "DeepSeek: DeepSeek Pro Latest",
-      "vendor": "~deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.2495,
-      "output_per_1m_usd": 0.7484,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek Pro Latest",
-      "canonical_key": "deepseek-pro"
-    },
-    {
       "id": "qwen/qwen3.6-27b",
       "name": "Qwen: Qwen3.6 27B",
       "vendor": "qwen",
@@ -3848,6 +3880,21 @@
       ]
     },
     {
+      "id": "qwen/qwen3.5-27b",
+      "name": "Qwen: Qwen3.5-27B",
+      "vendor": "qwen",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.26,
+      "output_per_1m_usd": 2.6,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Qwen 3.5 27 B",
+      "canonical_key": "qwen3.5-27b",
+      "merged_from": [
+        "openinfer/@oi/Qwen3.5-27B"
+      ]
+    },
+    {
       "id": "qwen/qwen3.5-122b-a10b",
       "name": "Qwen: Qwen3.5-122B-A10B",
       "vendor": "qwen",
@@ -3861,18 +3908,6 @@
       "merged_from": [
         "libertai/qwen3.5-122b-a10b"
       ]
-    },
-    {
-      "id": "qwen/qwen3.5-27b",
-      "name": "Qwen: Qwen3.5-27B",
-      "vendor": "qwen",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.26,
-      "output_per_1m_usd": 2.6,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Qwen 3.5 27 B",
-      "canonical_key": "qwen3.5-27b"
     },
     {
       "id": "qwen/qwen3.5-plus-02-15",
@@ -3935,6 +3970,18 @@
       "source": "litellm",
       "display_name": "Qwen 3 VL 235 B",
       "canonical_key": "qwen3-vl-235b"
+    },
+    {
+      "id": "~moonshotai/kimi-latest",
+      "name": "MoonshotAI: Kimi Latest",
+      "vendor": "~moonshotai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.27,
+      "output_per_1m_usd": 14.0,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Kimi Latest",
+      "canonical_key": "kimi"
     },
     {
       "id": "minimax/minimax-m2.5",
@@ -4042,18 +4089,6 @@
       "source": "litellm",
       "display_name": "Llama 3.3 70 B Instruct Fp 8 Fast",
       "canonical_key": "llama-3.3-70b-instruct-fp8-fast"
-    },
-    {
-      "id": "~moonshotai/kimi-latest",
-      "name": "MoonshotAI: Kimi Latest",
-      "vendor": "~moonshotai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.294,
-      "output_per_1m_usd": 24.0,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Kimi Latest",
-      "canonical_key": "kimi"
     },
     {
       "id": "minimax/minimax-m2.7",
@@ -4464,6 +4499,7 @@
       "canonical_key": "kimi-k3",
       "merged_from": [
         "baseten/moonshotai/Kimi-K3",
+        "github_copilot/kimi-k3",
         "moonshotai/kimi-k3:batch",
         "nebius/moonshotai/Kimi-K3",
         "sail/moonshotai/Kimi-K3",
@@ -4619,6 +4655,7 @@
       "merged_from": [
         "gemini-3.8-flash",
         "gemini/gemini-3.8-flash",
+        "github_copilot/gemini-3.8-flash",
         "google/gemini-3.8-flash"
       ]
     },
@@ -5809,17 +5846,18 @@
       ]
     },
     {
-      "id": "gpt-5.4-mini",
-      "name": "gpt-5.4-mini",
-      "vendor": "gpt",
+      "id": "github_copilot/gpt-5.4-mini",
+      "name": "github_copilot/gpt-5.4-mini",
+      "vendor": "github_copilot",
       "context_length": 272000,
       "input_per_1m_usd": 0.75,
       "output_per_1m_usd": 4.5,
-      "modality": "chat",
+      "modality": "responses",
       "source": "litellm",
       "display_name": "GPT-5.4 Mini",
       "canonical_key": "gpt-5.4-mini",
       "merged_from": [
+        "gpt-5.4-mini",
         "gpt-5.4-mini-2026-03-17"
       ]
     },
@@ -5896,6 +5934,30 @@
         "ovhcloud/Qwen2.5-VL-72B-Instruct",
         "together_ai/Qwen/Qwen2.5-VL-72B-Instruct"
       ]
+    },
+    {
+      "id": "unbiased/pareto-26.10",
+      "name": "Pareto 26.10",
+      "vendor": "unbiased",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 3.2,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "Pareto 26.10",
+      "canonical_key": "pareto-26.10"
+    },
+    {
+      "id": "~unbiased/pareto-latest",
+      "name": "Pareto Latest",
+      "vendor": "~unbiased",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.8,
+      "output_per_1m_usd": 3.2,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "Pareto Latest",
+      "canonical_key": "pareto"
     },
     {
       "id": "aion-labs/aion-2.0",
@@ -6257,7 +6319,8 @@
       "display_name": "Claude Sonnet 5.5",
       "canonical_key": "claude-sonnet-5.5",
       "merged_from": [
-        "anthropic/claude-sonnet-5.5"
+        "anthropic/claude-sonnet-5.5",
+        "github_copilot/claude-sonnet-5.5"
       ]
     },
     {
@@ -7558,7 +7621,8 @@
       "display_name": "Claude Opus 5.5",
       "canonical_key": "claude-opus-5.5",
       "merged_from": [
-        "anthropic/claude-opus-5.5"
+        "anthropic/claude-opus-5.5",
+        "github_copilot/claude-opus-5.5"
       ]
     },
     {
@@ -7821,6 +7885,51 @@
       "canonical_key": "nano-banana-pro"
     },
     {
+      "id": "github_copilot/gpt-5.6-terra",
+      "name": "github_copilot/gpt-5.6-terra",
+      "vendor": "github_copilot",
+      "context_length": 272000,
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 12.0,
+      "modality": "responses",
+      "source": "litellm",
+      "display_name": "GPT-5.6 Terra",
+      "canonical_key": "gpt-5.6-terra",
+      "merged_from": [
+        "gpt-5.6-terra"
+      ]
+    },
+    {
+      "id": "github_copilot/gpt-6-sol",
+      "name": "github_copilot/gpt-6-sol",
+      "vendor": "github_copilot",
+      "context_length": 272000,
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "modality": "responses",
+      "source": "litellm",
+      "display_name": "GPT-6 Sol",
+      "canonical_key": "gpt-6-sol",
+      "merged_from": [
+        "gpt-6-sol"
+      ]
+    },
+    {
+      "id": "github_copilot/gpt-6.1-sol",
+      "name": "github_copilot/gpt-6.1-sol",
+      "vendor": "github_copilot",
+      "context_length": 272000,
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "modality": "responses",
+      "source": "litellm",
+      "display_name": "GPT-6.1 Sol",
+      "canonical_key": "gpt-6.1-sol",
+      "merged_from": [
+        "gpt-6.1-sol"
+      ]
+    },
+    {
       "id": "gpt-4.1",
       "name": "gpt-4.1",
       "vendor": "gpt",
@@ -7835,30 +7944,6 @@
         "gpt-4.1-2025-04-14",
         "vercel_ai_gateway/openai/gpt-4.1"
       ]
-    },
-    {
-      "id": "gpt-6-sol",
-      "name": "gpt-6-sol",
-      "vendor": "gpt",
-      "context_length": 922000,
-      "input_per_1m_usd": 2.0,
-      "output_per_1m_usd": 10.0,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "GPT-6 Sol",
-      "canonical_key": "gpt-6-sol"
-    },
-    {
-      "id": "gpt-5.6-terra",
-      "name": "gpt-5.6-terra",
-      "vendor": "gpt",
-      "context_length": 922000,
-      "input_per_1m_usd": 2.0,
-      "output_per_1m_usd": 12.0,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "GPT-5.6 Terra",
-      "canonical_key": "gpt-5.6-terra"
     },
     {
       "id": "gradient_ai/openai-o3",
@@ -8027,18 +8112,6 @@
       "canonical_key": "gemini-3.5-transcribe"
     },
     {
-      "id": "gpt-6.1-sol",
-      "name": "gpt-6.1-sol",
-      "vendor": "gpt",
-      "context_length": 922000,
-      "input_per_1m_usd": 2.0,
-      "output_per_1m_usd": 10.0,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "GPT-6.1 Sol",
-      "canonical_key": "gpt-6.1-sol"
-    },
-    {
       "id": "baseten/zai-org/GLM-5.2-Fast",
       "name": "baseten/zai-org/GLM-5.2-Fast",
       "vendor": "baseten",
@@ -8087,18 +8160,6 @@
       "canonical_key": "us-gov.anthropic.claude-sonnet-5"
     },
     {
-      "id": "~unbiased/pareto-latest",
-      "name": "Pareto Latest",
-      "vendor": "~unbiased",
-      "context_length": 262144,
-      "input_per_1m_usd": 2.5,
-      "output_per_1m_usd": 7.5,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "Pareto Latest",
-      "canonical_key": "pareto"
-    },
-    {
       "id": "unbiased/pareto-26.9",
       "name": "Pareto 26.9",
       "vendor": "unbiased",
@@ -8123,7 +8184,8 @@
       "canonical_key": "claude-opus-5",
       "merged_from": [
         "anthropic/claude-opus-5",
-        "claude-opus-5"
+        "claude-opus-5",
+        "github_copilot/claude-opus-5"
       ]
     },
     {
@@ -8138,7 +8200,8 @@
       "display_name": "Claude Opus 4.8",
       "canonical_key": "claude-opus-4.8",
       "merged_from": [
-        "anthropic/claude-opus-4.8"
+        "anthropic/claude-opus-4.8",
+        "github_copilot/claude-opus-4.8"
       ]
     },
     {
@@ -8211,6 +8274,22 @@
       "source": "litellm",
       "display_name": "GPT-4 O Transcribe Diarize",
       "canonical_key": "gpt-4o-transcribe-diarize"
+    },
+    {
+      "id": "github_copilot/gpt-5.4",
+      "name": "github_copilot/gpt-5.4",
+      "vendor": "github_copilot",
+      "context_length": 272000,
+      "input_per_1m_usd": 2.5,
+      "output_per_1m_usd": 15.0,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "GPT-5.4",
+      "canonical_key": "gpt-5.4",
+      "merged_from": [
+        "gpt-5.4",
+        "gpt-5.4-2026-03-05"
+      ]
     },
     {
       "id": "gmi/openai/gpt-4o",
@@ -8308,21 +8387,6 @@
       "source": "litellm",
       "display_name": "GPT-4 O Transcribe",
       "canonical_key": "gpt-4o-transcribe"
-    },
-    {
-      "id": "gpt-5.4",
-      "name": "gpt-5.4",
-      "vendor": "gpt",
-      "context_length": 1050000,
-      "input_per_1m_usd": 2.5,
-      "output_per_1m_usd": 15.0,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "GPT-5.4",
-      "canonical_key": "gpt-5.4",
-      "merged_from": [
-        "gpt-5.4-2026-03-05"
-      ]
     },
     {
       "id": "us-gov.xai.grok-4.6",
@@ -8655,6 +8719,21 @@
       "canonical_key": "claude-opus-5-5"
     },
     {
+      "id": "github_copilot/gpt-5.6-sol",
+      "name": "github_copilot/gpt-5.6-sol",
+      "vendor": "github_copilot",
+      "context_length": 272000,
+      "input_per_1m_usd": 4.0,
+      "output_per_1m_usd": 20.0,
+      "modality": "responses",
+      "source": "litellm",
+      "display_name": "GPT-5.6 Sol",
+      "canonical_key": "gpt-5.6-sol",
+      "merged_from": [
+        "gpt-5.6-sol"
+      ]
+    },
+    {
       "id": "gpt-5.6",
       "name": "gpt-5.6",
       "vendor": "gpt",
@@ -8665,18 +8744,6 @@
       "source": "litellm",
       "display_name": "GPT-5.6",
       "canonical_key": "gpt-5.6"
-    },
-    {
-      "id": "gpt-5.6-sol",
-      "name": "gpt-5.6-sol",
-      "vendor": "gpt",
-      "context_length": 922000,
-      "input_per_1m_usd": 4.0,
-      "output_per_1m_usd": 20.0,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "GPT-5.6 Sol",
-      "canonical_key": "gpt-5.6-sol"
     },
     {
       "id": "daybreak-blue-latest",
@@ -8816,7 +8883,8 @@
       "display_name": "Claude Fable 5.1",
       "canonical_key": "claude-fable-5.1",
       "merged_from": [
-        "anthropic/claude-fable-5.1"
+        "anthropic/claude-fable-5.1",
+        "github_copilot/claude-fable-5.1"
       ]
     },
     {
@@ -8835,6 +8903,22 @@
       ]
     },
     {
+      "id": "github_copilot/gpt-5.5",
+      "name": "github_copilot/gpt-5.5",
+      "vendor": "github_copilot",
+      "context_length": 272000,
+      "input_per_1m_usd": 5.0,
+      "output_per_1m_usd": 30.0,
+      "modality": "responses",
+      "source": "litellm",
+      "display_name": "GPT-5.5",
+      "canonical_key": "gpt-5.5",
+      "merged_from": [
+        "gpt-5.5",
+        "gpt-5.5-2026-04-23"
+      ]
+    },
+    {
       "id": "chat-latest",
       "name": "chat-latest",
       "vendor": "chat",
@@ -8845,21 +8929,6 @@
       "source": "litellm",
       "display_name": "Chat Latest",
       "canonical_key": "chat"
-    },
-    {
-      "id": "gpt-5.5",
-      "name": "gpt-5.5",
-      "vendor": "gpt",
-      "context_length": 1050000,
-      "input_per_1m_usd": 5.0,
-      "output_per_1m_usd": 30.0,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "GPT-5.5",
-      "canonical_key": "gpt-5.5",
-      "merged_from": [
-        "gpt-5.5-2026-04-23"
-      ]
     },
     {
       "id": "vercel_ai_gateway/xai/grok-3-fast",
@@ -8977,6 +9046,21 @@
       "canonical_key": "claude-fable-5-1"
     },
     {
+      "id": "github_copilot/gpt-6-astra",
+      "name": "github_copilot/gpt-6-astra",
+      "vendor": "github_copilot",
+      "context_length": 272000,
+      "input_per_1m_usd": 10.0,
+      "output_per_1m_usd": 50.0,
+      "modality": "responses",
+      "source": "litellm",
+      "display_name": "GPT-6 Astra",
+      "canonical_key": "gpt-6-astra",
+      "merged_from": [
+        "gpt-6-astra"
+      ]
+    },
+    {
       "id": "gpt-4-1106-preview",
       "name": "gpt-4-1106-preview",
       "vendor": "gpt",
@@ -9003,18 +9087,6 @@
         "gpt-4-turbo-2024-04-09",
         "vercel_ai_gateway/openai/gpt-4-turbo"
       ]
-    },
-    {
-      "id": "gpt-6-astra",
-      "name": "gpt-6-astra",
-      "vendor": "gpt",
-      "context_length": 922000,
-      "input_per_1m_usd": 10.0,
-      "output_per_1m_usd": 50.0,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "GPT-6 Astra",
-      "canonical_key": "gpt-6-astra"
     },
     {
       "id": "j2-mid",
@@ -9346,10 +9418,10 @@
     }
   ],
   "quality": {
-    "input_rows": 3467,
-    "rejected": 2076,
-    "merged": 247,
+    "input_rows": 3495,
+    "rejected": 2078,
+    "merged": 255,
     "queued_for_review": 86,
-    "published": 689
+    "published": 692
   }
 }
