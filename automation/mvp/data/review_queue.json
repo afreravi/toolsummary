@@ -117,15 +117,6 @@
     "reason": "possible duplicate"
   },
   {
-    "candidate": "qwen/qwen3.5-35b-a3b",
-    "candidate_name": "Qwen 3.5 35 B A3 B",
-    "input_per_1m_usd": 0.15,
-    "possible_duplicate_of": "qwen/qwen3.6-35b-a3b",
-    "possible_duplicate_name": "Qwen 3.6 35 B A3 B",
-    "confidence": 0.933,
-    "reason": "possible duplicate"
-  },
-  {
     "candidate": "nscale/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
     "candidate_name": "DeepSeek R1 Distill Qwen 32 B",
     "input_per_1m_usd": 0.15,
