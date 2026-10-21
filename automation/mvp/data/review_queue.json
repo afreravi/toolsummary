@@ -306,15 +306,6 @@
     "reason": "possible duplicate"
   },
   {
-    "candidate": "mistral/mistral-large-4",
-    "candidate_name": "Mistral Large 4",
-    "input_per_1m_usd": 0.68,
-    "possible_duplicate_of": "mistralai/mistral-large-4-0",
-    "possible_duplicate_name": "Mistral Large 4.0",
-    "confidence": 0.938,
-    "reason": "possible duplicate"
-  },
-  {
     "candidate": "vercel_ai_gateway/meta/llama-3.1-70b",
     "candidate_name": "Llama 3.1 70 B",
     "input_per_1m_usd": 0.72,
