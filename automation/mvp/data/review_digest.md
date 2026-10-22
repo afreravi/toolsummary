@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-21
+# Daily review digest - 2026-10-22
 
 Automation refreshed the pricing dataset. **698 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-311 price changes in the last 30 days, 712 new models, 14 delisted.
+327 price changes in the last 30 days, 713 new models, 15 delisted.
 
-### 204 changes over 20% - check these before trusting the page
+### 217 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
@@ -26,10 +26,11 @@ Automation refreshed the pricing dataset. **698 model pages** and 400 comparison
 
 ## Needs a human decision
 
-### 48 possible duplicates
+### 49 possible duplicates
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
+- `~deepseek/deepseek-v4-flash-latest` looks like `deepseek/deepseek-v4.1-flash:batch` (similarity 0.944)
 - `meta/muse-spark-1.2-contributor` looks like `meta/muse-spark-1.3-contributor` (similarity 0.962)
 - `mistral/ministral-3-3b-2512` looks like `mistralai/ministral-3b-2512` (similarity 0.944)
 - `lambda_ai/llama3.3-70b-instruct-fp8` looks like `lambda_ai/llama3.1-70b-instruct-fp8` (similarity 0.96)
@@ -43,7 +44,6 @@ Two model IDs look like the same product. Confirm and either merge or ignore.
 - `ovhcloud/Meta-Llama-3_3-70B-Instruct` looks like `ovhcloud/Meta-Llama-3_1-70B-Instruct` (similarity 0.963)
 - `vercel_ai_gateway/meta/llama-3.1-70b` looks like `snowflake/llama3.1-70b` (similarity 0.96)
 - `together_ai/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo` looks like `together_ai/meta-llama/Meta-Llama-3-70B-Instruct-Turbo` (similarity 0.969)
-- `anthropic/claude-sonnet-5:batch` looks like `anthropic/claude-sonnet-5.5:batch` (similarity 0.938)
 
 ### 36 rows missing a usable context window
 

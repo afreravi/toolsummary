@@ -2,8 +2,8 @@
 
 - Input rows from aggregators: **3522**
 - Rejected as noise / resale duplicates: **2096**
-- Merged duplicates collapsed to one page: **256**
-- Routed to human review queue: **84**
+- Merged duplicates collapsed to one page: **255**
+- Routed to human review queue: **85**
 - Published with data-derived pages: **698**
 
 ## Rejection reasons

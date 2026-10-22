@@ -36,6 +36,15 @@
     "reason": "missing or too-small context window"
   },
   {
+    "candidate": "~deepseek/deepseek-v4-flash-latest",
+    "candidate_name": "DeepSeek V4 Flash Latest",
+    "input_per_1m_usd": 0.0475,
+    "possible_duplicate_of": "deepseek/deepseek-v4.1-flash:batch",
+    "possible_duplicate_name": "DeepSeek V4.1 Flash",
+    "confidence": 0.944,
+    "reason": "possible duplicate"
+  },
+  {
     "candidate": "nscale/Qwen/Qwen2.5-Coder-32B-Instruct",
     "candidate_name": "Qwen 2.5 Coder 32 B Instruct",
     "input_per_1m_usd": 0.06,
