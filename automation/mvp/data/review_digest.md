@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-22
+# Daily review digest - 2026-10-23
 
 Automation refreshed the pricing dataset. **698 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-327 price changes in the last 30 days, 713 new models, 15 delisted.
+340 price changes in the last 30 days, 713 new models, 15 delisted.
 
-### 217 changes over 20% - check these before trusting the page
+### 227 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
@@ -18,11 +18,11 @@ Automation refreshed the pricing dataset. **698 model pages** and 400 comparison
 - **DeepSeek Pro Latest** output: $0.6574 -> $5.0 (660.57%)
 - **DeepSeek V4 Flash 0731** input: $0.0094 -> $0.07 (644.68%)
 - **Qwen 3.8 27 B** input: $0.04 -> $0.24 (500.0%)
+- **Qwen 3.8 27 B** input: $0.04 -> $0.2 (400.0%)
 - **DeepSeek V4 Pro** input: $0.2088 -> $0.9553 (357.52%)
 - **DeepSeek V4 Pro** input: $0.2088 -> $0.9553 (357.52%)
 - **DeepSeek V4 Pro** output: $0.4176 -> $1.9105 (357.5%)
 - **DeepSeek V4 Pro** output: $0.4176 -> $1.9105 (357.5%)
-- **DeepSeek V4 Pro** input: $0.2088 -> $0.9483 (354.17%)
 
 ## Needs a human decision
 
