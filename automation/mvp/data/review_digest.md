@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-23
+# Daily review digest - 2026-10-24
 
-Automation refreshed the pricing dataset. **698 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **700 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-340 price changes in the last 30 days, 713 new models, 15 delisted.
+356 price changes in the last 30 days, 715 new models, 15 delisted.
 
-### 227 changes over 20% - check these before trusting the page
+### 241 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
@@ -14,23 +14,22 @@ Automation refreshed the pricing dataset. **698 model pages** and 400 comparison
 - **DeepSeek Flash Latest** output: $0.024 -> $0.5 (1983.33%)
 - **GLM 5.2** input: $0.037 -> $0.62 (1575.68%)
 - **DeepSeek Pro Latest** output: $0.7484 -> $8.0 (968.95%)
+- **GLM 5.3 Flash** input: $0.0052 -> $0.05 (861.54%)
 - **DeepSeek V4 Flash 0731** output: $0.15 -> $1.32 (780.0%)
 - **DeepSeek Pro Latest** output: $0.6574 -> $5.0 (660.57%)
 - **DeepSeek V4 Flash 0731** input: $0.0094 -> $0.07 (644.68%)
+- **DeepSeek V4.1 Flash** output: $0.15 -> $1.0 (566.67%)
 - **Qwen 3.8 27 B** input: $0.04 -> $0.24 (500.0%)
+- **GLM Flash Latest** input: $0.0052 -> $0.0262 (403.85%)
 - **Qwen 3.8 27 B** input: $0.04 -> $0.2 (400.0%)
 - **DeepSeek V4 Pro** input: $0.2088 -> $0.9553 (357.52%)
-- **DeepSeek V4 Pro** input: $0.2088 -> $0.9553 (357.52%)
-- **DeepSeek V4 Pro** output: $0.4176 -> $1.9105 (357.5%)
-- **DeepSeek V4 Pro** output: $0.4176 -> $1.9105 (357.5%)
 
 ## Needs a human decision
 
-### 49 possible duplicates
+### 48 possible duplicates
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
-- `~deepseek/deepseek-v4-flash-latest` looks like `deepseek/deepseek-v4.1-flash:batch` (similarity 0.944)
 - `meta/muse-spark-1.2-contributor` looks like `meta/muse-spark-1.3-contributor` (similarity 0.962)
 - `mistral/ministral-3-3b-2512` looks like `mistralai/ministral-3b-2512` (similarity 0.944)
 - `lambda_ai/llama3.3-70b-instruct-fp8` looks like `lambda_ai/llama3.1-70b-instruct-fp8` (similarity 0.96)
@@ -44,6 +43,7 @@ Two model IDs look like the same product. Confirm and either merge or ignore.
 - `ovhcloud/Meta-Llama-3_3-70B-Instruct` looks like `ovhcloud/Meta-Llama-3_1-70B-Instruct` (similarity 0.963)
 - `vercel_ai_gateway/meta/llama-3.1-70b` looks like `snowflake/llama3.1-70b` (similarity 0.96)
 - `together_ai/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo` looks like `together_ai/meta-llama/Meta-Llama-3-70B-Instruct-Turbo` (similarity 0.969)
+- `anthropic/claude-sonnet-5:batch` looks like `anthropic/claude-sonnet-5.5:batch` (similarity 0.938)
 
 ### 36 rows missing a usable context window
 
