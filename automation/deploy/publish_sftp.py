@@ -54,14 +54,34 @@ SAFE_PATH_MARKERS = ("public_html", "htdocs", "httpdocs", "domains/", "/www")
 
 
 def get_secret(name: str) -> str | None:
-    url = os.environ.get("AGENT_SERVER_URL", "").rstrip("/")
+    """Fetch a named secret, or None if it is not configured.
+
+    Two endpoint shapes exist and both are needed. Local Agent Canvas sets
+    AGENT_SERVER_URL and serves secrets under /api/settings/secrets. A cloud
+    sandbox does not set it, and serves them under the sandbox-scoped path
+    instead. Handling only the first shape silently finds no secrets in the
+    scheduled run, which looks like "not configured" rather than a bug.
+    """
+    if os.environ.get(name):
+        return os.environ[name]
+
     key = os.environ.get("SESSION_API_KEY") or os.environ.get("OH_SESSION_API_KEYS_0", "")
-    if not url or not key:
+    if not key:
         return None
-    req = urllib.request.Request(f"{url}/api/settings/secrets/{name}",
-                                 headers={"X-Session-API-Key": key})
+
+    url = os.environ.get("AGENT_SERVER_URL", "").rstrip("/")
+    if url:
+        endpoint = f"{url}/api/settings/secrets/{name}"
+    else:
+        api = os.environ.get("OPENHANDS_CLOUD_API_URL", "").rstrip("/")
+        sandbox = os.environ.get("SANDBOX_ID", "")
+        if not api or not sandbox:
+            return None
+        endpoint = f"{api}/api/v1/sandboxes/{sandbox}/settings/secrets/{name}"
+
+    req = urllib.request.Request(endpoint, headers={"X-Session-API-Key": key})
     try:
-        with urllib.request.urlopen(req, timeout=20) as r:
+        with urllib.request.urlopen(req, timeout=30) as r:
             return r.read().decode().rstrip("\r\n")
     except urllib.error.HTTPError:
         return None
