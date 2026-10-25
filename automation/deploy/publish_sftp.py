@@ -34,14 +34,23 @@ SECRETS = {
     "TOOLSUMMARY_SFTP_HOST": "VHOST",
     "TOOLSUMMARY_SFTP_USER": "VUSER",
     "TOOLSUMMARY_SFTP_PORT": "VPORT",
-    "TOOLSUMMARY_SFTP_KEY": "VSECRET",
     "TOOLSUMMARY_SFTP_PATH": "VREMOTE",
     "Remote_Path": "VREMOTE_FALLBACK",
 }
 
+# Credential secret names, most specific first. TOOLSUMMARY_SFTP_KEY is named
+# like a private key but has held a password, so it is tried as a password
+# fallback rather than assumed to be a key.
+CREDENTIAL_SECRETS = (
+    "TOOLSUMMARY_SFTP_PASSWORD",
+    "TOOLSUMMARY_SFTP_KEY",
+    "TOOLSUMMARY_SFTP_PASS",
+)
+
 # A wrong remote path is the failure that does real damage, so require one of
-# these markers before writing anything.
-SAFE_PATH_MARKERS = ("public_html", "www", "htdocs", "httpdocs", "web")
+# these markers before writing anything. "domains/" covers Hostinger's
+# per-site layout, which has no public_html at the top level.
+SAFE_PATH_MARKERS = ("public_html", "htdocs", "httpdocs", "domains/", "/www")
 
 
 def get_secret(name: str) -> str | None:
@@ -61,13 +70,36 @@ def get_secret(name: str) -> str | None:
 
 
 def resolve(names: dict[str, str]) -> dict[str, str]:
-    """Read each secret once, preferring the store over the environment."""
+    """Read each secret once, preferring the environment over the store."""
     out = {}
     for secret_name, var in names.items():
         value = os.environ.get(var) or get_secret(secret_name)
         if value:
             out[var] = value
     return out
+
+
+def resolve_credential() -> tuple[str, str]:
+    """Find the credential and decide whether it is a key or a password.
+
+    Returns (value, description). The description names the source that
+    actually supplied the value, so a stale environment variable cannot
+    masquerade as a stored secret.
+    """
+    value = os.environ.get("VSECRET")
+    if value:
+        source = "VSECRET"
+    else:
+        source = ""
+        for secret_name in CREDENTIAL_SECRETS:
+            value = os.environ.get(secret_name) or get_secret(secret_name)
+            if value:
+                source = secret_name
+                break
+    if not value:
+        return "", "missing"
+    kind = "key" if is_private_key(value) else "password"
+    return value, f"{kind} (from {source})"
 
 
 def looks_like_web_root(path: str) -> bool:
@@ -94,10 +126,13 @@ def main() -> int:
 
     cfg = resolve(SECRETS)
     remote = cfg.get("VREMOTE") or cfg.get("VREMOTE_FALLBACK")
+    secret, auth = resolve_credential()
 
-    missing = [n for n in ("VHOST", "VUSER", "VSECRET") if not cfg.get(n)]
+    missing = [n for n in ("VHOST", "VUSER") if not cfg.get(n)]
     if not remote:
         missing.append("TOOLSUMMARY_SFTP_PATH (or Remote_Path)")
+    if not secret:
+        missing.append("TOOLSUMMARY_SFTP_PASSWORD or TOOLSUMMARY_SFTP_KEY")
     if missing:
         print("missing configuration: " + ", ".join(missing))
         return 2
@@ -131,13 +166,10 @@ def main() -> int:
     env["VREMOTE"] = remote
     env["VMODE"] = mode
     env["VLOCAL"] = str(SITE)
-    secret = cfg["VSECRET"]
-    if is_private_key(secret):
+    if auth.startswith("key"):
         env["VKEY"] = secret
-        auth = "private key"
     else:
         env["VPASS"] = secret
-        auth = "password"
 
     print(f"mode: {mode} | auth: {auth} | port: {env['VPORT']}")
 
