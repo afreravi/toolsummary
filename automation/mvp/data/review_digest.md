@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-24
+# Daily review digest - 2026-10-25
 
-Automation refreshed the pricing dataset. **700 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **701 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-356 price changes in the last 30 days, 715 new models, 15 delisted.
+372 price changes in the last 30 days, 716 new models, 15 delisted.
 
-### 241 changes over 20% - check these before trusting the page
+### 250 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
