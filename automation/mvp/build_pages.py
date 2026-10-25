@@ -439,6 +439,39 @@ q.addEventListener('input',()=>{{const v=q.value.toLowerCase();rs.forEach(r=>r.h
         f"{BASE}/", body, ld))
 
 
+def build_htaccess() -> None:
+    """Generate the Apache config for the web root.
+
+    Generated rather than left to the server because the placeholder's
+    .htaccess sets X-Robots-Tag: noindex, which would keep every page out of
+    search results even though robots.txt invites crawlers in. Setting the
+    header to "all" here overrides that and lets the site rank.
+
+    Canonical host is enforced on the apex domain, and index.html is served
+    for directory URLs so /model/foo resolves without a trailing slash.
+    """
+    write(".htaccess", "\n".join([
+        "DirectoryIndex index.html index.htm",
+        "",
+        "<IfModule mod_headers.c>",
+        "    Header set X-Robots-Tag \"all\"",
+        "</IfModule>",
+        "",
+        "RewriteEngine On",
+        "",
+        "# One canonical host, so rankings are not split between www and apex.",
+        "RewriteCond %{HTTP_HOST} ^www\\.toolsummary\\.com$ [NC]",
+        "RewriteRule ^(.*)$ https://toolsummary.com/$1 [R=301,L]",
+        "",
+        "# Serve directory URLs without requiring a trailing slash.",
+        "RewriteCond %{REQUEST_FILENAME} !-f",
+        "RewriteCond %{REQUEST_FILENAME} !-d",
+        "RewriteCond %{REQUEST_FILENAME}.html -f",
+        "RewriteRule ^(.*)$ /$1.html [L]",
+        "",
+    ]))
+
+
 def build_sitemap(urls: list[str]) -> None:
     items = "".join(f"<url><loc>{BASE}{u}</loc></url>" for u in urls)
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{items}</urlset>')
@@ -540,6 +573,7 @@ def main() -> int:
     build_hub(models, stamp)
     build_sitemap(["/"] + m_urls + c_urls)
     build_robots_txt()
+    build_htaccess()
     build_llms_txt(models, stamp)
     print(f"[build] {len(m_urls)} model pages, {len(c_urls)} comparison pages -> site/")
     return 0
