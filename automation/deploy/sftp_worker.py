@@ -1,0 +1,202 @@
+#!/usr/bin/env python3
+"""SFTP worker for site publishing.
+
+Runs as a subprocess because paramiko is installed during a run, and a module
+installed mid-run is not importable by the process that installed it.
+
+Configuration comes from the environment. Prints one JSON line on stdout.
+Never prints a password, private key, or hostname.
+"""
+
+import io
+import json
+import os
+import posixpath
+import stat
+import sys
+
+import paramiko
+
+# Only these are considered ours on the remote side. Anything else in the web
+# root belongs to the owner and must never be pruned.
+MANAGED_FILES = ("index.html", "sitemap.xml", "llms.txt", "robots.txt")
+MANAGED_DIRS = ("model", "compare")
+
+
+def load_private_key(text: str):
+    """Parse a private key, trying each format paramiko supports."""
+    last = None
+    for cls in (paramiko.Ed25519Key, paramiko.ECDSAKey, paramiko.RSAKey,
+                getattr(paramiko, "DSSKey", paramiko.RSAKey)):
+        try:
+            return cls.from_private_key(io.StringIO(text))
+        except Exception as e:
+            last = e
+    raise ValueError(f"unrecognised private key format: {type(last).__name__}")
+
+
+def connect():
+    client = paramiko.SSHClient()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    kwargs = dict(
+        hostname=os.environ["VHOST"],
+        port=int(os.environ.get("VPORT") or 22),
+        username=os.environ["VUSER"],
+        timeout=30,
+        banner_timeout=30,
+        auth_timeout=30,
+        allow_agent=False,
+        look_for_keys=False,
+    )
+    key_text = os.environ.get("VKEY") or ""
+    if key_text:
+        kwargs["pkey"] = load_private_key(key_text)
+    else:
+        kwargs["password"] = os.environ.get("VPASS") or ""
+    client.connect(**kwargs)
+    return client
+
+
+def remote_files(sftp, root):
+    """Recursively list files under root as {relative_path: size}."""
+    found = {}
+    stack = [""]
+    while stack:
+        rel = stack.pop()
+        path = posixpath.join(root, rel) if rel else root
+        try:
+            entries = sftp.listdir_attr(path)
+        except IOError:
+            continue
+        for e in entries:
+            child = posixpath.join(rel, e.filename) if rel else e.filename
+            if stat.S_ISDIR(e.st_mode):
+                stack.append(child)
+            else:
+                found[child] = e.st_size
+    return found
+
+
+def local_files(root):
+    out = {}
+    for dirpath, _dirnames, filenames in os.walk(root):
+        for fn in filenames:
+            full = os.path.join(dirpath, fn)
+            rel = os.path.relpath(full, root).replace(os.sep, "/")
+            out[rel] = full
+    return out
+
+
+def is_managed(rel):
+    if rel in MANAGED_FILES:
+        return True
+    return any(rel.startswith(d + "/") for d in MANAGED_DIRS)
+
+
+def ensure_dir(sftp, remote_root, rel_dir):
+    parts = [p for p in rel_dir.split("/") if p]
+    cur = remote_root
+    for p in parts:
+        cur = posixpath.join(cur, p)
+        try:
+            sftp.stat(cur)
+        except IOError:
+            sftp.mkdir(cur)
+
+
+def run_verify(sftp, remote_root, result):
+    try:
+        sftp.stat(remote_root)
+        result["remote_root_exists"] = True
+    except IOError:
+        result["remote_root_exists"] = False
+        return
+    files = remote_files(sftp, remote_root)
+    result["remote_files"] = len(files)
+    result["remote_html"] = len([k for k in files if k.endswith(".html")])
+    probe = posixpath.join(remote_root, ".ts_write_probe")
+    try:
+        with sftp.open(probe, "w") as fh:
+            fh.write("ok")
+        sftp.remove(probe)
+        result["writable"] = True
+    except IOError:
+        result["writable"] = False
+
+
+def run_publish(sftp, remote_root, local_root, dry_run, result):
+    local = local_files(local_root)
+    remote = remote_files(sftp, remote_root)
+
+    # Compare on size only. The build is deterministic from the data, so an
+    # unchanged page has an unchanged size; this keeps the daily upload to the
+    # handful of pages whose prices actually moved.
+    to_upload = [rel for rel, path in local.items()
+                 if rel not in remote or remote[rel] != os.path.getsize(path)]
+    orphans = [rel for rel in remote
+               if is_managed(rel) and rel not in local]
+
+    result["local_files"] = len(local)
+    result["remote_files_before"] = len(remote)
+    result["to_upload"] = len(to_upload)
+    result["orphans"] = len(orphans)
+
+    if dry_run:
+        result["sample_uploads"] = sorted(to_upload)[:8]
+        result["sample_orphans"] = sorted(orphans)[:8]
+        return
+
+    ensure_dir(sftp, remote_root, "")
+    for rel in sorted(orphans):
+        try:
+            sftp.remove(posixpath.join(remote_root, rel))
+        except IOError:
+            pass
+    uploaded = 0
+    for rel in sorted(to_upload):
+        target = posixpath.join(remote_root, rel)
+        parent = posixpath.dirname(rel)
+        if parent:
+            ensure_dir(sftp, remote_root, parent)
+        sftp.put(local[rel], target)
+        uploaded += 1
+    result["uploaded"] = uploaded
+    result["pruned"] = len(orphans)
+
+
+def main():
+    result = {"ok": False}
+    client = None
+    try:
+        client = connect()
+        result["auth"] = "OK"
+        sftp = client.open_sftp()
+        try:
+            mode = os.environ.get("VMODE", "verify")
+            remote_root = os.environ["VREMOTE"].rstrip("/")
+            if mode == "verify":
+                run_verify(sftp, remote_root, result)
+            else:
+                run_publish(sftp, remote_root, os.environ["VLOCAL"],
+                            mode == "dry-run", result)
+            result["ok"] = True
+        finally:
+            sftp.close()
+    except paramiko.AuthenticationException:
+        result["auth"] = "FAILED"
+        result["error"] = "wrong user or password, or SSH access not enabled"
+    except Exception as e:
+        result["error"] = f"{type(e).__name__}: {e}"
+    finally:
+        if client is not None:
+            try:
+                client.close()
+            except Exception:
+                pass
+
+    print(json.dumps(result))
+    return 0 if result["ok"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
