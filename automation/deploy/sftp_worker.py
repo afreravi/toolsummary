@@ -14,6 +14,7 @@ import os
 import posixpath
 import stat
 import sys
+import threading
 
 import paramiko
 
@@ -126,7 +127,80 @@ def run_verify(sftp, remote_root, result):
         result["writable"] = False
 
 
-def run_publish(sftp, remote_root, local_root, dry_run, result):
+def ensure_dirs(sftp, remote_root, rel_dirs):
+    """Create each directory, parents first, ignoring ones that exist.
+
+    Done in one thread before the upload pool starts: SFTP mkdir is not
+    concurrency-safe, and two threads racing to create the same directory can
+    fail the whole upload with a spurious error.
+    """
+    ordered = sorted({d for d in rel_dirs if d}, key=lambda p: p.count("/"))
+    for rel_dir in ordered:
+        cur = remote_root
+        for part in [p for p in rel_dir.split("/") if p]:
+            cur = posixpath.join(cur, part)
+            try:
+                sftp.stat(cur)
+            except IOError:
+                try:
+                    sftp.mkdir(cur)
+                except IOError:
+                    pass
+
+
+def upload_parallel(client, remote_root, local, rels, workers=8):
+    """Upload files over several SFTP sessions at once.
+
+    paramiko serialises requests per channel, so a single session spends most
+    of its time waiting on round trips. A thousand small files took long enough
+    to hit the automation's wall clock; spreading them over independent
+    sessions is what makes a full publish fit inside the timeout.
+
+    Sessions are opened up front and one is handed to each thread, because a
+    channel is not safe to share between threads. Failures are collected rather
+    than raised so one bad file cannot abandon the rest mid-run.
+    """
+    queue = list(rels)
+    lock = threading.Lock()
+    done = [0]
+    errors = []
+
+    sessions = []
+    try:
+        for _ in range(max(1, workers)):
+            sessions.append(client.open_sftp())
+    except Exception as e:
+        errors.append(f"opening sessions: {type(e).__name__}")
+        return 0, errors
+
+    def worker(sftp):
+        while True:
+            with lock:
+                if not queue:
+                    return
+                rel = queue.pop(0)
+            try:
+                sftp.put(local[rel], posixpath.join(remote_root, rel))
+                with lock:
+                    done[0] += 1
+            except Exception as e:
+                with lock:
+                    errors.append(f"{rel}: {type(e).__name__}")
+
+    threads = [threading.Thread(target=worker, args=(s,)) for s in sessions]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    for s in sessions:
+        try:
+            s.close()
+        except Exception:
+            pass
+    return done[0], errors
+
+
+def run_publish(client, sftp, remote_root, local_root, dry_run, result):
     local = local_files(local_root)
     remote = remote_files(sftp, remote_root)
 
@@ -154,16 +228,20 @@ def run_publish(sftp, remote_root, local_root, dry_run, result):
             sftp.remove(posixpath.join(remote_root, rel))
         except IOError:
             pass
-    uploaded = 0
-    for rel in sorted(to_upload):
-        target = posixpath.join(remote_root, rel)
-        parent = posixpath.dirname(rel)
-        if parent:
-            ensure_dir(sftp, remote_root, parent)
-        sftp.put(local[rel], target)
-        uploaded += 1
+
+    # Directories first, single-threaded, then the files in parallel.
+    ensure_dirs(sftp, remote_root, {posixpath.dirname(r) for r in to_upload})
+    workers = int(os.environ.get("VWORKERS") or 8)
+    uploaded, errors = upload_parallel(client, remote_root, local, sorted(to_upload),
+                                       workers=workers)
     result["uploaded"] = uploaded
     result["pruned"] = len(orphans)
+    result["workers"] = workers
+    if errors:
+        result["upload_errors"] = len(errors)
+        result["upload_error_sample"] = errors[:5]
+        if uploaded == 0:
+            raise IOError(f"every upload failed, first: {errors[0]}")
 
 
 def main():
@@ -179,7 +257,7 @@ def main():
             if mode == "verify":
                 run_verify(sftp, remote_root, result)
             else:
-                run_publish(sftp, remote_root, os.environ["VLOCAL"],
+                run_publish(client, sftp, remote_root, os.environ["VLOCAL"],
                             mode == "dry-run", result)
             result["ok"] = True
         finally:

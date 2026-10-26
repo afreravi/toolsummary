@@ -175,9 +175,16 @@ def main() -> int:
         return 2
 
     # paramiko must be installed in this process and imported in the worker's.
-    subprocess.run([sys.executable, "-m", "pip", "install", "--quiet", "--no-warn-script-location",
-                    "--disable-pip-version-check", "paramiko"],
-                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # Skipped when already importable: an automation venv installs it via
+    # setup.sh, and pip here would run as a subprocess with output suppressed,
+    # so a failure would only surface later as a confusing ImportError.
+    try:
+        import paramiko  # noqa: F401
+    except ImportError:
+        subprocess.run([sys.executable, "-m", "pip", "install", "--quiet",
+                        "--no-warn-script-location", "--disable-pip-version-check",
+                        "paramiko"],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
     env = dict(os.environ)
     env["VHOST"] = cfg["VHOST"]
