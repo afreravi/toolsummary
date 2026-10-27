@@ -224,6 +224,70 @@ failure by reading `status_detail`:
 - `execution_error` with an `exit_code` and stdout — our code ran and failed.
 - `timeout` in the `execution` phase — our code ran but exceeded the limit.
 
+## The daily run publishes the site
+
+The "Toolsummary pricing refresh" cron (`30 4 * * *` UTC) does not stop at the
+git push: after the snapshot is safely on `main` it runs
+`automation/deploy/publish_tarball.py` to upload the built site. Publishing was
+moved here from the standalone publish automation because the daily run is the
+thing that regenerates the data, and a site that never reflects its own data is
+the failure mode that matters.
+
+Two ordering rules are deliberate and must not be "simplified":
+
+- The snapshot is pushed *before* the site is uploaded. The git history is the
+  irreplaceable artifact; the site is rebuildable from it. A publish that ran
+  first and hung could lose the day's prices.
+- A failed publish does **not** fail the run. It is reported (callback error
+  text plus a `done (with publish warning)` line) and the run exits 0, because a
+  stale site is recoverable tomorrow and a lost snapshot is not.
+
+A quiet day with no price movement is also success. `commit_and_push` returns
+`pushed` / `unchanged` / `failed`; only `failed` is fatal. Collapsing those into
+one boolean is what made "no changes" look like a lost snapshot.
+
+### The cron tarball ships code, not a repo checkout of the cron script
+
+The cron tarball contains only `main.py` and `verify_sftp.py`, so it has no
+`setup.sh`. Anything the publish step imports must be installed at runtime —
+the same reason `verify_sftp.py` pip-installs paramiko itself. The tarball also
+freezes `main.py`: **editing `automation/cron/main.py` on `main` changes nothing
+until the tarball is re-uploaded and re-attached** to the automation. After any
+change to that file, repackage and `PATCH` the automation's `tarball_path`:
+
+```bash
+cd automation/cron && tar -czf /tmp/cron.tar.gz main.py verify_sftp.py
+# POST /api/automation/v1/uploads, then PATCH the automation with the new path
+```
+
+The cron script clones `main` at run time, so the *pipeline* it runs is always
+current; only the entrypoint is frozen.
+
+### Branch matters: publish from `main`, not `dev-branch`
+
+The site data and the daily cron live on `main`. `dev-branch` historically
+carried the deploy code with a weeks-stale snapshot, so a publish that cloned
+`dev-branch` would overwrite the live site with old pages. `publish-run/main.py`
+now defaults to `main`. Deploy code and data should not be split across branches;
+when they are, publish only ever from the branch whose data is current.
+
+### Merging a local branch that the remote has moved past
+
+`git merge dev-branch` merges the *local* ref. If `origin/dev-branch` advanced
+(another session pushed) and the local ref is stale, the merge silently brings in
+the old tree — here it dropped the deploy files while the merge still reported
+success. `git fetch origin dev-branch` first, or merge `origin/dev-branch`.
+Confirm with `git ls-tree <ref> automation/deploy/` that the files you expect are
+actually present in the result.
+
+### Proving which run published the site
+
+Automation runs expose no stdout over the API (`/runs/{id}` 404s). To prove a
+publish actually happened, compare the remote root files' mtime against the run's
+`started_at`/`completed_at` — an mtime inside that window is direct evidence, and
+it also catches the failure where the run "completed" without uploading.
+
+
 ## Competitive landscape
 
 `docs/market.md` holds the market read. The short version as of 2026-10-26:
