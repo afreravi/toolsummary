@@ -252,15 +252,25 @@ def read_digest() -> str:
     return path.read_text()[:4000]
 
 
-def commit_and_push(token: str, dry_run: bool) -> tuple[bool, str]:
-    """Commit the regenerated data and push. Returns (pushed, detail)."""
+def commit_and_push(token: str, dry_run: bool) -> tuple[str, str]:
+    """Commit the regenerated data and push.
+
+    Returns (status, detail) with status one of:
+      "pushed"    - a snapshot was committed and is on the remote
+      "unchanged" - the pipeline produced no diff; nothing to persist
+      "failed"    - a push was attempted and rejected; the day is at risk
+
+    "unchanged" is benign and must be distinguished from "failed": a quiet day
+    with no price movement should still publish, whereas a rejected push loses
+    the snapshot permanently and must fail the run.
+    """
     data_dir = "automation/mvp/data"
     run(["git", "add", data_dir], cwd=WORK, token=token)
     # --cached so the check reflects what would actually be committed.
     staged = run(["git", "diff", "--cached", "--name-only"], cwd=WORK, token=token)
     changed = [f for f in staged.stdout.split() if f]
     if not changed:
-        return False, "no data changes to commit"
+        return "unchanged", "no data changes to commit"
 
     day = datetime.now(timezone.utc).date().isoformat()
     n_rows = len(read_history())
@@ -275,16 +285,16 @@ def commit_and_push(token: str, dry_run: bool) -> tuple[bool, str]:
         # writing to main. Used to test a new tarball before scheduling it.
         r = run(["git", "push", "--dry-run", "origin", "HEAD:main"], cwd=WORK, token=token)
         if r.returncode != 0:
-            return False, f"dry-run push rejected: {redact(r.stderr, token).strip()[:400]}"
-        return True, f"DRY RUN ok - would push {len(changed)} file(s)"
+            return "failed", f"dry-run push rejected: {redact(r.stderr, token).strip()[:400]}"
+        return "pushed", f"DRY RUN ok - would push {len(changed)} file(s)"
 
     # Pull-rebase then push: a rebase conflict means two runs overlapped, which
     # must be surfaced rather than forced through.
     run(["git", "pull", "--rebase", "origin", "main"], cwd=WORK, token=token)
     r = run(["git", "push", "origin", "HEAD:main"], cwd=WORK, token=token)
     if r.returncode != 0:
-        return False, f"push rejected: {redact(r.stderr, token).strip()[:400]}"
-    return True, f"pushed {len(changed)} file(s)"
+        return "failed", f"push rejected: {redact(r.stderr, token).strip()[:400]}"
+    return "pushed", f"pushed {len(changed)} file(s)"
 
 
 def main() -> int:
@@ -304,13 +314,14 @@ def main() -> int:
         dates = sorted({r.get("date") for r in history if r.get("date")})
         log(f"history: {len(history)} rows across {len(dates)} date(s), latest={dates[-1] if dates else 'none'}")
 
-        pushed, detail = commit_and_push(token, dry_run)
+        commit_status, detail = commit_and_push(token, dry_run)
         log(f"commit: {detail}")
 
         log("daily digest:\n" + read_digest())
 
-        if not pushed:
-            # Only "no changes" is benign; a rejected push loses the day.
+        if commit_status == "failed":
+            # A rejected push loses the day; the snapshot exists only in this
+            # sandbox and the sandbox is discarded. "unchanged" is benign.
             raise RuntimeError(f"history not persisted: {detail}")
 
         # Publish after the data is safely pushed. A publish failure is logged
