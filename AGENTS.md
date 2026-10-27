@@ -15,11 +15,12 @@ are the acquisition surface; the paid product is the API/MCP price-history feed.
   `deploy/toolsummary-site.tar.gz` plus a manifest. The host is not reachable
   over SFTP from the sandbox, so a human downloads the artifact and uploads it.
   See `docs/deploy.md`.
+- `automation/deploy/publish_tarball.py` — the publisher the daily run calls.
+  Ships the built site as one tarball and extracts it on the host; see
+  "Publish throughput" below.
 - `.github/workflows/build-site.yml` — builds and packages the site at 06:00
   UTC (after the 04:30 pricing refresh) and uploads it as a downloadable
   artifact. It does not push to `main` or deploy.
-- `automation/automation_main.py` — legacy entrypoint that also publishes over
-  SFTP. Unused; SFTP auth is rejected by the host (see `docs/publishing.md`).
 
 ## Irreplaceable data
 
@@ -100,78 +101,46 @@ Two traps in this that cost real time:
   nothing and looks like it failed before its first line. Use `python3 -u ...
   > /tmp/out 2>&1; echo exit=$?; cat /tmp/out`.
 
-## Publish hang: the real cause
+## Why the publish is a tarball, not a file walk
 
-The first publishes stalled at "Starting automation" and expired with no output.
-It was not the network, the credentials, or throttling: TCP connected, the SSH
-handshake completed, and `stat`/`listdir` answered in under a second.
+An earlier per-file publisher (`publish_sftp.py` + `sftp_worker.py`, since
+removed) stalled on the live host. It was not the network, the credentials, or
+throttling: TCP connected, the SSH handshake completed, and `stat`/`listdir`
+answered in under a second. The failure was that every SFTP session had to be
+individually bounded, and one unbounded session — a retry path, or the main
+session that ran the recursive walk — blocked forever until the automation's
+wall clock killed the run. A ~1,100-file upload also cost a round trip per file,
+so it never fit the wall clock anyway.
 
-Only the upload pool's SFTP sessions had a socket timeout. The **main session**
-is opened separately in `sftp_worker.main()`, and both the recursive remote
-listing and the orphan scan run on it, so one stalled request blocked forever
-until the automation's wall clock killed the run. All sessions now go through
-`harden_session`, the recursive walk guards against symlink loops, and the
-worker subprocess has its own timeout below the automation's.
-
-Two further holes were found and closed while testing the fix:
-
-- The retry path in `upload_parallel` opened its session with a bare
-  `client.open_sftp()`, bypassing `harden_session`. A stall in a retry would
-  therefore still hang the run — the fix had left one unbounded session behind.
-- `remote_files` tracked visited directories by *relative path*. A directory
-  symlink to an ancestor appends a path segment at every level, so the path is
-  always new and the set never matches. It is now bounded by depth as well as
-  by inode, which is the guard that actually terminates the loop.
+The tarball publisher replaced all of that with one upload and one `tar -xzf`.
+If you ever reintroduce a file-by-file path, bound every session's socket
+timeout and every recursive walk by both depth and inode.
 
 ### Verifying SFTP changes without a sandbox
 
-`tests/sftp/` (see `tests/README.md`) runs the real worker against a local
-paramiko SFTP server. It needs no credentials, no sandbox, and no network, and
-it reproduces both failure modes that matter: a server that never answers
-`listdir` (must fail in bounded time, not hang) and a ~1000-file publish (must
-finish well inside the automation wall clock). Run it before dispatching any
-SFTP automation:
+The per-file publisher and its local paramiko test suite were removed once the
+tarball publisher replaced them. The tarball path is short enough to verify
+directly against the live host, which changes nothing:
 
 ```bash
-python3 tests/sftp/run_all.py
+python3 automation/deploy/publish_tarball.py --verify
 ```
-
-The mocks are easy to get subtly wrong in ways that look like production bugs.
-Three that cost time: `SFTPHandle` takes only `flags` and needs `readfile` /
-`writefile` assigned as attributes; files must be opened in **binary** mode or
-every write fails with "write() argument must be str"; and overriding
-`check_channel_subsystem_request` stops paramiko's SFTP handler from starting,
-so `open_sftp()` hangs on the client side.
 
 
 ## Pushing a commit when the workspace has no GitHub token
 
-The interactive workspace has no `GITHUB_TOKEN`, so `git push` from here prompts
-for a password and hangs. The token exists only in the automation sandbox.
-`automation/push-run/` is a temporary automation that closes that gap: it ships
-a patch in its tarball, clones the repo, applies it, commits, and pushes.
+The interactive workspace has no working `GITHUB_TOKEN`; `github_token` is the
+one that authenticates (see "Secret lookup gotcha" above). Push with it
+directly rather than through a helper automation:
 
-Two things to know before reusing it:
+```bash
+git remote set-url origin "https://${github_token}@github.com/afreravi/toolsummary.git"
+git push origin HEAD:main
+```
 
-- **The patch must be a plain `git diff` against the remote head**, not
-  `git format-patch`. A format-patch header duplicates commits already on the
-  remote, so it fails to apply the moment the branch has moved — which it will
-  have. Generate with `git diff origin/dev-branch HEAD -- <paths>`, and ship the
-  commit subject in `message.txt`.
-- **The tarball is frozen at upload.** Editing `fix.patch` locally changes
-  nothing until the tarball is re-uploaded and the automation's `tarball_path`
-  is PATCHed:
-
-  ```bash
-  tar -czf /tmp/push-run.tar.gz -C automation/push-run .
-  curl -s -X POST "$HOST/api/automation/v1/uploads?name=push-run" \
-    -H "Authorization: Bearer $OPENHANDS_API_KEY" \
-    -H "Content-Type: application/gzip" --data-binary @/tmp/push-run.tar.gz
-  # then PATCH the automation with the returned tarball_path
-  ```
-
-The publish and cron automations do not have this problem: both clone the repo
-and run the code from it, so a pushed commit takes effect on the next run.
+The cron and publish paths clone the repo and run the code from it, so a pushed
+commit takes effect on the next run. Only the cron *entrypoint* is frozen in its
+tarball (see "The cron tarball ships code" above).
 
 ## Publish throughput: ship one tarball, not ~1,100 files
 
@@ -208,9 +177,9 @@ Guards worth knowing before editing it:
   removed after extraction; both it and `.ts-manifest` are cleaned up, so a
   completed publish leaves no extra files.
 
-`publish_sftp.py` (per-file, resumable, `--verify` / `--dry-run`) is kept for
-small change sets and for `tests/sftp/`, but the daily automation uses the
-tarball path.
+`publish_tarball.py` also has `--verify` (connect and report, change nothing)
+and `--dry-run` (package and report, upload nothing) for checking a host
+without publishing.
 
 ## The automation service can fail before our code runs
 
@@ -248,37 +217,28 @@ one boolean is what made "no changes" look like a lost snapshot.
 
 ### The cron tarball ships code, not a repo checkout of the cron script
 
-The cron tarball contains only `main.py` and `verify_sftp.py`, so it has no
-`setup.sh`. Anything the publish step imports must be installed at runtime —
-the same reason `verify_sftp.py` pip-installs paramiko itself. The tarball also
-freezes `main.py`: **editing `automation/cron/main.py` on `main` changes nothing
-until the tarball is re-uploaded and re-attached** to the automation. After any
-change to that file, repackage and `PATCH` the automation's `tarball_path`:
+The cron tarball contains only `main.py`, so it has no `setup.sh`. Anything the
+publish step imports must be installed at runtime, which is why the publisher
+pip-installs paramiko itself. The tarball also freezes `main.py`: **editing
+`automation/cron/main.py` on `main` changes nothing until the tarball is
+re-uploaded and re-attached** to the automation. After any change to that file,
+repackage and `PATCH` the automation's `tarball_path`:
 
 ```bash
-cd automation/cron && tar -czf /tmp/cron.tar.gz main.py verify_sftp.py
+cd automation/cron && tar -czf /tmp/cron.tar.gz main.py
 # POST /api/automation/v1/uploads, then PATCH the automation with the new path
 ```
 
 The cron script clones `main` at run time, so the *pipeline* it runs is always
 current; only the entrypoint is frozen.
 
-### Branch matters: publish from `main`, not `dev-branch`
+### One branch: `main`
 
-The site data and the daily cron live on `main`. `dev-branch` historically
-carried the deploy code with a weeks-stale snapshot, so a publish that cloned
-`dev-branch` would overwrite the live site with old pages. `publish-run/main.py`
-now defaults to `main`. Deploy code and data should not be split across branches;
-when they are, publish only ever from the branch whose data is current.
-
-### Merging a local branch that the remote has moved past
-
-`git merge dev-branch` merges the *local* ref. If `origin/dev-branch` advanced
-(another session pushed) and the local ref is stale, the merge silently brings in
-the old tree — here it dropped the deploy files while the merge still reported
-success. `git fetch origin dev-branch` first, or merge `origin/dev-branch`.
-Confirm with `git ls-tree <ref> automation/deploy/` that the files you expect are
-actually present in the result.
+Everything — the pipeline, the deploy code, and the data — lives on `main`, and
+the cron clones `main`. Older sessions kept deploy code on a `dev-branch` whose
+data was weeks stale; a publish that cloned it would have overwritten the live
+site with old pages. Do not reintroduce that split: keep deploy code and data on
+the same branch the automation clones.
 
 ### Proving which run published the site
 

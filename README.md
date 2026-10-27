@@ -24,8 +24,9 @@ automatable because it is a deterministic data transform, not a writing task.
 |---|---|
 | `automation/mvp/` | **Working, tested pipeline.** Fetches live LLM pricing, cleans it, records daily price history, builds pages, runs 40+ QA assertions |
 | `automation/mvp/track_history.py` | Append-only price log. The only output that cannot be regenerated |
-| `automation/automation_main.py` | Daily OpenHands automation entrypoint (cron, no LLM, publishes over SFTP) |
-| `automation/ROADMAP.md` | What is built, what is stubbed, and the phase-by-phase plan |
+| `automation/cron/main.py` | Daily OpenHands automation entrypoint (cron, no LLM): clone → pipeline → commit → push → publish |
+| `automation/deploy/publish_tarball.py` | Publishes the built site as one tarball and extracts it on the host |
+| `automation/ROADMAP.md` | What is built and the phase-by-phase plan |
 | `automation/DATA_PRODUCT_SPEC.md` | Spec for the paid API + MCP server |
 | `RELAUNCH_PLAN.md` | Current-stack audit of toolsummary.com and the phased relaunch plan |
 
@@ -41,11 +42,11 @@ python3 -m http.server 8080 --directory site
 Current output on a real run:
 
 ```
-[fetch]   wrote 3838 models -> data/pricing.json
-[gate]    3838 in -> 672 published (2518 rejected, 85 to review)
-[history] date=2026-10-09 tracked=672 days_on_record=1
-[build]   672 model pages, 400 comparison pages -> site/
-[qa]      pages=1073 models=672 broken_links=0 placeholder_leak=0
+[fetch]   wrote 3576 models -> data/pricing.json
+[gate]    3576 in -> 704 published (2115 rejected, 87 to review)
+[history] date=2026-10-27 tracked=704 days_on_record=...
+[build]   704 model pages, 400 comparison pages -> site/
+[qa]      pages=1105 models=704 broken_links=0 placeholder_leak=0
 [qa]      all checks passed
 ```
 

@@ -5,19 +5,20 @@ Status legend: **[built]** works and is tested · **[stub]** wired but needs a c
 ## What runs today
 
 ```
-cron (daily 06:00)
+cron "Toolsummary pricing refresh" (daily 04:30 UTC, no LLM)
       │
       ▼
-automation_main.py  ──[built]── orchestrates, reports, publishes
+automation/cron/main.py ──[built]── clone → pipeline → commit → push → publish
       │
-      ├─ run_pipeline.py ────────────[built]── 4 stages, aborts on any failure
+      ├─ run_pipeline.py ────────────[built]── 5 stages, aborts on any failure
       │       ├─ fetch_pricing.py ───[built]── OpenRouter + LiteLLM  → data/pricing.json
-      │       ├─ quality_gate.py ────[built]── filter/merge/queue    → 662 publishable
-      │       ├─ build_pages.py ─────[built]── 1,063 HTML pages      → site/
+      │       ├─ quality_gate.py ────[built]── filter/merge/queue    → 704 publishable
+      │       ├─ track_history.py ───[built]── append-only price log
+      │       ├─ build_pages.py ─────[built]── 1,104 HTML pages      → site/
       │       └─ tests.py ───────────[built]── 30+ assertions; non-zero exit = no publish
       │
       ├─ review_digest.md ──────────[built]── what the human reads (the 10%)
-      ├─ publish() ─────────────────[stub]─── needs SFTP secrets
+      ├─ publish_tarball.py ────────[built]── one tarball, one tar -xzf on the host
       └─ fire_callback() ───────────[built]── marks the run done in OpenHands
 ```
 
@@ -26,16 +27,23 @@ automation_main.py  ──[built]── orchestrates, reports, publishes
 ```
 automation/
 ├── ROADMAP.md               # this file
-├── REVIEW.md                # [planned] the 10% human checklist
-├── automation_main.py       # [built]  139 LOC — cron entrypoint, no LLM
+├── cron/
+│   ├── main.py              # [built]  scheduled entrypoint, no LLM
+│   └── README.md            # [built]  what the run does and its failure policy
+├── deploy/
+│   ├── publish_tarball.py   # [built]  the publisher the daily run calls
+│   └── package_site.py      # [built]  builds the downloadable archive + manifest
 └── mvp/
     ├── run_pipeline.py      # [built]   84 LOC — stage runner + digest
     ├── fetch_pricing.py     # [built]  114 LOC — pull + normalise sources
     ├── quality_gate.py      # [built]  278 LOC — the trust layer
+    ├── track_history.py     # [built]  append-only price log
     ├── build_pages.py       # [built]  517 LOC — render model + compare pages
     ├── tests.py             # [built]  136 LOC — QA gate
     ├── data/
     │   ├── pricing.json         # canonical dataset (the artifact that matters)
+    │   ├── price_history.jsonl  # append-only — irreplaceable
+    │   ├── price_changes.jsonl  # append-only — irreplaceable
     │   ├── quality_report.md    # counts + rejection reasons
     │   ├── review_queue.json    # rows needing a human
     │   └── review_digest.md     # daily summary
@@ -46,42 +54,40 @@ automation/
 
 The only part that matters long-term: a clean, reproducible dataset.
 
-- 3,769 raw rows from two aggregators → 662 publishable
-- Rejection is explicit and counted, never silent: 1,936 resale duplicates, 252 cloud-marketplace IDs, 187 marketplace listings, 16 non-model artefacts
-- 241 duplicates merged with the survivor recording `merged_from`
-- 97 ambiguous rows routed to a human queue instead of guessed at
+- 3,576 raw rows from two aggregators → 704 publishable
+- Rejection is explicit and counted, never silent: 2,115 rejected across resale duplicates, cloud-marketplace IDs, marketplace listings, and non-model artefacts
+- 264 duplicates merged with the survivor recording `merged_from`
+- 87 ambiguous rows routed to a human queue instead of guessed at
 - Builds are idempotent — same data in, byte-identical HTML out
 
 ## Phase 2 — page generation **[built, done]**
 
-- 662 model pages: price breakdown, blended cost, 3 workload scenarios, same-vendor peers, cheaper/costlier neighbours
+- 704 model pages: price breakdown, blended cost, 3 workload scenarios, same-vendor peers, cheaper/costlier neighbours
 - 400 comparison pages: head-to-head, % delta, conditional advice that is honest when context windows tie
 - `sitemap.xml`, `llms.txt`, internal hub
 
-## Phase 3 — deploy **[stub — needs your input]**
+## Phase 3 — deploy **[built, done]**
 
-`publish()` in `automation_main.py` is written and calls `rsync --delete` over SSH, but it needs three secrets stored in OpenHands:
+`automation/deploy/publish_tarball.py` publishes the built site over SFTP using
+the secrets stored in OpenHands:
 
-| Secret | Example |
+| Secret | Holds |
 |---|---|
-| `TOOLSUMMARY_SFTP_HOST` | `your-server.hostinger.com` |
-| `TOOLSUMMARY_SFTP_USER` | `u123456789` |
-| `TOOLSUMMARY_SFTP_KEY` | private key contents |
+| `TOOLSUMMARY_SFTP_HOST` | bare hostname |
+| `TOOLSUMMARY_SFTP_USER` | SSH account name |
+| `TOOLSUMMARY_SFTP_PASSWORD` | account password (the older `TOOLSUMMARY_SFTP_KEY` name is a password too) |
+| `TOOLSUMMARY_SFTP_PORT` | SSH port |
+| `TOOLSUMMARY_SFTP_PATH` | remote web root (`.../domains/toolsummary.com/public_html`) |
 
-Missing secrets do not break the run — publish is skipped and reported, so a credential gap can never take the site down.
+A publish failure does not fail the run — the snapshot is already pushed, so a
+stale site is recoverable tomorrow and a credential gap can never take the site
+down or lose a day's prices.
 
-## Phase 4 — register the cron **[stub — needs your go-ahead]**
+## Phase 4 — the cron **[built, registered]**
 
-One API call creates it. No LLM preset, because this task is deterministic:
-
-```bash
-curl -X POST "${OPENHANDS_HOST}/api/automation/v1/preset/prompt" \
-  -H "Authorization: Bearer ${OPENHANDS_API_KEY}" \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Toolsummary pricing refresh",
-       "prompt":"Run the pricing pipeline",
-       "trigger":{"type":"cron","schedule":"0 6 * * *","timezone":"UTC"}}'
-```
+One automation is registered: **"Toolsummary pricing refresh"**, cron
+`30 4 * * *` UTC, entrypoint `python3 main.py`, tarball uploaded from
+`automation/cron/`. No LLM preset, because this task is deterministic.
 
 ## Phase 5 — expand **[planned]**
 
@@ -96,9 +102,9 @@ Add sources one at a time, each behind the same quality gate:
 
 | Automated | Human |
 |---|---|
-| Fetching every source | Approving the 97 queued rows |
+| Fetching every source | Approving the 87 queued rows |
 | Filtering, merging, deduping | Spot-checking any >20% price move |
-| Rendering all 1,063 pages | Writing the occasional editorial piece |
+| Rendering all 1,104 pages | Writing the occasional editorial piece |
 | QA (30+ assertions) | Deciding to add a new source |
 | Publishing + sitemap | Handling a provider's takedown request |
 | Daily digest | |
