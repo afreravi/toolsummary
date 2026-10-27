@@ -152,7 +152,7 @@ def main():
                 return 1
             log("pipeline OK, site built")
 
-        cmd = [sys.executable, str(WORK / "automation" / "deploy" / "publish_sftp.py")]
+        cmd = [sys.executable, str(WORK / "automation" / "deploy" / "publish_tarball.py")]
         if mode in ("verify", "dry-run"):
             cmd.append(f"--{mode}")
         r = subprocess.run(cmd, cwd=WORK, capture_output=True, text=True, timeout=1800)
