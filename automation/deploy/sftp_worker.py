@@ -65,12 +65,21 @@ def connect():
     return client
 
 
-def remote_files(sftp, root):
-    """Recursively list files under root as {relative_path: size}."""
+def remote_files(sftp, root, max_entries=200000, max_depth=32):
+    """Recursively list files under root as {relative_path: size}.
+
+    Bounded three ways so a pathological tree cannot run forever. A directory
+    symlink pointing at an ancestor is the dangerous case: the relative path
+    grows at every level, so tracking visited paths does not catch it. Depth and
+    an inode set (when the server reports one) do.
+    """
     found = {}
-    stack = [""]
+    seen_dirs = set()
+    stack = [("", 0)]
     while stack:
-        rel = stack.pop()
+        rel, depth = stack.pop()
+        if depth > max_depth or len(found) >= max_entries:
+            continue
         path = posixpath.join(root, rel) if rel else root
         try:
             entries = sftp.listdir_attr(path)
@@ -79,7 +88,12 @@ def remote_files(sftp, root):
         for e in entries:
             child = posixpath.join(rel, e.filename) if rel else e.filename
             if stat.S_ISDIR(e.st_mode):
-                stack.append(child)
+                ino = getattr(e, "st_ino", 0)
+                key = ino if ino else child
+                if key in seen_dirs:
+                    continue
+                seen_dirs.add(key)
+                stack.append((child, depth + 1))
             else:
                 found[child] = e.st_size
     return found
@@ -153,6 +167,25 @@ def ensure_dirs(sftp, remote_root, rel_dirs):
                     pass
 
 
+def harden_session(sftp):
+    """Bound every operation on a session, so a stall raises instead of hanging.
+
+    Without this a single stalled SFTP request blocks forever. That is what
+    killed the first real publishes: the recursive remote listing in verify
+    mode and the orphan scan in publish mode both run on the main session, and
+    the automation's wall clock then expired with no result printed.
+    """
+    try:
+        sftp.get_channel().settimeout(SOCKET_TIMEOUT)
+    except Exception:
+        pass
+    try:
+        sftp.get_channel().get_transport().set_keepalive(15)
+    except Exception:
+        pass
+    return sftp
+
+
 def open_sessions(client, workers, result=None):
     """Open `workers` independent SFTP sessions, giving up gracefully.
 
@@ -164,18 +197,7 @@ def open_sessions(client, workers, result=None):
     sessions = []
     for i in range(max(1, workers)):
         try:
-            sftp = client.open_sftp()
-            # A stalled write must not hang the whole run: the automation has a
-            # wall-clock limit and being killed loses the report.
-            try:
-                sftp.get_channel().settimeout(SOCKET_TIMEOUT)
-            except Exception:
-                pass
-            try:
-                sftp.get_channel().get_transport().set_keepalive(15)
-            except Exception:
-                pass
-            sessions.append(sftp)
+            sessions.append(harden_session(client.open_sftp()))
         except Exception as e:
             if result is not None:
                 result[f"session_open_failures"] = result.get("session_open_failures", 0) + 1
@@ -203,6 +225,7 @@ def upload_parallel(client, remote_root, local, rels, workers=8, result=None):
     lock = threading.Lock()
     done = [0]
     errors = []
+    first_error = []
 
     sessions = open_sessions(client, workers, result)
 
@@ -216,23 +239,30 @@ def upload_parallel(client, remote_root, local, rels, workers=8, result=None):
                 sftp.put(local[rel], posixpath.join(remote_root, rel))
                 with lock:
                     done[0] += 1
-            except Exception:
+            except Exception as e:
                 # Retry once on a brand new session: a dropped or throttled
                 # channel is the usual cause and a retry on the same session
-                # would fail again.
+                # would fail again. The fresh session is hardened like every
+                # other, otherwise a stall in the retry hangs the whole run.
                 ok = False
                 try:
-                    fresh = client.open_sftp()
-                    fresh.put(local[rel], posixpath.join(remote_root, rel))
-                    fresh.close()
+                    fresh = harden_session(client.open_sftp())
+                    try:
+                        fresh.put(local[rel], posixpath.join(remote_root, rel))
+                    finally:
+                        fresh.close()
                     ok = True
-                except Exception:
-                    pass
+                except Exception as retry_error:
+                    e = retry_error
                 with lock:
                     if ok:
                         done[0] += 1
                     else:
                         errors.append(rel)
+                        # Keep the reason. Without it a total failure reports
+                        # only the first filename, which is not diagnosable.
+                        if not first_error:
+                            first_error.append(f"{type(e).__name__}: {e}")
 
     threads = [threading.Thread(target=worker, args=(s,)) for s in sessions]
     for t in threads:
@@ -244,6 +274,8 @@ def upload_parallel(client, remote_root, local, rels, workers=8, result=None):
             s.close()
         except Exception:
             pass
+    if first_error:
+        result["upload_error_reason"] = first_error[0]
     return done[0], errors
 
 
@@ -302,7 +334,8 @@ def run_publish(client, sftp, remote_root, local_root, dry_run, result):
         result["upload_errors"] = len(errors)
         result["upload_error_sample"] = errors[:5]
         if uploaded == 0:
-            raise IOError(f"every upload failed, first: {errors[0]}")
+            raise IOError(f"every upload failed, first: {errors[0]} "
+                          f"({result.get('upload_error_reason', 'no reason recorded')})")
 
 
 def main():
@@ -311,7 +344,7 @@ def main():
     try:
         client = connect()
         result["auth"] = "OK"
-        sftp = client.open_sftp()
+        sftp = harden_session(client.open_sftp())
         try:
             mode = os.environ.get("VMODE", "verify")
             remote_root = os.environ["VREMOTE"].rstrip("/")

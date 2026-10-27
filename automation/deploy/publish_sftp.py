@@ -26,8 +26,12 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SITE = ROOT / "automation" / "mvp" / "site"
+# VLOCAL lets a test point the uploader at a scratch tree instead of the
+# generated site. The automation leaves it unset and gets the real path.
+SITE = Path(os.environ.get("VLOCAL") or (ROOT / "automation" / "mvp" / "site"))
 WORKER = Path(__file__).resolve().parent / "sftp_worker.py"
+# Below the automation wall clock, so the worker reports before being killed.
+WORKER_TIMEOUT = int(os.environ.get("VWORKER_TIMEOUT") or 900)
 
 # Name in the secret store -> name the worker reads.
 SECRETS = {
@@ -154,15 +158,15 @@ def main() -> int:
     if not secret:
         missing.append("TOOLSUMMARY_SFTP_PASSWORD or TOOLSUMMARY_SFTP_KEY")
     if missing:
-        print("missing configuration: " + ", ".join(missing))
+        print("missing configuration: " + ", ".join(missing), flush=True)
         return 2
 
     # The remote path secret has been named two different things. Say which one
     # was used rather than silently picking one.
     if "VREMOTE" in cfg:
-        print("remote path source: TOOLSUMMARY_SFTP_PATH")
+        print("remote path source: TOOLSUMMARY_SFTP_PATH", flush=True)
     else:
-        print("remote path source: Remote_Path (TOOLSUMMARY_SFTP_PATH is unset)")
+        print("remote path source: Remote_Path (TOOLSUMMARY_SFTP_PATH is unset)", flush=True)
 
     if not looks_like_web_root(remote) and not a.allow_any_path:
         print(f"refusing: remote path does not look like a web root "
@@ -171,7 +175,7 @@ def main() -> int:
         return 2
 
     if mode == "publish" and not SITE.is_dir():
-        print(f"refusing: no built site at {SITE}. Run build_pages.py first.")
+        print(f"refusing: no built site at {SITE}. Run build_pages.py first.", flush=True)
         return 2
 
     # paramiko must be installed in this process and imported in the worker's.
@@ -198,27 +202,36 @@ def main() -> int:
     else:
         env["VPASS"] = secret
 
-    print(f"mode: {mode} | auth: {auth} | port: {env['VPORT']}")
+    print(f"mode: {mode} | auth: {auth} | port: {env['VPORT']}", flush=True)
 
-    proc = subprocess.run([sys.executable, str(WORKER)], capture_output=True,
-                          text=True, timeout=900, env=env)
+    try:
+        proc = subprocess.run([sys.executable, str(WORKER)], capture_output=True,
+                              text=True, timeout=WORKER_TIMEOUT, env=env)
+    except subprocess.TimeoutExpired as e:
+        print(f"RESULT: FAILED - worker exceeded {WORKER_TIMEOUT}s and was killed",
+              flush=True)
+        raw = e.stdout or b""
+        tail = raw.decode(errors="replace") if isinstance(raw, bytes) else str(raw)
+        for line in tail.strip().splitlines()[-5:]:
+            print("  " + line[:200], flush=True)
+        return 1
     output = (proc.stdout or "").strip()
     line = output.splitlines()[-1] if output else ""
 
     try:
         result = json.loads(line)
     except Exception:
-        print("worker produced no readable result")
+        print("worker produced no readable result", flush=True)
         tail = ((proc.stdout or "") + (proc.stderr or "")).strip().splitlines()[-3:]
         for t in tail:
-            print("  " + t[:200])
+            print("  " + t[:200], flush=True)
         return 1
 
     if result.get("auth") == "FAILED":
-        print("RESULT: AUTH FAILED - " + result.get("error", ""))
+        print("RESULT: AUTH FAILED - " + result.get("error", ""), flush=True)
         return 1
     if not result.get("ok"):
-        print("RESULT: FAILED - " + str(result.get("error", "unknown")))
+        print("RESULT: FAILED - " + str(result.get("error", "unknown")), flush=True)
         return 1
 
     if mode == "verify":
@@ -234,9 +247,9 @@ def main() -> int:
               f"{result.get('local_files')} files, prune {result.get('orphans')} "
               f"orphans (remote has {result.get('remote_files_before')})")
         for s in result.get("sample_uploads", []):
-            print("  upload " + s)
+            print("  upload " + s, flush=True)
         for s in result.get("sample_orphans", []):
-            print("  prune  " + s)
+            print("  prune  " + s, flush=True)
         return 0
 
     print(f"RESULT: uploaded {result.get('uploaded')} files, "
