@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T04:31:26+00:00",
+  "generated_at": "2026-10-27T09:43:27+00:00",
   "model_count": 704,
   "failed_sources": [],
   "models": [
@@ -250,22 +250,6 @@
       "canonical_key": "lyria-3-clip"
     },
     {
-      "id": "nvidia/nemotron-3-super-120b-a12b:free",
-      "name": "NVIDIA: Nemotron 3 Super (free)",
-      "vendor": "nvidia",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.0,
-      "output_per_1m_usd": 0.0,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Nemotron 3 Super 120 B A12 B",
-      "canonical_key": "nemotron-3-super-120b-a12b",
-      "merged_from": [
-        "nebius/nvidia/nemotron-3-super-120b-a12b",
-        "nvidia/nemotron-3-super-120b-a12b"
-      ]
-    },
-    {
       "id": "coralbricks/deepseek-v4.1-flash-fast",
       "name": "coralbricks/deepseek-v4.1-flash-fast",
       "vendor": "coralbricks",
@@ -370,7 +354,7 @@
       "vendor": "~deepseek",
       "context_length": 1048576,
       "input_per_1m_usd": 0.02,
-      "output_per_1m_usd": 0.1379,
+      "output_per_1m_usd": 1.0,
       "modality": "text+image->text",
       "source": "openrouter",
       "display_name": "DeepSeek Flash Latest",
@@ -584,6 +568,18 @@
       "canonical_key": "gemma-4-26b"
     },
     {
+      "id": "~z-ai/glm-flash-latest",
+      "name": "Z.ai: GLM Flash Latest",
+      "vendor": "~z-ai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.0313,
+      "output_per_1m_usd": 0.08,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "GLM Flash Latest",
+      "canonical_key": "glm-flash"
+    },
+    {
       "id": "z-ai/glm-5.2",
       "name": "Z.ai: GLM 5.2",
       "vendor": "z-ai",
@@ -676,18 +672,6 @@
       "source": "openrouter",
       "display_name": "Mercury 2.5",
       "canonical_key": "mercury-2.5"
-    },
-    {
-      "id": "google/gemma-3-4b-it",
-      "name": "Google: Gemma 3 4B",
-      "vendor": "google",
-      "context_length": 131072,
-      "input_per_1m_usd": 0.04,
-      "output_per_1m_usd": 0.05,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "Gemma 3.4 B It",
-      "canonical_key": "gemma-3-4b-it"
     },
     {
       "id": "sao10k/l3-lunaris-8b",
@@ -916,6 +900,18 @@
       ]
     },
     {
+      "id": "google/gemma-3-4b-it",
+      "name": "Google: Gemma 3 4B",
+      "vendor": "google",
+      "context_length": 131072,
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.1,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "Gemma 3.4 B It",
+      "canonical_key": "gemma-3-4b-it"
+    },
+    {
       "id": "google/gemma-3-12b-it",
       "name": "Google: Gemma 3 12B",
       "vendor": "google",
@@ -1077,18 +1073,6 @@
       "source": "litellm",
       "display_name": "Qwen 3 30 B A3 B Fp 8",
       "canonical_key": "qwen3-30b-a3b-fp8"
-    },
-    {
-      "id": "~z-ai/glm-flash-latest",
-      "name": "Z.ai: GLM Flash Latest",
-      "vendor": "~z-ai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.0513,
-      "output_per_1m_usd": 0.0701,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "GLM Flash Latest",
-      "canonical_key": "glm-flash"
     },
     {
       "id": "inclusionai/ling-3.0-flash-vl",
@@ -2448,22 +2432,6 @@
       ]
     },
     {
-      "id": "deepseek/deepseek-v4.1-flash-1017",
-      "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
-      "vendor": "deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.15,
-      "output_per_1m_usd": 0.6,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4.1 Flash 1017",
-      "canonical_key": "deepseek-v4.1-flash-1017",
-      "merged_from": [
-        "baseten/deepseek-ai/DeepSeek-V4.1-Flash-1017",
-        "together_ai/deepseek-ai/DeepSeek-V4.1-Flash-1017"
-      ]
-    },
-    {
       "id": "perceptron/perceptron-mk1.5",
       "name": "Perceptron: Perceptron Mk1.5",
       "vendor": "perceptron",
@@ -2539,6 +2507,41 @@
         "gemini/gemini-3.5-flash-lite",
         "google/gemini-3.5-flash-lite"
       ]
+    },
+    {
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "vendor": "moonshotai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 11.5,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Kimi K3",
+      "canonical_key": "kimi-k3",
+      "merged_from": [
+        "baseten/moonshotai/Kimi-K3",
+        "github_copilot/kimi-k3",
+        "moonshotai/kimi-k3:batch",
+        "nebius/moonshotai/Kimi-K3",
+        "opencode_go/kimi-k3",
+        "sail/moonshotai/Kimi-K3",
+        "scx-ai/Kimi-K3",
+        "tencent/kimi-k3",
+        "together_ai/moonshotai/Kimi-K3"
+      ]
+    },
+    {
+      "id": "~moonshotai/kimi-latest",
+      "name": "MoonshotAI: Kimi Latest",
+      "vendor": "~moonshotai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 11.5,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Kimi Latest",
+      "canonical_key": "kimi"
     },
     {
       "id": "mistralai/mistral-small-2603",
@@ -2983,18 +2986,6 @@
       ]
     },
     {
-      "id": "~moonshotai/kimi-latest",
-      "name": "MoonshotAI: Kimi Latest",
-      "vendor": "~moonshotai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.19,
-      "output_per_1m_usd": 8.94,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Kimi Latest",
-      "canonical_key": "kimi"
-    },
-    {
       "id": "inferenceapis/deepseek-ai/DeepSeek-V3",
       "name": "inferenceapis/deepseek-ai/DeepSeek-V3",
       "vendor": "inferenceapis",
@@ -3066,29 +3057,6 @@
       "canonical_key": "qwen3.8-27b",
       "merged_from": [
         "nebius/Qwen/Qwen3.8-27B"
-      ]
-    },
-    {
-      "id": "moonshotai/kimi-k3",
-      "name": "MoonshotAI: Kimi K3",
-      "vendor": "moonshotai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.2,
-      "output_per_1m_usd": 20.0,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Kimi K3",
-      "canonical_key": "kimi-k3",
-      "merged_from": [
-        "baseten/moonshotai/Kimi-K3",
-        "github_copilot/kimi-k3",
-        "moonshotai/kimi-k3:batch",
-        "nebius/moonshotai/Kimi-K3",
-        "opencode_go/kimi-k3",
-        "sail/moonshotai/Kimi-K3",
-        "scx-ai/Kimi-K3",
-        "tencent/kimi-k3",
-        "together_ai/moonshotai/Kimi-K3"
       ]
     },
     {
@@ -3563,18 +3531,6 @@
       "canonical_key": "deepseek-v4.1-flash-abliterated"
     },
     {
-      "id": "~deepseek/deepseek-pro-latest",
-      "name": "DeepSeek: DeepSeek Pro Latest",
-      "vendor": "~deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.2211,
-      "output_per_1m_usd": 8.0,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek Pro Latest",
-      "canonical_key": "deepseek-pro"
-    },
-    {
       "id": "qwen/qwen3.7-plus:batch",
       "name": "Qwen: Qwen3.7 Plus (batch)",
       "vendor": "qwen",
@@ -3626,6 +3582,18 @@
       "source": "litellm",
       "display_name": "Llama 4 Maverick",
       "canonical_key": "llama4-maverick"
+    },
+    {
+      "id": "~deepseek/deepseek-pro-latest",
+      "name": "DeepSeek: DeepSeek Pro Latest",
+      "vendor": "~deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.2458,
+      "output_per_1m_usd": 8.0,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek Pro Latest",
+      "canonical_key": "deepseek-pro"
     },
     {
       "id": "qwen/qwen3-vl-8b-instruct",
@@ -4122,6 +4090,22 @@
       ]
     },
     {
+      "id": "deepseek/deepseek-v4.1-flash-1017",
+      "name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+      "vendor": "deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 1.2,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek V4.1 Flash 1017",
+      "canonical_key": "deepseek-v4.1-flash-1017",
+      "merged_from": [
+        "baseten/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+        "together_ai/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+      ]
+    },
+    {
       "id": "moondream/moondream3-preview",
       "name": "Moondream: Moondream 3 Preview",
       "vendor": "moondream",
@@ -4219,6 +4203,21 @@
       "source": "openrouter",
       "display_name": "Qwen 3.5 Plus",
       "canonical_key": "qwen3.5-plus"
+    },
+    {
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "name": "NVIDIA: Nemotron 3 Super",
+      "vendor": "nvidia",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 2.4,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "Nemotron 3 Super 120 B A12 B",
+      "canonical_key": "nemotron-3-super-120b-a12b",
+      "merged_from": [
+        "nebius/nvidia/nemotron-3-super-120b-a12b"
+      ]
     },
     {
       "id": "minimax/minimax-m2.5",
@@ -5674,26 +5673,6 @@
       "source": "litellm",
       "display_name": "Minicpm V4.5",
       "canonical_key": "minicpm-v-4_5"
-    },
-    {
-      "id": "deepseek/deepseek-v4-pro-0813",
-      "name": "DeepSeek: DeepSeek V4 Pro 0813",
-      "vendor": "deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.66,
-      "output_per_1m_usd": 1.98,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4 Pro 0813",
-      "canonical_key": "deepseek-v4-pro-0813",
-      "merged_from": [
-        "baseten/deepseek-ai/DeepSeek-V4-Pro-0813",
-        "inferenceapis/deepseek-ai/DeepSeek-V4-Pro-0813",
-        "nebius/deepseek-ai/DeepSeek-V4-Pro-0813",
-        "sail/deepseek-ai/DeepSeek-V4-Pro-0813",
-        "tencent/deepseek-v4-pro-0813",
-        "together_ai/deepseek-ai/DeepSeek-V4-Pro-0813"
-      ]
     },
     {
       "id": "qwen/qwen-2.5-coder-32b-instruct",
@@ -7334,6 +7313,26 @@
       "source": "litellm",
       "display_name": "GLM 5.3 Abliterated",
       "canonical_key": "glm-5.3-abliterated"
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro-0813",
+      "name": "DeepSeek: DeepSeek V4 Pro 0813",
+      "vendor": "deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 1.32,
+      "output_per_1m_usd": 3.96,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek V4 Pro 0813",
+      "canonical_key": "deepseek-v4-pro-0813",
+      "merged_from": [
+        "baseten/deepseek-ai/DeepSeek-V4-Pro-0813",
+        "inferenceapis/deepseek-ai/DeepSeek-V4-Pro-0813",
+        "nebius/deepseek-ai/DeepSeek-V4-Pro-0813",
+        "sail/deepseek-ai/DeepSeek-V4-Pro-0813",
+        "tencent/deepseek-v4-pro-0813",
+        "together_ai/deepseek-ai/DeepSeek-V4-Pro-0813"
+      ]
     },
     {
       "id": "mistralai/mistral-large-4-0",
@@ -9597,7 +9596,7 @@
     }
   ],
   "quality": {
-    "input_rows": 3577,
+    "input_rows": 3576,
     "rejected": 2115,
     "merged": 264,
     "queued_for_review": 87,

@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-10-27T04:31:26+00:00",
+  "generated_at": "2026-10-27T09:43:27+00:00",
   "as_of": "2026-10-27",
   "window_days": 30,
   "counts": {
-    "price": 428,
+    "price": 435,
     "new": 723,
     "delisted": 19,
     "context": 23,
-    "significant": 289
+    "significant": 298
   },
   "events": [
     {
@@ -12867,26 +12867,13 @@
     {
       "date": "2026-10-27",
       "kind": "price",
-      "canonical_key": "deepseek-flash",
-      "display_name": "DeepSeek Flash Latest",
-      "vendor": "~deepseek",
-      "field": "output_per_1m_usd",
-      "from": 1.0,
-      "to": 0.1379,
-      "pct_change": -86.21,
-      "direction": "decrease",
-      "significant": true
-    },
-    {
-      "date": "2026-10-27",
-      "kind": "price",
       "canonical_key": "deepseek-pro",
       "display_name": "DeepSeek Pro Latest",
       "vendor": "~deepseek",
       "field": "input_per_1m_usd",
       "from": 0.2565,
-      "to": 0.2211,
-      "pct_change": -13.8,
+      "to": 0.2458,
+      "pct_change": -4.17,
       "direction": "decrease",
       "significant": false
     },
@@ -12919,6 +12906,32 @@
     {
       "date": "2026-10-27",
       "kind": "price",
+      "canonical_key": "deepseek-v4-pro-0813",
+      "display_name": "DeepSeek V4 Pro 0813",
+      "vendor": "deepseek",
+      "field": "input_per_1m_usd",
+      "from": 0.66,
+      "to": 1.32,
+      "pct_change": 100.0,
+      "direction": "increase",
+      "significant": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "price",
+      "canonical_key": "deepseek-v4-pro-0813",
+      "display_name": "DeepSeek V4 Pro 0813",
+      "vendor": "deepseek",
+      "field": "output_per_1m_usd",
+      "from": 1.98,
+      "to": 3.96,
+      "pct_change": 100.0,
+      "direction": "increase",
+      "significant": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "price",
       "canonical_key": "deepseek-v4.1-flash",
       "display_name": "DeepSeek V4.1 Flash",
       "vendor": "deepseek",
@@ -12940,6 +12953,58 @@
       "to": 0.15,
       "pct_change": -85.0,
       "direction": "decrease",
+      "significant": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "price",
+      "canonical_key": "deepseek-v4.1-flash-1017",
+      "display_name": "DeepSeek V4.1 Flash 1017",
+      "vendor": "deepseek",
+      "field": "input_per_1m_usd",
+      "from": 0.15,
+      "to": 0.3,
+      "pct_change": 100.0,
+      "direction": "increase",
+      "significant": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "price",
+      "canonical_key": "deepseek-v4.1-flash-1017",
+      "display_name": "DeepSeek V4.1 Flash 1017",
+      "vendor": "deepseek",
+      "field": "output_per_1m_usd",
+      "from": 0.6,
+      "to": 1.2,
+      "pct_change": 100.0,
+      "direction": "increase",
+      "significant": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "price",
+      "canonical_key": "gemma-3-4b-it",
+      "display_name": "Gemma 3.4 B It",
+      "vendor": "google",
+      "field": "input_per_1m_usd",
+      "from": 0.04,
+      "to": 0.05,
+      "pct_change": 25.0,
+      "direction": "increase",
+      "significant": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "price",
+      "canonical_key": "gemma-3-4b-it",
+      "display_name": "Gemma 3.4 B It",
+      "vendor": "google",
+      "field": "output_per_1m_usd",
+      "from": 0.05,
+      "to": 0.1,
+      "pct_change": 100.0,
+      "direction": "increase",
       "significant": true
     },
     {
@@ -12976,9 +13041,9 @@
       "vendor": "~z-ai",
       "field": "input_per_1m_usd",
       "from": 0.0413,
-      "to": 0.0513,
-      "pct_change": 24.21,
-      "direction": "increase",
+      "to": 0.0313,
+      "pct_change": -24.21,
+      "direction": "decrease",
       "significant": true
     },
     {
@@ -12989,9 +13054,9 @@
       "vendor": "~z-ai",
       "field": "output_per_1m_usd",
       "from": 0.0758,
-      "to": 0.0701,
-      "pct_change": -7.52,
-      "direction": "decrease",
+      "to": 0.08,
+      "pct_change": 5.54,
+      "direction": "increase",
       "significant": false
     },
     {
@@ -13028,9 +13093,9 @@
       "vendor": "~moonshotai",
       "field": "input_per_1m_usd",
       "from": 0.1814,
-      "to": 0.19,
-      "pct_change": 4.74,
-      "direction": "increase",
+      "to": 0.15,
+      "pct_change": -17.31,
+      "direction": "decrease",
       "significant": false
     },
     {
@@ -13041,10 +13106,10 @@
       "vendor": "~moonshotai",
       "field": "output_per_1m_usd",
       "from": 8.5226,
-      "to": 8.94,
-      "pct_change": 4.9,
+      "to": 11.5,
+      "pct_change": 34.94,
       "direction": "increase",
-      "significant": false
+      "significant": true
     },
     {
       "date": "2026-10-27",
@@ -13080,10 +13145,10 @@
       "vendor": "moonshotai",
       "field": "input_per_1m_usd",
       "from": 0.191,
-      "to": 0.2,
-      "pct_change": 4.71,
-      "direction": "increase",
-      "significant": false
+      "to": 0.15,
+      "pct_change": -21.47,
+      "direction": "decrease",
+      "significant": true
     },
     {
       "date": "2026-10-27",
@@ -13093,9 +13158,9 @@
       "vendor": "moonshotai",
       "field": "output_per_1m_usd",
       "from": 16.0,
-      "to": 20.0,
-      "pct_change": 25.0,
-      "direction": "increase",
+      "to": 11.5,
+      "pct_change": -28.12,
+      "direction": "decrease",
       "significant": true
     },
     {
@@ -13251,6 +13316,32 @@
       "from": 0.3,
       "to": 0.6,
       "pct_change": 100.0,
+      "direction": "increase",
+      "significant": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "price",
+      "canonical_key": "nemotron-3-super-120b-a12b",
+      "display_name": "Nemotron 3 Super 120 B A12 B",
+      "vendor": "nvidia",
+      "field": "input_per_1m_usd",
+      "from": 0.0,
+      "to": 0.3,
+      "pct_change": null,
+      "direction": "increase",
+      "significant": true
+    },
+    {
+      "date": "2026-10-27",
+      "kind": "price",
+      "canonical_key": "nemotron-3-super-120b-a12b",
+      "display_name": "Nemotron 3 Super 120 B A12 B",
+      "vendor": "nvidia",
+      "field": "output_per_1m_usd",
+      "from": 0.0,
+      "to": 2.4,
+      "pct_change": null,
       "direction": "increase",
       "significant": true
     },

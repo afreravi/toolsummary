@@ -1,6 +1,6 @@
 # Quality gate report
 
-- Input rows from aggregators: **3577**
+- Input rows from aggregators: **3576**
 - Rejected as noise / resale duplicates: **2115**
 - Merged duplicates collapsed to one page: **264**
 - Routed to human review queue: **87**
