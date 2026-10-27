@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-26
+# Daily review digest - 2026-10-27
 
-Automation refreshed the pricing dataset. **701 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **704 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-393 price changes in the last 30 days, 716 new models, 15 delisted.
+428 price changes in the last 30 days, 723 new models, 19 delisted.
 
-### 263 changes over 20% - check these before trusting the page
+### 289 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
@@ -17,33 +17,33 @@ Automation refreshed the pricing dataset. **701 model pages** and 400 comparison
 - **DeepSeek V4 Flash 0731** input: $0.0422 -> $0.44 (942.65%)
 - **GLM 5.3 Flash** input: $0.0052 -> $0.05 (861.54%)
 - **DeepSeek V4 Flash 0731** output: $0.15 -> $1.32 (780.0%)
+- **Mimo V2.5** output: $0.238 -> $2.0 (740.34%)
 - **DeepSeek V4 Flash 0731** output: $0.1694 -> $1.32 (679.22%)
 - **DeepSeek Pro Latest** output: $0.6574 -> $5.0 (660.57%)
 - **DeepSeek V4 Flash 0731** input: $0.0094 -> $0.07 (644.68%)
 - **DeepSeek V4.1 Flash** output: $0.15 -> $1.0 (566.67%)
 - **Qwen 3.8 27 B** input: $0.04 -> $0.24 (500.0%)
-- **GLM Flash Latest** input: $0.0052 -> $0.0262 (403.85%)
 
 ## Needs a human decision
 
-### 48 possible duplicates
+### 51 possible duplicates
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
+- `~deepseek/deepseek-v4-flash-latest` looks like `deepseek/deepseek-v4.1-flash:batch` (similarity 0.944)
 - `meta/muse-spark-1.2-contributor` looks like `meta/muse-spark-1.3-contributor` (similarity 0.962)
 - `mistral/ministral-3-3b-2512` looks like `mistralai/ministral-3b-2512` (similarity 0.944)
 - `lambda_ai/llama3.3-70b-instruct-fp8` looks like `lambda_ai/llama3.1-70b-instruct-fp8` (similarity 0.96)
 - `perceptron/perceptron-mk1` looks like `perceptron/perceptron-mk1.5` (similarity 0.933)
+- `mistral/ministral-3-8b-2512` looks like `mistralai/ministral-8b-2512` (similarity 0.944)
 - `mistral/ministral-3-14b-2512` looks like `mistralai/ministral-14b-2512` (similarity 0.947)
 - `gmi/Qwen/Qwen3-VL-235B-A22B-Instruct-FP8` looks like `qwen/qwen3-vl-235b-a22b-instruct` (similarity 0.931)
 - `minimax/MiniMax-M2.5-lightning` looks like `minimax/MiniMax-M2.1-lightning` (similarity 0.955)
 - `google/gemini-3.7-flash:batch` looks like `google/gemini-3.8-flash:batch` (similarity 0.938)
 - `google/gemini-3.6-flash:batch` looks like `google/gemini-3.8-flash:batch` (similarity 0.938)
+- `mistralai/mistral-medium-3` looks like `mistralai/mistral-medium-3.1` (similarity 0.941)
 - `nebius/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1` looks like `nebius/nvidia/Llama-3.1-Nemotron-Ultra-253B-v1` (similarity 0.966)
 - `ovhcloud/Meta-Llama-3_3-70B-Instruct` looks like `ovhcloud/Meta-Llama-3_1-70B-Instruct` (similarity 0.963)
-- `vercel_ai_gateway/meta/llama-3.1-70b` looks like `snowflake/llama3.1-70b` (similarity 0.96)
-- `together_ai/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo` looks like `together_ai/meta-llama/Meta-Llama-3-70B-Instruct-Turbo` (similarity 0.969)
-- `anthropic/claude-sonnet-5:batch` looks like `anthropic/claude-sonnet-5.5:batch` (similarity 0.938)
 
 ### 36 rows missing a usable context window
 

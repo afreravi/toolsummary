@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26T04:30:53+00:00",
-  "model_count": 701,
+  "generated_at": "2026-10-27T04:31:26+00:00",
+  "model_count": 704,
   "failed_sources": [],
   "models": [
     {
@@ -277,7 +277,8 @@
       "display_name": "DeepSeek V4.1 Flash Fast",
       "canonical_key": "deepseek-v4.1-flash-fast",
       "merged_from": [
-        "baseten/deepseek-ai/DeepSeek-V4.1-Flash-Fast"
+        "baseten/deepseek-ai/DeepSeek-V4.1-Flash-Fast",
+        "refuseless/deepseek-v4.1-flash-fast"
       ]
     },
     {
@@ -352,45 +353,16 @@
       "canonical_key": "llama3.2-3b-instruct"
     },
     {
-      "id": "ibm-granite/granite-4.0-h-micro",
-      "name": "IBM: Granite 4.0 Micro",
-      "vendor": "ibm-granite",
+      "id": "cloudflare/@cf/ibm-granite/granite-4.0-h-micro",
+      "name": "cloudflare/@cf/ibm-granite/granite-4.0-h-micro",
+      "vendor": "cloudflare",
       "context_length": 131000,
       "input_per_1m_usd": 0.017,
       "output_per_1m_usd": 0.112,
-      "modality": "text->text",
-      "source": "openrouter",
+      "modality": "chat",
+      "source": "litellm",
       "display_name": "Granite 4.0 H Micro",
-      "canonical_key": "granite-4.0-h-micro",
-      "merged_from": [
-        "cloudflare/@cf/ibm-granite/granite-4.0-h-micro"
-      ]
-    },
-    {
-      "id": "deepseek/deepseek-v4.1-flash",
-      "name": "DeepSeek: DeepSeek V4.1 Flash",
-      "vendor": "deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.02,
-      "output_per_1m_usd": 1.0,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4.1 Flash",
-      "canonical_key": "deepseek-v4.1-flash",
-      "merged_from": [
-        "baseten/deepseek-ai/DeepSeek-V4.1-Flash",
-        "coralbricks/deepseek-v4.1-flash",
-        "deepseek/deepseek-v4.1-flash:batch",
-        "inferenceapis/deepseek-ai/DeepSeek-V4.1-Flash",
-        "inferenceapis/deepseek-v4.1-flash",
-        "nebius/deepseek-ai/DeepSeek-V4.1-Flash",
-        "opencode_go/deepseek-v4.1-flash",
-        "prism/deepseek-v4.1-flash",
-        "sail/deepseek-ai/DeepSeek-V4.1-Flash",
-        "scx-ai/DeepSeek-V4.1-flash",
-        "tencent/deepseek-v4.1-flash",
-        "together_ai/deepseek-ai/DeepSeek-V4.1-Flash"
-      ]
+      "canonical_key": "granite-4.0-h-micro"
     },
     {
       "id": "~deepseek/deepseek-flash-latest",
@@ -398,7 +370,7 @@
       "vendor": "~deepseek",
       "context_length": 1048576,
       "input_per_1m_usd": 0.02,
-      "output_per_1m_usd": 1.0,
+      "output_per_1m_usd": 0.1379,
       "modality": "text+image->text",
       "source": "openrouter",
       "display_name": "DeepSeek Flash Latest",
@@ -788,18 +760,6 @@
       "canonical_key": "qwen3-8b"
     },
     {
-      "id": "~z-ai/glm-flash-latest",
-      "name": "Z.ai: GLM Flash Latest",
-      "vendor": "~z-ai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.0413,
-      "output_per_1m_usd": 0.0758,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "GLM Flash Latest",
-      "canonical_key": "glm-flash"
-    },
-    {
       "id": "tencent/hy-mt2-1.8b",
       "name": "Tencent: Hy-MT2-1.8B",
       "vendor": "tencent",
@@ -824,33 +784,6 @@
       "canonical_key": "trinity-mini"
     },
     {
-      "id": "~deepseek/deepseek-v4-flash-latest",
-      "name": "DeepSeek: DeepSeek V4 Flash Latest",
-      "vendor": "~deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.0475,
-      "output_per_1m_usd": 0.1568,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4 Flash Latest",
-      "canonical_key": "deepseek-v4-flash",
-      "merged_from": [
-        "dashscope/deepseek-v4-flash",
-        "deepseek-v4-flash",
-        "deepseek/deepseek-v4-flash",
-        "inferenceapis/deepseek-ai/DeepSeek-V4-Flash",
-        "inferenceapis/deepseek-v4-flash",
-        "libertai/deepseek-v4-flash",
-        "nebius/deepseek-ai/DeepSeek-V4-Flash",
-        "pinstripes/ps/deepseek-v4-flash",
-        "prism/deepseek-v4-flash",
-        "qwen_ai_platform/deepseek-v4-flash",
-        "qwencloud/deepseek-v4-flash",
-        "tencent/deepseek-v4-flash",
-        "tensormesh/deepseek-ai/DeepSeek-V4-Flash"
-      ]
-    },
-    {
       "id": "cloudflare/@cf/meta/llama-3.2-11b-vision-instruct",
       "name": "cloudflare/@cf/meta/llama-3.2-11b-vision-instruct",
       "vendor": "cloudflare",
@@ -861,6 +794,32 @@
       "source": "litellm",
       "display_name": "Llama 3.2 11 B Vision Instruct",
       "canonical_key": "llama-3.2-11b-vision-instruct"
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash:batch",
+      "name": "DeepSeek: DeepSeek V4.1 Flash (batch)",
+      "vendor": "deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.05,
+      "output_per_1m_usd": 0.15,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek V4.1 Flash",
+      "canonical_key": "deepseek-v4.1-flash",
+      "merged_from": [
+        "baseten/deepseek-ai/DeepSeek-V4.1-Flash",
+        "coralbricks/deepseek-v4.1-flash",
+        "deepseek/deepseek-v4.1-flash",
+        "inferenceapis/deepseek-ai/DeepSeek-V4.1-Flash",
+        "inferenceapis/deepseek-v4.1-flash",
+        "nebius/deepseek-ai/DeepSeek-V4.1-Flash",
+        "opencode_go/deepseek-v4.1-flash",
+        "prism/deepseek-v4.1-flash",
+        "sail/deepseek-ai/DeepSeek-V4.1-Flash",
+        "scx-ai/DeepSeek-V4.1-flash",
+        "tencent/deepseek-v4.1-flash",
+        "together_ai/deepseek-ai/DeepSeek-V4.1-Flash"
+      ]
     },
     {
       "id": "meta-llama/llama-3.1-8b-instruct",
@@ -1118,6 +1077,18 @@
       "source": "litellm",
       "display_name": "Qwen 3 30 B A3 B Fp 8",
       "canonical_key": "qwen3-30b-a3b-fp8"
+    },
+    {
+      "id": "~z-ai/glm-flash-latest",
+      "name": "Z.ai: GLM Flash Latest",
+      "vendor": "~z-ai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.0513,
+      "output_per_1m_usd": 0.0701,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "GLM Flash Latest",
+      "canonical_key": "glm-flash"
     },
     {
       "id": "inclusionai/ling-3.0-flash-vl",
@@ -1472,22 +1443,6 @@
       "canonical_key": "nex-n2.5-pro"
     },
     {
-      "id": "mistralai/mistral-small-2603:batch",
-      "name": "Mistral: Mistral Small 4 (batch)",
-      "vendor": "mistralai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.075,
-      "output_per_1m_usd": 0.3,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "Mistral Small 2603",
-      "canonical_key": "mistral-small-2603",
-      "merged_from": [
-        "mistral/mistral-small-2603",
-        "mistralai/mistral-small-2603"
-      ]
-    },
-    {
       "id": "bytedance-seed/seed-1.6-flash",
       "name": "ByteDance Seed: Seed 1.6 Flash",
       "vendor": "bytedance-seed",
@@ -1498,22 +1453,6 @@
       "source": "openrouter",
       "display_name": "Seed 1.6 Flash",
       "canonical_key": "seed-1.6-flash"
-    },
-    {
-      "id": "mistralai/ministral-8b-2512:batch",
-      "name": "Mistral: Ministral 3 8B 2512 (batch)",
-      "vendor": "mistralai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.075,
-      "output_per_1m_usd": 0.075,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "Ministral 8 B2512",
-      "canonical_key": "ministral-8b-2512",
-      "merged_from": [
-        "mistral/ministral-8b-2512",
-        "mistralai/ministral-8b-2512"
-      ]
     },
     {
       "id": "mistralai/mistral-small-3.2-24b-instruct",
@@ -1658,21 +1597,6 @@
         "qwen_ai_platform/qwen3-next-80b-a3b-instruct",
         "qwencloud/qwen3-next-80b-a3b-instruct",
         "together_ai/Qwen/Qwen3-Next-80B-A3B-Instruct"
-      ]
-    },
-    {
-      "id": "qwen/qwen3-30b-a3b-instruct-2507",
-      "name": "Qwen: Qwen3 30B A3B Instruct 2507",
-      "vendor": "qwen",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.09,
-      "output_per_1m_usd": 0.3,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Qwen 3 30 B A3 B Instruct 2507",
-      "canonical_key": "qwen3-30b-a3b-instruct-2507",
-      "merged_from": [
-        "nebius/Qwen/Qwen3-30B-A3B-Instruct-2507"
       ]
     },
     {
@@ -1835,6 +1759,21 @@
       "canonical_key": "voxtral-small-24b-2507"
     },
     {
+      "id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "name": "Qwen: Qwen3 30B A3B Instruct 2507",
+      "vendor": "qwen",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.1,
+      "output_per_1m_usd": 0.3,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "Qwen 3 30 B A3 B Instruct 2507",
+      "canonical_key": "qwen3-30b-a3b-instruct-2507",
+      "merged_from": [
+        "nebius/Qwen/Qwen3-30B-A3B-Instruct-2507"
+      ]
+    },
+    {
       "id": "bytedance/ui-tars-1.5-7b",
       "name": "ByteDance: UI-TARS 7B ",
       "vendor": "bytedance",
@@ -1937,7 +1876,7 @@
       "id": "github_copilot/gpt-6-luna",
       "name": "github_copilot/gpt-6-luna",
       "vendor": "github_copilot",
-      "context_length": 272000,
+      "context_length": 922000,
       "input_per_1m_usd": 0.1,
       "output_per_1m_usd": 0.5,
       "modality": "responses",
@@ -2207,18 +2146,26 @@
       "canonical_key": "doubao-seed-2-1-lite-260915"
     },
     {
-      "id": "xiaomi/mimo-v2.5",
-      "name": "Xiaomi: MiMo-V2.5",
-      "vendor": "xiaomi",
-      "context_length": 1050000,
+      "id": "deepseek/deepseek-v4-flash-0731",
+      "name": "DeepSeek: DeepSeek V4 Flash 0731",
+      "vendor": "deepseek",
+      "context_length": 1048576,
       "input_per_1m_usd": 0.119,
       "output_per_1m_usd": 0.238,
-      "modality": "text+image+audio+video->text",
+      "modality": "text->text",
       "source": "openrouter",
-      "display_name": "Mimo V2.5",
-      "canonical_key": "mimo-v2.5",
+      "display_name": "DeepSeek V4 Flash 0731",
+      "canonical_key": "deepseek-v4-flash-0731",
       "merged_from": [
-        "opencode_go/mimo-v2.5"
+        "baseten/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "dashscope/deepseek-v4-flash-0731",
+        "inferenceapis/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "nebius/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "qwen_ai_platform/deepseek-v4-flash-0731",
+        "qwencloud/deepseek-v4-flash-0731",
+        "sail/deepseek-ai/DeepSeek-V4-Flash-0731",
+        "scaleway/deepseek-v4-flash-0731",
+        "together_ai/deepseek-ai/DeepSeek-V4-Flash-0731"
       ]
     },
     {
@@ -2496,6 +2443,7 @@
       "canonical_key": "minimax-m3.1-flash",
       "merged_from": [
         "opencode_go/minimax-m3.1-flash",
+        "refuseless/minimax-m3.1-flash",
         "together_ai/MiniMaxAI/MiniMax-M3.1-Flash"
       ]
     },
@@ -2593,6 +2541,21 @@
       ]
     },
     {
+      "id": "mistralai/mistral-small-2603",
+      "name": "Mistral: Mistral Small 4",
+      "vendor": "mistralai",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.6,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "Mistral Small 2603",
+      "canonical_key": "mistral-small-2603",
+      "merged_from": [
+        "mistral/mistral-small-2603"
+      ]
+    },
+    {
       "id": "upstage/solar-pro-3",
       "name": "Upstage: Solar Pro 3",
       "vendor": "upstage",
@@ -2603,6 +2566,21 @@
       "source": "openrouter",
       "display_name": "Solar Pro 3",
       "canonical_key": "solar-pro-3"
+    },
+    {
+      "id": "mistralai/ministral-8b-2512",
+      "name": "Mistral: Ministral 3 8B 2512",
+      "vendor": "mistralai",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.15,
+      "output_per_1m_usd": 0.15,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "Ministral 8 B2512",
+      "canonical_key": "ministral-8b-2512",
+      "merged_from": [
+        "mistral/ministral-8b-2512"
+      ]
     },
     {
       "id": "qwen/qwen3-vl-30b-a3b-instruct",
@@ -2633,22 +2611,6 @@
         "qwen_ai_platform/qwen3-next-80b-a3b-thinking",
         "qwencloud/qwen3-next-80b-a3b-thinking",
         "together_ai/Qwen/Qwen3-Next-80B-A3B-Thinking"
-      ]
-    },
-    {
-      "id": "mistralai/codestral-2508:batch",
-      "name": "Mistral: Codestral 2508 (batch)",
-      "vendor": "mistralai",
-      "context_length": 256000,
-      "input_per_1m_usd": 0.15,
-      "output_per_1m_usd": 0.45,
-      "modality": "text+file->text",
-      "source": "openrouter",
-      "display_name": "Codestral 2508",
-      "canonical_key": "codestral-2508",
-      "merged_from": [
-        "mistral/codestral-2508",
-        "mistralai/codestral-2508"
       ]
     },
     {
@@ -2746,18 +2708,6 @@
       "merged_from": [
         "vercel_ai_gateway/mistral/magistral-small"
       ]
-    },
-    {
-      "id": "mistral/ministral-3-8b-2512",
-      "name": "mistral/ministral-3-8b-2512",
-      "vendor": "mistral",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.15,
-      "output_per_1m_usd": 0.15,
-      "modality": "chat",
-      "source": "litellm",
-      "display_name": "Ministral 3.8 B2512",
-      "canonical_key": "ministral-3-8b-2512"
     },
     {
       "id": "nebius/Qwen/QwQ-32B",
@@ -3006,18 +2956,6 @@
       "canonical_key": "meta-llama-3.1-8b-instruct-turbo"
     },
     {
-      "id": "~moonshotai/kimi-latest",
-      "name": "MoonshotAI: Kimi Latest",
-      "vendor": "~moonshotai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.1814,
-      "output_per_1m_usd": 8.5226,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Kimi Latest",
-      "canonical_key": "kimi"
-    },
-    {
       "id": "qwen/qwen3.6-flash",
       "name": "Qwen: Qwen3.6 Flash",
       "vendor": "qwen",
@@ -3043,6 +2981,18 @@
       "merged_from": [
         "vercel_ai_gateway/meta/llama-4-maverick"
       ]
+    },
+    {
+      "id": "~moonshotai/kimi-latest",
+      "name": "MoonshotAI: Kimi Latest",
+      "vendor": "~moonshotai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.19,
+      "output_per_1m_usd": 8.94,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Kimi Latest",
+      "canonical_key": "kimi"
     },
     {
       "id": "inferenceapis/deepseek-ai/DeepSeek-V3",
@@ -3092,29 +3042,6 @@
       "canonical_key": "mamba-codestral-7b-v0.1"
     },
     {
-      "id": "moonshotai/kimi-k3",
-      "name": "MoonshotAI: Kimi K3",
-      "vendor": "moonshotai",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.191,
-      "output_per_1m_usd": 16.0,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Kimi K3",
-      "canonical_key": "kimi-k3",
-      "merged_from": [
-        "baseten/moonshotai/Kimi-K3",
-        "github_copilot/kimi-k3",
-        "moonshotai/kimi-k3:batch",
-        "nebius/moonshotai/Kimi-K3",
-        "opencode_go/kimi-k3",
-        "sail/moonshotai/Kimi-K3",
-        "scx-ai/Kimi-K3",
-        "tencent/kimi-k3",
-        "together_ai/moonshotai/Kimi-K3"
-      ]
-    },
-    {
       "id": "qwen/qwen3-coder-flash",
       "name": "Qwen: Qwen3 Coder Flash",
       "vendor": "qwen",
@@ -3142,6 +3069,29 @@
       ]
     },
     {
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "vendor": "moonshotai",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.2,
+      "output_per_1m_usd": 20.0,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Kimi K3",
+      "canonical_key": "kimi-k3",
+      "merged_from": [
+        "baseten/moonshotai/Kimi-K3",
+        "github_copilot/kimi-k3",
+        "moonshotai/kimi-k3:batch",
+        "nebius/moonshotai/Kimi-K3",
+        "opencode_go/kimi-k3",
+        "sail/moonshotai/Kimi-K3",
+        "scx-ai/Kimi-K3",
+        "tencent/kimi-k3",
+        "together_ai/moonshotai/Kimi-K3"
+      ]
+    },
+    {
       "id": "stepfun/step-3.7-flash",
       "name": "StepFun: Step 3.7 Flash",
       "vendor": "stepfun",
@@ -3166,21 +3116,6 @@
       "canonical_key": "ministral-14b-2512",
       "merged_from": [
         "mistral/ministral-14b-2512"
-      ]
-    },
-    {
-      "id": "mistralai/mistral-medium-3.1:batch",
-      "name": "Mistral: Mistral Medium 3.1 (batch)",
-      "vendor": "mistralai",
-      "context_length": 131072,
-      "input_per_1m_usd": 0.2,
-      "output_per_1m_usd": 1.0,
-      "modality": "text+image+file->text",
-      "source": "openrouter",
-      "display_name": "Mistral Medium 3.1",
-      "canonical_key": "mistral-medium-3.1",
-      "merged_from": [
-        "mistralai/mistral-medium-3.1"
       ]
     },
     {
@@ -3616,6 +3551,30 @@
       ]
     },
     {
+      "id": "refuseless/deepseek-v4.1-flash-abliterated",
+      "name": "refuseless/deepseek-v4.1-flash-abliterated",
+      "vendor": "refuseless",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.22,
+      "output_per_1m_usd": 0.75,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "DeepSeek V4.1 Flash Abliterated",
+      "canonical_key": "deepseek-v4.1-flash-abliterated"
+    },
+    {
+      "id": "~deepseek/deepseek-pro-latest",
+      "name": "DeepSeek: DeepSeek Pro Latest",
+      "vendor": "~deepseek",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.2211,
+      "output_per_1m_usd": 8.0,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "DeepSeek Pro Latest",
+      "canonical_key": "deepseek-pro"
+    },
+    {
       "id": "qwen/qwen3.7-plus:batch",
       "name": "Qwen: Qwen3.7 Plus (batch)",
       "vendor": "qwen",
@@ -3715,18 +3674,6 @@
       ]
     },
     {
-      "id": "arcee-ai/trinity-large-thinking",
-      "name": "Arcee AI: Trinity Large Thinking",
-      "vendor": "arcee-ai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.25,
-      "output_per_1m_usd": 0.8,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Trinity Large Thinking",
-      "canonical_key": "trinity-large-thinking"
-    },
-    {
       "id": "bytedance-seed/seed-2.0-lite",
       "name": "ByteDance Seed: Seed-2.0-Lite",
       "vendor": "bytedance-seed",
@@ -3778,22 +3725,6 @@
         "gemini/gemini-3-flash-preview",
         "gmi/google/gemini-3-flash-preview",
         "google/gemini-3-flash-preview"
-      ]
-    },
-    {
-      "id": "mistralai/mistral-large-2512:batch",
-      "name": "Mistral: Mistral Large 3 2512 (batch)",
-      "vendor": "mistralai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.25,
-      "output_per_1m_usd": 0.75,
-      "modality": "text+image+file->text",
-      "source": "openrouter",
-      "display_name": "Mistral Large 2512",
-      "canonical_key": "mistral-large-2512",
-      "merged_from": [
-        "mistral/mistral-large-2512",
-        "mistralai/mistral-large-2512"
       ]
     },
     {
@@ -3952,6 +3883,18 @@
       "canonical_key": "beam"
     },
     {
+      "id": "refuseless/glm-5.3-flash-abliterated",
+      "name": "refuseless/glm-5.3-flash-abliterated",
+      "vendor": "refuseless",
+      "context_length": 1048576,
+      "input_per_1m_usd": 0.25,
+      "output_per_1m_usd": 0.8,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "GLM 5.3 Flash Abliterated",
+      "canonical_key": "glm-5.3-flash-abliterated"
+    },
+    {
       "id": "minimax/minimax-m2",
       "name": "MiniMax: MiniMax M2",
       "vendor": "minimax",
@@ -3967,18 +3910,6 @@
       ]
     },
     {
-      "id": "~deepseek/deepseek-pro-latest",
-      "name": "DeepSeek: DeepSeek Pro Latest",
-      "vendor": "~deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.2565,
-      "output_per_1m_usd": 8.0,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek Pro Latest",
-      "canonical_key": "deepseek-pro"
-    },
-    {
       "id": "deepseek/deepseek-chat",
       "name": "DeepSeek: DeepSeek V3",
       "vendor": "deepseek",
@@ -3992,6 +3923,21 @@
       "merged_from": [
         "deepseek-chat",
         "inferenceapis/deepseek-chat"
+      ]
+    },
+    {
+      "id": "qwen/qwen3.5-27b",
+      "name": "Qwen: Qwen3.5-27B",
+      "vendor": "qwen",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.26,
+      "output_per_1m_usd": 2.6,
+      "modality": "text+image+video->text",
+      "source": "openrouter",
+      "display_name": "Qwen 3.5 27 B",
+      "canonical_key": "qwen3.5-27b",
+      "merged_from": [
+        "openinfer/@oi/Qwen3.5-27B"
       ]
     },
     {
@@ -4070,21 +4016,6 @@
       "source": "litellm",
       "display_name": "Qwen 3 VL 235 B",
       "canonical_key": "qwen3-vl-235b"
-    },
-    {
-      "id": "qwen/qwen3.5-27b",
-      "name": "Qwen: Qwen3.5-27B",
-      "vendor": "qwen",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.27,
-      "output_per_1m_usd": 2.16,
-      "modality": "text+image+video->text",
-      "source": "openrouter",
-      "display_name": "Qwen 3.5 27 B",
-      "canonical_key": "qwen3.5-27b",
-      "merged_from": [
-        "openinfer/@oi/Qwen3.5-27B"
-      ]
     },
     {
       "id": "deepseek/deepseek-v3.2-exp",
@@ -4389,6 +4320,21 @@
       "canonical_key": "cydonia-24b-v4.1"
     },
     {
+      "id": "mistralai/codestral-2508",
+      "name": "Mistral: Codestral 2508",
+      "vendor": "mistralai",
+      "context_length": 256000,
+      "input_per_1m_usd": 0.3,
+      "output_per_1m_usd": 0.9,
+      "modality": "text+file->text",
+      "source": "openrouter",
+      "display_name": "Codestral 2508",
+      "canonical_key": "codestral-2508",
+      "merged_from": [
+        "mistral/codestral-2508"
+      ]
+    },
+    {
       "id": "qwen/qwen3-coder",
       "name": "Qwen: Qwen3 Coder 480B A35B",
       "vendor": "qwen",
@@ -4611,21 +4557,6 @@
       "canonical_key": "mistral-code-fim"
     },
     {
-      "id": "xiaomi/mimo-v2.5-pro",
-      "name": "Xiaomi: MiMo-V2.5-Pro",
-      "vendor": "xiaomi",
-      "context_length": 1050000,
-      "input_per_1m_usd": 0.3045,
-      "output_per_1m_usd": 0.609,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "Mimo V2.5 Pro",
-      "canonical_key": "mimo-v2.5-pro",
-      "merged_from": [
-        "opencode_go/mimo-v2.5-pro"
-      ]
-    },
-    {
       "id": "qwen/qwen3.6-27b",
       "name": "Qwen: Qwen3.6 27B",
       "vendor": "qwen",
@@ -4776,6 +4707,21 @@
       ]
     },
     {
+      "id": "xiaomi/mimo-v2.5",
+      "name": "Xiaomi: MiMo-V2.5",
+      "vendor": "xiaomi",
+      "context_length": 1050000,
+      "input_per_1m_usd": 0.4,
+      "output_per_1m_usd": 2.0,
+      "modality": "text+image+audio+video->text",
+      "source": "openrouter",
+      "display_name": "Mimo V2.5",
+      "canonical_key": "mimo-v2.5",
+      "merged_from": [
+        "opencode_go/mimo-v2.5"
+      ]
+    },
+    {
       "id": "mistralai/devstral-2512",
       "name": "Mistral: Devstral 2 2512",
       "vendor": "mistralai",
@@ -4788,19 +4734,16 @@
       "canonical_key": "devstral-2512"
     },
     {
-      "id": "mistralai/mistral-medium-3",
-      "name": "Mistral: Mistral Medium 3",
+      "id": "mistralai/mistral-medium-3.1",
+      "name": "Mistral: Mistral Medium 3.1",
       "vendor": "mistralai",
       "context_length": 131072,
       "input_per_1m_usd": 0.4,
       "output_per_1m_usd": 2.0,
       "modality": "text+image+file->text",
       "source": "openrouter",
-      "display_name": "Mistral Medium 3",
-      "canonical_key": "mistral-medium-3",
-      "merged_from": [
-        "mistral/mistral-medium-3"
-      ]
+      "display_name": "Mistral Medium 3.1",
+      "canonical_key": "mistral-medium-3.1"
     },
     {
       "id": "thedrummer/unslopnemo-12b",
@@ -4959,29 +4902,6 @@
       ]
     },
     {
-      "id": "deepseek/deepseek-v4-flash-0731",
-      "name": "DeepSeek: DeepSeek V4 Flash 0731",
-      "vendor": "deepseek",
-      "context_length": 1048576,
-      "input_per_1m_usd": 0.44,
-      "output_per_1m_usd": 1.32,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "DeepSeek V4 Flash 0731",
-      "canonical_key": "deepseek-v4-flash-0731",
-      "merged_from": [
-        "baseten/deepseek-ai/DeepSeek-V4-Flash-0731",
-        "dashscope/deepseek-v4-flash-0731",
-        "inferenceapis/deepseek-ai/DeepSeek-V4-Flash-0731",
-        "nebius/deepseek-ai/DeepSeek-V4-Flash-0731",
-        "qwen_ai_platform/deepseek-v4-flash-0731",
-        "qwencloud/deepseek-v4-flash-0731",
-        "sail/deepseek-ai/DeepSeek-V4-Flash-0731",
-        "scaleway/deepseek-v4-flash-0731",
-        "together_ai/deepseek-ai/DeepSeek-V4-Flash-0731"
-      ]
-    },
-    {
       "id": "qwen/qwen3-235b-a22b-thinking-2507",
       "name": "Qwen: Qwen3 235B A22B Thinking 2507",
       "vendor": "qwen",
@@ -5006,6 +4926,21 @@
       "canonical_key": "qwen3-coder-480b-a35b-instruct-fp8",
       "merged_from": [
         "together_ai/Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8"
+      ]
+    },
+    {
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "vendor": "xiaomi",
+      "context_length": 1050000,
+      "input_per_1m_usd": 0.48,
+      "output_per_1m_usd": 1.8,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "Mimo V2.5 Pro",
+      "canonical_key": "mimo-v2.5-pro",
+      "merged_from": [
+        "opencode_go/mimo-v2.5-pro"
       ]
     },
     {
@@ -5099,6 +5034,21 @@
       "canonical_key": "kimi-k2.5",
       "merged_from": [
         "baseten/moonshotai/Kimi-K2.5"
+      ]
+    },
+    {
+      "id": "mistralai/mistral-large-2512",
+      "name": "Mistral: Mistral Large 3 2512",
+      "vendor": "mistralai",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.5,
+      "output_per_1m_usd": 1.5,
+      "modality": "text+image+file->text",
+      "source": "openrouter",
+      "display_name": "Mistral Large 2512",
+      "canonical_key": "mistral-large-2512",
+      "merged_from": [
+        "mistral/mistral-large-2512"
       ]
     },
     {
@@ -5386,6 +5336,31 @@
         "nebius/deepseek-ai/DeepSeek-R1",
         "snowflake/deepseek-r1",
         "vercel_ai_gateway/deepseek/deepseek-r1"
+      ]
+    },
+    {
+      "id": "moonshotai/kimi-k2.7-code",
+      "name": "MoonshotAI: Kimi K2.7 Code",
+      "vendor": "moonshotai",
+      "context_length": 262144,
+      "input_per_1m_usd": 0.56,
+      "output_per_1m_usd": 3.1,
+      "modality": "text+image->text",
+      "source": "openrouter",
+      "display_name": "Kimi K2.7 Code",
+      "canonical_key": "kimi-k2.7-code",
+      "merged_from": [
+        "baseten/moonshotai/Kimi-K2.7-Code",
+        "cloudflare/@cf/moonshotai/kimi-k2.7-code",
+        "dashscope/kimi-k2.7-code",
+        "inferenceapis/kimi-k2.7-code",
+        "inferenceapis/moonshotai/Kimi-K2.7-Code",
+        "nebius/moonshotai/Kimi-K2.7-Code",
+        "opencode_go/kimi-k2.7-code",
+        "qwen_ai_platform/kimi-k2.7-code",
+        "qwencloud/kimi-k2.7-code",
+        "tencent/kimi-k2.7-code",
+        "together_ai/moonshotai/Kimi-K2.7-Code"
       ]
     },
     {
@@ -5743,31 +5718,6 @@
       "source": "litellm",
       "display_name": "Meta Llama 3.1 70 B Instruct",
       "canonical_key": "meta-llama-3_1-70b-instruct"
-    },
-    {
-      "id": "moonshotai/kimi-k2.7-code",
-      "name": "MoonshotAI: Kimi K2.7 Code",
-      "vendor": "moonshotai",
-      "context_length": 262144,
-      "input_per_1m_usd": 0.6712,
-      "output_per_1m_usd": 3.35,
-      "modality": "text+image->text",
-      "source": "openrouter",
-      "display_name": "Kimi K2.7 Code",
-      "canonical_key": "kimi-k2.7-code",
-      "merged_from": [
-        "baseten/moonshotai/Kimi-K2.7-Code",
-        "cloudflare/@cf/moonshotai/kimi-k2.7-code",
-        "dashscope/kimi-k2.7-code",
-        "inferenceapis/kimi-k2.7-code",
-        "inferenceapis/moonshotai/Kimi-K2.7-Code",
-        "nebius/moonshotai/Kimi-K2.7-Code",
-        "opencode_go/kimi-k2.7-code",
-        "qwen_ai_platform/kimi-k2.7-code",
-        "qwencloud/kimi-k2.7-code",
-        "tencent/kimi-k2.7-code",
-        "together_ai/moonshotai/Kimi-K2.7-Code"
-      ]
     },
     {
       "id": "mistral/mistral-large-4",
@@ -6346,6 +6296,27 @@
       ]
     },
     {
+      "id": "z-ai/glm-5.1",
+      "name": "Z.ai: GLM 5.1",
+      "vendor": "z-ai",
+      "context_length": 204800,
+      "input_per_1m_usd": 0.966,
+      "output_per_1m_usd": 3.036,
+      "modality": "text->text",
+      "source": "openrouter",
+      "display_name": "GLM 5.1",
+      "canonical_key": "glm-5.1",
+      "merged_from": [
+        "dashscope/glm-5.1",
+        "friendliai/zai-org/GLM-5.1",
+        "nebius/zai-org/GLM-5.1",
+        "qwen_ai_platform/glm-5.1",
+        "qwencloud/glm-5.1",
+        "together_ai/zai-org/GLM-5.1",
+        "zai/glm-5.1"
+      ]
+    },
+    {
       "id": "z-ai/glm-5",
       "name": "Z.ai: GLM 5",
       "vendor": "z-ai",
@@ -6410,6 +6381,18 @@
         "anthropic/claude-sonnet-5.5",
         "github_copilot/claude-sonnet-5.5"
       ]
+    },
+    {
+      "id": "~openai/gpt-terra-latest",
+      "name": "OpenAI: GPT Terra Latest",
+      "vendor": "~openai",
+      "context_length": 1050000,
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 5.0,
+      "modality": "text+image+file->text",
+      "source": "openrouter",
+      "display_name": "GPT Terra Latest",
+      "canonical_key": "gpt-terra"
     },
     {
       "id": "x-ai/grok-build-0.1",
@@ -6501,6 +6484,30 @@
       "merged_from": [
         "nebius/NousResearch/Hermes-3-Llama-3.1-405B"
       ]
+    },
+    {
+      "id": "abliteration/abliterated-model",
+      "name": "abliteration/abliterated-model",
+      "vendor": "abliteration",
+      "context_length": 262144,
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 3.0,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "Abliterated Model",
+      "canonical_key": "abliterated-model"
+    },
+    {
+      "id": "abliteration/abliterated-model-large-flash",
+      "name": "abliteration/abliterated-model-large-flash",
+      "vendor": "abliteration",
+      "context_length": 1048576,
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 2.0,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "Abliterated Model Large Flash",
+      "canonical_key": "abliterated-model-large-flash"
     },
     {
       "id": "claude-haiku-4-5-20251001",
@@ -6655,6 +6662,21 @@
       "source": "litellm",
       "display_name": "Grok Code Fast 1 0825",
       "canonical_key": "grok-code-fast-1-0825"
+    },
+    {
+      "id": "gpt-6.1-terra",
+      "name": "gpt-6.1-terra",
+      "vendor": "gpt",
+      "context_length": 922000,
+      "input_per_1m_usd": 1.0,
+      "output_per_1m_usd": 5.0,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "GPT-6.1 Terra",
+      "canonical_key": "gpt-6.1-terra",
+      "merged_from": [
+        "github_copilot/gpt-6.1-terra"
+      ]
     },
     {
       "id": "gradient_ai/openai-o3-mini",
@@ -7302,6 +7324,18 @@
       "canonical_key": "grok-4.20-multi-agent-experimental-beta-0304"
     },
     {
+      "id": "refuseless/glm-5.3-abliterated",
+      "name": "refuseless/glm-5.3-abliterated",
+      "vendor": "refuseless",
+      "context_length": 1048576,
+      "input_per_1m_usd": 1.25,
+      "output_per_1m_usd": 2.25,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "GLM 5.3 Abliterated",
+      "canonical_key": "glm-5.3-abliterated"
+    },
+    {
       "id": "mistralai/mistral-large-4-0",
       "name": "Mistral: Mistral Large 4",
       "vendor": "mistralai",
@@ -7314,27 +7348,6 @@
       "canonical_key": "mistral-large-4-0",
       "merged_from": [
         "mistral/mistral-large-4-0"
-      ]
-    },
-    {
-      "id": "z-ai/glm-5.1",
-      "name": "Z.ai: GLM 5.1",
-      "vendor": "z-ai",
-      "context_length": 204800,
-      "input_per_1m_usd": 1.4,
-      "output_per_1m_usd": 4.4,
-      "modality": "text->text",
-      "source": "openrouter",
-      "display_name": "GLM 5.1",
-      "canonical_key": "glm-5.1",
-      "merged_from": [
-        "dashscope/glm-5.1",
-        "friendliai/zai-org/GLM-5.1",
-        "nebius/zai-org/GLM-5.1",
-        "qwen_ai_platform/glm-5.1",
-        "qwencloud/glm-5.1",
-        "together_ai/zai-org/GLM-5.1",
-        "zai/glm-5.1"
       ]
     },
     {
@@ -7802,18 +7815,6 @@
       "canonical_key": "gpt-sol"
     },
     {
-      "id": "~openai/gpt-terra-latest",
-      "name": "OpenAI: GPT Terra Latest",
-      "vendor": "~openai",
-      "context_length": 1050000,
-      "input_per_1m_usd": 2.0,
-      "output_per_1m_usd": 12.0,
-      "modality": "text+image+file->text",
-      "source": "openrouter",
-      "display_name": "GPT Terra Latest",
-      "canonical_key": "gpt-terra"
-    },
-    {
       "id": "sakana/fugu-max",
       "name": "Sakana: Fugu Max",
       "vendor": "sakana",
@@ -8054,7 +8055,7 @@
       "id": "github_copilot/gpt-6-sol",
       "name": "github_copilot/gpt-6-sol",
       "vendor": "github_copilot",
-      "context_length": 272000,
+      "context_length": 922000,
       "input_per_1m_usd": 2.0,
       "output_per_1m_usd": 10.0,
       "modality": "responses",
@@ -8069,7 +8070,7 @@
       "id": "github_copilot/gpt-6.1-sol",
       "name": "github_copilot/gpt-6.1-sol",
       "vendor": "github_copilot",
-      "context_length": 272000,
+      "context_length": 922000,
       "input_per_1m_usd": 2.0,
       "output_per_1m_usd": 10.0,
       "modality": "responses",
@@ -8598,6 +8599,21 @@
       "source": "openrouter",
       "display_name": "Aion 3.0",
       "canonical_key": "aion-3.0"
+    },
+    {
+      "id": "abliteration/abliterated-model-large",
+      "name": "abliteration/abliterated-model-large",
+      "vendor": "abliteration",
+      "context_length": 1000000,
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 5.0,
+      "modality": "chat",
+      "source": "litellm",
+      "display_name": "Abliterated Model Large",
+      "canonical_key": "abliterated-model-large",
+      "merged_from": [
+        "abliteration/abliterated-model-large-v2"
+      ]
     },
     {
       "id": "claude-sonnet-4-5",
@@ -9212,7 +9228,7 @@
       "id": "github_copilot/gpt-6-astra",
       "name": "github_copilot/gpt-6-astra",
       "vendor": "github_copilot",
-      "context_length": 272000,
+      "context_length": 922000,
       "input_per_1m_usd": 10.0,
       "output_per_1m_usd": 50.0,
       "modality": "responses",
@@ -9581,10 +9597,10 @@
     }
   ],
   "quality": {
-    "input_rows": 3567,
-    "rejected": 2109,
-    "merged": 266,
-    "queued_for_review": 84,
-    "published": 701
+    "input_rows": 3577,
+    "rejected": 2115,
+    "merged": 264,
+    "queued_for_review": 87,
+    "published": 704
   }
 }

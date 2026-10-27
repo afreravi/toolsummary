@@ -36,6 +36,15 @@
     "reason": "missing or too-small context window"
   },
   {
+    "candidate": "~deepseek/deepseek-v4-flash-latest",
+    "candidate_name": "DeepSeek V4 Flash Latest",
+    "input_per_1m_usd": 0.0475,
+    "possible_duplicate_of": "deepseek/deepseek-v4.1-flash:batch",
+    "possible_duplicate_name": "DeepSeek V4.1 Flash",
+    "confidence": 0.944,
+    "reason": "possible duplicate"
+  },
+  {
     "candidate": "nscale/Qwen/Qwen2.5-Coder-32B-Instruct",
     "candidate_name": "Qwen 2.5 Coder 32 B Instruct",
     "input_per_1m_usd": 0.06,
@@ -114,6 +123,15 @@
     "possible_duplicate_of": "perceptron/perceptron-mk1.5",
     "possible_duplicate_name": "Perceptron Mk 1.5",
     "confidence": 0.933,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "mistral/ministral-3-8b-2512",
+    "candidate_name": "Ministral 3.8 B2512",
+    "input_per_1m_usd": 0.15,
+    "possible_duplicate_of": "mistralai/ministral-8b-2512",
+    "possible_duplicate_name": "Ministral 8 B2512",
+    "confidence": 0.944,
     "reason": "possible duplicate"
   },
   {
@@ -213,6 +231,15 @@
     "possible_duplicate_of": "google/gemini-3.8-flash:batch",
     "possible_duplicate_name": "Gemini 3.8 Flash",
     "confidence": 0.938,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "mistralai/mistral-medium-3",
+    "candidate_name": "Mistral Medium 3",
+    "input_per_1m_usd": 0.4,
+    "possible_duplicate_of": "mistralai/mistral-medium-3.1",
+    "possible_duplicate_name": "Mistral Medium 3.1",
+    "confidence": 0.941,
     "reason": "possible duplicate"
   },
   {
