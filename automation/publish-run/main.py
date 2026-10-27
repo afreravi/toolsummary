@@ -21,7 +21,7 @@ import tempfile
 from pathlib import Path
 
 REPO = "afreravi/toolsummary"
-BRANCH = os.environ.get("TOOLSUMMARY_BRANCH", "dev-branch")
+BRANCH = os.environ.get("TOOLSUMMARY_BRANCH", "main")
 WORK = Path(tempfile.gettempdir()) / "toolsummary-publish"
 
 SECRET_NAMES = ("github_token", "GITHUB_TOKEN", "TOOLSUMMARY_GITHUB_TOKEN", "Toolsummary")
