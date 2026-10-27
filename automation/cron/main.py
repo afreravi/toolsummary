@@ -213,6 +213,11 @@ def publish_site(dry_run: bool) -> tuple[bool, str]:
     script = WORK / "automation" / "deploy" / "publish_tarball.py"
     if not script.exists():
         return False, "publish_tarball.py missing from clone"
+    # The cron tarball ships no setup.sh, so paramiko is not guaranteed present.
+    # Install it here rather than failing the publish on a missing import.
+    subprocess.run([sys.executable, "-m", "pip", "install", "--quiet",
+                    "--disable-pip-version-check", "paramiko"],
+                   capture_output=True, text=True, timeout=180)
     cmd = [sys.executable, str(script)]
     if dry_run:
         cmd.append("--dry-run")
