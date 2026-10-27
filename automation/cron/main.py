@@ -34,7 +34,6 @@ WORK = Path(tempfile.gettempdir()) / "toolsummary"
 # Everything the run deliberately does not attempt. Stated here so a reader can
 # tell "skipped on purpose" from "silently missing".
 NOT_ATTEMPTED = (
-    "site publish (needs SFTP secrets)",
     "paid API/MCP serving",
 )
 
@@ -199,6 +198,33 @@ def run_pipeline() -> None:
         raise RuntimeError(f"pipeline failed (exit {r.returncode}) - QA did not pass, nothing committed")
 
 
+def publish_site(dry_run: bool) -> tuple[bool, str]:
+    """Upload the freshly built site to the live web root.
+
+    Runs the same publisher the standalone publish automation uses, so there is
+    one code path and one set of guards. It ships the site as a single tarball
+    because the host throttles SFTP to about one request per second and a
+    file-by-file upload of ~1,100 pages outlives the run's wall clock.
+
+    A publish failure is not fatal to the day: the price snapshot is already
+    pushed, and a stale site is recoverable tomorrow, whereas losing the
+    snapshot is not. So this reports and returns False rather than raising.
+    """
+    script = WORK / "automation" / "deploy" / "publish_tarball.py"
+    if not script.exists():
+        return False, "publish_tarball.py missing from clone"
+    cmd = [sys.executable, str(script)]
+    if dry_run:
+        cmd.append("--dry-run")
+    r = subprocess.run(cmd, cwd=WORK, capture_output=True, text=True, timeout=240)
+    out = (r.stdout or "").strip().splitlines()
+    for line in out[-6:]:
+        log(f"  {line}")
+    if r.returncode != 0:
+        return False, (r.stderr or "").strip()[:300] or (out[-1] if out else "publish failed")
+    return True, out[-1] if out else "published"
+
+
 def read_history() -> list[dict]:
     path = WORK / "automation" / "mvp" / "data" / "price_history.jsonl"
     if not path.exists():
@@ -282,7 +308,17 @@ def main() -> int:
             # Only "no changes" is benign; a rejected push loses the day.
             raise RuntimeError(f"history not persisted: {detail}")
 
+        # Publish after the data is safely pushed. A publish failure is logged
+        # and reported, but must not mask a successful snapshot: the history is
+        # the irreplaceable artifact, the site is rebuildable tomorrow.
+        published, publish_detail = publish_site(dry_run)
+        log(f"publish: {publish_detail}")
+
         log("skipped (by design): " + "; ".join(NOT_ATTEMPTED))
+        if not published:
+            fire_callback("COMPLETED", f"site publish did not complete: {publish_detail}")
+            log("done (with publish warning)")
+            return 0
         fire_callback("COMPLETED")
         log("done")
         return 0
