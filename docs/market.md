@@ -1,116 +1,176 @@
 # Toolsummary strategy — market read
 
-Research date: 2026-10-09. Sources are the competitors' own live pages.
+Research date: 2026-10-26. Sources are the competitors' own live pages, probed
+directly. Written by an AI agent; treat every figure as something to re-verify
+before it drives a spending decision.
 
 ## The uncomfortable finding first
 
-The plan assumed daily price history is an open niche that would become a moat
-with time. It is not open. Several competitors already publish it:
+The earlier version of this document said daily price history was table stakes
+but that "interpretation" was still an open gap. Having now read the
+competitors properly, that is too optimistic on both counts.
 
-| Site | Price history | MCP server | Notes |
-|---|---|---|---|
-| pricepertoken.com | yes, charts + `/pricing-history` | yes, announced | tracks 610+ models, daily updates from OpenRouter |
-| benchlm.ai | yes, "update ledger" + token price index | yes (free tier 1,000 reads/mo) | 783 models, per-change dated records |
-| costgoat.com | live pricing + value scores | no | 374+ APIs, benchmark-driven value ranking |
-| models.dev / llm-prices.com | partial | some | aggregator-shaped |
+**The niche is crowded, and one competitor has already built this exact plan.**
+`llm-cost.io` ships a price-changes tracker, a weekly report, a free model
+list, cheapest-for-coding guides, a batch-pricing page, a direct-vs-router
+page, an agent-cost page, a calculator, an RSS feed, a 96 KB `llms.txt`, and a
+free "Agent Data API" with no API key. It runs a Pro tier at $9/month with a $6
+founding rate. Its `/changes/` page diffs daily snapshots and states the
+comparison window explicitly ("comparing snapshot 2026-09-26 → 2026-10-25, 63
+daily snapshots collected").
 
-So "we have history" is table stakes, not differentiation. What is still thin
-across all of them is **interpretation**: none of them explain what a price
-change *means* for a given workload. They show a chart and stop.
+That is the plan in this document, already executed, by someone with a 63
+snapshot head start. Our own history currently holds **4 snapshot dates**
+(2026-10-09 → 2026-10-26). On the "dated history is the moat" thesis we are not
+close to competitive, and every day of delay widens the gap.
 
-That gap is where the content strategy should aim, and it has a useful property:
-it is derived from the data we already collect daily.
+## 1. Who is actually in this space
 
-## What the incumbents are weak at
+Probed live on 2026-10-26:
 
-Reading their pages, the consistent weaknesses are:
+| Site | What it ships | Notes |
+|---|---|---|
+| llm-cost.io | `/changes/` (63 snapshots), `/report/` weekly, `/free/`, `/guides/cheapest-coding/`, `/mcp/`, `/batch-pricing/`, `/direct-vs-router/`, `/agent-cost/`, `/calculator/`, `/llms.txt`, RSS | Closest competitor. Free Agent Data API, Pro $9/mo |
+| benchlm.ai | Pricing comparison + calculator, "update ledger", token price index | Ranks #1 for "llm api pricing" |
+| costgoat.com | `/compare/llm-api`, `/pricing/<vendor>-api`, `/bill-shock`, `/monitor/*`, cost calculators | Broad beyond LLMs (AWS, SaaS, domains) |
+| llmpricing.dev | 1,300+ models, 232+ providers, 13 languages, `/api` | i18n from day one |
+| tokeven.com | `/pricing-history`, `/models`, `/compare`, `/cost`, `/docs`, `/intelligence`, paid `/pricing` | AI cost optimizer framing |
+| aipricinghub.com | `/price-changes/` | Thin, but owns the phrase |
+| claudearchive.com | `/pricing-history/`, `/deprecations/`, `/migration-map/`, `/release-ledger/`, `/sources/` | Claude-only, but very deep |
+| clawrouters.com | Router product + pricing guides + cost calculator | Content as acquisition for a router |
+| pricepertoken.com | Price history + charts + paid MCP | Blocks bots (403); cited in earlier research |
+| models.dev | Open API: 232 providers, 8,940 models | Free upstream data source |
 
-1. **No dated, citable record per change.** benchlm has an index and a ledger
-   but the per-model pages don't state "input price was X on date Y, changed to
-   Z on date W" in a form you'd cite or that a search engine can match to a
-   specific query.
-2. **No long-tail pairing.** They cover "cheapest LLM API". Nobody covers
-   "Gemini 2.5 Flash vs GPT-5.4 nano price per million tokens for 100k input /
-   20k output", which is how people actually search when budgeting.
-3. **No "did it get more expensive" pages.** Price cuts get blog posts. Price
-   *increases* and silent deprecations get far less coverage, and those are the
-   queries with intent ("why did my bill go up").
-4. **Aggregator price ≠ direct price.** The same model differs across
-   endpoints. A page that says which route is cheapest for a model is
-   genuinely useful and nobody does it well.
+Also ranking on the money queries: llmpricecheck.com, llmapi.pro,
+inventivehq.com, comparedge.com, simplifai.tools, aicost.tools, llmcosthub.com,
+kickllm.com, leanlm.ai, aispendcalc.com, costperprompt.com, aimodelwatch.dev.
 
-## Low-hanging content that can actually rank
+That is roughly twenty sites on "LLM API pricing". Treat any plan whose pitch is
+"nobody covers X" as unverified until the SERP is checked.
 
-Ordered by (search intent × ease × automation fit). All of these are generated
-from `data/price_history.jsonl` plus `pricing.json` — no new data source needed.
+## 2. models.dev is the upstream, and it is free
 
-1. **Per-model price-history pages** (`/model/<slug>/history`). One page per
-   model, dated table of every recorded change, "as of" line. These are the
-   pages the pipeline already half-produces. Long-tail, low competition per
-   page, and they compound: every day we run, the page gets another row and
-   more unique content. ~666 pages today.
+`https://models.dev/api.json` returns 232 providers and **8,940 models** with
+`cost: {input, output, cache_read}` per model, plus context limits and
+modalities. We track 701. It is open, unauthenticated, and already the source
+many smaller tools build on.
 
-2. **"Price change" event pages** (`/changes/2026-10-09`). One page per day
-   something moved, listing what moved and by how much. Evergreen URLs, and
-   they naturally target "<model> price change" queries. Generated from
-   `price_changes.jsonl`, which we already write.
+Two consequences:
 
-3. **Head-to-head cost calculators** (`/compare/<a>-vs-<b>-cost`). Not just a
-   price table — a "what does this cost for *my* workload" answer with the
-   arithmetic shown. The existing 400 comparison pages are the seed; adding the
-   workload arithmetic is what makes them different from the incumbents.
+- **Do not compete on breadth.** 701 vs 8,940 is not a race worth entering.
+- **Consume it.** Merging models.dev would add `cache_read` — a field we do not
+  have at all — and close most of the coverage gap for free.
 
-4. **"Cheapest model for X" pages** (`/cheapest/coding`, `/cheapest/long-context`,
-   `/cheapest/vision`). Qualified cheapest-questions. The qualification (task
-   class, context floor) is what keeps these out of the wall-to-wall generic
-   competition for "cheapest LLM API".
+## 3. Where our data actually stands
 
-5. **Price-increase / deprecation pages** (`/increases`, `/deprecated`). Low
-   competition, high intent, and nobody covers them well. Directly derived from
-   `kind: price` events with `direction: increase` and `kind: delisted`.
+| Measure | Value |
+|---|---|
+| Models in `pricing.json` | 701 |
+| History rows / snapshot dates | 2,693 / **4** (2026-10-09 → 2026-10-26) |
+| Models with more than one observation | 664 |
+| Change events | 887 (711 new, 148 price, 18 context, 10 delisted) |
+| Significant changes (>20%) | 96 |
+| Pages built | 1,102 (701 model + 400 compare + root) |
+| Cache / batch price fields | **none** |
+| Models not on OpenRouter | 405 of 701 |
 
-Do **1 and 2 first**: they are pure derivations of data already on disk, they
-add a new page every single day without any new work, and they are the pages
-that accumulate the thing competitors can't backfill — our own dated record.
+The last row is the interesting one. We merge LiteLLM, so 405 of our models do
+not appear on OpenRouter — and the OpenRouter-only competitors therefore cannot
+cover them. That is a genuine differentiator.
 
-## The 90% automation story
+**But it is currently junk.** Our "extra" models include entries like
+`au.anthropic.claude-fable-5` and `au.anthropic.claude-opus-5-5` — LiteLLM's
+Azure/Bedrock-prefixed duplicates of the same underlying models. Publishing 405
+pages for them would generate near-duplicate content, which is worse than not
+publishing them. Deduplicate before treating this as an asset.
 
-The pipeline already produces the data. The automation gap is turning data into
-pages, and that is a deterministic transform — no LLM needed.
+## 4. The own-goal worth fixing first
 
-Avatars of the split:
+We collect price history and **publish none of it**. A rendered model page
+contains zero occurrences of "history", "changed", or "previous". We hold 2,693
+rows and 887 change events and show the visitor a single "as of" date.
 
-- **Deterministic (no LLM, near-zero marginal cost):** history tables, change
-  pages, cheapest-for-X rankings, increase/delist lists, sitemap, JSON API.
-  This is ~90% of the page count and it should stay non-LLM. It already runs
-  daily and now commits itself (see `automation/cron/`).
-- **LLM (the 10%):** a short "what this means" paragraph on the change pages,
-  and the monthly trend summary. One LLM call per *changed* model per day, not
-  per page. On a quiet day that is zero calls.
+This is the cheapest available win: the data is already on disk, the transform
+is deterministic, and no new source is needed. It does not make us competitive
+with 63 snapshots on day one, but the only way to get to 63 is to start
+publishing.
 
-Guardrail: the LLM must never author a number. It comments on figures the
-deterministic stage computed and QA-checked, which keeps a hallucination from
-becoming a mispriced page.
+## 5. Low-hanging content ideas, ranked
 
-## Monetization read
+Ordered by (unclaimed × derivable from data we have). Note the honest caveat in
+section 6.
 
-- **AdSense: poor fit.** Low-RPM traffic (developers, ad-blockers) on
-  high-volume pages. Thin pages also risk rejection under thin-content policy.
-  Not worth optimizing for.
-- **API/MCP subscription: the credible product.** The competing MCP servers are
-  free, so the paid tier has to sell something they don't: dated history with
-  provenance, and change events. BenchLM's free 1,000 reads/month sets the
-  price anchor. A low single-digit $/month tier with a real free tier is the
-  realistic shape.
-- **Affiliate: plausible but not primary.** GPU clouds and inference providers
-  have affiliate programs. Only worth it once the pages rank.
+1. **Per-model history and change pages** — `/model/<slug>/history` and
+   `/changes/<date>`. Pure derivation from `price_history.jsonl` and
+   `price_changes.jsonl`. **Claimed by llm-cost.io and aipricinghub**, so this is
+   parity work, not differentiation — but it is the foundation everything else
+   cites, and it compounds daily.
+2. **Cost-per-task / workload pages** — "what an AI agent costs per month",
+   "RAG pipeline monthly cost", "support chatbot cost". Our model pages already
+   render a "what a typical workload costs" section; this generalises it into
+   named, realistic workloads with the arithmetic shown. This is the thinnest
+   area across the competitive set.
+3. **Migration and deprecation pages** — "X was delisted, here is what to move
+   to and what it costs". We log `delisted` events (10 so far). claudearchive
+   does this for Claude only; cross-vendor is open.
+4. **Bill-shock / price-increase pages** — we log 84 increases. costgoat has
+   `/bill-shock`, so this is partly claimed, but the query intent ("why did my
+   bill go up") is strong and the content is a direct derivation.
+5. **Direct vs router** — genuinely useful, but llm-cost.io and costgoat both
+   cover it, and doing it well needs endpoint-level data we do not collect.
 
-The honest ordering is: traffic from citable history pages → free MCP to build
-habit → paid tier for history + change events. The ad network is not part of it.
+Ideas 2 and 3 are the best combination of unclaimed and buildable today.
 
-## What is already done
+## 6. What I could not verify
 
-- Daily pricing pipeline, deterministic, self-committing to `main`.
-- 666 models tracked with a daily append-only price log.
-- 1,067 pages built and QA-gated per run.
-- Price-change detection with a "significant" flag at the >20% threshold.
+Search-engine probing stopped returning results partway through this research —
+control queries that had returned hits began returning zero, which is
+rate-limiting, not a genuine absence of competitors. **The "unclaimed" claims in
+section 5 are therefore weaker than they look.** Queries such as "llm api cache
+pricing discount" and "batch api discount llm pricing" returned a full page of
+established sites, which suggests the long tail is more contested than the
+zero-result queries implied. Re-run this against a real keyword tool with volume
+data before committing to a content bet.
+
+## 7. The 90% automation split
+
+The split in the earlier draft holds, and is the part of the plan that is
+genuinely working.
+
+**Deterministic, no LLM (target: >90% of pages, near-zero marginal cost):**
+history tables, change pages, cheapest-for-X, increase/delist lists, workload
+cost pages, sitemap, `robots.txt`, `llms.txt`, JSON/RSS output. Runs daily.
+
+**LLM, the 10%:** a one-sentence "what this means" on *significant* changes
+only. That is 96 events across the whole dataset so far — on a quiet day, zero
+calls. Guardrail stands: the LLM never authors a number, only comments on
+figures the deterministic stage computed and QA-checked.
+
+## 8. What I would do first
+
+1. **Publish the site.** 1,102 pages are built and QA-clean and the live domain
+   serves a staging placeholder. Nothing else matters until `/sitemap.xml` and
+   `/robots.txt` return 200.
+2. **Ship the history we already collect** onto the model pages. Cheapest real
+   win, and it starts the compounding clock.
+3. **Deduplicate the 405 non-OpenRouter models** before publishing pages for
+   them. Merging models.dev would also add `cache_read`.
+4. **Pick the workload-cost angle** (idea 2) as the differentiation bet, after
+   validating it with real keyword data.
+5. **Accept the honest risk:** llm-cost.io has a 63-snapshot lead, a free MCP,
+   and the same price point. A head-on "pricing site" race is likely a loss.
+   The defensible position is non-OpenRouter coverage plus workload economics —
+   not "we also have price history".
+
+## 9. Legacy domain note
+
+`toolsummary.com` is indexed, but the indexed URLs are dead:
+`/ai-tools/aggregator/theresanaiforthat`, `/category/ai-tools/finance/`,
+`/page/2/` and similar all return 404. Those are soft 404s burning whatever
+legacy signal the domain has. They need explicit redirects (to the closest new
+page, or a 410 if there is no honest match).
+
+Separately, third-party directories describe toolsummary as an AI *tool
+directory* (creati.ai, vanetools, whattheai, toolstory.ai), not a pricing
+resource. There is a brand mismatch to manage: the domain's existing
+associations do not reinforce the new positioning.

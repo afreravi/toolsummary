@@ -1,0 +1,50 @@
+name: Build deployable site
+
+# Produces a downloadable archive of the generated site. It does NOT push to
+# main and does NOT deploy anywhere - a human downloads the artifact and uploads
+# it to the host. The daily price refresh is handled separately by the
+# "Toolsummary pricing refresh" automation, which commits data to main.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 06:00 UTC, after the 04:30 UTC pricing refresh has committed its data.
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      # Build from the committed data rather than re-fetching: the fetch stage
+      # belongs to the pricing automation, and duplicating it here would let the
+      # two disagree about what a given day's prices were.
+      - name: Build pages
+        working-directory: automation/mvp
+        run: python3 build_pages.py
+
+      - name: QA
+        working-directory: automation/mvp
+        run: python3 tests.py
+
+      - name: Package artifact
+        run: python3 automation/deploy/package_site.py
+
+      - name: Show manifest
+        run: cat deploy/manifest.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: toolsummary-site
+          path: |
+            deploy/toolsummary-site.tar.gz
+            deploy/manifest.json
+          retention-days: 14

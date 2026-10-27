@@ -65,50 +65,35 @@ def run_pipeline() -> int:
 
 
 def publish(site_dir: Path) -> str:
-    """Upload the built site. Returns a human-readable result line.
+    """Upload the built site over SFTP. Returns a human-readable result line.
 
-    Publish target is intentionally explicit: if SFTP credentials are absent
-    the run still reports success for the build and skips the upload, so a
-    missing secret can never take the live site down.
+    Delegates to automation/deploy/publish_sftp.py, which uploads only changed
+    files and prunes pages the build no longer emits. A missing credential
+    skips the upload rather than failing the run, so a config problem cannot
+    take the live site down.
+
+    TOOLSUMMARY_PUBLISH_MODE=verify|dry-run puts the publisher into a read-only
+    mode, which is how a new server gets tested without writing to it.
     """
-    host = os.environ.get("TOOLSUMMARY_SFTP_HOST")
-    if not host:
-        try:
-            host = get_secret("TOOLSUMMARY_SFTP_HOST")
-        except Exception:
-            return "publish: skipped (no SFTP host secret configured) - build artifacts kept in workspace"
+    publisher = ROOT / "deploy" / "publish_sftp.py"
+    if not publisher.exists():
+        return "publish: skipped (deploy/publish_sftp.py not found)"
 
-    port = os.environ.get("TOOLSUMMARY_SFTP_PORT", "22")
-    user = os.environ.get("TOOLSUMMARY_SFTP_USER", "")
-    remote = os.environ.get("TOOLSUMMARY_SFTP_PATH", "/public_html")
-    for name, var in (("TOOLSUMMARY_SFTP_USER", user),):
-        if not var:
-            try:
-                user = get_secret(name)
-            except Exception:
-                return "publish: skipped (no SFTP user secret configured)"
+    cmd = [sys.executable, str(publisher)]
+    mode = os.environ.get("TOOLSUMMARY_PUBLISH_MODE", "").strip()
+    if mode in ("verify", "dry-run"):
+        cmd.append(f"--{mode}")
 
-    key_path = ROOT / ".sftp_key"
     try:
-        key_path.write_text(get_secret("TOOLSUMMARY_SFTP_KEY"))
-        key_path.chmod(0o600)
-    except Exception:
-        return "publish: skipped (no SFTP key secret configured)"
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
+    except subprocess.TimeoutExpired:
+        return "publish: FAILED (timed out after 1800s)"
 
-    # rsync over ssh is the safest incremental upload: deleted pages are pruned
-    # with --delete so the live sitemap can never list an orphan.
-    cmd = [
-        "rsync", "-az", "--delete", "--chmod=D755,F644",
-        "-e", f"ssh -i {key_path} -p {port} -o StrictHostKeyChecking=accept-new",
-        f"{site_dir}/", f"{user}@{host}:{remote}/",
-    ]
-    try:
-        r = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
-        if r.returncode != 0:
-            return f"publish: FAILED (rsync exit {r.returncode}) {r.stderr.strip()[:300]}"
-        return f"publish: uploaded {len(list(site_dir.rglob('*.html')))} pages to {remote}"
-    finally:
-        key_path.unlink(missing_ok=True)
+    out = (r.stdout or "").strip()
+    tail = out.splitlines()[-1] if out else ""
+    if r.returncode != 0:
+        return f"publish: FAILED ({tail or (r.stderr or '').strip()[:300]})"
+    return f"publish: {tail}"
 
 
 def main() -> int:
