@@ -1,0 +1,16 @@
+# Toolsummary - LLM API pricing
+
+> Live input/output token pricing for 704 LLM API models, refreshed daily.
+> Last updated: 2026-10-27
+
+## Key facts
+- Models tracked: 704
+- Cheapest input price: Flint V1.0 at Free per 1M tokens
+- Median input price: $0.400 per 1M tokens
+
+## Pages
+- https://toolsummary.com/ - full sortable table
+- https://toolsummary.com/model/<slug>/ - per-model pricing and workload cost examples
+- https://toolsummary.com/compare/<a>-vs-<b>/ - head-to-head cost comparisons
+- https://toolsummary.com/blog/ - pricing notes and reports
+- https://toolsummary.com/submit/ - submit a tool or a correction
