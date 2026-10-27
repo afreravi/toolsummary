@@ -45,8 +45,8 @@ Current output on a real run:
 [fetch]   wrote 3576 models -> data/pricing.json
 [gate]    3576 in -> 704 published (2115 rejected, 87 to review)
 [history] date=2026-10-27 tracked=704 days_on_record=...
-[build]   704 model pages, 400 comparison pages -> site/
-[qa]      pages=1105 models=704 broken_links=0 placeholder_leak=0
+[build]   704 model pages, 400 comparison pages, 1 blog post(s), 9 static pages -> site/
+[qa]      pages=1113 models=704 broken_links=0 placeholder_leak=0
 [qa]      all checks passed
 ```
 

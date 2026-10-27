@@ -62,7 +62,11 @@ def main() -> int:
 
     broken_links = 0
     placeholder_leak = 0
-    NON_PAGE = ("/sitemap.xml", "/llms.txt")  # served files, not generated routes
+    # Served files that are not generated HTML pages: link targets that exist
+    # as files on disk, so they are checked for existence rather than looked up
+    # as an index.html route.
+    SERVED = ("/sitemap.xml", "/llms.txt", "/robots.txt", "/blog/feed.xml",
+              "/api/prices.json")
     for p in pages:
         html = p.read_text()
         # Strip <style>/<script> first: CSS contains 'text-decoration:none'
@@ -73,8 +77,18 @@ def main() -> int:
         if html.count("<h1>") != 1:
             check(False, f"page must have exactly one h1: {p}")
 
-        for link in re.findall(r'href="(/[^"#]*)"', html):
-            if link in NON_PAGE:
+        for link in re.findall(r'href="(/[^"#?]*)"', html):
+            if link in SERVED:
+                if not (SITE / link.strip("/")).exists():
+                    broken_links += 1
+                    if broken_links < 4:
+                        FAILURES.append(f"missing served file {link} on {p.relative_to(SITE)}")
+                continue
+            if link.startswith("/assets/"):
+                if not (SITE / link.strip("/")).exists():
+                    broken_links += 1
+                    if broken_links < 4:
+                        FAILURES.append(f"missing asset {link} on {p.relative_to(SITE)}")
                 continue
             target = SITE / "index.html" if link == "/" else SITE / link.strip("/") / "index.html"
             if not target.exists():
@@ -174,6 +188,74 @@ def main() -> int:
 
     check((DATA / "price_changes_recent.json").exists(),
           "price_changes_recent.json missing")
+
+
+    # --- forms: both must carry the key, a honeypot and a captcha -----------
+    # A form that silently loses its spam controls is the kind of regression
+    # that only shows up as inbox spam weeks later, so it is asserted here.
+    for route in ("submit/index.html", "contact/index.html"):
+        f = SITE / route
+        check(f.exists(), f"{route} missing")
+        if not f.exists():
+            continue
+        fh = f.read_text()
+        check("api.web3forms.com/submit" in fh, f"{route} does not post to Web3Forms")
+        check('name="access_key"' in fh, f"{route} has no access key")
+        check('name="botcheck"' in fh, f"{route} lost its honeypot field")
+        check("h-captcha" in fh, f"{route} lost its captcha")
+        check('method="POST"' in fh, f"{route} is not a POST form")
+        # A form that echoes the inbox address invites scraping; the address
+        # should not appear in page HTML.
+        check("info.toolsummary@gmail.com" not in fh,
+              f"{route} exposes the inbox address in HTML")
+
+    # --- blog ---------------------------------------------------------------
+    feed = SITE / "blog" / "feed.xml"
+    check(feed.exists(), "blog/feed.xml missing")
+    if feed.exists():
+        fx = feed.read_text()
+        check("<rss" in fx and "</rss>" in fx, "RSS feed is not well-formed RSS")
+        check("<item>" in fx, "RSS feed has no items")
+
+    # A post file with front matter must produce a page; a missing one is a
+    # silent content loss, which is worth catching.
+    import importlib.util as _ilu
+    _spec = _ilu.spec_from_file_location("bp2", ROOT / "build_pages.py")
+    _bp = _ilu.module_from_spec(_spec)
+    _spec.loader.exec_module(_bp)
+    posts = _bp.load_posts()
+    check(len(posts) > 0, "no blog posts parsed")
+    for p in posts:
+        check(bool(p["title"]), f"post {p['slug']} has no title")
+        check(bool(p["excerpt"]), f"post {p['slug']} has no excerpt")
+        check((SITE / "blog" / p["slug"] / "index.html").exists(),
+              f"post {p['slug']} was parsed but not rendered")
+        # Markdown must never reach the page unrendered.
+        html = (SITE / "blog" / p["slug"] / "index.html").read_text()
+        check("##" not in re.sub(r"<[^>]+>", "", html.split("<article", 1)[-1]),
+              f"post {p['slug']} leaks raw Markdown headings")
+        check("&lt;script" not in html and "<script>alert" not in html,
+              f"post {p['slug']} may have injected raw HTML")
+
+    # --- public JSON API ----------------------------------------------------
+    api = SITE / "api" / "prices.json"
+    check(api.exists(), "api/prices.json missing")
+    if api.exists():
+        doc = json.loads(api.read_text())
+        check(doc.get("version") == 1, "api/prices.json version is not 1")
+        check(len(doc.get("models", [])) == len(models),
+              f"api/prices.json has {len(doc.get('models', []))} models, expected {len(models)}")
+        for m in doc.get("models", [])[:50]:
+            check(set(("id", "name", "vendor", "input_per_1m_usd",
+                       "output_per_1m_usd", "url")) <= set(m),
+                  f"api/prices.json row missing fields: {m.get('id')}")
+
+    # --- trending -----------------------------------------------------------
+    check((SITE / "trending" / "index.html").exists(), "trending page missing")
+
+    # --- assets shipped -----------------------------------------------------
+    for asset in ("assets/css/theme.css", "assets/js/theme.js"):
+        check((SITE / asset).exists(), f"{asset} not copied into the site")
 
 
     print(f"[qa] pages={len(pages)} models={len(models)} "
