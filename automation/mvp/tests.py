@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 SITE = ROOT / "site"
+CONTACT_EMAIL = "info.toolsummary@gmail.com"
 
 FAILURES: list[str] = []
 
@@ -62,7 +63,11 @@ def main() -> int:
 
     broken_links = 0
     placeholder_leak = 0
-    NON_PAGE = ("/sitemap.xml", "/llms.txt")  # served files, not generated routes
+    # Served files that are not generated HTML pages: link targets that exist
+    # as files on disk, so they are checked for existence rather than looked up
+    # as an index.html route.
+    SERVED = ("/sitemap.xml", "/llms.txt", "/robots.txt", "/blog/feed.xml",
+              "/api/prices.json")
     for p in pages:
         html = p.read_text()
         # Strip <style>/<script> first: CSS contains 'text-decoration:none'
@@ -73,8 +78,18 @@ def main() -> int:
         if html.count("<h1>") != 1:
             check(False, f"page must have exactly one h1: {p}")
 
-        for link in re.findall(r'href="(/[^"#]*)"', html):
-            if link in NON_PAGE:
+        for link in re.findall(r'href="(/[^"#?]*)"', html):
+            if link in SERVED:
+                if not (SITE / link.strip("/")).exists():
+                    broken_links += 1
+                    if broken_links < 4:
+                        FAILURES.append(f"missing served file {link} on {p.relative_to(SITE)}")
+                continue
+            if link.startswith("/assets/"):
+                if not (SITE / link.strip("/")).exists():
+                    broken_links += 1
+                    if broken_links < 4:
+                        FAILURES.append(f"missing asset {link} on {p.relative_to(SITE)}")
                 continue
             target = SITE / "index.html" if link == "/" else SITE / link.strip("/") / "index.html"
             if not target.exists():
@@ -174,6 +189,152 @@ def main() -> int:
 
     check((DATA / "price_changes_recent.json").exists(),
           "price_changes_recent.json missing")
+
+
+    # --- forms: both must carry the key, a honeypot and a captcha -----------
+    # A form that silently loses its spam controls is the kind of regression
+    # that only shows up as inbox spam weeks later, so it is asserted here.
+    for route in ("submit/index.html", "contact/index.html"):
+        f = SITE / route
+        check(f.exists(), f"{route} missing")
+        if not f.exists():
+            continue
+        fh = f.read_text()
+        check("api.web3forms.com/submit" in fh, f"{route} does not post to Web3Forms")
+        check('name="access_key"' in fh, f"{route} has no access key")
+        check('name="botcheck"' in fh, f"{route} lost its honeypot field")
+        # replyto would write our own address into public HTML, so it is
+        # deliberately absent; Web3Forms derives Reply-To from `email`.
+        check('name="replyto"' not in fh, f"{route} leaks an address via replyto")
+        # No third-party captcha of any kind.
+        for vendor in ("h-captcha", "hcaptcha", "recaptcha", "turnstile"):
+            check(vendor not in fh.lower(), f"{route} still references {vendor}")
+        # The human check is a sum, answered in the browser.
+        check('id="human-question"' in fh, f"{route} has no human-check question")
+        check('id="human-answer"' in fh, f"{route} has no human-check input")
+        # The answer must not be submitted or the check is trivially defeated
+        # by a script that reads the form fields and posts them back.
+        seg = fh.split('id="human-answer"', 1)[1].split(">", 1)[0]
+        check("name=" not in seg,
+              f"{route} human-check input has a name and would be submitted")
+        check('method="POST"' in fh, f"{route} is not a POST form")
+        # novalidate keeps the browser's own bubbles from pre-empting the dialog.
+        check("novalidate" in fh, f"{route} lets the browser pre-empt the dialog")
+        # The dialog is how both outcomes are reported now.
+        check('id="form-modal"' in fh, f"{route} has no result dialog")
+        check("data-ok-message" in fh, f"{route} has no success message for the dialog")
+        # Post over fetch, so the page must not be sent to a redirect target.
+        check('name="redirect"' not in fh,
+              f"{route} still redirects away; the dialog would never be seen")
+        # A form that echoes the inbox address invites scraping; the address
+        # should not appear in page HTML.
+        check(CONTACT_EMAIL not in fh,
+              f"{route} exposes the inbox address in HTML")
+
+    # --- no secrets in anything served --------------------------------------
+    # No captcha secret exists any more, but the access key is still read from
+    # the environment, so make sure the variable name never reaches a page.
+    for f in SITE.rglob("*"):
+        if f.is_file() and f.suffix in {".html", ".js", ".css", ".json", ".xml", ".txt"}:
+            body = f.read_text(errors="ignore")
+            check("WEB3FORMS_ACCESS_KEY" not in body,
+                  f"env var name leaked into {f.relative_to(SITE)}")
+
+    # --- Google Search Console verification ---------------------------------
+    # The tag must be on the canonical home page or verification silently
+    # lapses; Google reports it as a property that is no longer verified.
+    home = (SITE / "index.html").read_text()
+    check('name="google-site-verification"' in home,
+          "home page lost the Google Search Console verification tag")
+    check("ZOgdSz3sOgeaKnJFJYKfIRhy3fM1L4I6vFD4xt5yagM" in home,
+          "Google Search Console verification token changed or is missing")
+
+    # --- blog ---------------------------------------------------------------
+    feed = SITE / "blog" / "feed.xml"
+    check(feed.exists(), "blog/feed.xml missing")
+    if feed.exists():
+        fx = feed.read_text()
+        check("<rss" in fx and "</rss>" in fx, "RSS feed is not well-formed RSS")
+        check("<item>" in fx, "RSS feed has no items")
+
+    # A post file with front matter must produce a page; a missing one is a
+    # silent content loss, which is worth catching.
+    import importlib.util as _ilu
+    _spec = _ilu.spec_from_file_location("bp2", ROOT / "build_pages.py")
+    _bp = _ilu.module_from_spec(_spec)
+    _spec.loader.exec_module(_bp)
+    posts = _bp.load_posts()
+    check(len(posts) > 0, "no blog posts parsed")
+    for p in posts:
+        check(bool(p["title"]), f"post {p['slug']} has no title")
+        check(bool(p["excerpt"]), f"post {p['slug']} has no excerpt")
+        check(p["author"] in _bp.AUTHORS,
+              f"post {p['slug']} resolves to unknown author {p['author']}")
+        check((SITE / "blog" / p["slug"] / "index.html").exists(),
+              f"post {p['slug']} was parsed but not rendered")
+        # A post must name a real person and link to their author page, or the
+        # byline is decoration rather than an author signal.
+        ph = (SITE / "blog" / p["slug"] / "index.html").read_text()
+        check("The Toolsummary desk" not in ph,
+              f"post {p['slug']} still shows the placeholder byline")
+        check(f'/blog/author/{p["author"]}/' in ph,
+              f"post {p['slug']} does not link to its author page")
+        check((SITE / "blog" / "author" / p["author"] / "index.html").exists(),
+              f"author page missing for {p['author']}")
+        # Markdown must never reach the page unrendered.
+        html = ph
+        check("##" not in re.sub(r"<[^>]+>", "", html.split("<article", 1)[-1]),
+              f"post {p['slug']} leaks raw Markdown headings")
+        check("&lt;script" not in html and "<script>alert" not in html,
+              f"post {p['slug']} may have injected raw HTML")
+
+    # Posts must be genuinely distinct, not one text under four names.
+    bodies = [p["body"] for p in posts]
+    check(len(set(bodies)) == len(bodies), "two blog posts have identical bodies")
+    titles = [p["title"].lower() for p in posts]
+    check(len(set(titles)) == len(titles), "two blog posts share a title")
+
+    # A published post needs a real title length for search results; too short
+    # and it competes with nothing, too long and it is truncated.
+    for p in posts:
+        check(20 <= len(p["title"]) <= 65,
+              f"post {p['slug']} title is {len(p['title'])} chars (want 20-65)")
+        check(70 <= len(p["excerpt"]) <= 200,
+              f"post {p['slug']} excerpt is {len(p['excerpt'])} chars (want 70-200)")
+
+    # --- public JSON API ----------------------------------------------------
+    api = SITE / "api" / "prices.json"
+    check(api.exists(), "api/prices.json missing")
+    if api.exists():
+        doc = json.loads(api.read_text())
+        check(doc.get("version") == 1, "api/prices.json version is not 1")
+        check(len(doc.get("models", [])) == len(models),
+              f"api/prices.json has {len(doc.get('models', []))} models, expected {len(models)}")
+        for m in doc.get("models", [])[:50]:
+            check(set(("id", "name", "vendor", "input_per_1m_usd",
+                       "output_per_1m_usd", "url")) <= set(m),
+                  f"api/prices.json row missing fields: {m.get('id')}")
+
+    # --- trending -----------------------------------------------------------
+    check((SITE / "trending" / "index.html").exists(), "trending page missing")
+
+    # --- footer -------------------------------------------------------------
+    # The copyright range must end at the current year. A hardcoded year is the
+    # classic way a site starts looking abandoned every January.
+    import datetime as _dt
+    year = str(_dt.date.today().year)
+    for p in pages[:1] + [SITE / "blog" / "index.html"]:
+        fh = p.read_text()
+        check("data-since" in fh, f"{p.relative_to(SITE)} footer lost the start year")
+        m = re.search(r'data-year>(\d{4})<', fh)
+        check(bool(m), f"{p.relative_to(SITE)} footer has no end year")
+        if m:
+            check(m.group(1) == year,
+                  f"{p.relative_to(SITE)} footer year is {m.group(1)}, expected {year}")
+
+    # --- assets shipped -----------------------------------------------------
+    for asset in ("assets/css/theme.css", "assets/js/theme.js"):
+        check((SITE / asset).exists(), f"{asset} not copied into the site")
 
 
     print(f"[qa] pages={len(pages)} models={len(models)} "
