@@ -23,6 +23,14 @@ THEME = ROOT / "theme"
 BLOG = ROOT / "blog"
 BASE = "https://toolsummary.com"
 
+# Google Search Console verification for the URL-prefix property on BASE.
+# This is a public token, not a secret: it proves control of the domain and is
+# meant to be readable in the page source. It only verifies the exact prefix it
+# was issued for, so it must stay on the canonical host -- it does nothing on a
+# preview or staging host, and a Domain property would need a DNS TXT record
+# instead of this tag.
+GOOGLE_SITE_VERIFICATION = "ZOgdSz3sOgeaKnJFJYKfIRhy3fM1L4I6vFD4xt5yagM"
+
 # Public by design: Web3Forms access keys are meant to be embedded in page
 # HTML. The key can only send mail to the address that created it, never read
 # anything. Override with the environment when rotating the key.
@@ -238,6 +246,7 @@ def page(title: str, desc: str, canonical: str, body: str, ld: dict,
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{canonical}">
+<meta name="google-site-verification" content="{GOOGLE_SITE_VERIFICATION}">
 <meta name="theme-color" content="#17130f">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">

@@ -240,6 +240,15 @@ def main() -> int:
             check("WEB3FORMS_ACCESS_KEY" not in body,
                   f"env var name leaked into {f.relative_to(SITE)}")
 
+    # --- Google Search Console verification ---------------------------------
+    # The tag must be on the canonical home page or verification silently
+    # lapses; Google reports it as a property that is no longer verified.
+    home = (SITE / "index.html").read_text()
+    check('name="google-site-verification"' in home,
+          "home page lost the Google Search Console verification tag")
+    check("ZOgdSz3sOgeaKnJFJYKfIRhy3fM1L4I6vFD4xt5yagM" in home,
+          "Google Search Console verification token changed or is missing")
+
     # --- blog ---------------------------------------------------------------
     feed = SITE / "blog" / "feed.xml"
     check(feed.exists(), "blog/feed.xml missing")
