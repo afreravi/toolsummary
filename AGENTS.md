@@ -306,3 +306,22 @@ reputation, then the recipient's filters. Nothing in the page markup fixes it.
 Do not add a `replyto` hidden field: it writes the inbox address into public
 HTML where scrapers collect it, and Web3Forms already sets Reply-To from the
 visitor's `email` field.
+
+## Publish record
+
+`theme-live` was merged to `main` (`b115b04`) and published to the live web root
+on 2026-10-28. What went live: the Price Ledger theme, 4 blog posts with author
+pages, client-side pagination over the full table, the in-page form dialog, the
+mobile layout fixes, the arithmetic human check, and the Search Console tag.
+
+Live state at publish: 713 model pages, 401 comparison pages, 1,137 files.
+`x-robots-tag: all` on the root, so the placeholder's `noindex` is gone and the
+site is indexable. `/api/prices.json` returns the dataset as JSON.
+
+The merge kept `main`'s data: `theme-live` never touched `automation/mvp/data`,
+so the newer 2026-10-28 snapshot (713 models) survived rather than being
+overwritten by the branch's stale 704-model copy. The 704/713 difference is the
+signal that this went right -- if a future merge shows model counts going
+*down* after a branch lands, the branch carried stale data and the publish would
+have regressed the site. Check `git log origin/main..<branch> -- automation/mvp/data`
+is empty before merging a theme branch.
