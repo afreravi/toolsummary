@@ -177,6 +177,37 @@
     nav.appendChild(controls);
   }
 
+  /* ----------------------------------------------------------- human check */
+  // A small sum, generated here and checked here. The answer lives in this
+  // closure rather than in the DOM or a hidden input, so reading the page
+  // source does not reveal it and it is never emailed with the submission.
+  // This stops the ordinary case -- a script that fills every field and posts
+  // -- and is not intended to stop a person who is determined to answer 7 + 4.
+  function initHumanCheck() {
+    var label = document.getElementById("human-question");
+    var input = document.getElementById("human-answer");
+    if (!label || !input) return null;
+
+    var a = 2 + Math.floor(Math.random() * 8);   // 2..9
+    var b = 1 + Math.floor(Math.random() * 8);   // 1..8
+    var answer = a + b;
+    label.textContent = "What is " + a + " + " + b + "?";
+    input.value = "";
+    input.setAttribute("aria-label", "What is " + a + " plus " + b + "?");
+
+    return {
+      ok: function () { return parseInt(input.value.trim(), 10) === answer; },
+      reset: function () {
+        var na = 2 + Math.floor(Math.random() * 8);
+        var nb = 1 + Math.floor(Math.random() * 8);
+        answer = na + nb;
+        label.textContent = "What is " + na + " + " + nb + "?";
+        input.setAttribute("aria-label", "What is " + na + " plus " + nb + "?");
+        input.value = "";
+      },
+    };
+  }
+
   /* ---------------------------------------------------------------- modal */
   // One modal per page, reused for success and failure. Focus is moved into
   // the dialog and trapped there while it is open, then returned to whatever
@@ -232,6 +263,7 @@
     var form = document.getElementById("submit-form");
     if (!form) return;
     var modal = initModal();
+    var human = initHumanCheck();
     var btn = form.querySelector('button[type="submit"]');
     var btnLabel = btn ? btn.textContent : "";
 
@@ -240,7 +272,11 @@
     function validate(el) {
       var wrap = fieldOf(el);
       if (!wrap) return true;
-      var ok = el.checkValidity();
+      // The sum is checked against the closure, not against the DOM, so it is
+      // validated here rather than by the browser's constraint API.
+      var ok = el.id === "human-answer" && human
+        ? human.ok()
+        : el.checkValidity();
       wrap.classList.toggle("is-bad", !ok);
       return ok;
     }
@@ -265,9 +301,15 @@
         var first = fieldOf(bad[0]);
         if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
         if (modal) {
-          modal.open("error", "Check the highlighted fields",
-            "Some required answers are missing or invalid. Nothing was sent, and "
-            + "what you typed is still here.");
+          var wrongSum = human && bad.indexOf(
+            document.getElementById("human-answer")) !== -1;
+          modal.open("error",
+            wrongSum ? "Check the sum" : "Check the highlighted fields",
+            wrongSum
+              ? "That answer is not right. Nothing was sent, and everything you "
+                + "typed is still here."
+              : "Some required answers are missing or invalid. Nothing was sent, and "
+                + "what you typed is still here.");
         }
         return;
       }
@@ -287,6 +329,9 @@
         .then(function (res) {
           if (res.ok && res.body && res.body.success) {
             form.reset();
+            // form.reset() cannot clear the sum: the answer lives in a closure,
+            // so a second submission would fail against the old question.
+            if (human) human.reset();
             fields.forEach(function (f) {
               var w = fieldOf(f);
               if (w) w.classList.remove("is-bad");

@@ -263,33 +263,40 @@ assumes price history is an open niche without re-checking the SERP first.
 
 
 
-## Forms: reCAPTCHA and the mail path
+## Forms: the human check and the mail path
 
 Both public forms (`/submit/`, `/contact/`) POST JSON to Web3Forms over `fetch`
 and report the outcome in an in-page dialog. Do not reintroduce a native submit
-or a `redirect` field: with either, a `200` and a `400` both look like "the page
+or a `redirect` field: with either, a 200 and a 400 both look like "the page
 went away", and the user cannot be told the difference.
 
-### The captcha is reCAPTCHA v3, and it is a paid Web3Forms feature
+Keep `novalidate` on the form. Without it the browser's own validation bubbles
+fire first and pre-empt the dialog, so the same mistake shows two different
+error styles.
 
-hCaptcha was removed. The site now uses Google reCAPTCHA v3, which is invisible
-(no checkbox) and attaches a token in the `recaptcha_response` field.
+### The bot check is arithmetic, not a captcha
 
-**This is a Web3Forms Pro feature.** On the free plan the token is not verified
-server side. Before assuming the captcha is doing anything, confirm the form's
-dashboard setting:
+There is no third-party captcha: no hCaptcha, no reCAPTCHA, no Turnstile. Two
+attempts at a hosted captcha failed here -- reCAPTCHA is a paid Web3Forms
+feature, so on the free plan it silently verifies nothing and still blocks
+submissions. A hosted captcha can also fail closed and lock a real person out of
+the form, which is worse than the spam it prevents.
 
-1. Web3Forms dashboard -> the form -> Settings
-2. Choose `recaptcha` as the captcha provider
-3. Paste the **secret** key and save
+`human_check_block()` in `build_pages.py` renders a sum, and `initHumanCheck()`
+in `theme.js` generates it and checks the answer in a closure:
 
-The secret key is never in this repository and must never be. Only the public
-site key belongs in page HTML. `tests.py` fails the build if the secret appears
-in any generated file.
+- The answer is never in the DOM, so scraping the page does not reveal it.
+- The input has no `name`, so it is never emailed as submission data.
+- It stops the ordinary case: a script that fills every field it finds and
+  posts. It does not stop a determined person, and it is not sold as doing so.
+  The honeypot and Web3Forms' own server-side filter cover the rest.
 
-- Site key (public, in `build_pages.py`): safe to publish
-- Secret key: dashboard only; also available to the build as `RECAPTCHA_SITE_KEY`
-  for the public half, and never written out
+The wording shown to the user says "So we know a person is sending this", not
+"security". Do not dress it up as more than a speed bump.
+
+If you ever do want a real captcha, note that the Web3Forms captcha provider
+must be set in their dashboard, and the secret key goes there -- never in this
+repository or in a page.
 
 ### Deliverability
 

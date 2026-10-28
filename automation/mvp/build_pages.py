@@ -1209,40 +1209,38 @@ def build_rss(posts: list[dict]) -> str:
 
 # ------------------------------------------------------------------- forms
 # Both forms POST to Web3Forms, which forwards to the contact inbox. The
-# access key is public by design; the reCAPTCHA secret key is not and must
-# never be written into a page.
+# access key is public by design. There is no captcha secret to protect because
+# there is no third-party captcha.
 #
-# Bot defence is reCAPTCHA v3 plus a honeypot. The secret half of the key pair
-# is configured in the Web3Forms dashboard, where Web3Forms verifies the token
-# server side; the site only ever carries the public site key.
-
-RECAPTCHA_SITE_KEY = os.environ.get(
-    "RECAPTCHA_SITE_KEY", "6LeyXgUuAAAAAEONnVN1c239BkOW5Hcfwu1l9dUs")
+# Bot defence is a human check plus a honeypot. No third-party captcha: no
+# account, no secret key, and nothing that can fail closed and lock a real
+# person out of the form.
 
 
-def recaptcha_block() -> str:
-    """Hidden field that receives the v3 token, plus the loader script.
+def human_check_block() -> str:
+    """A small arithmetic question, generated and checked in the browser.
 
-    v3 is invisible: there is no checkbox to render, so this replaces the
-    hCaptcha widget rather than sitting beside it. The token is attached to the
-    submission and verified by Web3Forms against the secret key.
+    The question is written by JS on load and the answer is kept in a closure,
+    not in the DOM, so a bot has to run JavaScript and read a live variable
+    rather than scrape a fixed value. It is a gate against the common case --
+    an automated script that fills every field it finds and posts -- and it is
+    deliberately not presented as more than that. A determined attacker can
+    answer a sum; the honeypot and Web3Forms' own server-side spam filter are
+    what cover that case.
+
+    The field has no `name`, so the answer is never emailed; it is a check, not
+    data.
     """
     return (
-        f'<input type="hidden" name="recaptcha_response" id="recaptchaResponse">'
-        f'<script src="https://www.google.com/recaptcha/api.js?render={RECAPTCHA_SITE_KEY}"></script>'
-        f'<script>'
-        f'(function(){{'
-        f'function run(){{'
-        f'if(!window.grecaptcha){{return;}}'
-        f'grecaptcha.ready(function(){{'
-        f'grecaptcha.execute("{RECAPTCHA_SITE_KEY}",{{action:"submit"}})'
-        f'.then(function(t){{var f=document.getElementById("recaptchaResponse");if(f){{f.value=t;}}}});'
-        f'}});'
-        f'}}'
-        f'if(document.readyState!=="loading"){{run();}}'
-        f'else{{document.addEventListener("DOMContentLoaded",run);}}'
-        f'}})();'
-        f'</script>'
+        '<div class="field field--wide">'
+        '<label for="human-answer"><span id="human-question">Quick check</span>'
+        ' <span class="req">*</span></label>'
+        '<input id="human-answer" type="text" required inputmode="numeric" '
+        'autocomplete="off" autocapitalize="off" spellcheck="false" '
+        'placeholder="Your answer" aria-describedby="human-hint">'
+        '<span class="hint" id="human-hint">So we know a person is sending this.</span>'
+        '<span class="err">That is not the right answer.</span>'
+        '</div>'
     )
 
 
@@ -1295,7 +1293,7 @@ def build_submit() -> None:
   placement &mdash; every row is priced the same way.
 </div>
 
-<form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST"
+<form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST" novalidate
       data-ok-message="We verify every submission against the provider's own pricing page before it appears, so it may take a day or two to show up in the ledger.">
   {form_hidden("Toolsummary: model submission")}
   <div class="form__grid">
@@ -1351,7 +1349,7 @@ def build_submit() -> None:
       <span class="hint">Only used if we need to ask you a question about this row.</span>
     </div>
   </div>
-  {recaptcha_block()}
+  {human_check_block()}
   <div class="btn-row">
     <button class="btn" type="submit">Submit for review</button>
     <span class="mut" style="font-size:13.5px">Fields marked <span class="req">*</span> are required.</span>
@@ -1377,7 +1375,7 @@ def build_contact() -> None:
     what we need to verify a row.</p>
 </div>
 
-<form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST"
+<form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST" novalidate
       data-ok-message="Your message reached us. We usually reply within one working day.">
   {form_hidden("Toolsummary: contact message")}
   <div class="form__grid">
@@ -1405,7 +1403,7 @@ def build_contact() -> None:
       <span class="err">A little more detail helps us route this.</span>
     </div>
   </div>
-  {recaptcha_block()}
+  {human_check_block()}
   <div class="btn-row">
     <button class="btn" type="submit">Send message</button>
     <span class="mut" style="font-size:13.5px">Fields marked <span class="req">*</span> are required.</span>
@@ -1470,9 +1468,9 @@ def build_privacy() -> None:
   <p>The public pages are static and set no tracking cookies. The submit and contact
     forms are processed by <a href="https://web3forms.com" rel="noopener">Web3Forms</a>,
     which forwards your message to our inbox and does not store submissions. Their
-    captcha is Google reCAPTCHA v3, which sets a cookie to score submissions for
-    spam. We never see your answers on that page; Web3Forms verifies the score and
-    forwards only the message.</p>
+    spam check is a small arithmetic question answered in your browser. There is no
+    third-party captcha, no tracking cookie, and the answer is never sent to us or
+    stored.</p>
   <h2>What is not done</h2>
   <p>No data is sold, and no provider is given access to submissions. Email addresses
     from the forms are used only to reply to you.</p>

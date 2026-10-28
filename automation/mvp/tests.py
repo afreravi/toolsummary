@@ -16,13 +16,6 @@ ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 SITE = ROOT / "site"
 CONTACT_EMAIL = "info.toolsummary@gmail.com"
-# The reCAPTCHA secret key must never appear in anything the site serves. It is
-# read from the environment, never stored here: a secret committed to the repo
-# is already leaked, even inside a guard that exists to catch leaks.
-import os
-RECAPTCHA_SECRET = os.environ.get("RECAPTCHA_SECRET_KEY", "")
-if not RECAPTCHA_SECRET:
-    print("[qa] note: RECAPTCHA_SECRET_KEY not set; skipping secret-leak scan")
 
 FAILURES: list[str] = []
 
@@ -213,12 +206,20 @@ def main() -> int:
         # replyto would write our own address into public HTML, so it is
         # deliberately absent; Web3Forms derives Reply-To from `email`.
         check('name="replyto"' not in fh, f"{route} leaks an address via replyto")
-        # reCAPTCHA v3 replaces hCaptcha entirely.
-        check("h-captcha" not in fh and "hcaptcha" not in fh.lower(),
-              f"{route} still references hCaptcha")
-        check("google.com/recaptcha/api.js" in fh, f"{route} lost the reCAPTCHA loader")
-        check('name="recaptcha_response"' in fh, f"{route} has no reCAPTCHA token field")
+        # No third-party captcha of any kind.
+        for vendor in ("h-captcha", "hcaptcha", "recaptcha", "turnstile"):
+            check(vendor not in fh.lower(), f"{route} still references {vendor}")
+        # The human check is a sum, answered in the browser.
+        check('id="human-question"' in fh, f"{route} has no human-check question")
+        check('id="human-answer"' in fh, f"{route} has no human-check input")
+        # The answer must not be submitted or the check is trivially defeated
+        # by a script that reads the form fields and posts them back.
+        seg = fh.split('id="human-answer"', 1)[1].split(">", 1)[0]
+        check("name=" not in seg,
+              f"{route} human-check input has a name and would be submitted")
         check('method="POST"' in fh, f"{route} is not a POST form")
+        # novalidate keeps the browser's own bubbles from pre-empting the dialog.
+        check("novalidate" in fh, f"{route} lets the browser pre-empt the dialog")
         # The dialog is how both outcomes are reported now.
         check('id="form-modal"' in fh, f"{route} has no result dialog")
         check("data-ok-message" in fh, f"{route} has no success message for the dialog")
@@ -231,14 +232,11 @@ def main() -> int:
               f"{route} exposes the inbox address in HTML")
 
     # --- no secrets in anything served --------------------------------------
-    # A secret key in a static page is public the moment it is deployed, so
-    # this is checked across every generated file, not just the form pages.
+    # No captcha secret exists any more, but the access key is still read from
+    # the environment, so make sure the variable name never reaches a page.
     for f in SITE.rglob("*"):
         if f.is_file() and f.suffix in {".html", ".js", ".css", ".json", ".xml", ".txt"}:
             body = f.read_text(errors="ignore")
-            if RECAPTCHA_SECRET:
-                check(RECAPTCHA_SECRET not in body,
-                      f"reCAPTCHA secret key leaked into {f.relative_to(SITE)}")
             check("WEB3FORMS_ACCESS_KEY" not in body,
                   f"env var name leaked into {f.relative_to(SITE)}")
 
