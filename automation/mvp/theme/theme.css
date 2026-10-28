@@ -197,7 +197,7 @@ main { padding: 42px 0 72px; }
 
 /* stat strip */
 .stats {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
   gap: 1px; background: var(--rule);
   border: 1px solid var(--rule); border-radius: var(--radius);
   margin: 26px 0 34px; overflow: hidden;
@@ -326,7 +326,7 @@ table.ledger caption {
 
 /* -------------------------------------------------------------------- cards */
 
-.cards { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.cards { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
 .card {
   background: var(--card); border: 1px solid var(--rule-2); border-radius: var(--radius);
   padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px;
@@ -385,7 +385,11 @@ table.ledger caption {
 
 .form { max-width: 720px; }
 .form__grid { display: grid; gap: 20px; grid-template-columns: 1fr 1fr; }
-.field { display: flex; flex-direction: column; gap: 7px; }
+/* Grid items default to min-width:auto and refuse to shrink below their
+   content, which pushes a wide input past the viewport edge on narrow phones.
+   min-width:0 lets the track shrink and the input size to it. */
+.form__grid > * { min-width: 0; }
+.field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
 .field--wide { grid-column: 1 / -1; }
 .field label { font-weight: 600; font-size: 14.5px; }
 .field .hint { font-size: 13px; color: var(--ink-3); }
@@ -421,6 +425,40 @@ table.ledger caption {
 }
 .notice--info { border-left-color: var(--teal); background: var(--teal-wash); }
 .notice--ok { border-left-color: var(--teal); background: var(--teal-wash); }
+
+/* -------------------------------------------------------------------- modal */
+
+.modal {
+  position: fixed; inset: 0; z-index: 60;
+  display: grid; place-items: center; padding: 20px;
+  background: rgba(25, 21, 18, .55);
+  opacity: 0; transition: opacity .18s ease;
+}
+.modal[hidden] { display: none; }
+.modal.is-on { opacity: 1; }
+.modal__box {
+  background: var(--card); border: 1px solid var(--rule-2);
+  border-top: 4px solid var(--teal);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  max-width: 420px; width: 100%; padding: 26px 24px 22px;
+  text-align: center; transform: translateY(8px); transition: transform .18s ease;
+}
+.modal.is-on .modal__box { transform: none; }
+.modal--error .modal__box { border-top-color: var(--up); }
+.modal__icon {
+  width: 44px; height: 44px; margin: 0 auto 14px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 22px; line-height: 1;
+  background: var(--teal-wash); color: var(--teal-ink);
+}
+.modal--error .modal__icon { background: var(--up-wash); color: var(--up); }
+.modal__title { margin: 0 0 8px; font-size: 23px; }
+.modal__msg { margin: 0 0 20px; color: var(--ink-2); font-size: 15px; }
+.modal__actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.modal__actions .btn { width: 100%; justify-content: center; }
+@media (min-width: 420px) { .modal__actions .btn { width: auto; } }
+@media (prefers-reduced-motion: reduce) {
+  .modal, .modal__box { transition: none; }
+}
 
 /* -------------------------------------------------------------------- footer */
 
@@ -470,13 +508,23 @@ table.ledger caption {
   .nav a { padding: 12px; border-bottom: 1px solid rgba(247,241,230,.1); }
   .nav .nav__cta { margin-top: 6px; }
   .nav__toggle { display: inline-block; }
-  .masthead__bar { padding: 12px 0; }
+  /* Vertical only: a shorthand padding here would zero the horizontal padding
+     that .wrap provides, leaving the brand flush against the screen edge. */
+  .masthead__bar { padding-top: 12px; padding-bottom: 12px; }
   .form__grid { grid-template-columns: 1fr; }
   main { padding: 30px 0 54px; }
 }
 @media (max-width: 460px) {
   .footer__grid { grid-template-columns: 1fr; }
   .ticker__cell { padding: 10px 14px; }
+  .wrap { padding: 0 16px; }
+  .brand__mark { font-size: 22px; }
+  .stat { padding: 14px 15px; }
+  .stat__value { font-size: 20px; }
+  .post { padding: 18px 16px; }
+  .card { padding: 16px; }
+  .pager { gap: 8px 10px; }
+  .pager__btn { padding: 6px 8px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

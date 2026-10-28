@@ -15,6 +15,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 SITE = ROOT / "site"
+CONTACT_EMAIL = "info.toolsummary@gmail.com"
+# The reCAPTCHA secret key must never appear in anything the site serves. It is
+# read from the environment, never stored here: a secret committed to the repo
+# is already leaked, even inside a guard that exists to catch leaks.
+import os
+RECAPTCHA_SECRET = os.environ.get("RECAPTCHA_SECRET_KEY", "")
+if not RECAPTCHA_SECRET:
+    print("[qa] note: RECAPTCHA_SECRET_KEY not set; skipping secret-leak scan")
 
 FAILURES: list[str] = []
 
@@ -202,21 +210,37 @@ def main() -> int:
         check("api.web3forms.com/submit" in fh, f"{route} does not post to Web3Forms")
         check('name="access_key"' in fh, f"{route} has no access key")
         check('name="botcheck"' in fh, f"{route} lost its honeypot field")
-        check("h-captcha" in fh, f"{route} lost its captcha")
+        # replyto would write our own address into public HTML, so it is
+        # deliberately absent; Web3Forms derives Reply-To from `email`.
+        check('name="replyto"' not in fh, f"{route} leaks an address via replyto")
+        # reCAPTCHA v3 replaces hCaptcha entirely.
+        check("h-captcha" not in fh and "hcaptcha" not in fh.lower(),
+              f"{route} still references hCaptcha")
+        check("google.com/recaptcha/api.js" in fh, f"{route} lost the reCAPTCHA loader")
+        check('name="recaptcha_response"' in fh, f"{route} has no reCAPTCHA token field")
         check('method="POST"' in fh, f"{route} is not a POST form")
-        check("api.web3forms.com/submit" in fh and 'id="sent-notice"' in fh,
-              f"{route} has no success notice for the post-submit redirect")
-        # The form must not be stopped from posting by its own script. A
-        # preventDefault on every submit silently swallows real submissions,
-        # which is worse than no validation at all.
-        js = (SITE / "assets" / "js" / "theme.js").read_text()
-        block = js.split("initForm")[1] if "initForm" in js else ""
-        check("e.preventDefault()" in block and "if (!bad.length) return;" in block,
-              "form script may still block valid submissions")
+        # The dialog is how both outcomes are reported now.
+        check('id="form-modal"' in fh, f"{route} has no result dialog")
+        check("data-ok-message" in fh, f"{route} has no success message for the dialog")
+        # Post over fetch, so the page must not be sent to a redirect target.
+        check('name="redirect"' not in fh,
+              f"{route} still redirects away; the dialog would never be seen")
         # A form that echoes the inbox address invites scraping; the address
         # should not appear in page HTML.
-        check("info.toolsummary@gmail.com" not in fh,
+        check(CONTACT_EMAIL not in fh,
               f"{route} exposes the inbox address in HTML")
+
+    # --- no secrets in anything served --------------------------------------
+    # A secret key in a static page is public the moment it is deployed, so
+    # this is checked across every generated file, not just the form pages.
+    for f in SITE.rglob("*"):
+        if f.is_file() and f.suffix in {".html", ".js", ".css", ".json", ".xml", ".txt"}:
+            body = f.read_text(errors="ignore")
+            if RECAPTCHA_SECRET:
+                check(RECAPTCHA_SECRET not in body,
+                      f"reCAPTCHA secret key leaked into {f.relative_to(SITE)}")
+            check("WEB3FORMS_ACCESS_KEY" not in body,
+                  f"env var name leaked into {f.relative_to(SITE)}")
 
     # --- blog ---------------------------------------------------------------
     feed = SITE / "blog" / "feed.xml"

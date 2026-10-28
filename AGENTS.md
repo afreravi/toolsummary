@@ -261,3 +261,41 @@ Data API, $9/mo Pro). Our history holds 4 snapshot dates. `models.dev` serves
 8,940 models with `cache_read` pricing for free. Do not write a plan that
 assumes price history is an open niche without re-checking the SERP first.
 
+
+
+## Forms: reCAPTCHA and the mail path
+
+Both public forms (`/submit/`, `/contact/`) POST JSON to Web3Forms over `fetch`
+and report the outcome in an in-page dialog. Do not reintroduce a native submit
+or a `redirect` field: with either, a `200` and a `400` both look like "the page
+went away", and the user cannot be told the difference.
+
+### The captcha is reCAPTCHA v3, and it is a paid Web3Forms feature
+
+hCaptcha was removed. The site now uses Google reCAPTCHA v3, which is invisible
+(no checkbox) and attaches a token in the `recaptcha_response` field.
+
+**This is a Web3Forms Pro feature.** On the free plan the token is not verified
+server side. Before assuming the captcha is doing anything, confirm the form's
+dashboard setting:
+
+1. Web3Forms dashboard -> the form -> Settings
+2. Choose `recaptcha` as the captcha provider
+3. Paste the **secret** key and save
+
+The secret key is never in this repository and must never be. Only the public
+site key belongs in page HTML. `tests.py` fails the build if the secret appears
+in any generated file.
+
+- Site key (public, in `build_pages.py`): safe to publish
+- Secret key: dashboard only; also available to the build as `RECAPTCHA_SITE_KEY`
+  for the public half, and never written out
+
+### Deliverability
+
+Mail landing in spam is a domain-reputation problem, not a form bug. Ranked by
+effect: SPF, DKIM and DMARC on the sending domain, then Web3Forms' own sending
+reputation, then the recipient's filters. Nothing in the page markup fixes it.
+Do not add a `replyto` hidden field: it writes the inbox address into public
+HTML where scrapers collect it, and Web3Forms already sets Reply-To from the
+visitor's `email` field.

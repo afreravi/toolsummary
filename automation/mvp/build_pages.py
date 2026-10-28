@@ -1209,23 +1209,75 @@ def build_rss(posts: list[dict]) -> str:
 
 # ------------------------------------------------------------------- forms
 # Both forms POST to Web3Forms, which forwards to the contact inbox. The
-# access key is public by design. Bot defence is hCaptcha plus a honeypot
-# field; the provider also runs its own server-side spam filter.
+# access key is public by design; the reCAPTCHA secret key is not and must
+# never be written into a page.
+#
+# Bot defence is reCAPTCHA v3 plus a honeypot. The secret half of the key pair
+# is configured in the Web3Forms dashboard, where Web3Forms verifies the token
+# server side; the site only ever carries the public site key.
 
-def hcaptcha_block() -> str:
-    return ('<div class="h-captcha" data-captcha="true" data-theme="light"></div>')
+RECAPTCHA_SITE_KEY = os.environ.get(
+    "RECAPTCHA_SITE_KEY", "6LeyXgUuAAAAAEONnVN1c239BkOW5Hcfwu1l9dUs")
 
 
-def form_hidden(subject: str, redirect: str) -> str:
+def recaptcha_block() -> str:
+    """Hidden field that receives the v3 token, plus the loader script.
+
+    v3 is invisible: there is no checkbox to render, so this replaces the
+    hCaptcha widget rather than sitting beside it. The token is attached to the
+    submission and verified by Web3Forms against the secret key.
+    """
+    return (
+        f'<input type="hidden" name="recaptcha_response" id="recaptchaResponse">'
+        f'<script src="https://www.google.com/recaptcha/api.js?render={RECAPTCHA_SITE_KEY}"></script>'
+        f'<script>'
+        f'(function(){{'
+        f'function run(){{'
+        f'if(!window.grecaptcha){{return;}}'
+        f'grecaptcha.ready(function(){{'
+        f'grecaptcha.execute("{RECAPTCHA_SITE_KEY}",{{action:"submit"}})'
+        f'.then(function(t){{var f=document.getElementById("recaptchaResponse");if(f){{f.value=t;}}}});'
+        f'}});'
+        f'}}'
+        f'if(document.readyState!=="loading"){{run();}}'
+        f'else{{document.addEventListener("DOMContentLoaded",run);}}'
+        f'}})();'
+        f'</script>'
+    )
+
+
+def form_hidden(subject: str) -> str:
+    """Reserved Web3Forms fields plus the honeypot.
+
+    No `redirect`: both forms post over fetch and answer in place, so a
+    redirect would throw the user out of the page they were on. No `replyto`
+    either: Web3Forms already sets Reply-To from the `email` field, and
+    writing our own address into the page would expose it to scrapers.
+    """
     return (
         f'<input type="hidden" name="access_key" value="{WEB3FORMS_KEY}">'
         f'<input type="hidden" name="subject" value="{html.escape(subject)}">'
         f'<input type="hidden" name="from_name" value="Toolsummary">'
-        f'<input type="hidden" name="redirect" value="{redirect}">'
         # Honeypot: hidden from users, irresistible to naive bots.
         '<input type="checkbox" name="botcheck" style="display:none" tabindex="-1" '
         'autocomplete="off" aria-hidden="true">'
     )
+
+
+def form_modal(ok_message: str) -> str:
+    """The dialog both outcomes use. Rendered hidden; JS drives it."""
+    return f"""
+<div class="modal" id="form-modal" role="dialog" aria-modal="true"
+     aria-labelledby="form-modal-title" hidden>
+  <div class="modal__box">
+    <div class="modal__icon" aria-hidden="true">&#10003;</div>
+    <h2 class="modal__title" id="form-modal-title">Thank you</h2>
+    <p class="modal__msg">{html.escape(ok_message)}</p>
+    <div class="modal__actions">
+      <button type="button" class="btn" data-modal-ok>Close</button>
+    </div>
+  </div>
+</div>"""
 
 
 def build_submit() -> None:
@@ -1243,13 +1295,9 @@ def build_submit() -> None:
   placement &mdash; every row is priced the same way.
 </div>
 
-<form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-  {form_hidden("Toolsummary: model submission", f"{BASE}/submit/?sent=1")}
-  <div class="notice notice--ok" id="sent-notice" role="status" hidden>
-    <strong>Thanks &mdash; that reached us.</strong> We verify every submission against
-    the provider's own pricing page before it appears, so it may take a day or two to
-    show up in the ledger.
-  </div>
+<form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST"
+      data-ok-message="We verify every submission against the provider's own pricing page before it appears, so it may take a day or two to show up in the ledger.">
+  {form_hidden("Toolsummary: model submission")}
   <div class="form__grid">
     <div class="field">
       <label for="model-name">Model name <span class="req">*</span></label>
@@ -1302,16 +1350,14 @@ def build_submit() -> None:
       <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
       <span class="hint">Only used if we need to ask you a question about this row.</span>
     </div>
-    <div class="field field--wide">
-      {hcaptcha_block()}
-    </div>
   </div>
+  {recaptcha_block()}
   <div class="btn-row">
     <button class="btn" type="submit">Submit for review</button>
     <span class="mut" style="font-size:13.5px">Fields marked <span class="req">*</span> are required.</span>
   </div>
 </form>
-<script src="https://web3forms.com/client/script.js" async defer></script>
+{form_modal("We verify every submission against the provider's own pricing page before it appears, so it may take a day or two to show up in the ledger.")}
 """
     ld = {"@context": "https://schema.org", "@type": "WebPage",
           "name": "Submit a model", "url": f"{BASE}/submit/"}
@@ -1331,12 +1377,9 @@ def build_contact() -> None:
     what we need to verify a row.</p>
 </div>
 
-<form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-  {form_hidden("Toolsummary: contact message", f"{BASE}/contact/?sent=1")}
-  <div class="notice notice--ok" id="sent-notice" role="status" hidden>
-    <strong>Thanks &mdash; your message reached us.</strong> We usually reply within
-    one working day.
-  </div>
+<form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST"
+      data-ok-message="Your message reached us. We usually reply within one working day.">
+  {form_hidden("Toolsummary: contact message")}
   <div class="form__grid">
     <div class="field">
       <label for="c-name">Your name <span class="req">*</span></label>
@@ -1361,16 +1404,14 @@ def build_contact() -> None:
         placeholder="How can we help?"></textarea>
       <span class="err">A little more detail helps us route this.</span>
     </div>
-    <div class="field field--wide">
-      {hcaptcha_block()}
-    </div>
   </div>
+  {recaptcha_block()}
   <div class="btn-row">
     <button class="btn" type="submit">Send message</button>
     <span class="mut" style="font-size:13.5px">Fields marked <span class="req">*</span> are required.</span>
   </div>
 </form>
-<script src="https://web3forms.com/client/script.js" async defer></script>
+{form_modal("Your message reached us. We usually reply within one working day.")}
 """
     ld = {"@context": "https://schema.org", "@type": "ContactPage",
           "name": "Contact Toolsummary", "url": f"{BASE}/contact/"}
@@ -1429,7 +1470,9 @@ def build_privacy() -> None:
   <p>The public pages are static and set no tracking cookies. The submit and contact
     forms are processed by <a href="https://web3forms.com" rel="noopener">Web3Forms</a>,
     which forwards your message to our inbox and does not store submissions. Their
-    captcha is hCaptcha, which may set a cookie to distinguish people from bots.</p>
+    captcha is Google reCAPTCHA v3, which sets a cookie to score submissions for
+    spam. We never see your answers on that page; Web3Forms verifies the score and
+    forwards only the message.</p>
   <h2>What is not done</h2>
   <p>No data is sold, and no provider is given access to submissions. Email addresses
     from the forms are used only to reply to you.</p>

@@ -177,10 +177,63 @@
     nav.appendChild(controls);
   }
 
+  /* ---------------------------------------------------------------- modal */
+  // One modal per page, reused for success and failure. Focus is moved into
+  // the dialog and trapped there while it is open, then returned to whatever
+  // had focus before, so a keyboard user is not dumped back at the top.
+  function initModal() {
+    var modal = document.getElementById("form-modal");
+    if (!modal) return null;
+    var box = modal.querySelector(".modal__box");
+    var title = modal.querySelector(".modal__title");
+    var msg = modal.querySelector(".modal__msg");
+    var icon = modal.querySelector(".modal__icon");
+    var okBtn = modal.querySelector("[data-modal-ok]");
+    var lastFocus = null;
+
+    function close() {
+      modal.classList.remove("is-on");
+      modal.hidden = true;
+      document.body.style.overflow = "";
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    function open(kind, heading, text) {
+      lastFocus = document.activeElement;
+      modal.classList.toggle("modal--error", kind === "error");
+      if (icon) icon.textContent = kind === "error" ? "!" : "\u2713";
+      if (title) title.textContent = heading;
+      if (msg) msg.textContent = text;
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+      // Next frame, so the opacity transition actually runs.
+      requestAnimationFrame(function () { modal.classList.add("is-on"); });
+      if (okBtn) okBtn.focus();
+    }
+
+    if (okBtn) okBtn.addEventListener("click", close);
+    modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (modal.hidden) return;
+      if (e.key === "Escape") { e.preventDefault(); close(); return; }
+      if (e.key !== "Tab") return;
+      var f = box.querySelectorAll("button, [href], input, select, textarea");
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+
+    return { open: open, close: close };
+  }
+
   /* --------------------------------------------------------- submit form */
   function initForm() {
     var form = document.getElementById("submit-form");
     if (!form) return;
+    var modal = initModal();
+    var btn = form.querySelector('button[type="submit"]');
+    var btnLabel = btn ? btn.textContent : "";
 
     function fieldOf(el) { return el.closest(".field"); }
 
@@ -199,27 +252,69 @@
       if (e.target.matches("input, select, textarea")) validate(e.target);
     }, true);
 
-    // Only intercept a submit that fails validation. A valid form must be
-    // allowed to POST natively to the provider, otherwise the page looks like
-    // it succeeded while nothing was ever sent.
+    // Post with fetch so the page can tell success from failure and respond
+    // in place. A native submit would hand the user to the provider and lose
+    // the distinction: a 200 and a 400 both look like "the page went away".
     form.addEventListener("submit", function (e) {
+      e.preventDefault();
       var fields = Array.prototype.slice.call(
         form.querySelectorAll("input, select, textarea")
       );
       var bad = fields.filter(function (f) { return !validate(f); });
-      if (!bad.length) return;
-      e.preventDefault();
-      var first = fieldOf(bad[0]);
-      if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
+      if (bad.length) {
+        var first = fieldOf(bad[0]);
+        if (first) first.scrollIntoView({ behavior: "smooth", block: "center" });
+        if (modal) {
+          modal.open("error", "Check the highlighted fields",
+            "Some required answers are missing or invalid. Nothing was sent, and "
+            + "what you typed is still here.");
+        }
+        return;
+      }
 
-    // The provider redirects back with ?sent=1 after a successful POST, which
-    // is how a static page confirms delivery.
-    var notice = document.getElementById("sent-notice");
-    if (notice && /[?&]sent=1\b/.test(window.location.search)) {
-      notice.hidden = false;
-      notice.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
+      if (btn) { btn.disabled = true; btn.textContent = "Sending\u2026"; }
+
+      fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      })
+        .then(function (r) {
+          return r.json()
+            .catch(function () { return {}; })
+            .then(function (j) { return { ok: r.ok, status: r.status, body: j }; });
+        })
+        .then(function (res) {
+          if (res.ok && res.body && res.body.success) {
+            form.reset();
+            fields.forEach(function (f) {
+              var w = fieldOf(f);
+              if (w) w.classList.remove("is-bad");
+            });
+            if (modal) {
+              modal.open("ok", "Thank you",
+                form.dataset.okMessage
+                || "Your message reached us. We usually reply within one working day.");
+            }
+          } else {
+            var why = (res.body && res.body.message) || "The form service rejected it.";
+            if (modal) {
+              modal.open("error", "Not sent",
+                why + " Your answers are still here, so you can try again without retyping.");
+            }
+          }
+        })
+        .catch(function () {
+          if (modal) {
+            modal.open("error", "Not sent",
+              "We could not reach the server. Check your connection and try again. "
+              + "Your answers are still here.");
+          }
+        })
+        .then(function () {
+          if (btn) { btn.disabled = false; btn.textContent = btnLabel; }
+        });
+    });
   }
 
   /* ------------------------------------------------------------ footer */
