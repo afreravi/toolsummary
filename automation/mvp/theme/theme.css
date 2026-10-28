@@ -292,6 +292,31 @@ table.ledger caption {
 .search__count {
   font-family: var(--mono); font-size: 12px; color: var(--ink-3); white-space: nowrap;
 }
+
+/* -------------------------------------------------------------------- pager */
+
+.pager {
+  display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center;
+  justify-content: space-between; margin: 16px 0 0;
+  font-family: var(--mono); font-size: 12.5px; color: var(--ink-3);
+}
+.pager__controls { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.pager__btn {
+  font-family: var(--mono); font-size: 12.5px; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule-2);
+  border-radius: var(--radius); padding: 6px 10px; cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.pager__btn:hover:not(:disabled) { border-color: var(--teal); color: var(--teal-ink); }
+.pager__btn:disabled { opacity: .4; cursor: default; }
+.pager__btn.is-current {
+  background: var(--teal); border-color: var(--teal); color: var(--paper);
+}
+.pager__gap { padding: 6px 2px; color: var(--ink-3); }
+@media (max-width: 560px) {
+  .pager { justify-content: center; }
+  .pager__info { flex-basis: 100%; text-align: center; }
+}
 .empty {
   display: none; padding: 22px; text-align: center; color: var(--ink-3);
   font-family: var(--mono); font-size: 13px; border: 1px dashed var(--rule-2);
@@ -395,6 +420,7 @@ table.ledger caption {
   padding: 14px 18px; margin: 0 0 26px; font-size: 15px;
 }
 .notice--info { border-left-color: var(--teal); background: var(--teal-wash); }
+.notice--ok { border-left-color: var(--teal); background: var(--teal-wash); }
 
 /* -------------------------------------------------------------------- footer */
 

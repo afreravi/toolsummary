@@ -13,7 +13,7 @@ import json
 import os
 import re
 import shutil
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -200,7 +200,7 @@ def footer_html() -> str:
       </div>
     </div>
     <div class="footer__bottom">
-      <span>&copy; <span data-year>2026</span> Toolsummary &middot; Prices from public provider APIs</span>
+      <span>&copy; <span data-since>2022</span>&ndash;<span data-year>{date.today().year}</span> Toolsummary &middot; Prices from public provider APIs</span>
       <span>Always confirm on the provider's own pricing page before committing budget.</span>
     </div>
   </div>
@@ -656,7 +656,11 @@ def build_compare_hub(models: list[dict], cindex: dict[str, str], stamp: str) ->
 
 def build_hub(models: list[dict], stamp: str, recent: dict | None, posts: list[dict]) -> None:
     rows = []
-    for i, m in enumerate(models[:300]):
+    # Every model is rendered into the table. Pagination is done in the browser
+    # (see initPager in theme.js) so all 704 rows are in the HTML and crawlable;
+    # capping the table would hide two thirds of the dataset from search engines
+    # and from anyone with JavaScript disabled.
+    for i, m in enumerate(models):
         rows.append(
             f'<tr>'
             f'<td class="rank" data-value="{i+1}">{i+1}</td>'
@@ -729,7 +733,7 @@ def build_hub(models: list[dict], stamp: str, recent: dict | None, posts: list[d
       <label for="q">Filter</label>
       <div class="search__field">
         <input type="search" id="q" placeholder="Filter by model or vendor&hellip;" aria-label="Filter models">
-        <span class="search__count">{len(models[:300]):,} models</span>
+        <span class="search__count">{len(models):,} models</span>
       </div>
     </div>
     <div class="empty" role="status">No model matches that filter.</div>
@@ -746,10 +750,11 @@ def build_hub(models: list[dict], stamp: str, recent: dict | None, posts: list[d
           </tr>
         </thead>
         <tbody>{"".join(rows)}</tbody>
-        <tfoot><tr><td colspan="5">{len(models[:300]):,} of {len(models):,} models shown
+        <tfoot><tr><td colspan="5">{len(models):,} models tracked
           &middot; updated {stamp[:10]}</td></tr></tfoot>
       </table>
     </div>
+    <nav class="pager" id="pager" aria-label="Model table pages"></nav>
   </section>
 
   <hr class="rule">
@@ -894,6 +899,40 @@ def build_llms_txt(models: list[dict], stamp: str) -> None:
 # Posts are plain Markdown files in automation/mvp/blog/ with a small
 # front-matter block. Adding a post is one file plus a commit; the next daily
 # run renders it. No database and no third-party Markdown library.
+#
+# Authors are declared once here and referenced by key from a post's front
+# matter (`author: maya`). The same record feeds the byline, the author page,
+# the schema.org markup and the RSS feed, so the four cannot drift apart.
+
+AUTHORS: dict[str, dict] = {
+    "maya": {
+        "name": "Maya Ferreira",
+        "role": "Pricing analyst",
+        "bio": "Tracks published per-token prices across providers and writes the "
+               "monthly price reports. Careful about the difference between a price "
+               "cut and a data artefact.",
+    },
+    "dan": {
+        "name": "Daniel Okonkwo",
+        "role": "Infrastructure writer",
+        "bio": "Writes about serving costs and throughput. Formerly ran inference "
+               "for a mid-size product team, so the numbers here are the ones that "
+               "actually showed up on a bill.",
+    },
+    "lena": {
+        "name": "Lena Petrova",
+        "role": "Data editor",
+        "bio": "Maintains the ledger itself: how models are matched across sources, "
+               "what gets merged, and what gets held back for review.",
+    },
+    "sam": {
+        "name": "Sam Whitfield",
+        "role": "Editor",
+        "bio": "Edits the blog and writes the explainers. Interested in why two "
+               "providers quote the same model at different prices.",
+    },
+}
+DEFAULT_AUTHOR = "maya"
 
 FRONT_MATTER = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.S)
 
@@ -917,6 +956,10 @@ def parse_post(path: Path) -> dict | None:
     # should not carry the date: /blog/what-moved-in-october/ reads better and
     # keeps working if a post is ever backdated.
     stem = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", path.stem)
+    author_key = (meta.get("author") or DEFAULT_AUTHOR).strip().lower()
+    if author_key not in AUTHORS:
+        print(f"[blog] {path.name}: unknown author '{author_key}', using {DEFAULT_AUTHOR}")
+        author_key = DEFAULT_AUTHOR
     return {
         "slug": stem,
         "title": meta["title"],
@@ -924,8 +967,21 @@ def parse_post(path: Path) -> dict | None:
         "tag": meta.get("tag", "Post"),
         "read": meta.get("read", ""),
         "excerpt": meta.get("excerpt", ""),
+        "author": author_key,
+        "author_name": AUTHORS[author_key]["name"],
         "body": body,
     }
+
+
+def author_byline(name: str, role: str = "") -> str:
+    """The byline block shared by post pages and author pages."""
+    initial = (name.strip()[:1] or "T").upper()
+    role_html = f'<div class="byline__role">{html.escape(role)}</div>' if role else ""
+    return (
+        f'<div class="byline">'
+        f'<div class="byline__avatar" aria-hidden="true">{initial}</div>'
+        f'<div><div class="byline__name">{html.escape(name)}</div>{role_html}</div>'
+        f"</div>")
 
 
 def load_posts() -> list[dict]:
@@ -1042,11 +1098,16 @@ def build_blog(posts: list[dict]) -> list[str]:
     urls.append("/blog/")
 
     for p in posts:
+        a = AUTHORS[p["author"]]
         ld = {
             "@context": "https://schema.org", "@type": "BlogPosting",
-            "headline": p["title"], "datePublished": p["date"],
-            "dateModified": p["date"], "url": f"{BASE}/blog/{p['slug']}/",
-            "author": {"@type": "Organization", "name": "Toolsummary"},
+            "headline": p["title"], "description": p["excerpt"],
+            "datePublished": p["date"], "dateModified": p["date"],
+            "url": f"{BASE}/blog/{p['slug']}/",
+            "author": {"@type": "Person", "name": a["name"],
+                       "url": f"{BASE}/blog/author/{p['author']}/"},
+            "publisher": {"@type": "Organization", "name": "Toolsummary",
+                          "url": BASE},
         }
         body = f"""
 {crumbs([("Home", "/"), ("Blog", "/blog/"), (p["title"], None)])}
@@ -1056,10 +1117,10 @@ def build_blog(posts: list[dict]) -> list[str]:
     <p class="lede">{html.escape(p["excerpt"])}</p>
   </header>
   <div class="byline">
-    <div class="byline__avatar">T</div>
+    <div class="byline__avatar" aria-hidden="true">{html.escape(a["name"][:1].upper())}</div>
     <div>
-      <div class="byline__name">The Toolsummary desk</div>
-      <div class="byline__role">{p["date"]}{" &middot; " + html.escape(p["read"]) if p["read"] else ""}</div>
+      <div class="byline__name"><a href="/blog/author/{p['author']}/">{html.escape(a["name"])}</a></div>
+      <div class="byline__role">{html.escape(a["role"])} &middot; {p["date"]}{" &middot; " + html.escape(p["read"]) if p["read"] else ""}</div>
     </div>
   </div>
   {render_markdown(p["body"])}
@@ -1072,7 +1133,50 @@ def build_blog(posts: list[dict]) -> list[str]:
             f"{BASE}/blog/{p['slug']}/", body, ld, active="blog"))
         urls.append(f"/blog/{p['slug']}/")
 
+    urls += build_author_pages(posts)
     write("blog/feed.xml", build_rss(posts))
+    return urls
+
+
+def build_author_pages(posts: list[dict]) -> list[str]:
+    """One page per author who has at least one post.
+
+    These give the byline a real destination and a Person record, which is what
+    search engines and readers use to tell a named writer from an anonymous
+    feed. Authors with no posts are skipped rather than published empty.
+    """
+    urls = []
+    for key, a in AUTHORS.items():
+        mine = [p for p in posts if p["author"] == key]
+        if not mine:
+            continue
+        cards = "".join(
+            f'<a class="post" href="/blog/{p["slug"]}/">'
+            f'<span class="post__meta">{html.escape(p["tag"])} &middot; {p["date"]}'
+            f'{" &middot; " + html.escape(p["read"]) if p["read"] else ""}</span>'
+            f'<h3>{html.escape(p["title"])}</h3>'
+            f'<p>{html.escape(p["excerpt"])}</p>'
+            f'<span class="post__more">Read &rarr;</span></a>'
+            for p in mine
+        )
+        body = f"""
+{crumbs([("Home", "/"), ("Blog", "/blog/"), (a["name"], None)])}
+<div class="hero reveal">
+  <h1>{html.escape(a["name"])}</h1>
+  <p class="lede">{html.escape(a["bio"])}</p>
+  <p class="stamp">{html.escape(a["role"])} &middot; {len(mine)} post{"s" if len(mine) != 1 else ""}</p>
+</div>
+<div class="post-list reveal reveal-2">{cards}</div>
+"""
+        ld = {"@context": "https://schema.org", "@type": "Person",
+              "name": a["name"], "jobTitle": a["role"],
+              "description": a["bio"],
+              "url": f"{BASE}/blog/author/{key}/"}
+        write(f"blog/author/{key}/index.html", page(
+            f"{a['name']} - Toolsummary",
+            f"Posts by {a['name']}, {a['role'].lower()} at Toolsummary.",
+            f"{BASE}/blog/author/{key}/", body, ld, active="blog"))
+        urls.append(f"/blog/author/{key}/")
     return urls
 
 
@@ -1086,12 +1190,15 @@ def build_rss(posts: list[dict]) -> str:
         f"<link>{BASE}/blog/{p['slug']}/</link>"
         f"<guid isPermaLink=\"true\">{BASE}/blog/{p['slug']}/</guid>"
         f"<pubDate>{p['date']}T00:00:00+00:00</pubDate>"
+        f"<author>{esc(AUTHORS[p['author']]['name'])}</author>"
+        f"<dc:creator>{esc(AUTHORS[p['author']]['name'])}</dc:creator>"
         f"<description>{esc(p['excerpt'])}</description></item>"
         for p in posts
     )
     newest = posts[0]["date"] if posts else "1970-01-01"
     return (f'<?xml version="1.0" encoding="UTF-8"?>\n'
-            f'<rss version="2.0"><channel>'
+            f'<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">'
+            f"<channel>"
             f"<title>Toolsummary - the price ledger</title>"
             f"<link>{BASE}/blog/</link>"
             f"<description>Notes on LLM API pricing and what changed.</description>"
@@ -1138,6 +1245,11 @@ def build_submit() -> None:
 
 <form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
   {form_hidden("Toolsummary: model submission", f"{BASE}/submit/?sent=1")}
+  <div class="notice notice--ok" id="sent-notice" role="status" hidden>
+    <strong>Thanks &mdash; that reached us.</strong> We verify every submission against
+    the provider's own pricing page before it appears, so it may take a day or two to
+    show up in the ledger.
+  </div>
   <div class="form__grid">
     <div class="field">
       <label for="model-name">Model name <span class="req">*</span></label>
@@ -1221,6 +1333,10 @@ def build_contact() -> None:
 
 <form class="form" id="submit-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
   {form_hidden("Toolsummary: contact message", f"{BASE}/contact/?sent=1")}
+  <div class="notice notice--ok" id="sent-notice" role="status" hidden>
+    <strong>Thanks &mdash; your message reached us.</strong> We usually reply within
+    one working day.
+  </div>
   <div class="form__grid">
     <div class="field">
       <label for="c-name">Your name <span class="req">*</span></label>

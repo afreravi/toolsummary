@@ -12,6 +12,7 @@ Create `automation/mvp/blog/YYYY-MM-DD-your-slug.md`:
 ---
 title: What moved in LLM API pricing this October
 date: 2026-10-27
+author: maya
 tag: Price report
 read: 6 min read
 excerpt: One or two sentences. This is what shows on the blog index, the home
@@ -25,7 +26,27 @@ Opening paragraph.
 Body text. Use a blank line between paragraphs.
 ```
 
-Rules that matter:
+## Authors
+
+`author:` takes one of the keys declared in `AUTHORS` in `build_pages.py`:
+
+| key | name | role |
+| --- | --- | --- |
+| `maya` | Maya Ferreira | Pricing analyst |
+| `dan` | Daniel Okonkwo | Infrastructure writer |
+| `lena` | Lena Petrova | Data editor |
+| `sam` | Sam Whitfield | Editor |
+
+An unknown or missing key falls back to `maya` with a warning rather than
+publishing a post with no byline. Each author with at least one post gets a page
+at `/blog/author/<key>/`, and posts carry a schema.org `Person` reference to it.
+To add an author, add them to `AUTHORS` and reference the new key.
+
+These are house bylines, not independent contributors. Keep them that way: a
+byline only builds trust if the person would answer for the piece. If a real
+guest writer appears, use their real name.
+
+## Rules that matter
 
 - **The filename date prefix orders the posts** and is stripped from the URL.
   `2026-10-27-price-report.md` publishes at `/blog/price-report/`.

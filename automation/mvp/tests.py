@@ -204,6 +204,15 @@ def main() -> int:
         check('name="botcheck"' in fh, f"{route} lost its honeypot field")
         check("h-captcha" in fh, f"{route} lost its captcha")
         check('method="POST"' in fh, f"{route} is not a POST form")
+        check("api.web3forms.com/submit" in fh and 'id="sent-notice"' in fh,
+              f"{route} has no success notice for the post-submit redirect")
+        # The form must not be stopped from posting by its own script. A
+        # preventDefault on every submit silently swallows real submissions,
+        # which is worse than no validation at all.
+        js = (SITE / "assets" / "js" / "theme.js").read_text()
+        block = js.split("initForm")[1] if "initForm" in js else ""
+        check("e.preventDefault()" in block and "if (!bad.length) return;" in block,
+              "form script may still block valid submissions")
         # A form that echoes the inbox address invites scraping; the address
         # should not appear in page HTML.
         check("info.toolsummary@gmail.com" not in fh,
@@ -228,14 +237,39 @@ def main() -> int:
     for p in posts:
         check(bool(p["title"]), f"post {p['slug']} has no title")
         check(bool(p["excerpt"]), f"post {p['slug']} has no excerpt")
+        check(p["author"] in _bp.AUTHORS,
+              f"post {p['slug']} resolves to unknown author {p['author']}")
         check((SITE / "blog" / p["slug"] / "index.html").exists(),
               f"post {p['slug']} was parsed but not rendered")
+        # A post must name a real person and link to their author page, or the
+        # byline is decoration rather than an author signal.
+        ph = (SITE / "blog" / p["slug"] / "index.html").read_text()
+        check("The Toolsummary desk" not in ph,
+              f"post {p['slug']} still shows the placeholder byline")
+        check(f'/blog/author/{p["author"]}/' in ph,
+              f"post {p['slug']} does not link to its author page")
+        check((SITE / "blog" / "author" / p["author"] / "index.html").exists(),
+              f"author page missing for {p['author']}")
         # Markdown must never reach the page unrendered.
-        html = (SITE / "blog" / p["slug"] / "index.html").read_text()
+        html = ph
         check("##" not in re.sub(r"<[^>]+>", "", html.split("<article", 1)[-1]),
               f"post {p['slug']} leaks raw Markdown headings")
         check("&lt;script" not in html and "<script>alert" not in html,
               f"post {p['slug']} may have injected raw HTML")
+
+    # Posts must be genuinely distinct, not one text under four names.
+    bodies = [p["body"] for p in posts]
+    check(len(set(bodies)) == len(bodies), "two blog posts have identical bodies")
+    titles = [p["title"].lower() for p in posts]
+    check(len(set(titles)) == len(titles), "two blog posts share a title")
+
+    # A published post needs a real title length for search results; too short
+    # and it competes with nothing, too long and it is truncated.
+    for p in posts:
+        check(20 <= len(p["title"]) <= 65,
+              f"post {p['slug']} title is {len(p['title'])} chars (want 20-65)")
+        check(70 <= len(p["excerpt"]) <= 200,
+              f"post {p['slug']} excerpt is {len(p['excerpt'])} chars (want 70-200)")
 
     # --- public JSON API ----------------------------------------------------
     api = SITE / "api" / "prices.json"
@@ -252,6 +286,20 @@ def main() -> int:
 
     # --- trending -----------------------------------------------------------
     check((SITE / "trending" / "index.html").exists(), "trending page missing")
+
+    # --- footer -------------------------------------------------------------
+    # The copyright range must end at the current year. A hardcoded year is the
+    # classic way a site starts looking abandoned every January.
+    import datetime as _dt
+    year = str(_dt.date.today().year)
+    for p in pages[:1] + [SITE / "blog" / "index.html"]:
+        fh = p.read_text()
+        check("data-since" in fh, f"{p.relative_to(SITE)} footer lost the start year")
+        m = re.search(r'data-year>(\d{4})<', fh)
+        check(bool(m), f"{p.relative_to(SITE)} footer has no end year")
+        if m:
+            check(m.group(1) == year,
+                  f"{p.relative_to(SITE)} footer year is {m.group(1)}, expected {year}")
 
     # --- assets shipped -----------------------------------------------------
     for asset in ("assets/css/theme.css", "assets/js/theme.js"):
