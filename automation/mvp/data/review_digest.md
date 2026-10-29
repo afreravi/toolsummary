@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-28
+# Daily review digest - 2026-10-29
 
-Automation refreshed the pricing dataset. **713 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **722 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-461 price changes in the last 30 days, 732 new models, 19 delisted.
+487 price changes in the last 30 days, 742 new models, 20 delisted.
 
-### 317 changes over 20% - check these before trusting the page
+### 330 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
@@ -30,7 +30,6 @@ Automation refreshed the pricing dataset. **713 model pages** and 400 comparison
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
-- `~deepseek/deepseek-v4-flash-latest` looks like `deepseek/deepseek-v4.1-flash:batch` (similarity 0.944)
 - `meta/muse-spark-1.2-contributor` looks like `meta/muse-spark-1.3-contributor` (similarity 0.962)
 - `mistral/ministral-3-3b-2512` looks like `mistralai/ministral-3b-2512` (similarity 0.944)
 - `lambda_ai/llama3.3-70b-instruct-fp8` looks like `lambda_ai/llama3.1-70b-instruct-fp8` (similarity 0.96)
@@ -44,8 +43,9 @@ Two model IDs look like the same product. Confirm and either merge or ignore.
 - `mistralai/mistral-medium-3` looks like `mistralai/mistral-medium-3.1` (similarity 0.941)
 - `nebius/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1` looks like `nebius/nvidia/Llama-3.1-Nemotron-Ultra-253B-v1` (similarity 0.966)
 - `ovhcloud/Meta-Llama-3_3-70B-Instruct` looks like `ovhcloud/Meta-Llama-3_1-70B-Instruct` (similarity 0.963)
+- `vercel_ai_gateway/meta/llama-3.1-70b` looks like `snowflake/llama3.1-70b` (similarity 0.96)
 
-### 36 rows missing a usable context window
+### 35 rows missing a usable context window
 
 - `nscale/Qwen/Qwen2.5-Coder-3B-Instruct` - 0.01 USD/1M input
 - `nscale/Qwen/Qwen2.5-Coder-7B-Instruct` - 0.01 USD/1M input

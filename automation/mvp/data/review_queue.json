@@ -36,15 +36,6 @@
     "reason": "missing or too-small context window"
   },
   {
-    "candidate": "~deepseek/deepseek-v4-flash-latest",
-    "candidate_name": "DeepSeek V4 Flash Latest",
-    "input_per_1m_usd": 0.0475,
-    "possible_duplicate_of": "deepseek/deepseek-v4.1-flash:batch",
-    "possible_duplicate_name": "DeepSeek V4.1 Flash",
-    "confidence": 0.944,
-    "reason": "possible duplicate"
-  },
-  {
     "candidate": "nscale/Qwen/Qwen2.5-Coder-32B-Instruct",
     "candidate_name": "Qwen 2.5 Coder 32 B Instruct",
     "input_per_1m_usd": 0.06,
@@ -288,15 +279,6 @@
     "reason": "missing or too-small context window"
   },
   {
-    "candidate": "baseten/moonshotai/Kimi-K2-Instruct-0905",
-    "candidate_name": "Kimi K2 Instruct 0905",
-    "input_per_1m_usd": 0.6,
-    "possible_duplicate_of": null,
-    "possible_duplicate_name": null,
-    "confidence": null,
-    "reason": "missing or too-small context window"
-  },
-  {
     "candidate": "gpt-4o-mini-tts",
     "candidate_name": "GPT-4 O Mini Tts",
     "input_per_1m_usd": 0.6,
@@ -483,6 +465,15 @@
     "possible_duplicate_of": "xai/grok-4.20-reasoning",
     "possible_duplicate_name": "Grok 4.20 Reasoning",
     "confidence": 0.95,
+    "reason": "possible duplicate"
+  },
+  {
+    "candidate": "mistral/mistral-large-4",
+    "candidate_name": "Mistral Large 4",
+    "input_per_1m_usd": 1.36,
+    "possible_duplicate_of": "mistralai/mistral-large-4-0",
+    "possible_duplicate_name": "Mistral Large 4.0",
+    "confidence": 0.938,
     "reason": "possible duplicate"
   },
   {
