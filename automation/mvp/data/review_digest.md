@@ -1,12 +1,12 @@
-# Daily review digest - 2026-10-29
+# Daily review digest - 2026-10-30
 
-Automation refreshed the pricing dataset. **722 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
+Automation refreshed the pricing dataset. **732 model pages** and 400 comparison pages were regenerated. No action needed unless something below looks wrong.
 
 ## Prices that moved
 
-487 price changes in the last 30 days, 742 new models, 20 delisted.
+514 price changes in the last 30 days, 753 new models, 21 delisted.
 
-### 330 changes over 20% - check these before trusting the page
+### 347 changes over 20% - check these before trusting the page
 
 - **DeepSeek Flash Latest** input: $0.0001 -> $0.0336 (33500.0%)
 - **DeepSeek V4 Flash Latest** output: $0.0147 -> $1.28 (8607.48%)
@@ -26,7 +26,7 @@ Automation refreshed the pricing dataset. **722 model pages** and 400 comparison
 
 ## Needs a human decision
 
-### 51 possible duplicates
+### 50 possible duplicates
 Two model IDs look like the same product. Confirm and either merge or ignore.
 
 - `poolside/laguna-xs-2.1:free` looks like `poolside/laguna-s-2.1:free` (similarity 0.96)
@@ -45,7 +45,7 @@ Two model IDs look like the same product. Confirm and either merge or ignore.
 - `ovhcloud/Meta-Llama-3_3-70B-Instruct` looks like `ovhcloud/Meta-Llama-3_1-70B-Instruct` (similarity 0.963)
 - `vercel_ai_gateway/meta/llama-3.1-70b` looks like `snowflake/llama3.1-70b` (similarity 0.96)
 
-### 35 rows missing a usable context window
+### 36 rows missing a usable context window
 
 - `nscale/Qwen/Qwen2.5-Coder-3B-Instruct` - 0.01 USD/1M input
 - `nscale/Qwen/Qwen2.5-Coder-7B-Instruct` - 0.01 USD/1M input
@@ -59,9 +59,9 @@ Two model IDs look like the same product. Confirm and either merge or ignore.
 - `fireworks-ai-4.1b-to-16b` - 0.2 USD/1M input
 - `nscale/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B` - 0.2 USD/1M input
 - `together-ai-4.1b-8b` - 0.2 USD/1M input
+- `dashscope/qwen-audio-3.1-tts-flash` - 0.23 USD/1M input
 - `baseten/nvidia/Nemotron-120B-A12B` - 0.3 USD/1M input
 - `together-ai-8.1b-21b` - 0.3 USD/1M input
-- `fal_ai/fal-ai/moondream3-preview/query` - 0.4 USD/1M input
 
 ## Anything that moved fast
 
